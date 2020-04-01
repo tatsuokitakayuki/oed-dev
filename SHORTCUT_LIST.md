@@ -1,4 +1,4 @@
-# TOED shortcut list
+# OED shortcut list
 
 ## Implemented in Ace
 
@@ -132,7 +132,7 @@
 | Macros recording | Ctrl+Alt+E |  |
 | Center selection |  | Ctrl+L |
 
-## Implemented in TOED
+## Implemented in OED
 
 ### File
 | Name | Windows/Linux | Mac |

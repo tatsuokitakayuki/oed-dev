@@ -1,20 +1,20 @@
-# TOED（とえど） - Text: Open, edit, and download.
+# OED（おえど） - Open, edit, and download.
 
 ## これはなにか
-「TOED」は PWA (Progressive Web Apps)によるテキストエディターの実装例です。
-私達は主に Chromebook （あるいは Chromium OS やそれを元とした OS の） ユーザーのために「TOED」を開発しています。
+「OED」は PWA (Progressive Web Apps)によるテキストエディターの実装例です。
+私達は主に Chromebook （あるいは Chromium OS やそれを元とした OS の） ユーザーのために「OED」を開発しています。
 
 ## 目的
-- 「TOED」を立派なテキストエディタに仕上げます。
+- 「OED」を立派なテキストエディタに仕上げます。
     - 機能を追加します。
         1. Ace のすべての機能にできる限りアクセスできるようにします。
             - 当面の重点目標です。
         2. PWA として備えるべき機能を実装します。
-        3. 「TOED」ならではの機能を実装します。
+        3. 「OED」ならではの機能を実装します。
     - 不具合を修正します。
     - ソースコードを整えます。
 
-## 「TOED」の特徴
+## 「OED」の特徴
 - 完全なプログレッシブウェブアプリ（PWA）です。多分。
     - Chrome API を使っていません。
     - 一般的なテキストエディターと使用感が異なります。
@@ -73,17 +73,16 @@
 ## 法的通知
 Copyright [Comeluck Lab](https://www.comeluck.jp/).
 Developed by 龍興 尚幸 （Tatsuoki, Takayuki）
-- [GitHub - tatsuokitakayuki/toed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/toed-dev)
-- [MIT License](https://github.com/tatsuokitakayuki/toed-dev/blob/master/LICENSE)
+- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 
 ## 使い方
 ### すぐに試す方法
-- [安定版 (stable channel)](https://toed-stable.web.app/)
-- [開発版 (dev channel)](https://toed-dev.web.app/)
+- [安定版 (stable channel)](https://oed-stable.web.app/)
+- [開発版 (dev channel)](https://oed-dev.web.app/)
 
 This app uses [Firebase](https://firebase.google.com/) hosting services.
 
 ## 問い合わせ先
 龍興 尚幸 （Tatsuoki, Takayuki）
-- Twitter: @ttatsuoki （プライベートアカウント）
-    - お気軽に。
+- お気軽に。

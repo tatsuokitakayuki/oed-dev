@@ -1,20 +1,20 @@
-# TOED - Text: Open, edit, and download.
+# OED - Open, edit, and download.
 
 ## What is this
-"TOED" is an example of text editor implementation by PWA (Progressive Web Apps).
-We make "TOED" mainly for Chromebook (or Chromium OS and OS based) users.
+"OED" is an example of text editor implementation by PWA (Progressive Web Apps).
+We make "OED" mainly for Chromebook (or Chromium OS and OS based) users.
 
 ## Goal
-- Turn "TOED" into a worthy text editor.
+- Turn "OED" into a worthy text editor.
     - Add features.
         1. Make all Ace features as accessible as possible.
             - Immediate priority goals.
         2. Implement functions to be provided as PWA.
-        3. Implements functions unique to "TOED".
+        3. Implements functions unique to "OED".
     - Correct the bug.
     - Prepare source code.
 
-## Features of "TOED"
+## Features of "OED"
 - A complete progressive web app (PWA). Perhaps.
     - We are not using the Chrome API.
     - Usability differs from a general text editor.
@@ -73,17 +73,16 @@ This app is developed using the following libraries and frameworks.
 ## Legal notice
 Copyright [Comeluck Lab](https://www.comeluck.jp/).
 Developed by Tatsuoki, Takayuki
-- [GitHub - tatsuokitakayuki/toed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/toed-dev)
-- [MIT License](https://github.com/tatsuokitakayuki/toed-dev/blob/master/LICENSE)
+- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 
 ## How to use
 ### How to try immediately
-- [stable channel](https://toed-stable.web.app/)
-- [dev channel](https://toed-dev.web.app/)
+- [stable channel](https://oed-stable.web.app/)
+- [dev channel](https://oed-dev.web.app/)
 
 This app uses [Firebase](https://firebase.google.com/) hosting services.
 
 ## Contact information
 Tatsuoki, Takayuki
-- Twitter: @ttatsuoki (Private account)
-    - Feel free to.
+- Feel free to.
