@@ -1,5 +1,5 @@
-const TOED_VERSION = '2.0.20200401.0';
-const TOED_BASE = 'TOED';
+const OED_VERSION = '2.0.20200401.0';
+const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.8';
 const ACE_BASE = 'Ace';
 const MDC_VERSION = '5.1.0';
@@ -10,7 +10,7 @@ const LF_VERSION = '1.7.3';
 const LF_BASE = 'localForage';
 const EC_VERSION = '1.0.0';
 const EC_BASE = 'emmet-core';
-const TOED_URLS = [
+const OED_URLS = [
     './',
     './app_bar.js',
     './cache_manager.js',
@@ -60,7 +60,7 @@ const TOED_URLS = [
     './res.js',
     './snackbar.js',
     './sw.js',
-    './toed.js',
+    './oed.js',
     './ui_helper.js',
     './view.js',
     './images/icons/favicon.png',
@@ -507,10 +507,10 @@ const EC_URLS = [
 const JOINT_FOR_KEY = '-v';
 const CACHE_LIST = [
     {
-        base: TOED_BASE,
-        version: TOED_VERSION,
-        list: TOED_URLS,
-        log: TOED_BASE
+        base: OED_BASE,
+        version: OED_VERSION,
+        list: OED_URLS,
+        log: OED_BASE
     },
     {
         base: ACE_BASE,

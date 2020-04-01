@@ -5,11 +5,11 @@ import {FileHelper} from '/file_helper.js';
 export class Options {
 
     constructor() {
-        this.toed = this.getDefaultToedOptions();
+        this.oed = this.getDefaultOedOptions();
     }
 
     async initializeA(core) {
-        await this.initializeToedOptionsA(core);
+        await this.initializeOedOptionsA(core);
         await this.initializeEditorOptionsA(core.editor);
         await this.initializeRendererOptionsA(core.editor);
         await this.initializeSessionOptionsA(core.editor.session);
@@ -220,7 +220,7 @@ export class Options {
             .setItem('options_extensions', this.getExtensionsOptions(editor));
     }
 
-    getDefaultToedOptions() {
+    getDefaultOedOptions() {
         return {
             hello: false,               // true|[false]
             keybinding: 'Ace',          // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
@@ -228,41 +228,41 @@ export class Options {
         };
     }
 
-    getToedOptions() {
-        return this.toed;
+    getOedOptions() {
+        return this.oed;
     }
 
-    async initializeToedOptionsA(core) {
-        const value = await localforage.getItem('options_toed');
+    async initializeOedOptionsA(core) {
+        const value = await localforage.getItem('options_oed');
         if (value) {
-            this.toed = value;
+            this.oed = value;
         } else {
-            this.toed = this.getDefaultToedOptions();
+            this.oed = this.getDefaultOedOptions();
         }
-        core.setKeybinding(this.toed.keybinding);
+        core.setKeybinding(this.oed.keybinding);
     }
 
-    saveToedOptions() {
-        localforage.setItem('options_toed', this.getToedOptions());
+    saveOedOptions() {
+        localforage.setItem('options_oed', this.getOedOptions());
     }
 
     async exportOptionsA(core) {
-        const toedOptions = this.getToedOptions(core.getEditor());
+        const oedOptions = this.getOedOptions(core.getEditor());
         const editorOptions = this.getEditorOptions(core.getEditor());
         const rendererOptions = this.getRendererOptions(core.getEditor());
         const sessionOptions = this.getSessionOptions(core.getEditorSession());
         const extensionsOptions = this.getExtensionsOptions(core.getEditor());
         const cacheManager = new CacheManager(core);
-        const appVersion = await cacheManager.getVersionA('TOED', 0);
+        const appVersion = await cacheManager.getVersionA('OED', 0);
         const options = {
             info_options: {
                 exportVersion: '1',
                 exportDate: new Date().toString(),
-                appName: 'TOED',
+                appName: 'OED',
                 appVersion: appVersion,
             },
             options: {
-                toed: toedOptions,
+                oed: oedOptions,
                 editor: editorOptions,
                 renderer: rendererOptions,
                 session: sessionOptions,
@@ -286,7 +286,7 @@ export class Options {
             core.getEditor().setOptions(options.options.renderer);
             core.getEditor().setOptions(options.options.session);
             core.getEditor().setOptions(options.options.extensions);
-            this.toed = options.options.toed;
+            this.oed = options.options.oed;
         }
     }
 }

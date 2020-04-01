@@ -9,27 +9,27 @@ export class MenuExtensions extends Menu {
             id: 'menu-list-extensions',
             items: [
                 {
-                    id: 'menu-extensions-toed-enable-basic-autocompletion',
+                    id: 'menu-extensions-oed-enable-basic-autocompletion',
                     text: 'Enable basic autocompletion',
                     meta: ''
                 },
                 {
-                    id: 'menu-extensions-toed-enable-live-autocompletion',
+                    id: 'menu-extensions-oed-enable-live-autocompletion',
                     text: 'Enable live autocompletion',
                     meta: ''
                 },
                 {
-                    id: 'menu-extensions-toed-enable-snippets',
+                    id: 'menu-extensions-oed-enable-snippets',
                     text: 'Enable snippets',
                     meta: ''
                 },
                 {
-                    id: 'menu-extensions-toed-enable-emmet',
+                    id: 'menu-extensions-oed-enable-emmet',
                     text: 'Enable emmet',
                     meta: ''
                 },
                 {
-                    id: 'menu-extensions-toed-use-elastic-tabstops',
+                    id: 'menu-extensions-oed-use-elastic-tabstops',
                     text: 'Use elastic tabstops',
                     meta: ''
                 }
@@ -51,7 +51,7 @@ export class MenuExtensions extends Menu {
             item.textContent = originalText + ' [' + String(
                 this.core.getEditor().getOption(
                     this.core.idToName(
-                        item.id.slice((this.menuId + '-toed-').length)
+                        item.id.slice((this.menuId + '-oed-').length)
                     )
                 )
             ) + ']';

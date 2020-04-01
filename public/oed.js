@@ -10,11 +10,11 @@ window.addEventListener('DOMContentLoaded', () => core.initializeA());
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         if (navigator.serviceWorker.controller) {
-            console.log('[toed.js] Active service worker found, no need to register');
+            console.log('[oed.js] Active service worker found, no need to register');
         } else {
             navigator.serviceWorker.register('./sw.js', {scope: './'})
                 .then(reg => {
-                    console.log('[toed.js] Service worker has been registered for scope: ' + reg.scope);
+                    console.log('[oed.js] Service worker has been registered for scope: ' + reg.scope);
                 });
         }
     });

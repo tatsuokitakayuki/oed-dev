@@ -73,7 +73,7 @@ export class FileManager {
         this.list[index].setName(name);
         this.list[index].setDisplayName(name);
         this.list[index].url = new URL(
-            res.protocols.toed + '//' +
+            res.protocols.oed + '//' +
             res.hosts.edit_session + '/' +
             res.dirs.res + '/' + name
         );

@@ -86,7 +86,7 @@ export class Core {
         appView.addEventListener('dragover', event => this.onDragOver(event), false);
         appView.addEventListener('drop', event => this.onDropA(event), false);
         this.focusEditor();
-        this.helloToed();
+        this.helloOed();
         this.setWindowTitle();
         document.dispatchEvent(
             new ChangeViewEvent(
@@ -187,16 +187,16 @@ export class Core {
         return this.fileManager.isClean(index);
     }
 
-    getToedOptions() {
-        return this.options.getToedOptions();
+    getOedOptions() {
+        return this.options.getOedOptions();
     }
 
     getKeybinding() {
-        return this.getToedOptions().keybinding;
+        return this.getOedOptions().keybinding;
     }
 
     isHello() {
-        return this.getToedOptions().hello;
+        return this.getOedOptions().hello;
     }
 
     getDrawer() {
@@ -260,7 +260,7 @@ export class Core {
     }
 
     setKeybinding(name) {
-        this.getToedOptions().keybinding = name;
+        this.getOedOptions().keybinding = name;
         let value = null;
         if (name && name !== 'Ace') {
             value = 'ace/keyboard/' + name.toLowerCase();
@@ -269,7 +269,7 @@ export class Core {
     }
 
     setHello(hello) {
-        this.getToedOptions().hello = hello;
+        this.getOedOptions().hello = hello;
     }
 
     saveEditorOptions() {
@@ -288,33 +288,33 @@ export class Core {
         this.options.saveExtensionsOptions(this.getEditor());
     }
 
-    saveToedOptions() {
-        this.options.saveToedOptions();
+    saveOedOptions() {
+        this.options.saveOedOptions();
     }
 
     dropFileData(index) {
         this.fileManager.dropFileData(index);
     }
 
-    helloToed() {
+    helloOed() {
         if (this.isHello()) {
             return;
         }
         const res = new Res();
         this.editor.insert(res.strings.hello);
         this.setHello(true);
-        this.saveToedOptions();
+        this.saveOedOptions();
     }
 
     setWindowTitle() {
         let channel = document.domain;
-        if (document.domain == 'toed-dev.web.app') {
+        if (document.domain == 'oed-dev.web.app') {
             channel = 'official dev channel';
         }
-        if (document.domain == 'toed-stable.web.app') {
+        if (document.domain == 'oed-stable.web.app') {
             channel = 'official stable channel';
         }
-        document.title = `TOED [${channel}]`;
+        document.title = `OED [${channel}]`;
     }
 
     buildTitle(titleData) {
@@ -400,7 +400,7 @@ export class Core {
         const url = this.getUrl(index);
         const res = new Res();
         if (url.pathname.includes('/' + res.dirs.res + '/')) {
-            this.renameFile(index, () => this.getEditor().execCommand('toedDownloadFile'), null);
+            this.renameFile(index, () => this.getEditor().execCommand('oedDownloadFile'), null);
             return;
         }
         this.fileManager.downloadFile(index);
@@ -468,7 +468,7 @@ export class Core {
         document.dispatchEvent(new ChangeDrawerItemEvent(index, -1));
         const res = new Res();
         index = this.findIndex(
-            new URL(res.protocols.toed + '//' +
+            new URL(res.protocols.oed + '//' +
                 res.hosts.edit_session + '/' +
                 res.dirs.res + '/' + coreName
             ).href
@@ -486,7 +486,7 @@ export class Core {
                 this.setDisplayName(index, coreName);
                 this.setUrl(
                     new URL(
-                        res.protocols.toed + '//' +
+                        res.protocols.oed + '//' +
                         res.hosts.edit_session + '/' +
                         res.dirs.res + '/' + coreName
                     ),

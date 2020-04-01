@@ -20,7 +20,7 @@ export class FileData {
         this.setName(name);
         this.setDisplayName(name);
         this.url = new URL(
-            res.protocols.toed + '//' +
+            res.protocols.oed + '//' +
             res.hosts.edit_session + '/' +
             res.dirs.res + '/' + name
         );
@@ -74,7 +74,7 @@ export class FileData {
         this.setDisplayName(name);
         const res = new Res();
         this.url = new URL(
-            res.protocols.toed + '//' +
+            res.protocols.oed + '//' +
             res.hosts.edit_session + '/' +
             res.dirs.files + '/' + name
         );

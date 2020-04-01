@@ -44,7 +44,7 @@ export class CacheManager {
     }
 
     markdownCacheList(cacheList) {
-        let markdown = '# TOED cache list\n\n';
+        let markdown = '# OED cache list\n\n';
         cacheList.forEach(item => {
             markdown += `## ${item.name}\n`;
             item.version.forEach(version => {
@@ -56,7 +56,7 @@ export class CacheManager {
     }
 
     textCacheList(cacheList) {
-        let text = 'TOED cache list\n\n';
+        let text = 'OED cache list\n\n';
         cacheList.forEach(item => {
             text += `${item.name}\n`;
             item.version.forEach(version => {

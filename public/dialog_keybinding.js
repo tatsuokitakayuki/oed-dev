@@ -20,12 +20,12 @@ export class DialogKeybinding extends DialogSelect {
 
     submit() {
         super.submit();
-        this.core.saveToedOptions();
+        this.core.saveOedOptions();
     }
 
     reset() {
         super.reset();
         this.core.setKeybinding(this.initialValue);
-        this.core.saveToedOptions();
+        this.core.saveOedOptions();
     }
 }

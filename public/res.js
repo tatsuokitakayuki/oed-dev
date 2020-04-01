@@ -56,7 +56,7 @@ export class Res {
             cache_list: 'CACHELIST',
         };
         this.protocols = {
-            toed: 'toed:',
+            oed: 'oed:',
         };
         this.hosts = {
             edit_session: 'edit.session',
@@ -75,7 +75,7 @@ export class Res {
         };
         this.strings = {
             confirm_close_file: 'Discard $filename$ edits and close.',
-            hello: 'Hello, TOED.\nTOED - Text: Open, edit, and download.\n',
+            hello: 'Hello, OED.\nOED - Open, edit, and download.\n',
             prompt_rename_file: 'Enter a new name.',
             untitled: 'untitled',
         };

@@ -37,7 +37,7 @@ export class DialogRenameFile extends DialogPrompt {
         this.fileData.setDisplayName(sanitizedName);
         const res = new Res();
         this.fileData.url = new URL(
-            res.protocols.toed + '//' +
+            res.protocols.oed + '//' +
             res.hosts.edit_session + '/' +
             res.dirs.files + '/' + sanitizedName
         );

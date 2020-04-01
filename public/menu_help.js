@@ -16,35 +16,35 @@ export class MenuHelp extends Menu {
                 },
                 {id: '-', text: '', meta: ''},
                 {
-                    id: 'menu-help-toed-keybinding',
+                    id: 'menu-help-oed-keybinding',
                     text: 'Keybinding...',
                     meta: ''
                 },
                 {id: '-', text: '', meta: ''},
                 {
-                    id: 'menu-help-toed-export-options',
+                    id: 'menu-help-oed-export-options',
                     text: 'Export Options',
                     meta: ''
                 },
                 {
-                    id: 'menu-help-toed-import-options',
+                    id: 'menu-help-oed-import-options',
                     text: 'Import Options...',
                     meta: ''
                 },
                 {id: '-', text: '', meta: ''},
                 {
-                    id: 'menu-help-toed-cache-list',
+                    id: 'menu-help-oed-cache-list',
                     text: 'Cache list',
                     meta: ''
                 },
                 {id: '-', text: '', meta: ''},
                 {
-                    id: 'menu-help-toed-change-log',
+                    id: 'menu-help-oed-change-log',
                     text: 'Change log',
                     meta: ''
                 },
                 {
-                    id: 'menu-help-toed-about',
+                    id: 'menu-help-oed-about',
                     text: 'About',
                     meta: ''
                 }
@@ -67,7 +67,7 @@ export class MenuHelp extends Menu {
                 data => item.id == data.id
             ).text;
             switch (item.id) {
-                case 'menu-help-toed-keybinding':
+                case 'menu-help-oed-keybinding':
                     item.textContent = originalText + ' [' +
                         res.keybindings.find(
                             item => item.value == String(this.core.getKeybinding())

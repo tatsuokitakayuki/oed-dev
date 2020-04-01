@@ -1,9 +1,9 @@
 {
     "dir": "auto",
     "lang": "en-US",
-    "name": "TOED",
-    "short_name": "TOED",
-    "description": "Text: Open, edit, and download.",
+    "name": "OED",
+    "short_name": "OED",
+    "description": "Open, edit, and download.",
 
     "theme_color": "#faf500",
     "background_color": "#ffffff",

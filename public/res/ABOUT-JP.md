@@ -1,6 +1,6 @@
-# TOED（とえど） - Text: Open, edit, and download.
+# OED（おえど） - Text: Open, edit, and download.
 
-## 「TOED」の特徴
+## 「OED」の特徴
 
 - 完全なプログレッシブウェブアプリ（PWA）です。多分。
     - Google Chrome API を使っていません。
@@ -64,6 +64,6 @@
 
 Copyright (c) 2020 Tatsuoki, Takayuki.
 (Private Twitter account: @ttatsuoki)
-- [GitHub - tatsuokitakayuki/toed-dev: Text: Open, Edit and Download.](https://github.com/tatsuokitakayuki/toed-dev)
-- [MIT License](https://github.com/tatsuokitakayuki/toed-dev/blob/master/LICENSE)
+- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, Edit and Download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 - This app uses [Firebase](https://firebase.google.com/) hosting services.

@@ -1,6 +1,6 @@
-# TOED - Text: Open, edit, and download.
+# OED - Text: Open, edit, and download.
 
-## TOED features
+## OED features
 
 - A complete progressive web app (PWA). Perhaps.
     - You are not using the Google Chrome API.
@@ -64,6 +64,6 @@ This app is developed using the following libraries and frameworks.
 
 Copyright (c) 2020 Tatsuoki, Takayuki.
 (Private Twitter account: @ttatsuoki)
-- [GitHub - tatsuokitakayuki/toed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/toed-dev)
-- [MIT License](https://github.com/tatsuokitakayuki/toed-dev/blob/master/LICENSE)
+- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 - This app uses [Firebase](https://firebase.google.com/) hosting services.

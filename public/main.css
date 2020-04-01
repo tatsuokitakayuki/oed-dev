@@ -43,7 +43,7 @@ body {
     white-space: nowrap;
 }
 
-.toed-dark {
+.oed-dark {
     --mdc-theme-primary: black;
     --mdc-theme-secondary: black;
     --mdc-theme-error: black;
@@ -52,7 +52,7 @@ body {
     --mdc-theme-on-error: cyan;
 }
 
-.toed-light {
+.oed-light {
     --mdc-theme-primary: white;
     --mdc-theme-secondary: white;
     --mdc-theme-error: white;
