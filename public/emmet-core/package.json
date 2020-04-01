@@ -1,0 +1,49 @@
+{
+  "_from": "emmet-core",
+  "_id": "emmet-core@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Rd9rbiV8Z7nqdZZxMs7L6TUFg/WENY9F3elB4shq10hELaf0s5V99ynsnJOarU31Lb2eR4MqgOxHS7OXRGpKDw==",
+  "_location": "/emmet-core",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "emmet-core",
+    "name": "emmet-core",
+    "escapedName": "emmet-core",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/emmet-core/-/emmet-core-1.0.0.tgz",
+  "_shasum": "e36fb45b7307fbb11016e0973efd5e2ed48e76ab",
+  "_spec": "emmet-core",
+  "_where": "C:\\Users\\user",
+  "author": {
+    "name": "jffby"
+  },
+  "bugs": {
+    "url": "https://github.com/cloud9ide/emmet-core/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "emmet-core",
+  "homepage": "https://github.com/cloud9ide/emmet-core#readme",
+  "keywords": [
+    "emmet-core"
+  ],
+  "license": "MIT",
+  "main": "emmet.js",
+  "name": "emmet-core",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloud9ide/emmet-core.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

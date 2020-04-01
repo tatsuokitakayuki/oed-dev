@@ -1,0 +1,76 @@
+import {MaterialHelper} from '/material_helper.js';
+import {Res} from '/res.js';
+
+export class Dialog {
+
+    constructor(core) {
+        this.core = core;
+        this.dialog = new mdc.dialog.MDCDialog(this.getElement());
+        this.dialog.escapeKeyAction = 'reset';
+        this.dialog.scrimClickAction = 'reset';
+        this.dialogTitle = document.getElementById('dialog-title');
+        this.dialogContent = document.getElementById('dialog-content');
+        this.dialogFooter = document.getElementById('dialog-footer');
+    }
+
+    onOpened() {}
+
+    onChange(event) {}
+
+    onClosed(event) {
+        switch (event.detail.action) {
+            case 'submit':
+                this.submit();
+                break;
+            case 'reset':
+                this.reset();
+                break;
+            default:
+                break;
+        }
+        this.dialog.destroy();
+        this.dialog = null;
+        const materialHelper = new MaterialHelper();
+        materialHelper.removeChildren(this.dialogTitle);
+        materialHelper.removeChildren(this.dialogContent);
+        materialHelper.removeChildren(this.dialogFooter);
+        this.dialogTitle.textContent = null;
+        this.dialogContent.textContent = null;
+        this.dialogFooter.textContent = null;
+    }
+
+    getElement() {
+        return document.getElementById('dialog');
+    }
+
+    buildTitle(title) {
+        this.dialogTitle.textContent = title;
+    }
+
+    buildContent() {}
+
+    buildFooter() {
+        const res = new Res();
+        const materialHelper = new MaterialHelper();
+        this.buttonCancel = materialHelper.buttonDialogCancel();
+        this.dialogFooter.appendChild(this.buttonCancel);
+        this.buttonOk = materialHelper.buttonDialogOk();
+        this.dialogFooter.appendChild(this.buttonOk);
+    }
+
+    open() {
+        this.buildContent();
+        this.buildFooter();
+        this.dialog.listen(
+            'MDCDialog:closed', event => this.onClosed(event), {once: true}
+        );
+        this.dialog.listen(
+            'MDCDialog:opened', () => this.onOpened(), {once: true}
+        );
+        this.dialog.open();
+    }
+
+    submit() {}
+
+    reset() {}
+}

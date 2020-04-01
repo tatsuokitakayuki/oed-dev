@@ -1,0 +1,152 @@
+import {ChangeViewEvent} from '/change_view_event.js';
+import {MaterialHelper} from '/material_helper.js';
+import {UIHelper} from '/ui_helper.js';
+
+export class Drawer extends UIHelper {
+
+    constructor(core) {
+        super();
+        this.core = core;
+        this.drawer = new mdc.drawer.MDCDrawer(document.getElementById('drawer-view'));
+    }
+
+    initialize() {
+        const options = {passive: true};
+        this.drawer.listen('MDCDrawer:opened', () => this.onOpened(), options);
+        this.drawer.listen('MDCDrawer:closed', () => this.onClosed(), options);
+        const fileListView = this.getFileListView();
+        fileListView.singleSelection = true;
+        fileListView.wrapFocus = true;
+        fileListView.addEventListener(
+            'MDCList:action', event => this.onAction(event), options
+        );
+        document.addEventListener(
+            'Drawer:changeitem', event => this.onChange(event), options
+        );
+    }
+
+    onOpened() {
+        this.core.getEditor().resize();
+        this.getFileListView().childNodes[this.core.getActive()].focus();
+    }
+
+    onClosed() {
+        this.core.getEditor().resize();
+        this.getFileListView().childNodes[this.core.getActive()].blur();
+        this.core.focusEditor();
+    }
+
+    onAction(event) {
+        this.updateItem(this.core.getActive(), -1);
+        const index = event.detail.index;
+        this.core.updateEditSession(index);
+        this.core.focusEditor();
+        document.dispatchEvent(
+            new ChangeViewEvent(
+                index, index, {editor: true, draweritem: false, appbar: true}
+            )
+        );
+        this.updateItem(index, index);
+    }
+
+    onChange(event) {
+        this.updateItem(event.detail.index, event.detail.active);
+    }
+
+    isOpen() {
+        return this.drawer.open;
+    }
+
+    toggle() {
+        this.drawer.open = !this.isOpen();
+    }
+
+    getFileListView() {
+        return document.getElementById('file-list');
+    }
+
+    addItem(index, active) {
+        const item = this.buildItem(index, index == active);
+        this.getFileListView().appendChild(item);
+    }
+
+    removeItem(index) {
+        const fileListView = this.getFileListView();
+        fileListView.removeChild(fileListView.childNodes[index]);
+    }
+
+    updateItem(index, active) {
+        const newItem = this.buildItem(index, index == active);
+        const fileListView = this.getFileListView();
+        fileListView.replaceChild(newItem, fileListView.childNodes[index]);
+        if (index == active) {
+            fileListView.childNodes[index].scrollIntoView(
+                {behavior: 'auto', block: 'center'}
+            );
+        }
+    }
+
+    hasItem(index) {
+        return Boolean(this.getFileListView().childNodes[index]);
+    }
+
+    buildItem(index, selected) {
+        const materialHelper = new MaterialHelper();
+        const item = materialHelper.li(
+            null,
+            [
+                {
+                    name: 'class',
+                    value: 'mdc-list-item' + (selected ? ' mdc-list-item--selected' : '')
+                },
+                {
+                    name: 'id',
+                    value: 'file-list-item-' + String(this.core.getTime(index)) + '-' + String(index)
+                },
+                {name: 'role', value: 'menuitem'},
+                {name: 'aria-selected', value: selected},
+                {name: 'tabindex', value: '-1'},
+                {name: 'title', value: this.core.getUrl(index).href},
+            ]
+        );
+        item.appendChild(
+            materialHelper.i(
+                this.getIconName(index),
+                [
+                    {
+                        name: 'class',
+                        value: 'mdc-list-item__graphic material-icons'
+                    },
+                    {name: 'role', value: 'button'},
+                    {name: 'aria-hidden', value: 'true'}
+                ]
+            )
+        );
+        item.appendChild(
+            materialHelper.span(
+                this.buildItemName(index),
+                [{name: 'class', value: 'mdc-list-item__text'}]
+            )
+        );
+        return item;
+    }
+
+    buildItemName(index) {
+        let itemName = this.core.getDisplayName(index);
+        if (!this.core.isClean(index)) {
+            itemName += ' (Mod)';
+        }
+        if (this.core.isReadOnly(index)) {
+            itemName += ' (RO)';
+        }
+        return itemName;
+    }
+
+    getIconName(index) {
+        let iconName = 'insert_drive_file';
+        if (this.core.isCoreFile(index)) {
+            iconName = 'info';
+        }
+        return iconName;
+    }
+}

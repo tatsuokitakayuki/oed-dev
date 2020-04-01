@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Text: Open, edit, and download.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#faf500">
+        <title>TOED</title>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" type="text/css" href="/material-components-web/dist/material-components-web.min.css">
+        <link rel="stylesheet" type="text/css" href="/iconfont/material-icons.css">
+        <link rel="stylesheet" type="text/css" href="/main.css">
+        <link rel="shortcut icon" type="image/png" href="/images/icons/favicon.png">
+        <link rel="apple-touch-icon" type="image/png" href="/images/icons/favicon.png" />
+        <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/icons/favicon.png" />
+        <script defer src="/emmet-core/emmet.js"></script>
+        <script defer src="/ace/ace.js"></script>
+        <script defer src="/ace/ext-language_tools.js"></script>
+        <script defer src="/ace/ext-elastic_tabstops_lite.js"></script>
+        <script defer src="/ace/ext-modelist.js"></script>
+        <script defer src="/ace/ext-linking.js"></script>
+        <script defer src="/ace/ext-emmet.js"></script>
+        <script defer src="/material-components-web/dist/material-components-web.min.js"></script>
+        <script defer src="/localForage/localforage.min.js"></script>
+        <script src="/toed.js" type="module"></script>
+    </head>
+    <body class="mdc-typography toed-dark" id="app-view">
+        <!-- Top App Bar -->
+        <header class="mdc-top-app-bar app-bar mdc-top-app-bar--dense mdc-elevation--z4" id="app-bar">
+            <div class="mdc-top-app-bar__row">
+                <!-- Start side -->
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <!-- Drawer button -->
+                    <button type="button" class="mdc-button mdc-top-app-bar__navigation-icon" tabindex="0" id="app-nav-icon" title="Ctrl+Shift+L">
+                        <div class="mdc-button__ripple"></div>
+                        <i class="material-icons" aria-hidden="true">menu</i>
+                    </button>
+                    <!-- Title -->
+                    <span class="mdc-top-app-bar__title" id="app-bar-title">Text: Open, edit, and download.</span>
+                </section>
+                <!-- End side -->
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    <!-- Menu buttons -->
+                    <!-- File -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-file" title="Alt+I">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">File</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-file">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-file"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edit -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-edit" title="Alt+D">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Edit</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-edit">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-edit"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Search -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-search" title="Alt+S">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Search</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-search">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-search"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Code -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-code" title="Alt+C">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Code</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-code">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-code"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-view" title="Alt+V">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">View</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-view">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-view"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Extensions -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-extensions" title="Alt+X">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Extensions</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-extensions">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-extensions"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Help -->
+                    <div>
+                        <button type="button" class="mdc-button mdc-top-app-bar__action-item" tabindex="0" id="button-help" title="Alt+H">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Help</span>
+                        </button>
+                        <div class="mdc-menu-surface--anchor">
+                            <div class="mdc-menu mdc-menu-surface" id="menu-help">
+                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-help"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </header>
+        <!-- File Drawer -->
+        <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--dense-fixed-adjust mdc-elevation--z2" id="drawer-view">
+            <div class="mdc-drawer__header" id="drawer-header">
+                <h3 class="mdc-drawer__title">File list</h3>
+            </div>
+            <div class="mdc-drawer__content" id="drawer-content">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="file-list"></ul>
+            </div>
+        </aside>
+        <!-- Ace Editor View -->
+        <div class="mdc-drawer-app-content mdc-top-app-bar--dense-fixed-adjust">
+            <main class="main-content" id="editor"></main>
+        </div>
+        <!-- Dialog View -->
+        <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content" id="dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <h2 class="mdc-dialog__title" id="dialog-title"></h2>
+                    <div class="mdc-dialog__content" id="dialog-content"></div>
+                    <footer class="mdc-dialog__actions" id="dialog-footer"></footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+        <!-- Snackbar -->
+        <div class="mdc-snackbar mdc-snackbar--leading" id="snackbar-view">
+            <div class="mdc-snackbar__surface" id="snackbar-surface">
+                <div class="mdc-snackbar__label" id="snackbar-label"></div>
+                <div class="mdc-snackbar__actions" id="snackbar-actions"></div>
+            </div>
+        </div>
+    </body>
+</html>

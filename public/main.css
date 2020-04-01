@@ -1,0 +1,66 @@
+@font-face {
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.mdc-drawer-app-content {
+    flex: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.main-content {
+    overflow: auto;
+    height: 100%;
+}
+
+.app-bar {
+    position: absolute;
+}
+
+.mdc-top-app-bar {
+    z-index: 7;
+}
+
+.mdc-list-item {
+    white-space: nowrap;
+}
+
+.mdc-list-item__text {
+    overflow: visible;
+    white-space: nowrap;
+}
+
+.mdc-list-item__meta {
+    padding-left: 2em;
+    overflow: visible;
+    white-space: nowrap;
+}
+
+.toed-dark {
+    --mdc-theme-primary: black;
+    --mdc-theme-secondary: black;
+    --mdc-theme-error: black;
+    --mdc-theme-on-primary: white;
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-on-error: cyan;
+}
+
+.toed-light {
+    --mdc-theme-primary: white;
+    --mdc-theme-secondary: white;
+    --mdc-theme-error: white;
+    --mdc-theme-on-primary: black;
+    --mdc-theme-on-secondary: black;
+    --mdc-theme-on-error: red;
+}
+
+select {
+    width: 100%;
+}
