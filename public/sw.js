@@ -1,4 +1,4 @@
-const OED_VERSION = '2.0.20200401.0';
+const OED_VERSION = '2.0.20200402.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.8';
 const ACE_BASE = 'Ace';
