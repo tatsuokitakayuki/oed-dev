@@ -1,4 +1,4 @@
-# OED - Text: Open, edit, and download.
+# OED - Open, edit, and download.
 
 ## OED features
 
@@ -64,6 +64,6 @@ This app is developed using the following libraries and frameworks.
 
 Copyright (c) 2020 Tatsuoki, Takayuki.
 (Private Twitter account: @ttatsuoki)
-- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [GitHub - tatsuokitakayuki/oed-dev: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
 - [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 - This app uses [Firebase](https://firebase.google.com/) hosting services.

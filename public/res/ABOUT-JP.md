@@ -1,4 +1,4 @@
-# OED（おえど） - Text: Open, edit, and download.
+# OED（おえど） - Open, edit, and download.
 
 ## 「OED」の特徴
 
@@ -64,6 +64,6 @@
 
 Copyright (c) 2020 Tatsuoki, Takayuki.
 (Private Twitter account: @ttatsuoki)
-- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, Edit and Download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [GitHub - tatsuokitakayuki/oed-dev: Open, Edit and Download.](https://github.com/tatsuokitakayuki/oed-dev)
 - [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 - This app uses [Firebase](https://firebase.google.com/) hosting services.
