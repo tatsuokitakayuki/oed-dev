@@ -73,7 +73,7 @@
 ## 法的通知
 Copyright [Comeluck Lab](https://www.comeluck.jp/).
 Developed by 龍興 尚幸 （Tatsuoki, Takayuki）
-- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [GitHub - tatsuokitakayuki/oed-dev: OED - Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
 - [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 
 ## 使い方

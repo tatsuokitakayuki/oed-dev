@@ -73,7 +73,7 @@ This app is developed using the following libraries and frameworks.
 ## Legal notice
 Copyright [Comeluck Lab](https://www.comeluck.jp/).
 Developed by Tatsuoki, Takayuki
-- [GitHub - tatsuokitakayuki/oed-dev: Text: Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
+- [GitHub - tatsuokitakayuki/oed-dev: OED - Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
 - [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 
 ## How to use
