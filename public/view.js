@@ -9,17 +9,15 @@ export class View {
     }
 
     initialize() {
-        document
-            .addEventListener(
-                'View:change', event => this.onChange(event), {passive: true}
-            );
+        document.addEventListener(
+            'View:change', event => this.onChange(event), {passive: true}
+        );
     }
 
     destory() {
-        document
-            .removeEventListener(
-                'View:change', event => this.onChange(event)
-            );
+        document.removeEventListener(
+            'View:change', event => this.onChange(event)
+        );
     }
 
     onChange(event) {
@@ -45,7 +43,5 @@ export class View {
     updateEditor(index) {
         this.core.editor.setSession(this.core.getEditSession(index));
         this.core.editor.setReadOnly(this.core.isReadOnly(index));
-        //const fileHelper = new FileHelper();
-        //this.core.getEditorSession().setMode(fileHelper.getMode(this.core.getName(index)));
     }
 }
