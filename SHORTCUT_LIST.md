@@ -131,6 +131,7 @@
 | Macros replay | Ctrl+Shift+E | Command+Shift+E |
 | Macros recording | Ctrl+Alt+E |  |
 | Center selection |  | Ctrl+L |
+| Sort lines | Ctrl+Alt+S | Command+Alt+S |
 
 ## Implemented in OED
 
