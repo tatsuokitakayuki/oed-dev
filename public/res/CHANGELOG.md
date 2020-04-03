@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200403 (stable)
+- Updated for stable (version 2, maintenance 1) release.
+
 ## Version 2.0.30200402 (stable)
 - Updated ABOUT.md.
 
