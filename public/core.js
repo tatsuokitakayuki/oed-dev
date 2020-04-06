@@ -3,6 +3,7 @@ import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogConfirm} from '/dialog_confirm.js';
 import {DialogCursorStyle} from '/dialog_cursor_style.js';
+import {DialogFileDecoding} from '/dialog_file_decoding.js';
 import {DialogFirstLineNumber} from '/dialog_first_line_number.js';
 import {DialogFoldStyle} from '/dialog_fold_style.js';
 import {DialogFontFamily} from '/dialog_font_family.js';
@@ -29,8 +30,8 @@ import {MenuHelp} from '/menu_help.js';
 import {MenuSearch} from '/menu_search.js'; 
 import {MenuView} from '/menu_view.js'; 
 import {Options} from '/options.js';
-import {Snackbar} from '/snackbar.js';
 import {Res} from '/res.js';
+import {Snackbar} from '/snackbar.js';
 import {View} from '/view.js';
 
 export class Core {
@@ -195,6 +196,14 @@ export class Core {
         return this.getOedOptions().keybinding;
     }
 
+    getFileDecoding() {
+        return this.getOedOptions().fileDecoding;
+    }
+
+    getFileEncoding() {
+        return this.getOedOptions().fileEncoding;
+    }
+
     isHello() {
         return this.getOedOptions().hello;
     }
@@ -266,6 +275,14 @@ export class Core {
             value = 'ace/keyboard/' + name.toLowerCase();
         }
         this.editor.setKeyboardHandler(value);
+    }
+
+    setFileDecoding(name) {
+        this.getOedOptions().fileDecoding = name;
+    }
+
+    setFileEncoding(name) {
+        this.getOedOptions().fileEncoding = name;
     }
 
     setHello(hello) {
@@ -613,6 +630,11 @@ export class Core {
     promptFirstLineNumber() {
         const dialogFirstLineNumber = new DialogFirstLineNumber(this);
         dialogFirstLineNumber.open();
+    }
+
+    selectFileDecoding() {
+        const dialogFileDecoding = new DialogFileDecoding(this);
+        dialogFileDecoding.open();
     }
 
     idToName(id) {

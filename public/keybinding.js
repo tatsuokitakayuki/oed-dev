@@ -47,6 +47,11 @@ export class Keybinding {
             readOnly: false
         });
         this.core.getEditor().commands.addCommand({
+            name: 'oedFileDecoding',
+            exec: editor => this.core.selectFileDecoding(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
             name: 'oedCloseFile',
             bindKey: {win: 'Alt-W', mac: 'Option-W'},
             exec: editor => this.core.closeFileA(this.core.getActive()),

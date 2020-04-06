@@ -99,7 +99,7 @@ export class FileData {
                 text = await cacheManager.formattedCacheListA('markdown');
             } else {
                 const fileHelper = new FileHelper();
-                text = await fileHelper.fetchTextUrlA(url);
+                text = await fileHelper.fetchTextUrlA(url, 'utf-8');
                 if (text === null) {
                     throw new Error();
                 }
@@ -115,7 +115,9 @@ export class FileData {
     async openFileA(file) {
         try {
             const fileHelper = new FileHelper();
-            const text = await fileHelper.fetchTextFileA(file)
+            const text = await fileHelper.fetchTextFileA(
+                file, this.core.getFileDecoding()
+            );
             if (text === null) {
                 throw new Error();
             }

@@ -1,5 +1,6 @@
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
+import {Res} from '/res.js';
 
 export class MenuFile extends Menu {
 
@@ -46,6 +47,12 @@ export class MenuFile extends Menu {
                 },
                 {id: '-', text: '', meta: ''},
                 {
+                    id: 'menu-file-oed-file-decoding',
+                    text: 'File decoding...',
+                    meta: ''
+                },
+                {id: '-', text: '', meta: ''},
+                {
                     id: 'menu-file-oed-close-file',
                     text: 'Close file...',
                     meta: 'Alt+W'
@@ -58,5 +65,24 @@ export class MenuFile extends Menu {
         super.initialize();
         const materialHelper = new MaterialHelper();
         materialHelper.menuItems(document.getElementById(this.itemData.id), this.itemData.items);
+    }
+
+    updateMenuItems() {
+        const res = new Res();
+        this.menu.items.forEach(item => {
+            const originalText = this.itemData.items.find(
+                data => item.id == data.id
+            ).text;
+            switch (item.id) {
+                case 'menu-file-oed-file-decoding':
+                    item.textContent = originalText + ' [' +
+                        res.encoding_names.find(
+                            item => item.value == String(this.core.getFileDecoding())
+                        ).name + ']';
+                    break;
+                default:
+                    break;
+            }
+        });
     }
 }

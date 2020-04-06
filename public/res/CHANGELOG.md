@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200406 (dev)
+- Added File decoding option.
+
 ## Version 2.0.30200403 (dev)
 - Unnecessary rows were deleted.
 

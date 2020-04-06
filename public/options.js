@@ -222,6 +222,7 @@ export class Options {
 
     getDefaultOedOptions() {
         return {
+            fileDecoding: 'utf-8',      // string ["utf-8"]
             hello: false,               // true|[false]
             keybinding: 'Ace',          // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
             theme: 'Dark',              // ["Dark"]|"Light"|"Ace"|"AceReverse"

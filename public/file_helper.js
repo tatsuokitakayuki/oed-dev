@@ -2,14 +2,15 @@ import {HtmlHelper} from '/html_helper.js';
 
 export class FileHelper {
 
-    async fetchTextUrlA(url) {
+    async fetchTextUrlA(url, encodingName) {
         const response = await fetch(url);
-        return await response.text();
+        const arrayBuffer = await response.arrayBuffer();
+        return new TextDecoder(encodingName).decode(arrayBuffer);
     }
 
-    async fetchTextFileA(file) {
+    async fetchTextFileA(file, encodingName) {
         const url = URL.createObjectURL(file);
-        const text = await this.fetchTextUrlA(url);
+        const text = await this.fetchTextUrlA(url, encodingName);
         URL.revokeObjectURL(url);
         return text;
     }
