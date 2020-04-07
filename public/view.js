@@ -1,6 +1,5 @@
 import {ChangeAppBarEvent} from '/change_app_bar_event.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
-import {FileHelper} from '/file_helper.js';
 
 export class View {
 

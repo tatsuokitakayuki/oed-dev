@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200407 (dev)
+- Removed unnecessary imports.
+
 ## Version 2.0.30200406 (dev)
 - Added File decoding option.
 
