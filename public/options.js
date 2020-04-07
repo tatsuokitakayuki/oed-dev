@@ -236,9 +236,7 @@ export class Options {
     async initializeOedOptionsA(core) {
         const value = await localforage.getItem('options_oed');
         if (value) {
-            this.oed = value;
-        } else {
-            this.oed = this.getDefaultOedOptions();
+            Object.assign(this.oed, value);
         }
         core.setKeybinding(this.oed.keybinding);
     }
