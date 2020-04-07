@@ -1,3 +1,4 @@
+import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
 
@@ -9,7 +10,9 @@ export class DialogFirstLineNumber extends DialogPrompt {
     }
 
     onChange(event) {
-        this.core.setOption('firstLineNumber', Number(event.target.value));
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('firstLineNumber', Number(event.target.value))
+        );
     }
 
     open() {
@@ -27,7 +30,9 @@ export class DialogFirstLineNumber extends DialogPrompt {
 
     reset() {
         super.reset();
-        this.core.setOption('firstLineNumber', Number(this.initialValue));
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('firstLineNumber', Number(this.initialValue))
+        );
         this.core.saveSessionOptions();
     }
 }

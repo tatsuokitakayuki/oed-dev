@@ -1,3 +1,4 @@
+import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
@@ -9,7 +10,9 @@ export class DialogWrap extends DialogSelect {
     }
 
     onChange(event) {
-        this.core.setOption('wrap', event.target.value);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('wrap', event.target.value)
+        );
     }
 
     open() {
@@ -24,7 +27,9 @@ export class DialogWrap extends DialogSelect {
 
     reset() {
         super.reset();
-        this.core.setOption('wrap', this.initialValue);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('wrap', this.initialValue)
+        );
         this.core.saveSessionOptions();
     }
 }

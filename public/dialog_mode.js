@@ -1,3 +1,4 @@
+import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
@@ -10,7 +11,9 @@ export class DialogMode extends DialogSelect {
     }
 
     onChange(event) {
-        this.core.setOption('mode', event.target.value);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('mode', event.target.value)
+        );
     }
 
     open() {
@@ -24,7 +27,9 @@ export class DialogMode extends DialogSelect {
 
     reset() {
         super.reset();
-        this.core.setOption('mode', this.initialValue);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('mode', this.initialValue)
+        );
     }
 
     getListData() {

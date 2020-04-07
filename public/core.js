@@ -64,6 +64,11 @@ export class Core {
 
     async initializeA() {
         this.appView.initialize();
+        document.addEventListener(
+            'Editor:changeoption',
+            event => this.getEditor().setOption(event.detail.name, event.detail.value),
+            {passive: true}
+        );
         await this.newFileA();
         await this.options.initializeA(this);
         this.keybinding.initialize();
@@ -234,14 +239,6 @@ export class Core {
         }
     }
 
-    setOption(name, value) {
-        this.getEditor().setOption(name, value);
-    }
-
-    setTheme(name) {
-        this.getEditor().setTheme(name);
-    }
-
     setFontSize(fontSize) {
         this.getEditor().setFontSize(fontSize);
         document.getElementById('editor').style.fontSize = fontSize;
@@ -278,10 +275,6 @@ export class Core {
 
     setFileDecoding(name) {
         this.getOedOptions().fileDecoding = name;
-    }
-
-    setFileEncoding(name) {
-        this.getOedOptions().fileEncoding = name;
     }
 
     setHello(hello) {

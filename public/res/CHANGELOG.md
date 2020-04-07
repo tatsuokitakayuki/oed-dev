@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200407 (dev)
+- Added ChangeEditorOptionEvent class.
 - Changed class name from View to AppView.
 - Improved import of OED options.
 - Improved initialization of OED options.

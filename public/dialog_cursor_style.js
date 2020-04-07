@@ -1,3 +1,4 @@
+import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
@@ -9,7 +10,9 @@ export class DialogCursorStyle extends DialogSelect {
     }
 
     onChange(event) {
-        this.core.setOption('cursorStyle', event.target.value);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('cursorStyle', event.target.value)
+        );
     }
 
     open() {
@@ -24,7 +27,9 @@ export class DialogCursorStyle extends DialogSelect {
 
     reset() {
         super.reset();
-        this.core.setOption('cursorStyle', this.initialValue);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('cursorStyle', this.initialValue)
+        );
         this.core.saveEditorOptions();
     }
 }

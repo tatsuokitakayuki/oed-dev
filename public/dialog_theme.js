@@ -1,3 +1,4 @@
+import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
@@ -10,7 +11,9 @@ export class DialogTheme extends DialogSelect {
     }
 
     onChange(event) {
-        this.core.setTheme(event.target.value);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('theme', event.target.value)
+        );
     }
 
     buildSelectList(themes) {
@@ -56,7 +59,9 @@ export class DialogTheme extends DialogSelect {
 
     reset() {
         super.reset();
-        this.core.setTheme(this.initialValue);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('theme', this.initialValue)
+        );
         this.core.saveRendererOptions();
     }
 }
