@@ -1,5 +1,4 @@
 import {DialogSelect} from '/dialog_select.js';
-import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class DialogWrap extends DialogSelect {
