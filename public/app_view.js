@@ -1,7 +1,7 @@
 import {ChangeAppBarEvent} from '/change_app_bar_event.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
 
-export class View {
+export class AppView {
 
     constructor(core) {
         this.core = core;

@@ -1,4 +1,5 @@
 import {AppBar} from '/app_bar.js';
+import {AppView} from '/app_view.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogConfirm} from '/dialog_confirm.js';
@@ -31,13 +32,12 @@ import {MenuView} from '/menu_view.js';
 import {Options} from '/options.js';
 import {Res} from '/res.js';
 import {Snackbar} from '/snackbar.js';
-import {View} from '/view.js';
 
 export class Core {
 
     constructor() {
         this.editor = ace.edit('editor');
-        this.view = new View(this);
+        this.appView = new AppView(this);
         this.appBar = new AppBar(this);
         this.drawer = new Drawer(this);
         this.menuFile = new MenuFile(this);
@@ -63,7 +63,7 @@ export class Core {
     }
 
     async initializeA() {
-        this.view.initialize();
+        this.appView.initialize();
         await this.newFileA();
         await this.options.initializeA(this);
         this.keybinding.initialize();

@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## Version 2.0.30200407 (dev)
+- Changed class name from View to AppView.
+- Improved import of OED options.
 - Improved initialization of OED options.
 - Removed unnecessary imports.
 

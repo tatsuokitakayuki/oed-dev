@@ -13,6 +13,7 @@ const EC_BASE = 'emmet-core';
 const OED_URLS = [
     './',
     './app_bar.js',
+    './app_view.js',
     './cache_manager.js',
     './change_app_bar_event.js',
     './change_drawer_item_event.js',
@@ -74,7 +75,6 @@ const OED_URLS = [
     './snackbar.js',
     './sw.js',
     './ui_helper.js',
-    './view.js',
 ];
 const ACE_URLS = [
     './ace/ace.js',
