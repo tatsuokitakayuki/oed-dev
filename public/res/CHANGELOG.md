@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200407 (dev)
+- Improved initialization of OED options.
 - Removed unnecessary imports.
 
 ## Version 2.0.30200406 (dev)
