@@ -19,7 +19,6 @@ import {DialogTabSize} from '/dialog_tab_size.js';
 import {DialogTheme} from '/dialog_theme.js';
 import {DialogWrap} from '/dialog_wrap.js';
 import {Drawer} from '/drawer.js';
-import {FileHelper} from '/file_helper.js';
 import {FileManager} from '/file_manager.js';
 import {Keybinding} from '/keybinding.js';
 import {MenuCode} from '/menu_code.js'; 
