@@ -285,7 +285,7 @@ export class Options {
             core.getEditor().setOptions(options.options.renderer);
             core.getEditor().setOptions(options.options.session);
             core.getEditor().setOptions(options.options.extensions);
-            this.oed = options.options.oed;
+            Object.assign(this.oed, options.options.oed);
         }
     }
 }
