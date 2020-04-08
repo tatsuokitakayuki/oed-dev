@@ -1,3 +1,4 @@
+import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
 
 export class Keybinding {
@@ -83,11 +84,18 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedUseSoftTabs',
+            exec: editor =>
+                editor.setOption('useSoftTabs', !editor.getOption('useSoftTabs')),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSaveEditSessionOptions',
             exec: editor => {
-                editor.setOption(
-                    'useSoftTabs', !editor.getOption('useSoftTabs')
+                this.core.saveSessionOptions();
+                this.core.saveOedOptions();
+                document.dispatchEvent(
+                    new ChangeSnackbarEvent('Saved edit session options.', null)
                 );
-                this.core.saveEditorOptions();
             },
             readOnly: true
         });

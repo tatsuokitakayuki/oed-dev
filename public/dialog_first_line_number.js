@@ -11,28 +11,27 @@ export class DialogFirstLineNumber extends DialogPrompt {
 
     onChange(event) {
         document.dispatchEvent(
-            new ChangeEditorOptionEvent('firstLineNumber', Number(event.target.value))
+            new ChangeEditorOptionEvent(
+                'firstLineNumber', Number(event.target.value)
+            )
         );
     }
 
     open() {
         const res = new Res();
         super.open(
-            res.titles.first_line_number, null, res.placeholders.first_line_number,
-            this.initialValue, 'number', 0, null
+            res.titles.first_line_number, null,
+            res.placeholders.first_line_number, this.initialValue, 'number', 0,
+            null
         );
-    }
-
-    submit() {
-        super.submit();
-        this.core.saveSessionOptions();
     }
 
     reset() {
         super.reset();
         document.dispatchEvent(
-            new ChangeEditorOptionEvent('firstLineNumber', Number(this.initialValue))
+            new ChangeEditorOptionEvent(
+                'firstLineNumber', Number(this.initialValue)
+            )
         );
-        this.core.saveSessionOptions();
     }
 }

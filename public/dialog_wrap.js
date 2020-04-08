@@ -20,16 +20,10 @@ export class DialogWrap extends DialogSelect {
         super.open(res.titles.wrap, res.wrap);
     }
 
-    submit() {
-        super.submit();
-        this.core.saveSessionOptions();
-    }
-
     reset() {
         super.reset();
         document.dispatchEvent(
             new ChangeEditorOptionEvent('wrap', this.initialValue)
         );
-        this.core.saveSessionOptions();
     }
 }

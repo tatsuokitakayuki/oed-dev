@@ -1,4 +1,4 @@
-const OED_VERSION = '2.0.20200408.1';
+const OED_VERSION = '2.0.20200408.2';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.9 (sw.js list update 1)';
 const ACE_BASE = 'Ace';

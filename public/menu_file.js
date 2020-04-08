@@ -86,6 +86,11 @@ export class MenuFile extends Menu {
                     text: 'Use soft tabs',
                     meta: ''
                 },
+                {
+                    id: 'menu-file-oed-save-edit-session-options',
+                    text: 'Save edit session options',
+                    meta: ''
+                },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-close-file',

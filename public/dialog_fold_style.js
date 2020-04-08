@@ -1,6 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
-import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class DialogFoldStyle extends DialogSelect {
@@ -21,16 +20,10 @@ export class DialogFoldStyle extends DialogSelect {
         super.open(res.titles.fold_style, res.fold_style);
     }
 
-    submit() {
-        super.submit();
-        this.core.saveSessionOptions();
-    }
-
     reset() {
         super.reset();
         document.dispatchEvent(
             new ChangeEditorOptionEvent('foldStyle', this.initialValue)
         );
-        this.core.saveSessionOptions();
     }
 }

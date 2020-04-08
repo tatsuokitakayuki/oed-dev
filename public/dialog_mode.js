@@ -1,6 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
-import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class DialogMode extends DialogSelect {
@@ -19,10 +18,6 @@ export class DialogMode extends DialogSelect {
     open() {
         const res = new Res();
         super.open(res.titles.mode, this.getListData());
-    }
-
-    submit() {
-        super.submit();
     }
 
     reset() {

@@ -1,6 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogPrompt} from '/dialog_prompt.js';
-import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class DialogTabSize extends DialogPrompt {
@@ -24,16 +23,10 @@ export class DialogTabSize extends DialogPrompt {
         );
     }
 
-    submit() {
-        super.submit();
-        this.core.saveSessionOptions();
-    }
-
     reset() {
         super.reset();
         document.dispatchEvent(
             new ChangeEditorOptionEvent('tabSize', this.initialValue)
         );
-        this.core.saveSessionOptions();
     }
 }
