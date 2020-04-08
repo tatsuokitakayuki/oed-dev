@@ -52,6 +52,46 @@ export class Keybinding {
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
+            name: 'oedFirstLineNumber',
+            exec: editor => this.core.promptFirstLineNumber(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedFoldStyle',
+            exec: editor => this.core.selectFoldStyle(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedMode',
+            exec: editor => this.core.selectMode(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedNewLineMode',
+            exec: editor => this.core.selectNewLineMode(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedWrap',
+            exec: editor => this.core.selectWrap(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedTabSize',
+            exec: editor => this.core.promptTabSize(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedUseSoftTabs',
+            exec: editor => {
+                editor.setOption(
+                    'useSoftTabs', !editor.getOption('useSoftTabs')
+                );
+                this.core.saveEditorOptions();
+            },
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
             name: 'oedCloseFile',
             bindKey: {win: 'Alt-W', mac: 'Option-W'},
             exec: editor => this.core.closeFileA(this.core.getActive()),
@@ -187,16 +227,6 @@ export class Keybinding {
                 editor.setOption(
                     'selectionStyle',
                     editor.getOption('selectionStyle') === 'line' ? 'text' : 'line'
-                );
-                this.core.saveEditorOptions();
-            },
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedUseSoftTabs',
-            exec: editor => {
-                editor.setOption(
-                    'useSoftTabs', !editor.getOption('useSoftTabs')
                 );
                 this.core.saveEditorOptions();
             },
@@ -358,36 +388,6 @@ export class Keybinding {
         this.core.getEditor().commands.addCommand({
             name: 'oedTheme',
             exec: editor => this.core.selectTheme(),
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedWrap',
-            exec: editor => this.core.selectWrap(),
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedTabSize',
-            exec: editor => this.core.promptTabSize(),
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedFirstLineNumber',
-            exec: editor => this.core.promptFirstLineNumber(),
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedMode',
-            exec: editor => this.core.selectMode(),
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedFoldStyle',
-            exec: editor => this.core.selectFoldStyle(),
-            readOnly: true
-        });
-        this.core.getEditor().commands.addCommand({
-            name: 'oedNewLineMode',
-            exec: editor => this.core.selectNewLineMode(),
             readOnly: true
         });
     }
