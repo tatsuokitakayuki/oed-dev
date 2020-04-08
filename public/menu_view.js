@@ -162,43 +162,6 @@ export class MenuView extends Menu {
                     text: 'Theme...',
                     meta: ''
                 },
-                {id: '-', text: '', meta: ''},
-                // Edit session options
-                {
-                    id: 'menu-view-oed-first-line-number', // EditSession
-                    text: 'First line number...',
-                    meta: ''
-                },
-                {
-                    id: 'menu-view-oed-fold-style', // EditSession
-                    text: 'Fold style...',
-                    meta: ''
-                },
-                {
-                    id: 'menu-view-oed-mode', // EditSession
-                    text: 'Mode...',
-                    meta: ''
-                },
-                {
-                    id: 'menu-view-oed-new-line-mode', // EditSession
-                    text: 'New line mode...',
-                    meta: ''
-                },
-                {
-                    id: 'menu-view-oed-wrap', // EditSession
-                    text: 'Soft wrap...',
-                    meta: ''
-                },
-                {
-                    id: 'menu-view-oed-tab-size', // EditSession
-                    text: 'Tab size...',
-                    meta: ''
-                },
-                {
-                    id: 'menu-view-oed-use-soft-tabs', // EditSession
-                    text: 'Use soft tabs',
-                    meta: ''
-                },
             ]
         };
     }
@@ -243,12 +206,6 @@ export class MenuView extends Menu {
                             item => item.value == optionValue
                         ).name + ']';
                     break;
-                case 'menu-view-oed-wrap':
-                    item.textContent = originalText + ' [' +
-                        res.wrap.find(
-                            item => item.value == optionValue
-                        ).name + ']';
-                    break;
                 case 'menu-view-oed-theme':
                     let theme = res.getThemes().bright.find(
                         theme => theme.value == optionValue
@@ -260,25 +217,6 @@ export class MenuView extends Menu {
                     }
                     item.textContent = originalText +
                         ' [' + theme.caption + ']';
-                    break;
-                case 'menu-view-oed-fold-style':
-                    item.textContent = originalText + ' [' +
-                        res.fold_style.find(
-                            item => item.value == optionValue
-                        ).name + ']';
-                    break;
-                case 'menu-view-oed-mode':
-                    const modeList = ace.require('ace/ext/modelist');
-                    item.textContent = originalText + ' [' +
-                        modeList.modes.find(
-                            item => item.mode == optionValue
-                        ).caption + ']';
-                    break;
-                case 'menu-view-oed-new-line-mode':
-                    item.textContent = originalText + ' [' +
-                        res.new_line_mode.find(
-                            item => item.value == optionValue
-                        ).name + ']';
                     break;
                 default:
                     item.textContent = originalText + ' [' + optionValue + ']';

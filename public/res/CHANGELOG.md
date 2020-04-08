@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200408 (dev)
+- Moved some View menu items to File menu.
 - Updated ACE_URLS in sw.js.
 - Updated ace-builds to version 1.4.9.
 - Improved Close file.
