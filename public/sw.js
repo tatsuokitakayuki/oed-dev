@@ -1,6 +1,6 @@
 const OED_VERSION = '2.0.20200408.0';
 const OED_BASE = 'OED';
-const ACE_VERSION = '1.4.9';
+const ACE_VERSION = '1.4.9 (sw.js list update 1)';
 const ACE_BASE = 'Ace';
 const MDC_VERSION = '5.1.0';
 const MDC_BASE = 'MDC';
@@ -108,6 +108,7 @@ const ACE_URLS = [
     './ace/mode-abc.js',
     './ace/mode-actionscript.js',
     './ace/mode-ada.js',
+    './ace/mode-alda.js',
     './ace/mode-apache_conf.js',
     './ace/mode-apex.js',
     './ace/mode-applescript.js',
@@ -198,6 +199,7 @@ const ACE_URLS = [
     './ace/mode-mask.js',
     './ace/mode-matlab.js',
     './ace/mode-maze.js',
+    './ace/mode-mediawiki.js',
     './ace/mode-mel.js',
     './ace/mode-mixal.js',
     './ace/mode-mushcode.js',
@@ -219,11 +221,13 @@ const ACE_URLS = [
     './ace/mode-plain_text.js',
     './ace/mode-powershell.js',
     './ace/mode-praat.js',
+    './ace/mode-prisma.js',
     './ace/mode-prolog.js',
     './ace/mode-properties.js',
     './ace/mode-protobuf.js',
     './ace/mode-puppet.js',
     './ace/mode-python.js',
+    './ace/mode-qml.js',
     './ace/mode-r.js',
     './ace/mode-razor.js',
     './ace/mode-rdoc.js',
@@ -276,6 +280,7 @@ const ACE_URLS = [
     './ace/snippets/abc.js',
     './ace/snippets/actionscript.js',
     './ace/snippets/ada.js',
+    './ace/snippets/alda.js',
     './ace/snippets/apache_conf.js',
     './ace/snippets/apex.js',
     './ace/snippets/applescript.js',
@@ -366,6 +371,7 @@ const ACE_URLS = [
     './ace/snippets/mask.js',
     './ace/snippets/matlab.js',
     './ace/snippets/maze.js',
+    './ace/snippets/mediawiki.js',
     './ace/snippets/mel.js',
     './ace/snippets/mixal.js',
     './ace/snippets/mushcode.js',
@@ -387,11 +393,13 @@ const ACE_URLS = [
     './ace/snippets/plain_text.js',
     './ace/snippets/powershell.js',
     './ace/snippets/praat.js',
+    './ace/snippets/prisma.js',
     './ace/snippets/prolog.js',
     './ace/snippets/properties.js',
     './ace/snippets/protobuf.js',
     './ace/snippets/puppet.js',
     './ace/snippets/python.js',
+    './ace/snippets/qml.js',
     './ace/snippets/r.js',
     './ace/snippets/razor.js',
     './ace/snippets/rdoc.js',
@@ -463,6 +471,7 @@ const ACE_URLS = [
     './ace/theme-merbivore_soft.js',
     './ace/theme-mono_industrial.js',
     './ace/theme-monokai.js',
+    './ace/theme-nord_dark.js',
     './ace/theme-pastel_on_dark.js',
     './ace/theme-solarized_dark.js',
     './ace/theme-solarized_light.js',
