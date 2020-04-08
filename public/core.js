@@ -437,7 +437,7 @@ export class Core {
     }
 
     async closeFileA(index) {
-        if (!this.isCoreFile(index)) {
+        if (!this.isCoreFile(index) && !this.isClean(index)) {
             const res = new Res();
             const dialogConfirm = new DialogConfirm();
             dialogConfirm.open(
