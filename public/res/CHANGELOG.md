@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200408 (dev)
+- Updated ace-builds to version 1.4.9.
 - Improved Close file.
 
 ## Version 2.0.30200407 (dev)
