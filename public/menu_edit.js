@@ -92,6 +92,12 @@ export class MenuEdit extends Menu {
                 },
                 {id: '-', text: '', meta: ''},
                 {
+                    id: 'menu-edit-sortlines',
+                    text: 'Sort lines',
+                    meta: 'Ctrl+Alt+S'
+                },
+                {id: '-', text: '', meta: ''},
+                {
                     id: 'menu-edit-togglerecording',
                     text: 'Toggle recording macro',
                     meta: 'Ctrl+Alt+E'
