@@ -1,16 +1,18 @@
+import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
-import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class DialogKeybinding extends DialogSelect {
 
     constructor(core) {
         super(core);
-        this.initialValue = this.core.getKeybinding();
+        this.initialValue = this.core.getOption('keybinding');
     }
 
     onChange(event) {
-        this.core.setKeybinding(event.target.value);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('keybinding', event.target.value)
+        );
     }
 
     open() {
@@ -25,7 +27,9 @@ export class DialogKeybinding extends DialogSelect {
 
     reset() {
         super.reset();
-        this.core.setKeybinding(this.initialValue);
+        document.dispatchEvent(
+            new ChangeEditorOptionEvent('keybinding', this.initialValue)
+        );
         this.core.saveOedOptions();
     }
 }

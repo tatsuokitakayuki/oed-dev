@@ -58,6 +58,7 @@ export class MenuFile extends Menu {
                     meta: '',
                     update: true
                 },
+                {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-first-line-number', // EditSession
                     text: 'First line number...',
@@ -130,18 +131,13 @@ export class MenuFile extends Menu {
                 data => item.id == data.id
             );
             if (data.update) {
-                let optionValue = '';
-                if (item.id != 'menu-file-oed-file-decoding') {
-                    optionValue = String(
-                        this.core.getOption(
-                            this.core.idToName(
-                                item.id.slice((this.menuId + '-oed-').length)
-                            )
+                const optionValue = String(
+                    this.core.getOption(
+                        this.core.idToName(
+                            item.id.slice((this.menuId + '-oed-').length)
                         )
-                    );
-                } else {
-                    optionValue = String(this.core.getFileDecoding());
-                }
+                    )
+                );
                 let optionText = optionValue;
                 switch (item.id) {
                     case 'menu-file-oed-file-decoding':

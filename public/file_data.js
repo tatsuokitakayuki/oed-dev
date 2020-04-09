@@ -116,7 +116,7 @@ export class FileData {
         try {
             const fileHelper = new FileHelper();
             const text = await fileHelper.fetchTextFileA(
-                file, this.core.getFileDecoding()
+                file, this.core.getOption('fileDecoding')
             );
             if (text === null) {
                 throw new Error();

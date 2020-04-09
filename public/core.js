@@ -66,7 +66,24 @@ export class Core {
         this.appView.initialize();
         document.addEventListener(
             'Editor:changeoption',
-            event => this.getEditor().setOption(event.detail.name, event.detail.value),
+            event => {
+                switch (event.detail.name) {
+                    case 'fontSize':
+                        this.getEditor().setOption(event.detail.name, event.detail.value);
+                        document.getElementById('editor').style.fontSize = event.detail.value;
+                        break;
+                    case 'fileDecoding':
+                        this.getOedOptions().fileDecoding = event.detail.value;
+                        break;
+                    case 'keybinding':
+                        this.getOedOptions().keybinding = event.detail.value;
+                        this.setKeybinding(event.detail.value);
+                        break;
+                    default:
+                        this.getEditor().setOption(event.detail.name, event.detail.value);
+                        break;
+                }
+            },
             {passive: true}
         );
         await this.newFileA();
@@ -133,11 +150,19 @@ export class Core {
     }
 
     getOption(name) {
-        return this.getEditor().getOption(name);
-    }
-
-    getTheme() {
-        return this.getEditor().getTheme();
+        let optionValue = '';
+        switch (name) {
+            case 'fileDecoding':
+                optionValue = this.getOedOptions().fileDecoding;
+                break;
+            case 'keybinding':
+                optionValue = this.getOedOptions().keybinding;
+                break;
+            default:
+                optionValue = this.getEditor().getOption(name);
+                break;
+        }
+        return optionValue;
     }
 
     getActive() {
@@ -196,18 +221,6 @@ export class Core {
         return this.options.getOedOptions();
     }
 
-    getKeybinding() {
-        return this.getOedOptions().keybinding;
-    }
-
-    getFileDecoding() {
-        return this.getOedOptions().fileDecoding;
-    }
-
-    getFileEncoding() {
-        return this.getOedOptions().fileEncoding;
-    }
-
     isHello() {
         return this.getOedOptions().hello;
     }
@@ -239,11 +252,6 @@ export class Core {
         }
     }
 
-    setFontSize(fontSize) {
-        this.getEditor().setFontSize(fontSize);
-        document.getElementById('editor').style.fontSize = fontSize;
-    }
-
     setName(index, name) {
         this.fileManager.setName(index, name);
     }
@@ -265,16 +273,11 @@ export class Core {
     }
 
     setKeybinding(name) {
-        this.getOedOptions().keybinding = name;
         let value = null;
         if (name && name !== 'Ace') {
             value = 'ace/keyboard/' + name.toLowerCase();
         }
         this.editor.setKeyboardHandler(value);
-    }
-
-    setFileDecoding(name) {
-        this.getOedOptions().fileDecoding = name;
     }
 
     setHello(hello) {

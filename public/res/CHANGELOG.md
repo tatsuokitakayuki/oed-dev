@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200409 (dev)
+- Improved setOption.
 - Improved menu updating.
 - Renamed "Mode" to "Language mode".
 - Updated ignore list in File menu.

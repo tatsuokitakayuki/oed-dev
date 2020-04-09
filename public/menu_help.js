@@ -74,18 +74,13 @@ export class MenuHelp extends Menu {
                 data => item.id == data.id
             );
             if (data.update) {
-                let optionValue = '';
-                if (item.id != 'menu-help-oed-keybinding') {
-                    optionValue = String(
-                        this.core.getOption(
-                            this.core.idToName(
-                                item.id.slice((this.menuId + '-oed-').length)
-                            )
+                const optionValue = String(
+                    this.core.getOption(
+                        this.core.idToName(
+                            item.id.slice((this.menuId + '-oed-').length)
                         )
-                    );
-                } else {
-                    optionValue = String(this.core.getKeybinding());
-                }
+                    )
+                );
                 let optionText = optionValue;
                 switch (item.id) {
                     case 'menu-help-oed-keybinding':
