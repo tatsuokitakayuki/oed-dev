@@ -11,27 +11,32 @@ export class MenuExtensions extends Menu {
                 {
                     id: 'menu-extensions-oed-enable-basic-autocompletion',
                     text: 'Enable basic autocompletion',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-live-autocompletion',
                     text: 'Enable live autocompletion',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-snippets',
                     text: 'Enable snippets',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-emmet',
                     text: 'Enable emmet',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-extensions-oed-use-elastic-tabstops',
                     text: 'Use elastic tabstops',
-                    meta: ''
+                    meta: '',
+                    update: true
                 }
             ]
         };
@@ -45,16 +50,20 @@ export class MenuExtensions extends Menu {
 
     updateMenuItems() {
         this.menu.items.forEach(item => {
-            const originalText = this.itemData.items.find(
+            const data = this.itemData.items.find(
                 data => item.id == data.id
-            ).text;
-            item.textContent = originalText + ' [' + String(
-                this.core.getEditor().getOption(
-                    this.core.idToName(
-                        item.id.slice((this.menuId + '-oed-').length)
+            );
+            if (data.update) {
+                let optionValue = String(
+                    this.core.getOption(
+                        this.core.idToName(
+                            item.id.slice((this.menuId + '-oed-').length)
+                        )
                     )
-                )
-            ) + ']';
+                );
+                let optionText = optionValue;
+                item.textContent = data.text + ' [' + optionText + ']';
+            }
         });
     }
 }

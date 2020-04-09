@@ -11,101 +11,119 @@ export class MenuEdit extends Menu {
                 {
                     id: 'menu-edit-undo',
                     text: 'Undo',
-                    meta: 'Ctrl+Z'
+                    meta: 'Ctrl+Z',
+                    update: false
                 },
                 {
                     id: 'menu-edit-redo',
                     text: 'Redo',
-                    meta: 'Ctrl+Shift+Z'
+                    meta: 'Ctrl+Shift+Z',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-cut',
                     text: 'Cut',
-                    meta: 'Ctrl+X'
+                    meta: 'Ctrl+X',
+                    update: false
                 },
                 {
                     id: 'menu-edit-copy',
                     text: 'Copy',
-                    meta: 'Ctrl+C'
+                    meta: 'Ctrl+C',
+                    update: false
                 },
                 /*
                 {
                     id: 'menu-edit-paste',
                     text: 'Paste',
-                    meta: 'Ctrl+V'
+                    meta: 'Ctrl+V',
+                    update: false
                 },
                 */
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-overwrite',
                     text: 'Overwrite',
-                    meta: 'Ins'
+                    meta: 'Ins',
+                    update: false
                 },
                 {
                     id: 'menu-edit-delete',
                     text: 'Delete',
-                    meta: 'Del'
+                    meta: 'Del',
+                    update: false
                 },
                 {
                     id: 'menu-edit-backspace',
                     text: 'Backspace',
-                    meta: 'Bs'
+                    meta: 'Bs',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-selectall',
                     text: 'Select all',
-                    meta: 'Ctrl+A'
+                    meta: 'Ctrl+A',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-indent',
                     text: 'Indent',
-                    meta: 'Tab'
+                    meta: 'Tab',
+                    update: false
                 },
                 {
                     id: 'menu-edit-outdent',
                     text: 'Outdent',
-                    meta: 'Shift+Tab'
+                    meta: 'Shift+Tab',
+                    update: false
                 },
                 {
                     id: 'menu-edit-blockindent',
                     text: 'Block indent',
-                    meta: 'Ctrl+]'
+                    meta: 'Ctrl+]',
+                    update: false
                 },
                 {
                     id: 'menu-edit-blockoutdent',
                     text: 'Block outdent',
-                    meta: 'Ctrl+['
+                    meta: 'Ctrl+[',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-touppercase',
                     text: 'To upper case',
-                    meta: 'Ctrl+U'
+                    meta: 'Ctrl+U',
+                    update: false
                 },
                 {
                     id: 'menu-edit-tolowercase',
                     text: 'To lower case',
-                    meta: 'Ctrl+Shift+U'
+                    meta: 'Ctrl+Shift+U',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-sortlines',
                     text: 'Sort lines',
-                    meta: 'Ctrl+Alt+S'
+                    meta: 'Ctrl+Alt+S',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-togglerecording',
                     text: 'Toggle recording macro',
-                    meta: 'Ctrl+Alt+E'
+                    meta: 'Ctrl+Alt+E',
+                    update: false
                 },
                 {
                     id: 'menu-edit-replaymacro',
                     text: 'Replay macro',
-                    meta: 'Ctrl+Shift+E'
+                    meta: 'Ctrl+Shift+E',
+                    update: false
                 }
             ]
         };

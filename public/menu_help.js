@@ -12,41 +12,48 @@ export class MenuHelp extends Menu {
                 {
                     id: 'menu-help-open-command-pallete',
                     text: 'Command pallete...',
-                    meta: 'F1'
+                    meta: 'F1',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-keybinding',
                     text: 'Keybinding...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-export-options',
                     text: 'Export Options',
-                    meta: ''
+                    meta: '',
+                    update: false
                 },
                 {
                     id: 'menu-help-oed-import-options',
                     text: 'Import Options...',
-                    meta: ''
+                    meta: '',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-cache-list',
                     text: 'Cache list',
-                    meta: ''
+                    meta: '',
+                    update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-change-log',
                     text: 'Change log',
-                    meta: ''
+                    meta: '',
+                    update: false
                 },
                 {
                     id: 'menu-help-oed-about',
                     text: 'About',
-                    meta: ''
+                    meta: '',
+                    update: false
                 }
             ]
         };
@@ -63,18 +70,33 @@ export class MenuHelp extends Menu {
     updateMenuItems() {
         const res = new Res();
         this.menu.items.forEach(item => {
-            const originalText = this.itemData.items.find(
+            const data = this.itemData.items.find(
                 data => item.id == data.id
-            ).text;
-            switch (item.id) {
-                case 'menu-help-oed-keybinding':
-                    item.textContent = originalText + ' [' +
-                        res.keybindings.find(
-                            item => item.value == String(this.core.getKeybinding())
-                        ).name + ']';
-                    break;
-                default:
-                    break;
+            );
+            if (data.update) {
+                let optionValue = '';
+                if (item.id != 'menu-help-oed-keybinding') {
+                    optionValue = String(
+                        this.core.getOption(
+                            this.core.idToName(
+                                item.id.slice((this.menuId + '-oed-').length)
+                            )
+                        )
+                    );
+                } else {
+                    optionValue = String(this.core.getKeybinding());
+                }
+                let optionText = optionValue;
+                switch (item.id) {
+                    case 'menu-help-oed-keybinding':
+                        optionText = res.keybindings.find(
+                            item => item.value == optionValue
+                        ).name;
+                        break;
+                    default:
+                        break;
+                }
+                item.textContent = data.text + ' [' + optionText + ']';
             }
         });
     }

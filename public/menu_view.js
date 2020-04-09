@@ -13,154 +13,184 @@ export class MenuView extends Menu {
                 {
                     id: 'menu-view-oed-auto-scroll-editor-into-view', // Editor
                     text: 'Auto scroll editor into view',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-behaviours-enabled', // Editor
                     text: 'Behaviours enabled',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-copy-with-empty-selection', // Editor
                     text: 'Copy with empty selection',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-cursor-style', // Editor
                     text: 'Cursor style...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-enable-linking', // Editor
                     text: 'Enable linking',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-enable-multiselect', // Editor
                     text: 'Enable multiselect',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-active-line', // Editor
                     text: 'Highlight active line',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-selected-word', // Editor
                     text: 'Highlight selected word',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-merge-undo-deltas', // Editor
                     text: 'Merge undo deltas...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-navigate-within-soft-tabs', // Editor
                     text: 'Navigate within soft tabs',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-read-only', // Editor
                     text: 'Read only',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-selection-style', // Editor
                     text: 'Selection style',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-wrap-behaviours-enabled', // Editor
                     text: 'Wrap behaviours enabled',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {id: '-', text: '', meta: ''},
                 // Renderer options
                 {
                     id: 'menu-view-oed-show-gutter', // Renderer (Gutter)
                     text: 'Show gutter',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-fixed-width-gutter', // Renderer (Gutter)
                     text: 'Fixed Width gutter',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-gutter-line', // Renderer (Gutter)
                     text: 'Highlight gutter line',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-show-line-numbers', // Renderer  (Gutter)
                     text: 'Show line numbers',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-fade-fold-widgets', // Renderer (Gutter)
                     text: 'Fade fold widgets',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-show-fold-widgets', // Renderer (Gutter)
                     text: 'Show fold widgets',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-print-margin-column', // Renderer (Margin)
                     text: 'Print margin column...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-show-print-margin', // Renderer (Margin)
                     text: 'Show print margin',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-animated-scroll', // Renderer (Scroll)
                     text: 'Animated scroll',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-v-scroll-bar-always-visible', // Renderer (Scroll)
                     text: 'Vertical scroll bar always visible',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-h-scroll-bar-always-visible', // Renderer (Scroll)
                     text: 'Horizontal scroll bar always visible',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-scroll-past-end', // Renderer (Scroll)
                     text: 'Scroll past end...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-display-indent-guides', // Renderer
                     text: 'Display indent guides',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-show-invisibles', // Renderer
                     text: 'Show invisibles',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-font-family', // Renderer (Font)
                     text: 'Font family...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-font-size', // Renderer (Font)
                     text: 'Font size...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
                 {
                     id: 'menu-view-oed-theme', // Renderer
                     text: 'Theme...',
-                    meta: ''
+                    meta: '',
+                    update: true
                 },
             ]
         };
@@ -177,50 +207,49 @@ export class MenuView extends Menu {
     updateMenuItems() {
         const res = new Res();
         this.menu.items.forEach(item => {
-            const originalText = this.itemData.items.find(
+            const data = this.itemData.items.find(
                 data => item.id == data.id
-            ).text;
-            const optionValue = String(
-                this.core.getOption(
-                    this.core.idToName(
-                        item.id.slice((this.menuId + '-oed-').length)
-                    )
-                )
             );
-            switch (item.id) {
-                case 'menu-view-oed-cursor-style':
-                    item.textContent = originalText + ' [' +
-                        res.cursor_style.find(
+            if (data.update) {
+                const optionValue = String(
+                    this.core.getOption(
+                        this.core.idToName(
+                            item.id.slice((this.menuId + '-oed-').length)
+                        )
+                    )
+                );
+                let optionText = optionValue;
+                switch (item.id) {
+                    case 'menu-view-oed-cursor-style':
+                        optionText = res.cursor_style.find(
                             item => item.value == optionValue
-                        ).name + ']';
-                    break;
-                case 'menu-view-oed-merge-undo-deltas':
-                    item.textContent = originalText + ' [' +
-                        res.merge_undo_deltas.find(
+                        ).name;
+                        break;
+                    case 'menu-view-oed-merge-undo-deltas':
+                        optionText = res.merge_undo_deltas.find(
                             item => item.value == optionValue
-                        ).name + ']';
-                    break;
-                case 'menu-view-oed-scroll-past-end':
-                    item.textContent = originalText + ' [' +
-                        res.scroll_past_end.find(
+                        ).name;
+                        break;
+                    case 'menu-view-oed-scroll-past-end':
+                        optionText = res.scroll_past_end.find(
                             item => item.value == optionValue
-                        ).name + ']';
-                    break;
-                case 'menu-view-oed-theme':
-                    let theme = res.getThemes().bright.find(
-                        theme => theme.value == optionValue
-                    );
-                    if (!theme) {
-                        theme = res.getThemes().dark.find(
+                        ).name;
+                        break;
+                    case 'menu-view-oed-theme':
+                        let theme = res.getThemes().bright.find(
                             theme => theme.value == optionValue
                         );
-                    }
-                    item.textContent = originalText +
-                        ' [' + theme.caption + ']';
-                    break;
-                default:
-                    item.textContent = originalText + ' [' + optionValue + ']';
-                    break;
+                        if (!theme) {
+                            theme = res.getThemes().dark.find(
+                                theme => theme.value == optionValue
+                            );
+                        }
+                        optionText = theme.caption;
+                        break;
+                    default:
+                        break;
+                }
+                item.textContent = data.text + ' [' + optionText + ']';
             }
         });
     }
