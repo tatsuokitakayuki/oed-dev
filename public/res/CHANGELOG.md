@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200409 (dev)
+- Renamed "Mode" to "Language mode".
 - Updated ignore list in File menu.
 - Added description to all added commands.
 - Added Sort lines to Edit menu.

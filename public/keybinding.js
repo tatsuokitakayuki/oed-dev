@@ -73,8 +73,8 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedMode',
-            description: 'Mode...',
-            exec: editor => this.core.selectMode(),
+            description: 'Language mode...',
+            exec: editor => this.core.selectLanguageMode(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({

@@ -1,4 +1,4 @@
-const OED_VERSION = '2.0.20200408.2';
+const OED_VERSION = '2.0.20200409.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.9 (sw.js list update 1)';
 const ACE_BASE = 'Ace';
@@ -30,8 +30,8 @@ const OED_URLS = [
     './dialog_font_family.js',
     './dialog_font_size.js',
     './dialog_keybinding.js',
+    './dialog_language_mode.js',
     './dialog_merge_undo_deltas.js',
-    './dialog_mode.js',
     './dialog_new_line_mode.js',
     './dialog_print_margin_column.js',
     './dialog_prompt.js',

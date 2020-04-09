@@ -11,7 +11,7 @@ import {DialogFontFamily} from '/dialog_font_family.js';
 import {DialogFontSize} from '/dialog_font_size.js';
 import {DialogKeybinding} from '/dialog_keybinding.js';
 import {DialogMergeUndoDeltas} from '/dialog_merge_undo_deltas.js';
-import {DialogMode} from '/dialog_mode.js';
+import {DialogLanguageMode} from '/dialog_language_mode.js';
 import {DialogNewLineMode} from '/dialog_new_line_mode.js';
 import {DialogPrintMarginColumn} from '/dialog_print_margin_column.js';
 import {DialogScrollPastEnd} from '/dialog_scroll_past_end.js';
@@ -604,9 +604,9 @@ export class Core {
         dialogWrap.open();
     }
 
-    selectMode() {
-        const dialogMode = new DialogMode(this);
-        dialogMode.open();
+    selectLanguageMode() {
+        const dialogLanguageMode = new DialogLanguageMode(this);
+        dialogLanguageMode.open();
     }
 
     selectFoldStyle() {

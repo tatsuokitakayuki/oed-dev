@@ -133,7 +133,7 @@ export class Res {
             max_lines: 'Max lines',
             merge_undo_deltas: 'Merge undo deltas',
             min_lines: 'Min lines',
-            mode: 'Mode',
+            language_mode: 'Language mode',
             modified: '(Modified)',
             new_line_mode: 'New line mode',
             new_name: 'New name',

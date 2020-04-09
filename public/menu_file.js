@@ -63,7 +63,7 @@ export class MenuFile extends Menu {
                 },
                 {
                     id: 'menu-file-oed-mode', // EditSession
-                    text: 'Mode...',
+                    text: 'Language mode...',
                     meta: ''
                 },
                 {
