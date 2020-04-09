@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 2.0.30200409 (dev)
+- Added description to all added commands.
+- Added Sort lines to Edit menu.
+
 ## Version 2.0.30200408 (dev)
 - Added Save edit session options to File menu.
 - Moved some View menu items to File menu.
