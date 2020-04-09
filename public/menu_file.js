@@ -116,6 +116,7 @@ export class MenuFile extends Menu {
             'menu-file-oed-toggle-file-list',
             'menu-file-oed-next-file',
             'menu-file-oed-previous-file',
+            'menu-file-oed-save-edit-session-options',
             'menu-file-oed-close-file',
         ];
         const res = new Res();
