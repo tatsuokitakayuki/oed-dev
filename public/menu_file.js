@@ -1,4 +1,3 @@
-import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
 
@@ -116,12 +115,6 @@ export class MenuFile extends Menu {
                 }
             ]
         };
-    }
-
-    initialize() {
-        super.initialize();
-        const materialHelper = new MaterialHelper();
-        materialHelper.menuItems(document.getElementById(this.itemData.id), this.itemData.items);
     }
 
     updateMenuItems() {

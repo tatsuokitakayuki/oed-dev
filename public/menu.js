@@ -1,3 +1,4 @@
+import {MaterialHelper} from '/material_helper.js';
 import {UIHelper} from '/ui_helper.js';
 
 export class Menu extends UIHelper {
@@ -7,6 +8,7 @@ export class Menu extends UIHelper {
         this.core = core;
         this.menuId = menuId;
         this.menu = new mdc.menu.MDCMenu(document.getElementById(menuId));
+        this.itemData = null;
     }
 
     initialize() {
@@ -20,6 +22,8 @@ export class Menu extends UIHelper {
         );
         document.getElementById(this.menuId)
             .addEventListener('keyup', event => this.onKeyUp(event), options);
+        const materialHelper = new MaterialHelper();
+        materialHelper.menuItems(document.getElementById(this.itemData.id), this.itemData.items);
     }
 
     onAction(event) {

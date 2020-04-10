@@ -1,4 +1,3 @@
-import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 
 export class MenuCode extends Menu {
@@ -85,11 +84,5 @@ export class MenuCode extends Menu {
                 }
             ]
         };
-    }
-
-    initialize() {
-        super.initialize();
-        const materialHelper = new MaterialHelper();
-        materialHelper.menuItems(document.getElementById(this.itemData.id), this.itemData.items);
     }
 }
