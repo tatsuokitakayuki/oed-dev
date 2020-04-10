@@ -63,6 +63,12 @@ export class Core {
     }
 
     async initializeA() {
+        window.addEventListener('beforeunload', event => {
+            if (!this.isSafe()) {
+                event.preventDefault();
+                event.returnValue = '';
+            }
+        });
         this.appView.initialize();
         document.addEventListener(
             'Editor:changeoption',
@@ -207,6 +213,10 @@ export class Core {
 
     isCoreFile(index) {
         return this.fileManager.isCoreFile(index);
+    }
+
+    isSafe() {
+        return this.fileManager.list.every(item => item.isClean());
     }
 
     hasUndo(index) {

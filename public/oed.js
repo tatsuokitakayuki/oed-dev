@@ -2,10 +2,6 @@ import {Core} from '/core.js';
 
 const core = new Core();
 
-window.addEventListener('beforeunload', event => {
-    event.preventDefault();
-    event.returnValue = '';
-});
 window.addEventListener('DOMContentLoaded', () => core.initializeA());
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

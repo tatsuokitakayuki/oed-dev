@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200410 (dev)
+- Improved to confirm whether to close the app only when there is a changed file.
+
 ## Version 2.0.30200409 (dev)
 - Improved setOption.
 - Improved menu updating.
