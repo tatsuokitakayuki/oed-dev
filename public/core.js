@@ -647,6 +647,9 @@ export class Core {
     }
 
     selectFile(index) {
+        if (index >= this.getLength() || index < 0) {
+            return;
+        }
         document.dispatchEvent(
             new ChangeViewEvent(
                 this.getActive(), -1, {editor: false, draweritem: true, appbar: false}

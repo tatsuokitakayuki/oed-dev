@@ -22,6 +22,62 @@ export class Keybinding {
             exec: editor => this.core.previousFile(),
             readOnly: true
         });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile1',
+            description: 'Select file 1',
+            bindKey: {win: 'Ctrl-1', mac: 'Command-1'},
+            exec: editor => this.core.selectFile(0),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile2',
+            description: 'Select file 2',
+            bindKey: {win: 'Ctrl-2', mac: 'Command-2'},
+            exec: editor => this.core.selectFile(1),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile3',
+            description: 'Select file 3',
+            bindKey: {win: 'Ctrl-3', mac: 'Command-3'},
+            exec: editor => this.core.selectFile(2),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile4',
+            description: 'Select file 4',
+            bindKey: {win: 'Ctrl-4', mac: 'Command-4'},
+            exec: editor => this.core.selectFile(3),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile5',
+            description: 'Select file 5',
+            bindKey: {win: 'Ctrl-5', mac: 'Command-5'},
+            exec: editor => this.core.selectFile(4),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile6',
+            description: 'Select file 6',
+            bindKey: {win: 'Ctrl-6', mac: 'Command-6'},
+            exec: editor => this.core.selectFile(5),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile7',
+            description: 'Select file 7',
+            bindKey: {win: 'Ctrl-7', mac: 'Command-7'},
+            exec: editor => this.core.selectFile(6),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFile8',
+            description: 'Select file 8',
+            bindKey: {win: 'Ctrl-8', mac: 'Command-8'},
+            exec: editor => this.core.selectFile(7),
+            readOnly: true
+        });
     }
 
     initializeFileMenu() {
