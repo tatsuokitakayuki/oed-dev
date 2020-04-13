@@ -679,6 +679,10 @@ export class Core {
         this.selectFile(index);
     }
 
+    lastFile() {
+        this.selectFile(this.getLength() - 1);
+    }
+
     toggleFileList() {
         this.drawer.toggle();
     }

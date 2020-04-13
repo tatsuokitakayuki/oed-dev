@@ -78,6 +78,13 @@ export class Keybinding {
             exec: editor => this.core.selectFile(7),
             readOnly: true
         });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedSelectFileLast',
+            description: 'Select file last',
+            bindKey: {win: 'Ctrl-9', mac: 'Command-9'},
+            exec: editor => this.core.lastFile(),
+            readOnly: true
+        });
     }
 
     initializeFileMenu() {
