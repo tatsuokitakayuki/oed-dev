@@ -646,17 +646,12 @@ export class Core {
         return id.replace(/-./gi, match => match.slice(1).toUpperCase());
     }
 
-    nextFile() {
-        let index = this.getActive();
+    selectFile(index) {
         document.dispatchEvent(
             new ChangeViewEvent(
-                index, -1, {editor: false, draweritem: true, appbar: false}
+                this.getActive(), -1, {editor: false, draweritem: true, appbar: false}
             )
         );
-        index++;
-        if (index >= this.getLength()) {
-            index = 0;
-        }
         this.updateEditSession(index);
         document.dispatchEvent(
             new ChangeViewEvent(
@@ -665,23 +660,20 @@ export class Core {
         );
     }
 
+    nextFile() {
+        let index = this.getActive() + 1;
+        if (index >= this.getLength()) {
+            index = 0;
+        }
+        this.selectFile(index);
+    }
+
     previousFile() {
-        let index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, -1, {editor: false, draweritem: true, appbar: false}
-            )
-        );
-        index--;
+        let index = this.getActive() - 1;
         if (index < 0) {
             index = this.getLength() - 1;
         }
-        this.updateEditSession(index);
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        this.selectFile(index);
     }
 
     toggleFileList() {

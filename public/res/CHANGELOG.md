@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 2.0.30200413 (dev)
+- Improved Select file.
+
+## Version 2.0.30200412 (dev)
+- Fixed some elements.
+
 ## Version 2.0.30200410 (dev)
 - Fixed initialization of all menu items.
 - Improved to confirm whether to close the app only when there is a changed file.
