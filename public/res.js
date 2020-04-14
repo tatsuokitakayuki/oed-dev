@@ -225,7 +225,8 @@ export class Res {
         this.strings = {
             confirm_close_file: 'Discard $filename$ edits and close.',
             hello: 'Hello, OED.\nOED - Open, edit, and download.\n',
-            //prompt_rename_file: 'Enter a new name.',
+            modified: 'Modified',
+            read_only: 'Read only',
             untitled: 'untitled',
         };
         this.titles = {
@@ -239,10 +240,8 @@ export class Res {
             keybinding: 'Keybinding',
             language_mode: 'Language mode',
             merge_undo_deltas: 'Merge undo deltas',
-            modified: '(Modified)',
             new_line_mode: 'New line mode',
             print_margin_column: 'Print margin column',
-            readOnly: ' (Read only)',
             rename_file: 'Rename file',
             scroll_past_end: 'Scroll past end',
             tab_size: 'Tab size',

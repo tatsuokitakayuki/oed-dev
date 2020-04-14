@@ -339,18 +339,6 @@ export class Core {
         document.title = `OED [${channel}]`;
     }
 
-    buildTitle(titleData) {
-        const res = new Res();
-        let textContent = titleData.title;
-        if (titleData.modified) {
-            textContent += ' ' + res.titles.modified;
-        }
-        if (titleData.readOnly) {
-            textContent += ' ' + res.titles.readOnly;
-        }
-        return textContent;
-    }
-
     updateEditSession(index) {
         this.fileManager.updateEditSession(index, this.getEditorSession());
     }

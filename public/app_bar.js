@@ -1,3 +1,4 @@
+import {Res} from '/res.js';
 import {UIHelper} from '/ui_helper.js';
 
 export class AppBar extends UIHelper {
@@ -76,16 +77,38 @@ export class AppBar extends UIHelper {
     }
 
     onChange(event) {
+        const index = event.detail.index;
         const titleData = {
-            title: this.core.getDisplayName(event.detail.index),
-            modified: !this.core.isClean(event.detail.index),
-            readOnly: this.core.isReadOnly(event.detail.index),
+            title: this.core.getDisplayName(index),
+            options: {
+                modified: !this.core.isClean(index),
+                read_only: this.core.isReadOnly(index),
+            }
         };
-        this.setTitle(this.core.buildTitle(titleData));
+        this.setTitle(this.buildTitle(titleData));
     }
 
     getElement() {
         return document.getElementById('app-bar');
+    }
+
+    buildTitle(titleData) {
+        const res = new Res();
+        let textContent = titleData.title;
+        if (true) {
+            let status = [];
+            if (titleData.options.modified) {
+                status.push(res.strings.modified);
+            }
+            if (titleData.options.read_only) {
+                status.push(res.strings.read_only);
+            }
+            const s = status.join(', ');
+            if (s) {
+                textContent += ` (${s})`;
+            }
+        }
+        return textContent;
     }
 
     setTitle(title) {
