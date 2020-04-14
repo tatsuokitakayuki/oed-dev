@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200414 (dev)
+- Moved description string literal from keybinding.js to res.js.
+
 ## Version 2.0.30200413 (dev)
 - Assigned "Select last file" to Ctrl+9.
 - Assigned "Select 1st to 8th file" to Ctrl+1~8.

@@ -1,5 +1,6 @@
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
+import {Res} from '/res.js';
 
 export class Keybinding {
     
@@ -8,79 +9,80 @@ export class Keybinding {
     }
 
     initializeFileList() {
+        const res = new Res();
         this.core.getEditor().commands.addCommand({
             name: 'oedNextFile',
-            description: 'Next file',
+            description: res.descriptions.next_file,
             bindKey: {win: 'Ctrl-Tab', mac: 'Command-Tab'},
             exec: editor => this.core.nextFile(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedPreviousFile',
-            description: 'Previous file',
+            description: res.descriptions.previous_file,
             bindKey: {win: 'Ctrl-Shift-Tab', mac: 'Command-Shift-Tab'},
             exec: editor => this.core.previousFile(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile1',
-            description: 'Select file 1',
+            description: res.descriptions.first_file,
             bindKey: {win: 'Ctrl-1', mac: 'Command-1'},
             exec: editor => this.core.selectFile(0),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile2',
-            description: 'Select file 2',
+            description: res.descriptions.second_file,
             bindKey: {win: 'Ctrl-2', mac: 'Command-2'},
             exec: editor => this.core.selectFile(1),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile3',
-            description: 'Select file 3',
+            description: res.descriptions.third_file,
             bindKey: {win: 'Ctrl-3', mac: 'Command-3'},
             exec: editor => this.core.selectFile(2),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile4',
-            description: 'Select file 4',
+            description: res.descriptions.fourth_file,
             bindKey: {win: 'Ctrl-4', mac: 'Command-4'},
             exec: editor => this.core.selectFile(3),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile5',
-            description: 'Select file 5',
+            description: res.descriptions.fifth_file,
             bindKey: {win: 'Ctrl-5', mac: 'Command-5'},
             exec: editor => this.core.selectFile(4),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile6',
-            description: 'Select file 6',
+            description: res.descriptions.sixth_file,
             bindKey: {win: 'Ctrl-6', mac: 'Command-6'},
             exec: editor => this.core.selectFile(5),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile7',
-            description: 'Select file 7',
+            description: res.descriptions.seventh_file,
             bindKey: {win: 'Ctrl-7', mac: 'Command-7'},
             exec: editor => this.core.selectFile(6),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFile8',
-            description: 'Select file 8',
+            description: res.descriptions.eighth_file,
             bindKey: {win: 'Ctrl-8', mac: 'Command-8'},
             exec: editor => this.core.selectFile(7),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectFileLast',
-            description: 'Select file last',
+            description: res.descriptions.last_file,
             bindKey: {win: 'Ctrl-9', mac: 'Command-9'},
             exec: editor => this.core.lastFile(),
             readOnly: true
@@ -88,86 +90,87 @@ export class Keybinding {
     }
 
     initializeFileMenu() {
+        const res = new Res();
         this.core.getEditor().commands.addCommand({
             name: 'oedNewFile',
-            description: 'New file',
+            description: res.descriptions.new_file,
             bindKey: {win: 'Ctrl-N', mac: 'Command-N'},
             exec: editor => this.core.newFileA(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedOpenFile',
-            description: 'Open file...',
+            description: res.descriptions.open_file + '...',
             bindKey: {win: 'Ctrl-O', mac: 'Command-O'},
             exec: editor => this.core.openSelectFileA(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedDownloadFile',
-            description: 'Download file',
+            description: res.descriptions.download_file,
             bindKey: {win: 'Ctrl-S', mac: 'Command-S'},
             exec: editor => this.core.downloadFile(this.core.getActive()),
             readOnly: false
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedRenameFile',
-            description: 'Rename file...',
+            description: res.descriptions.rename_file + '...',
             bindKey: {win: 'Alt-R', mac: 'Option-R'},
             exec: editor => this.core.renameFile(this.core.getActive(), null, null),
             readOnly: false
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFileDecoding',
-            description: 'File decoding...',
+            description: res.descriptions.file_decoding + '...',
             exec: editor => this.core.selectFileDecoding(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFirstLineNumber',
-            description: 'First line number...',
+            description: res.descriptions.first_line_number + '...',
             exec: editor => this.core.promptFirstLineNumber(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFoldStyle',
-            description: 'Fold style...',
+            description: res.descriptions.fold_style + '...',
             exec: editor => this.core.selectFoldStyle(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedMode',
-            description: 'Language mode...',
+            description: res.descriptions.language_mode + '...',
             exec: editor => this.core.selectLanguageMode(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedNewLineMode',
-            description: 'New line mode...',
+            description: res.descriptions.new_line_mode + '...',
             exec: editor => this.core.selectNewLineMode(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedWrap',
-            description: 'Soft wrap...',
+            description: res.descriptions.wrap + '...',
             exec: editor => this.core.selectWrap(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedTabSize',
-            description: 'Tab size...',
+            description: res.descriptions.tab_size + '...',
             exec: editor => this.core.promptTabSize(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedUseSoftTabs',
-            description: 'Use soft tabs',
+            description: res.descriptions.use_soft_tabs,
             exec: editor =>
                 editor.setOption('useSoftTabs', !editor.getOption('useSoftTabs')),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSaveEditSessionOptions',
-            description: 'Save edit session options',
+            description: res.descriptions.save_edit_session_options,
             exec: editor => {
                 this.core.saveSessionOptions();
                 this.core.saveOedOptions();
@@ -179,7 +182,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedCloseFile',
-            description: 'Close file...',
+            description: res.descriptions.close_file + '...',
             bindKey: {win: 'Alt-W', mac: 'Option-W'},
             exec: editor => this.core.closeFileA(this.core.getActive()),
             readOnly: true
@@ -196,9 +199,10 @@ export class Keybinding {
     }
 
     initializeViewMenu() {
+        const res = new Res();
         this.core.getEditor().commands.addCommand({
             name: 'oedAutoScrollEditorIntoView',
-            description: 'Auto scroll editor into view',
+            description: res.descriptions.auto_scroll_editor_into_view,
             exec: editor => {
                 editor.setOption(
                     'autoScrollEditorIntoView',
@@ -210,7 +214,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedBehavioursEnabled',
-            description: 'Behaviours enabled',
+            description: res.descriptions.behaviours_enabled,
             exec: editor => {
                 editor.setOption(
                     'behavioursEnabled', !editor.getOption('behavioursEnabled')
@@ -221,7 +225,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedCopyWithEmptySelection',
-            description: 'Copy with empty selection',
+            description: res.descriptions.copy_with_empty_selection,
             exec: editor => {
                 editor.setOption(
                     'copyWithEmptySelection',
@@ -233,13 +237,13 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedCursorStyle',
-            description: 'Cursor style...',
+            description: res.descriptions.cursor_style + '...',
             exec: editor => this.core.selectCursorStyle(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedEnableLinking',
-            description: 'Enable linking',
+            description: res.descriptions.enable_linking,
             exec: editor => {
                 editor.setOption(
                     'enableLinking', !editor.getOption('enableLinking')
@@ -250,7 +254,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedEnableMultiselect',
-            description: 'Enable multiselect',
+            description: res.descriptions.enable_multiselect,
             exec: editor => {
                 editor.setOption(
                     'enableMultiselect', !editor.getOption('enableMultiselect')
@@ -261,7 +265,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedHighlightActiveLine',
-            description: 'Highlight active line',
+            description: res.descriptions.highlight_active_line,
             exec: editor => {
                 editor.setOption(
                     'highlightActiveLine',
@@ -273,7 +277,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedHighlightSelectedWord',
-            description: 'Highlight selected word',
+            description: res.descriptions.highlight_selected_word,
             exec: editor => {
                 editor.setOption(
                     'highlightSelectedWord',
@@ -285,13 +289,13 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedMergeUndoDeltas',
-            description: 'Merge undo deltas...',
+            description: res.descriptions.merge_undo_deltas + '...',
             exec: editor => this.core.selectMergeUndoDeltas(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedNavigateWithinSoftTabs',
-            description: 'Navigate within soft tabs',
+            description: res.descriptions.navigate_within_soft_tabs,
             exec: editor => {
                 editor.setOption(
                     'navigateWithinSoftTabs',
@@ -303,7 +307,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedReadOnly',
-            description: 'Read only',
+            description: res.descriptions.read_only,
             exec: editor => {
                 const index = this.core.getActive();
                 if (!this.core.isCoreFile(index)) {
@@ -321,7 +325,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSelectionStyle',
-            description: 'Selection style',
+            description: res.descriptions.selection_style,
             exec: editor => {
                 editor.setOption(
                     'selectionStyle',
@@ -333,7 +337,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedWrapBehavioursEnabled',
-            description: 'Wrap behaviours enabled',
+            description: res.descriptions.wrap_behaviours_enabled,
             exec: editor => {
                 editor.setOption(
                     'wrapBehavioursEnabled',
@@ -345,7 +349,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedShowGutter',
-            description: 'Show gutter',
+            description: res.descriptions.show_gutter,
             exec: editor => {
                 editor.setOption('showGutter', !editor.getOption('showGutter'));
                 this.core.saveRendererOptions();
@@ -354,7 +358,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFixedWidthGutter',
-            description: 'Fixed width gutter',
+            description: res.descriptions.fixed_width_gutter,
             exec: editor => {
                 editor.setOption(
                     'fixedWidthGutter', !editor.getOption('fixedWidthGutter')
@@ -365,7 +369,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedHighlightGutterLine',
-            description: 'Highlight gutter line',
+            description: res.descriptions.highlight_gutter_line,
             exec: editor => {
                 editor.setOption(
                     'highlightGutterLine',
@@ -377,7 +381,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedShowLineNumbers',
-            description: 'Show line numbers',
+            description: res.descriptions.show_line_numbers,
             exec: editor => {
                 editor.setOption(
                     'showLineNumbers', !editor.getOption('showLineNumbers')
@@ -388,7 +392,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedDisplayIndentGuides',
-            description: 'Display indent guides',
+            description: res.descriptions.display_indent_guides,
             exec: editor => {
                 editor.setOption(
                     'displayIndentGuides',
@@ -400,13 +404,13 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedPrintMarginColumn',
-            description: 'Print margin column...',
+            description: res.descriptions.print_margin_column + '...',
             exec: editor => this.core.promptPrintMarginColumn(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedShowPrintMargin',
-            description: 'Show print margin',
+            description: res.descriptions.show_print_margin,
             exec: editor => {
                 editor.setOption(
                     'showPrintMargin', !editor.getOption('showPrintMargin')
@@ -417,7 +421,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedAnimatedScroll',
-            description: 'Animated scroll',
+            description: res.descriptions.animated_scroll,
             exec: editor => {
                 editor.setOption(
                     'animatedScroll', !editor.getOption('animatedScroll')
@@ -428,7 +432,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFadeFoldWidgets',
-            description: 'Fade fold widgets',
+            description: res.descriptions.fade_fold_widgets,
             exec: editor => {
                 editor.setOption(
                     'fadeFoldWidgets', !editor.getOption('fadeFoldWidgets')
@@ -439,13 +443,13 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedScrollPastEnd',
-            description: 'Scroll past end...',
+            description: res.descriptions.scroll_past_end + '...',
             exec: editor => this.core.selectScrollPastEnd(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedShowFoldWidgets',
-            description: 'Show fold widgets',
+            description: res.descriptions.show_fold_widgets,
             exec: editor => {
                 editor.setOption(
                     'showFoldWidgets', !editor.getOption('showFoldWidgets')
@@ -456,7 +460,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedShowInvisibles',
-            description: 'Show invisibles',
+            description: res.descriptions.show_invisibles,
             exec: editor => {
                 editor.setOption(
                     'showInvisibles', !editor.getOption('showInvisibles')
@@ -467,7 +471,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedVScrollBarAlwaysVisible',
-            description: 'Vertical scroll bar always visible',
+            description: res.descriptions.vertical_scroll_bar_always_visible,
             exec: editor => {
                 editor.setOption(
                     'vScrollBarAlwaysVisible',
@@ -479,7 +483,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedHScrollBarAlwaysVisible',
-            description: 'Holizontal scroll bar always visible',
+            description: res.descriptions.holizontal_scroll_bar_always_visible,
             exec: editor => {
                 editor.setOption(
                     'hScrollBarAlwaysVisible',
@@ -491,28 +495,29 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFontSize',
-            description: 'Font size...',
+            description: res.descriptions.font_size + '...',
             exec: editor => this.core.promptFontSize(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFontFamily',
-            description: 'Font family...',
+            description: res.descriptions.font_family + '...',
             exec: editor => this.core.promptFontFamily(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedTheme',
-            description: 'Theme...',
+            description: res.descriptions.theme + '...',
             exec: editor => this.core.selectTheme(),
             readOnly: true
         });
     }
 
     initializeExtensionsMenu() {
+        const res = new Res();
         this.core.getEditor().commands.addCommand({
             name: 'oedEnableBasicAutocompletion',
-            description: 'Enable basic autocompletion',
+            description: res.descriptions.enable_basic_autocompletion,
             exec: editor => {
                 editor.setOption(
                     'enableBasicAutocompletion',
@@ -524,7 +529,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedEnableLiveAutocompletion',
-            description: 'Enable live autocompletion',
+            description: res.descriptions.enable_live_autocompletion,
             exec: editor => {
                 editor.setOption(
                     'enableLiveAutocompletion',
@@ -536,7 +541,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedEnableSnippets',
-            description: 'Enable snippets',
+            description: res.descriptions.enable_snippets,
             exec: editor => {
                 editor.setOption(
                     'enableSnippets', !editor.getOption('enableSnippets')
@@ -547,7 +552,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedEnableEmmet',
-            description: 'Enable emmet',
+            description: res.descriptions.enable_emmet,
             exec: editor => {
                 editor.setOption(
                     'enableEmmet', !editor.getOption('enableEmmet')
@@ -558,7 +563,7 @@ export class Keybinding {
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedUseElasticTabstops',
-            description: 'Use elastic tabstops',
+            description: res.descriptions.use_elastic_tabstops,
             exec: editor => {
                 editor.setOption(
                     'useElasticTabstops',
@@ -571,97 +576,99 @@ export class Keybinding {
     }
 
     initializeHelpMenu() {
+        const res = new Res();
         this.core.getEditor().commands.addCommand({
             name: 'oedKeybinding',
-            description: 'keybinding...',
+            description: res.descriptions.keybinding + '...',
             exec: editor => this.core.selectKeybinding(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedExportOptions',
-            description: 'Export options',
+            description: res.descriptions.export_options,
             exec: editor => this.core.exportOptionsA(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedImportOptions',
-            description: 'Import options...',
+            description: res.descriptions.import_options + '...',
             exec: editor => this.core.importOptionsA(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedCacheList',
-            description: 'Cache list',
+            description: res.descriptions.cache_list,
             exec: editor => this.core.cacheListA(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedChangeLog',
-            description: 'Change log',
+            description: res.descriptions.change_log,
             exec: editor => this.core.changeLogA(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedAbout',
-            description: 'About',
+            description: res.descriptions.about,
             exec: editor => this.core.aboutA(),
             readOnly: true
         });
     }
 
     initializeTopAppBar() {
+        const res = new Res();
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleFileList',
-            description: 'Toggle file list',
+            description: res.descriptions.toggle_file_list,
             bindKey: {win: 'Ctrl-Shift-F', mac: 'Command-Shift-F'},
             exec: editor => this.core.toggleFileList(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleFileMenu',
-            description: 'Toggle file menu',
+            description: res.descriptions.toggle_file_menu,
             bindKey: {win: 'Alt-I'},
             exec: editor => this.core.toggleFileMenu(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleEditMenu',
-            description: 'Toggle edit menu',
+            description: res.descriptions.toggle_edit_menu,
             bindKey: {win: 'Alt-D'},
             exec: editor => this.core.toggleEditMenu(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleSearchMenu',
-            description: 'Toggle search menu',
+            description: res.descriptions.toggle_search_menu,
             bindKey: {win: 'Alt-S'},
             exec: editor => this.core.toggleSearchMenu(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleCodeMenu',
-            description: 'Toggle code menu',
+            description: res.descriptions.toggle_code_menu,
             bindKey: {win: 'Alt-C'},
             exec: editor => this.core.toggleCodeMenu(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleViewMenu',
-            description: 'Toggle view menu',
+            description: res.descriptions.toggle_view_menu,
             bindKey: {win: 'Alt-V'},
             exec: editor => this.core.toggleViewMenu(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleExtensionsMenu',
-            description: 'Toggle extensions menu',
+            description: res.descriptions.toggle_extensions_menu,
             bindKey: {win: 'Alt-X'},
             exec: editor => this.core.toggleExtensionsMenu(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleHelpMenu',
-            description: 'Toggle help menu',
+            description: res.descriptions.toggle_help_menu,
             bindKey: {win: 'Alt-H'},
             exec: editor => this.core.toggleHelpMenu(),
             readOnly: true
