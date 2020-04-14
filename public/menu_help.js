@@ -75,7 +75,7 @@ export class MenuHelp extends Menu {
                 let optionText = optionValue;
                 switch (item.id) {
                     case 'menu-help-oed-keybinding':
-                        optionText = res.keybindings.find(
+                        optionText = res.keybinding.find(
                             item => item.value == optionValue
                         ).name;
                         break;

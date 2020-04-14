@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200414 (dev)
+- Fixed spelling 'keybindings' to 'keybinding'.
 - Moved description string literal from keybinding.js to res.js.
 
 ## Version 2.0.30200413 (dev)
