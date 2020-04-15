@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200415 (dev)
+- Updated ace-builds to version 1.4.10.
+
 ## Version 2.0.30200414 (dev)
 - Deleted unnecessary contents.
 - Updated the title string.
