@@ -7,7 +7,7 @@ export class DialogTheme extends DialogSelect {
 
     constructor(core) {
         super(core);
-        this.initialValue = this.core.getTheme();
+        this.initialValue = this.core.getOption('theme');
     }
 
     onChange(event) {
