@@ -5,111 +5,112 @@ export class MenuFile extends Menu {
 
     constructor(core) {
         super(core, 'menu-file');
+        const res = new Res();
         this.itemData = {
             id: 'menu-list-file',
             items: [
                 {
                     id: 'menu-file-oed-new-file',
-                    text: 'New file',
+                    text: res.descriptions.new_file,
                     meta: 'Ctrl+N',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-open-file',
-                    text: 'Open file...',
+                    text: res.descriptions.open_file + '...',
                     meta: 'Ctrl+O',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-download-file',
-                    text: 'Download file',
+                    text: res.descriptions.download_file,
                     meta: 'Ctrl+S',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-rename-file',
-                    text: 'Rename file...',
+                    text: res.descriptions.rename_file + '...',
                     meta: 'Alt+R',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-toggle-file-list',
-                    text: 'Toggle file list',
+                    text: res.descriptions.toggle_file_list,
                     meta: 'Ctrl+Shift+F',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-next-file',
-                    text: 'Next file',
+                    text: res.descriptions.next_file,
                     meta: 'Ctrl+Tab',
                 },
                 {
                     id: 'menu-file-oed-previous-file',
-                    text: 'Previous file',
+                    text: res.descriptions.previous_file,
                     meta: 'Ctrl+Shift+Tab',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-file-decoding', // OED
-                    text: 'File decoding...',
+                    text: res.descriptions.file_decoding + '...',
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-first-line-number', // EditSession
-                    text: 'First line number...',
+                    text: res.descriptions.first_line_number + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-fold-style', // EditSession
-                    text: 'Fold style...',
+                    text: res.descriptions.fold_style + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-mode', // EditSession
-                    text: 'Language mode...',
+                    text: res.descriptions.language_mode + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-new-line-mode', // EditSession
-                    text: 'New line mode...',
+                    text: res.descriptions.new_line_mode + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-wrap', // EditSession
-                    text: 'Soft wrap...',
+                    text: res.descriptions.wrap + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-tab-size', // EditSession
-                    text: 'Tab size...',
+                    text: res.descriptions.tab_size + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-use-soft-tabs', // EditSession
-                    text: 'Use soft tabs',
+                    text: res.descriptions.use_soft_tabs,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-save-edit-session-options',
-                    text: 'Save edit session options',
+                    text: res.descriptions.save_edit_session_options,
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-close-file',
-                    text: 'Close file...',
+                    text: res.descriptions.close_file + '...',
                     meta: 'Alt+W',
                     update: false
                 }

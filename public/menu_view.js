@@ -5,85 +5,86 @@ export class MenuView extends Menu {
 
     constructor(core) {
         super(core, 'menu-view');
+        const res = new Res();
         this.itemData = {
             id: 'menu-list-view',
             items: [
                 // Editor options
                 {
                     id: 'menu-view-oed-auto-scroll-editor-into-view', // Editor
-                    text: 'Auto scroll editor into view',
+                    text: res.descriptions.auto_scroll_editor_info_view,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-behaviours-enabled', // Editor
-                    text: 'Behaviours enabled',
+                    text: res.descriptions.behaviours_enabled,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-copy-with-empty-selection', // Editor
-                    text: 'Copy with empty selection',
+                    text: res.descriptions.copy_with_empty_selection,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-cursor-style', // Editor
-                    text: 'Cursor style...',
+                    text: res.descriptions.cursor_style + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-enable-linking', // Editor
-                    text: 'Enable linking',
+                    text: res.descriptions.enable_linking,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-enable-multiselect', // Editor
-                    text: 'Enable multiselect',
+                    text: res.descriptions.enable_multiselect,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-active-line', // Editor
-                    text: 'Highlight active line',
+                    text: res.descriptions.highlight_active_line,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-selected-word', // Editor
-                    text: 'Highlight selected word',
+                    text: res.descriptions.highlight_selected_word,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-merge-undo-deltas', // Editor
-                    text: 'Merge undo deltas...',
+                    text: res.descriptions.merge_undo_deltas + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-navigate-within-soft-tabs', // Editor
-                    text: 'Navigate within soft tabs',
+                    text: res.descriptions.navigate_within_soft_tabs,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-read-only', // Editor
-                    text: 'Read only',
+                    text: res.descriptions.read_only,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-selection-style', // Editor
-                    text: 'Selection style',
+                    text: res.descriptions.selection_style,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-wrap-behaviours-enabled', // Editor
-                    text: 'Wrap behaviours enabled',
+                    text: res.descriptions.wrap_behaviours_enabled,
                     meta: '',
                     update: true
                 },
@@ -91,103 +92,103 @@ export class MenuView extends Menu {
                 // Renderer options
                 {
                     id: 'menu-view-oed-show-gutter', // Renderer (Gutter)
-                    text: 'Show gutter',
+                    text: res.descriptions.show_gutter,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-fixed-width-gutter', // Renderer (Gutter)
-                    text: 'Fixed Width gutter',
+                    text: res.descriptions.fixed_width_gutter,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-gutter-line', // Renderer (Gutter)
-                    text: 'Highlight gutter line',
+                    text: res.descriptions.highlight_gutter_line,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-line-numbers', // Renderer  (Gutter)
-                    text: 'Show line numbers',
+                    text: res.descriptions.show_line_numbers,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-fade-fold-widgets', // Renderer (Gutter)
-                    text: 'Fade fold widgets',
+                    text: res.descriptions.fade_fold_widgets,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-fold-widgets', // Renderer (Gutter)
-                    text: 'Show fold widgets',
+                    text: res.descriptions.show_fold_widgets,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-print-margin-column', // Renderer (Margin)
-                    text: 'Print margin column...',
+                    text: res.descriptions.print_margin_column + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-print-margin', // Renderer (Margin)
-                    text: 'Show print margin',
+                    text: res.descriptions.show_print_margin,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-animated-scroll', // Renderer (Scroll)
-                    text: 'Animated scroll',
+                    text: res.descriptions.animated_scroll,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-v-scroll-bar-always-visible', // Renderer (Scroll)
-                    text: 'Vertical scroll bar always visible',
+                    text: res.descriptions.vertical_scroll_bar_always_visible,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-h-scroll-bar-always-visible', // Renderer (Scroll)
-                    text: 'Horizontal scroll bar always visible',
+                    text: res.descriptions.holizontal_scroll_bar_always_visible,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-scroll-past-end', // Renderer (Scroll)
-                    text: 'Scroll past end...',
+                    text: res.descriptions.scroll_past_end + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-display-indent-guides', // Renderer
-                    text: 'Display indent guides',
+                    text: res.descriptions.display_indent_guiles,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-invisibles', // Renderer
-                    text: 'Show invisibles',
+                    text: res.descriptions.show_invisibles,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-font-family', // Renderer (Font)
-                    text: 'Font family...',
+                    text: res.descriptions.font_family + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-font-size', // Renderer (Font)
-                    text: 'Font size...',
+                    text: res.descriptions.font_size + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-theme', // Renderer
-                    text: 'Theme...',
+                    text: res.descriptions.theme + '...',
                     meta: '',
                     update: true
                 },

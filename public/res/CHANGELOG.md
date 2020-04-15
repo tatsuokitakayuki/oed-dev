@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200415 (dev)
+- Fixed the menu name to refer to res.js.
 - Fixed the option name same as Ace Editor.
 - Fixed a bug that Theme dialog doesn't open.
 - Updated ace-builds to version 1.4.10.

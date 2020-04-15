@@ -5,52 +5,53 @@ export class MenuHelp extends Menu {
 
     constructor(core) {
         super(core, 'menu-help');
+        const res = new Res();
         this.itemData = {
             id: 'menu-list-help',
             items: [
                 {
                     id: 'menu-help-open-command-pallete',
-                    text: 'Command pallete...',
+                    text: res.descriptions.command_pallete + '...',
                     meta: 'F1',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-keybinding',
-                    text: 'Keybinding...',
+                    text: res.descriptions.keybinding + '...',
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-export-options',
-                    text: 'Export Options',
+                    text: res.descriptions.export_options,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-import-options',
-                    text: 'Import Options...',
+                    text: res.descriptions.import_options + '...',
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-cache-list',
-                    text: 'Cache list',
+                    text: res.descriptions.cache_list,
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-change-log',
-                    text: 'Change log',
+                    text: res.descriptions.change_log,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-about',
-                    text: 'About',
+                    text: res.descriptions.about,
                     meta: '',
                     update: false
                 }
