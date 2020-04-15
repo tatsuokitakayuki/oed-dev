@@ -24,7 +24,7 @@ export class Res {
             toggle_file_list: 'Toggle file list',
             file_decoding: 'File decoding',
             first_line_number: 'First line number',
-            fold_style: 'Fold style',
+            fold_style: 'Folding',
             language_mode: 'Language mode',
             new_line_mode: 'New line mode',
             wrap: 'Soft wrap',
@@ -69,18 +69,18 @@ export class Res {
             fold_other: 'Fold other',
             unfold_all: 'Unfold all',
             auto_scroll_editor_info_view: 'Auto scroll editor info view',
-            behaviours_enabled: 'Behaviours Enabled',
-            copy_with_empty_selection: 'Copy with empty selection',
+            behaviours_enabled: 'Enable behaviours',
+            copy_with_empty_selection: 'Copy without selection',
             cursor_style: 'Cursor style',
             enable_linking: 'Enable linking',
             enable_multiselect: 'Enable multiselect',
             highlight_active_line: 'Highlight active line',
             highlight_selected_word: 'Hightlight selected word',
             merge_undo_deltas: 'Merge undo deltas',
-            navigate_within_soft_tabs: 'Navigate within soft tabs',
+            navigate_within_soft_tabs: 'Atomic soft tabs',
             read_only: 'Read only',
-            selection_style: 'Selection style',
-            wrap_behaviours_enabled: 'Wrap behaviours enabled',
+            selection_style: 'Full line selection',
+            wrap_behaviours_enabled: 'Wrap with quotes',
             show_gutter: 'Show gutter',
             fixed_width_gutter: 'Fixed width gutter',
             highlight_gutter_line: 'Highlight gutter line',
@@ -89,20 +89,20 @@ export class Res {
             show_fold_widgets: 'Show fold widgets',
             print_margin_column: 'Print margin column',
             show_print_margin: 'Show print margin',
-            animated_scroll: 'Animated scroll',
-            vertical_scroll_bar_always_visible: 'Vertical scroll bar always visible',
-            holizontal_scroll_bar_always_visible: 'Holizontal scroll bar always visible',
-            scroll_past_end: 'Scroll past end',
-            display_indent_guiles: 'Display indent guides',
+            animated_scroll: 'Animate scrolling',
+            vertical_scroll_bar_always_visible: 'Persistent VScrollbar',
+            holizontal_scroll_bar_always_visible: 'Persistent HScrollbar',
+            scroll_past_end: 'Overscroll',
+            display_indent_guiles: 'Show indent guides',
             show_invisibles: 'Show invisibles',
             font_family: 'Font family',
             font_size: 'Font size',
             theme: 'Theme',
-            enable_basic_autocompletion: 'Enable basic autocompletion',
-            enable_live_autocompletion: 'Enable live autocompletion',
-            enable_snippets: 'Enable snippets',
-            enable_emmet: 'Enable emmet',
-            use_elastic_tabstops: 'Use elastic tabstops',
+            enable_basic_autocompletion: 'Basic autocompletion',
+            enable_live_autocompletion: 'Live autocompletion',
+            enable_snippets: 'Snippets',
+            enable_emmet: 'Emmet',
+            use_elastic_tabstops: 'Elastic tabstops',
             command_pallete: 'Command pallete',
             keybinding: 'Keybinding',
             export_options: 'Export options',
@@ -117,6 +117,11 @@ export class Res {
             toggle_view_menu: 'Toggle view menu',
             toggle_extensions_menu: 'Toggle extensions menu',
             toggle_help_menu: 'Toggle help menu',
+
+            enable_auto_indent: 'Enable Auto Indent',
+            indented_soft_wrap: 'Indented Soft Wrap',
+            use_textarea_for_ime: 'Use textarea for IME',
+            use_incremental_search: 'Incremental Search',
         };
         this.cursor_style = [
             {name: 'Ace', value: 'ace'},
@@ -171,7 +176,7 @@ export class Res {
             {name: 'Mark begin', value: 'markbegin'},
             {name: 'Mark begin and end', value: 'markbeginend'}
         ];
-        this.keybinding = [
+        this.keybinding = [ // 'keyboardHandler'
             {name: 'Ace', value: 'Ace'},
             {name: 'Vim', value: 'Vim'},
             {name: 'Emacs', value: 'Emacs'},
@@ -189,9 +194,9 @@ export class Res {
             {name: 'Windows', value: 'windows'}
         ];
         this.scroll_past_end = [
-            {name: 'No past end', value: 0},
-            {name: 'Half height past end', value: 0.5},
-            {name: 'Full height past end', value: 1}
+            {name: 'None', value: 0},
+            {name: 'Half', value: 0.5},
+            {name: 'Full', value: 1}
         ];
         this.wrap = [
             {name: 'Off', value: 'off'},
