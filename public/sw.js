@@ -1,6 +1,6 @@
-const OED_VERSION = '2.0.20200414.0';
+const OED_VERSION = '2.0.20200415.0';
 const OED_BASE = 'OED';
-const ACE_VERSION = '1.4.9 (sw.js list update 1)';
+const ACE_VERSION = '1.4.10';
 const ACE_BASE = 'Ace';
 const MDC_VERSION = '5.1.0';
 const MDC_BASE = 'MDC';
@@ -118,7 +118,6 @@ const ACE_URLS = [
     './ace/mode-assembly_x86.js',
     './ace/mode-autohotkey.js',
     './ace/mode-batchfile.js',
-    './ace/mode-bro.js',
     './ace/mode-c9search.js',
     './ace/mode-c_cpp.js',
     './ace/mode-cirru.js',
@@ -290,7 +289,6 @@ const ACE_URLS = [
     './ace/snippets/assembly_x86.js',
     './ace/snippets/autohotkey.js',
     './ace/snippets/batchfile.js',
-    './ace/snippets/bro.js',
     './ace/snippets/c9search.js',
     './ace/snippets/c_cpp.js',
     './ace/snippets/cirru.js',
