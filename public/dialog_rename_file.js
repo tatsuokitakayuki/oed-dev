@@ -19,7 +19,7 @@ export class DialogRenameFile extends DialogPrompt {
     open(fileData, callback, args) {
         const res = new Res();
         super.open(
-            res.titles.rename_file, null, res.placeholders.rename_file,
+            res.descriptions.rename_file, null, res.placeholders.rename_file,
             fileData.name, 'text', null, null
         );
         this.fileData = fileData;

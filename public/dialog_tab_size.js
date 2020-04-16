@@ -18,7 +18,7 @@ export class DialogTabSize extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            res.titles.tab_size, null, res.placeholders.tab_size,
+            res.descriptions.tab_size, null, res.placeholders.tab_size,
             this.initialValue, 'number', 1, 16
         );
     }

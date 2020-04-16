@@ -49,7 +49,7 @@ export class DialogTheme extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.theme, res.getThemes());
+        super.open(res.descriptions.theme, res.getThemes());
     }
 
     submit() {

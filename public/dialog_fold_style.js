@@ -17,7 +17,7 @@ export class DialogFoldStyle extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.fold_style, res.fold_style);
+        super.open(res.descriptions.fold_style, res.fold_style);
     }
 
     reset() {

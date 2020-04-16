@@ -17,7 +17,7 @@ export class DialogKeybinding extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.keybinding, res.keybinding);
+        super.open(res.descriptions.keybinding, res.keybinding);
     }
 
     submit() {

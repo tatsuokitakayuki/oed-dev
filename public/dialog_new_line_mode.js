@@ -17,7 +17,7 @@ export class DialogNewLineMode extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.new_line_mode, res.new_line_mode);
+        super.open(res.descriptions.new_line_mode, res.new_line_mode);
     }
 
     reset() {

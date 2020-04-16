@@ -17,7 +17,7 @@ export class DialogLanguageMode extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.language_mode, this.getListData());
+        super.open(res.descriptions.language_mode, this.getListData());
     }
 
     reset() {

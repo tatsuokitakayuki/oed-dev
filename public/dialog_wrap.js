@@ -17,7 +17,7 @@ export class DialogWrap extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.wrap, res.wrap);
+        super.open(res.descriptions.wrap, res.wrap);
     }
 
     reset() {

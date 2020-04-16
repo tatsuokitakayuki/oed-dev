@@ -22,7 +22,7 @@ export class DialogFontFamily extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            res.titles.font_family, null, res.placeholders.font_family,
+            res.descriptions.font_family, null, res.placeholders.font_family,
             this.initialValue, 'text', null, null
         );
     }

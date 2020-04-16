@@ -442,7 +442,7 @@ export class Core {
             const res = new Res();
             const dialogConfirm = new DialogConfirm();
             dialogConfirm.open(
-                res.titles.close_file,
+                res.descriptions.close_file,
                 res.strings.confirm_close_file
                     .replace('$filename$', this.getName(index)),
                 args => this.closeFileCallbackA(args),

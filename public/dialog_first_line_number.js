@@ -20,7 +20,7 @@ export class DialogFirstLineNumber extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            res.titles.first_line_number, null,
+            res.descriptions.first_line_number, null,
             res.placeholders.first_line_number, this.initialValue, 'number', 0,
             null
         );

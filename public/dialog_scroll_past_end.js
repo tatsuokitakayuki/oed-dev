@@ -18,7 +18,7 @@ export class DialogScrollPastEnd extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.scroll_past_end, res.scroll_past_end);
+        super.open(res.descriptions.scroll_past_end, res.scroll_past_end);
     }
 
     submit() {

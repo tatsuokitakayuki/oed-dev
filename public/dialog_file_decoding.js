@@ -17,7 +17,7 @@ export class DialogFileDecoding extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.file_decoding, res.encoding_names);
+        super.open(res.descriptions.file_decoding, res.encoding_names);
     }
 
     reset() {

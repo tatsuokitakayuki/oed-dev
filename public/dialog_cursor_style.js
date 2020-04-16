@@ -17,7 +17,7 @@ export class DialogCursorStyle extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.cursor_style, res.cursor_style);
+        super.open(res.descriptions.cursor_style, res.cursor_style);
     }
 
     submit() {

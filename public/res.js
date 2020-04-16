@@ -234,25 +234,6 @@ export class Res {
             read_only: 'Read only',
             untitled: 'untitled',
         };
-        this.titles = {
-            close_file: 'Close file',
-            cursor_style: 'Cursor style',
-            file_decoding: 'File decoding',
-            first_line_number: 'First line number',
-            fold_style: 'Fold style',
-            font_family: 'Font family',
-            font_size: 'Font size',
-            keybinding: 'Keybinding',
-            language_mode: 'Language mode',
-            merge_undo_deltas: 'Merge undo deltas',
-            new_line_mode: 'New line mode',
-            print_margin_column: 'Print margin column',
-            rename_file: 'Rename file',
-            scroll_past_end: 'Scroll past end',
-            tab_size: 'Tab size',
-            theme: 'Theme',
-            wrap: 'Soft wrap',
-        };
     }
 
     getThemes() {

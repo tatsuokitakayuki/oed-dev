@@ -18,7 +18,7 @@ export class DialogMergeUndoDeltas extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.titles.merge_undo_deltas, res.merge_undo_deltas);
+        super.open(res.descriptions.merge_undo_deltas, res.merge_undo_deltas);
     }
 
     submit() {

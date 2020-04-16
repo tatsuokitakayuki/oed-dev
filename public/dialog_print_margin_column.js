@@ -19,8 +19,9 @@ export class DialogPrintMarginColumn extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            res.titles.print_margin_column, null, res.placeholders.print_margin_column,
-            this.initialValue, 'number', 0, 256
+            res.descriptions.print_margin_column, null,
+            res.placeholders.print_margin_column, this.initialValue, 'number',
+            0, 256
         );
     }
 
