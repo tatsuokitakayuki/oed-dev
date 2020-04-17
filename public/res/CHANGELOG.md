@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200417 (dev)
+- Fixed a bug of Rename file called from Download file.
+
 ## Version 2.0.30200416 (dev)
 - Cleaned up all title strings.
 

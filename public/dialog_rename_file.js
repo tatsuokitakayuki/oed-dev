@@ -50,7 +50,7 @@ export class DialogRenameFile extends DialogPrompt {
             )
         );
         if (this.callback) {
-            this.callback(args);
+            this.callback(this.args);
         }
     }
 }

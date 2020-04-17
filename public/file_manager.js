@@ -139,7 +139,7 @@ export class FileManager {
         return this.list[index].downloadFile();
     }
 
-    renameFile(index, callback) {
-        return this.list[index].renameFile(callback);
+    renameFile(index, callback, args) {
+        return this.list[index].renameFile(callback, args);
     }
 }

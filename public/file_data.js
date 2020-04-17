@@ -136,8 +136,8 @@ export class FileData {
         document.dispatchEvent(new ChangeSnackbarEvent('Download file: ' + this.name, null));
     }
 
-    renameFile(callback) {
+    renameFile(callback, args) {
         const dialogRenameFile = new DialogRenameFile(this.core);
-        dialogRenameFile.open(this, callback);
+        dialogRenameFile.open(this, callback, args);
     }
 }

@@ -410,7 +410,7 @@ export class Core {
         const url = this.getUrl(index);
         const res = new Res();
         if (url.pathname.includes('/' + res.dirs.res + '/')) {
-            this.renameFile(index, () => this.getEditor().execCommand('oedDownloadFile'), null);
+            this.renameFile(index, () => this.getEditor().execCommand('oedDownloadFile'), index);
             return;
         }
         this.fileManager.downloadFile(index);
@@ -426,7 +426,7 @@ export class Core {
         if (this.isCoreFile(index)) {
             return;
         }
-        const result = this.fileManager.renameFile(index, callback);
+        const result = this.fileManager.renameFile(index, callback, args);
         this.focusEditor();
         if (result) {
             document.dispatchEvent(
