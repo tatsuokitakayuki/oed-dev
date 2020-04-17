@@ -35,6 +35,12 @@ export class MenuView extends Menu {
                     update: true
                 },
                 {
+                    id: 'menu-view-oed-enable-auto-indent', // Editor
+                    text: res.descriptions.enable_auto_indent,
+                    meta: '',
+                    update: true
+                },
+                {
                     id: 'menu-view-oed-enable-linking', // Editor
                     text: res.descriptions.enable_linking,
                     meta: '',
@@ -171,6 +177,12 @@ export class MenuView extends Menu {
                 {
                     id: 'menu-view-oed-show-invisibles', // Renderer
                     text: res.descriptions.show_invisibles,
+                    meta: '',
+                    update: true
+                },
+                {
+                    id: 'menu-view-oed-use-textarea-for-ime', // Renderer
+                    text: res.descriptions.use_textarea_for_ime,
                     meta: '',
                     update: true
                 },

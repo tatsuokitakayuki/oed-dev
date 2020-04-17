@@ -72,6 +72,12 @@ export class MenuFile extends Menu {
                     update: true
                 },
                 {
+                    id: 'menu-file-oed-indented-soft-wrap', // EditSession
+                    text: res.descriptions.indented_soft_wrap,
+                    meta: '',
+                    update: true
+                },
+                {
                     id: 'menu-file-oed-mode', // EditSession
                     text: res.descriptions.language_mode + '...',
                     meta: '',

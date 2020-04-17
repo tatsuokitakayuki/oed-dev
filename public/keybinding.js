@@ -138,6 +138,13 @@ export class Keybinding {
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
+            name: 'oedIndentedSoftWrap',
+            description: res.descriptions.indented_soft_wrap,
+            exec: editor =>
+                editor.setOption('indentedSoftWrap', !editor.getOption('indentedSoftWrap')),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
             name: 'oedMode',
             description: res.descriptions.language_mode + '...',
             exec: editor => this.core.selectLanguageMode(),
@@ -239,6 +246,17 @@ export class Keybinding {
             name: 'oedCursorStyle',
             description: res.descriptions.cursor_style + '...',
             exec: editor => this.core.selectCursorStyle(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedEnableAutoIndent',
+            description: res.descriptions.enable_auto_indent,
+            exec: editor => {
+                editor.setOption(
+                    'enableAutoIndent', !editor.getOption('enableAutoIndent')
+                );
+                this.core.saveEditorOptions();
+            },
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
@@ -494,15 +512,26 @@ export class Keybinding {
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
-            name: 'oedFontSize',
-            description: res.descriptions.font_size + '...',
-            exec: editor => this.core.promptFontSize(),
+            name: 'oedUseTextareaForIME',
+            description: res.descriptions.use_textarea_for_ime,
+            exec: editor => {
+                editor.setOption(
+                    'useTextareaForIME', !editor.getOption('useTextareaForIME')
+                );
+                this.core.saveRendererOptions();
+            },
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedFontFamily',
             description: res.descriptions.font_family + '...',
             exec: editor => this.core.promptFontFamily(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
+            name: 'oedFontSize',
+            description: res.descriptions.font_size + '...',
+            exec: editor => this.core.promptFontSize(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({

@@ -25,6 +25,7 @@ export class Res {
             file_decoding: 'File decoding',
             first_line_number: 'First line number',
             fold_style: 'Folding',
+            indented_soft_wrap: 'Indented Soft Wrap',
             language_mode: 'Language mode',
             new_line_mode: 'New line mode',
             wrap: 'Soft wrap',
@@ -72,6 +73,7 @@ export class Res {
             behaviours_enabled: 'Enable behaviours',
             copy_with_empty_selection: 'Copy without selection',
             cursor_style: 'Cursor style',
+            enable_auto_indent: 'Enable Auto Indent',
             enable_linking: 'Enable linking',
             enable_multiselect: 'Enable multiselect',
             highlight_active_line: 'Highlight active line',
@@ -95,6 +97,7 @@ export class Res {
             scroll_past_end: 'Overscroll',
             display_indent_guiles: 'Show indent guides',
             show_invisibles: 'Show invisibles',
+            use_textarea_for_ime: 'Use textarea for IME',
             font_family: 'Font family',
             font_size: 'Font size',
             theme: 'Theme',
@@ -118,9 +121,6 @@ export class Res {
             toggle_extensions_menu: 'Toggle extensions menu',
             toggle_help_menu: 'Toggle help menu',
 
-            enable_auto_indent: 'Enable Auto Indent',
-            indented_soft_wrap: 'Indented Soft Wrap',
-            use_textarea_for_ime: 'Use textarea for IME',
             use_incremental_search: 'Incremental Search',
         };
         this.cursor_style = [

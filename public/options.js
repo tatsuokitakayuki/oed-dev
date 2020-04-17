@@ -22,6 +22,7 @@ export class Options {
             behavioursEnabled: true,            // [true]|false
             copyWithEmptySelection: false,      // true|[false]
             cursorStyle: 'ace',                 // ["ace"]|"slim"|"smooth"|"wide"
+            enableAutoIndent: true,             // [true]|false
             enableLinking: true,                // [true]|false
             enableMultiselect: true,            // [true]|false
             highlightActiveLine: true,          // [true]|false
@@ -39,6 +40,7 @@ export class Options {
             behavioursEnabled: editor.getOption('behavioursEnabled'),
             copyWithEmptySelection: editor.getOption('copyWithEmptySelection'),
             cursorStyle: editor.getOption('cursorStyle'),
+            enableAutoIndent: editor.getOption('enableAutoIndent'),
             enableLinking: editor.getOption('enableLinking'),
             enableMultiselect: editor.getOption('enableMultiselect'),
             highlightActiveLine: editor.getOption('highlightActiveLine'),
@@ -82,6 +84,7 @@ export class Options {
             showLineNumbers: true,          // [true]|false
             showPrintMargin: true,          // [true]|false
             theme: 'ace/theme/chrome',      // path to a theme e.g "ace/theme/textmate"
+            useTextareaForIME: true,        // [true]|false
             vScrollBarAlwaysVisible: false, // true|[false]
         };
     }
@@ -104,6 +107,7 @@ export class Options {
             showLineNumbers: editor.getOption('showLineNumbers'),
             showPrintMargin: editor.getOption('showPrintMargin'),
             theme: editor.getOption('theme'),
+            useTextareaForIME: editor.getOption('useTextareaForIME'),
             vScrollBarAlwaysVisible: editor.getOption('vScrollBarAlwaysVisible'),
         };
     }
@@ -152,6 +156,7 @@ export class Options {
         return {
             firstLineNumber: 1,     // number [1]
             foldStyle: 'markbegin', // ["markbegin"]|"markbeginend"|"manual"
+            indentedSoftWrap: true, // [true]|false
             newLineMode: 'auto',    // ["auto"]|"unix"|"windows"
             tabSize: 4,             // number [4]
             useSoftTabs: true,      // [true]|false
@@ -164,6 +169,7 @@ export class Options {
         return {
             firstLineNumber: session.getOption('firstLineNumber'),
             foldStyle: session.getOption('foldStyle'),
+            indentedSoftWrap: session.getOption('indentedSoftWrap'),
             newLineMode: session.getOption('newLineMode'),
             tabSize: session.getOption('tabSize'),
             useSoftTabs: session.getOption('useSoftTabs'),
