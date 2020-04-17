@@ -17,8 +17,8 @@ export class MenuHelp extends Menu {
                 },
                 {id: '-', text: '', meta: ''},
                 {
-                    id: 'menu-help-oed-keybinding',
-                    text: res.descriptions.keybinding + '...',
+                    id: 'menu-help-oed-keyboard-handler',
+                    text: res.descriptions.keyboard_handler + '...',
                     meta: '',
                     update: true
                 },
@@ -75,8 +75,8 @@ export class MenuHelp extends Menu {
                 );
                 let optionText = optionValue;
                 switch (item.id) {
-                    case 'menu-help-oed-keybinding':
-                        optionText = res.keybinding.find(
+                    case 'menu-help-oed-keyboard-handler':
+                        optionText = res.keyboard_handler.find(
                             item => item.value == optionValue
                         ).name;
                         break;

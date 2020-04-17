@@ -9,7 +9,7 @@ import {DialogFirstLineNumber} from '/dialog_first_line_number.js';
 import {DialogFoldStyle} from '/dialog_fold_style.js';
 import {DialogFontFamily} from '/dialog_font_family.js';
 import {DialogFontSize} from '/dialog_font_size.js';
-import {DialogKeybinding} from '/dialog_keybinding.js';
+import {DialogKeyboardHandler} from '/dialog_keyboard_handler.js';
 import {DialogMergeUndoDeltas} from '/dialog_merge_undo_deltas.js';
 import {DialogLanguageMode} from '/dialog_language_mode.js';
 import {DialogNewLineMode} from '/dialog_new_line_mode.js';
@@ -81,9 +81,9 @@ export class Core {
                     case 'fileDecoding':
                         this.getOedOptions().fileDecoding = event.detail.value;
                         break;
-                    case 'keybinding':
-                        this.getOedOptions().keybinding = event.detail.value;
-                        this.setKeybinding(event.detail.value);
+                    case 'keyboardHandler':
+                        this.getOedOptions().keyboardHandler = event.detail.value;
+                        this.setKeyboardHandler(event.detail.value);
                         break;
                     default:
                         this.getEditor().setOption(event.detail.name, event.detail.value);
@@ -161,8 +161,8 @@ export class Core {
             case 'fileDecoding':
                 optionValue = this.getOedOptions().fileDecoding;
                 break;
-            case 'keybinding':
-                optionValue = this.getOedOptions().keybinding;
+            case 'keyboardHandler':
+                optionValue = this.getOedOptions().keyboardHandler;
                 break;
             default:
                 optionValue = this.getEditor().getOption(name);
@@ -282,7 +282,7 @@ export class Core {
         this.fileManager.setUntitledName(index);
     }
 
-    setKeybinding(name) {
+    setKeyboardHandler(name) {
         let value = null;
         if (name && name !== 'Ace') {
             value = 'ace/keyboard/' + name.toLowerCase();
@@ -565,9 +565,9 @@ export class Core {
         dialogTheme.open();
     }
 
-    selectKeybinding() {
-        const dialogKeybinding = new DialogKeybinding(this);
-        dialogKeybinding.open();
+    selectKeyboardHandler() {
+        const dialogKeyboardHandler = new DialogKeyboardHandler(this);
+        dialogKeyboardHandler.open();
     }
 
     promptFontSize() {

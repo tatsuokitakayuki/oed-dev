@@ -104,7 +104,7 @@ export class Res {
             enable_emmet: 'Emmet',
             use_elastic_tabstops: 'Elastic tabstops',
             command_pallete: 'Command pallete',
-            keybinding: 'Keybinding',
+            keyboard_handler: 'Keybinding',
             export_options: 'Export options',
             import_options: 'Import options',
             cache_list: 'Cache list',
@@ -176,7 +176,7 @@ export class Res {
             {name: 'Mark begin', value: 'markbegin'},
             {name: 'Mark begin and end', value: 'markbeginend'}
         ];
-        this.keybinding = [ // 'keyboardHandler'
+        this.keyboard_handler = [
             {name: 'Ace', value: 'Ace'},
             {name: 'Vim', value: 'Vim'},
             {name: 'Emacs', value: 'Emacs'},

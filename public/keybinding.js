@@ -578,9 +578,9 @@ export class Keybinding {
     initializeHelpMenu() {
         const res = new Res();
         this.core.getEditor().commands.addCommand({
-            name: 'oedKeybinding',
-            description: res.descriptions.keybinding + '...',
-            exec: editor => this.core.selectKeybinding(),
+            name: 'oedKeyboardHandler',
+            description: res.descriptions.keyboard_handler + '...',
+            exec: editor => this.core.selectKeyboardHandler(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({

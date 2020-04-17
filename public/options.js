@@ -224,7 +224,7 @@ export class Options {
         return {
             fileDecoding: 'utf-8',      // string ["utf-8"]
             hello: false,               // true|[false]
-            keybinding: 'Ace',          // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
+            keyboardHandler: 'Ace',          // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
             theme: 'Dark',              // ["Dark"]|"Light"|"Ace"|"AceReverse"
         };
     }
@@ -238,7 +238,7 @@ export class Options {
         if (value) {
             Object.assign(this.oed, value);
         }
-        core.setKeybinding(this.oed.keybinding);
+        core.setKeyboardHandler(this.oed.keyboardHandler);
     }
 
     saveOedOptions() {

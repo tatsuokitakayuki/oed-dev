@@ -2,22 +2,22 @@ import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
-export class DialogKeybinding extends DialogSelect {
+export class DialogKeyboardHandler extends DialogSelect {
 
     constructor(core) {
         super(core);
-        this.initialValue = this.core.getOption('keybinding');
+        this.initialValue = this.core.getOption('keyboardHandler');
     }
 
     onChange(event) {
         document.dispatchEvent(
-            new ChangeEditorOptionEvent('keybinding', event.target.value)
+            new ChangeEditorOptionEvent('keyboardHandler', event.target.value)
         );
     }
 
     open() {
         const res = new Res();
-        super.open(res.descriptions.keybinding, res.keybinding);
+        super.open(res.descriptions.keyboard_handler, res.keyboard_handler);
     }
 
     submit() {
@@ -28,7 +28,7 @@ export class DialogKeybinding extends DialogSelect {
     reset() {
         super.reset();
         document.dispatchEvent(
-            new ChangeEditorOptionEvent('keybinding', this.initialValue)
+            new ChangeEditorOptionEvent('keyboardHandler', this.initialValue)
         );
         this.core.saveOedOptions();
     }

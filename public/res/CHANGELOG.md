@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200417 (dev)
+- Renamed "keybinding" option to "keyboardHandler".
 - Fixed a bug of Rename file called from Download file.
 
 ## Version 2.0.30200416 (dev)
