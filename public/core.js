@@ -631,7 +631,7 @@ export class Core {
     }
 
     idToName(id) {
-        return id.replace(/-./gi, match => match.slice(1).toUpperCase());
+        return id.replace(/-./gi, match => match.slice(1).toUpperCase()).replace('Ime', 'IME');
     }
 
     selectFile(index) {
