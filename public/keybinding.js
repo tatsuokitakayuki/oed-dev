@@ -182,7 +182,7 @@ export class Keybinding {
                 this.core.saveSessionOptions();
                 this.core.saveOedOptions();
                 document.dispatchEvent(
-                    new ChangeSnackbarEvent('Saved edit session options.', null)
+                    new ChangeSnackbarEvent('Saved edit session options.', true, null)
                 );
             },
             readOnly: true

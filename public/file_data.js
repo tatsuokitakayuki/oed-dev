@@ -133,7 +133,7 @@ export class FileData {
         const fileHelper = new FileHelper();
         const blob = fileHelper.buildBlob(this.editSession.getValue(), this.type);
         fileHelper.writeBlob(blob, this.name);
-        document.dispatchEvent(new ChangeSnackbarEvent('Download file: ' + this.name, null));
+        document.dispatchEvent(new ChangeSnackbarEvent('Download file: ' + this.name, true, null));
     }
 
     renameFile(callback, args) {

@@ -1,6 +1,9 @@
 export class ChangeSnackbarEvent extends CustomEvent {
     
-    constructor(label, actions) {
-        super('Snackbar:change', {detail: {label: label, actions: actions}});
+    constructor(label, close, actions) {
+        super(
+            'Snackbar:change',
+            {detail: {label: label, close: close, actions: actions}}
+        );
     }
 }

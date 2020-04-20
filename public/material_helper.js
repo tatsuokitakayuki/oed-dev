@@ -47,11 +47,37 @@ export class MaterialHelper extends HtmlHelper {
         });
     }
 
-    buttonDialog(label) {
-        const span = this.span(
-            label,
-            [{name: 'class', value: 'mdc-button__label'}]
+    buttonRipple() {
+        return this.div(null, [{name: 'class', value: 'mdc-button__ripple'}]);
+    }
+
+    actionSnackbarClose() {
+        const action = this.actionSnackbar();
+        action.appendChild(
+            this.span(
+                'close',
+                [
+                    {name: 'class', value: 'mdc-button__label material-icons'},
+                    {name: 'aria-hidden', value: 'true'}
+                ]
+            )
         );
+        return action;
+    }
+
+    actionSnackbar() {
+        const action = this.button(
+            null,
+            [
+                {name: 'type', value: 'button'},
+                {name: 'class', value: 'mdc-button mdc-snackbar__action'}
+            ]
+        );
+        action.appendChild(this.buttonRipple());
+        return action;
+    }
+
+    buttonDialog(label) {
         const button = this.button(
             null,
             [
@@ -59,9 +85,7 @@ export class MaterialHelper extends HtmlHelper {
                 {name: 'class', value: 'mdc-button mdc-dialog__button mdc-button--outlined'},
             ]
         );
-        button.appendChild(
-            this.div(null, [{name: 'class', value: 'mdc-button__ripple'}])
-        );
+        button.appendChild(this.buttonRipple());
         button.appendChild(
             this.span(label, [{name: 'class', value: 'mdc-button__label'}])
         );
@@ -97,9 +121,7 @@ export class MaterialHelper extends HtmlHelper {
         anchor.appendChild(this.div(
             null, [{name: 'class', value: 'mdc-select__selected-text'}]
         ));
-        anchor.appendChild(this.div(
-            null, [{name: 'class', value: 'mdc-line-ripple'}]
-        ));
+        anchor.appendChild(this.underline());
         return anchor;
     }
 

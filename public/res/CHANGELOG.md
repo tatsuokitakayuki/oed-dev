@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200420 (dev)
+- Added a close action to Snackbar.
+
 ## Version 2.0.30200417 (dev)
 - Added options.
 - Renamed "keybinding" option to "keyboardHandler".

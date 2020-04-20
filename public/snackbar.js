@@ -1,4 +1,5 @@
 import {MaterialHelper} from '/material_helper.js';
+import {Res} from '/res.js';
 
 export class Snackbar {
 
@@ -36,15 +37,18 @@ export class Snackbar {
     }
 
     onChange(event) {
-        this.update(event.detail.label, event.detail.actions);
+        this.update(event.detail.label, event.detail.close, event.detail.actions);
     }
 
-    update(label, actions) {
+    update(label, close, actions) {
         this.snackbar.labelText = label;
         this.snackbar.closeOnEscape = true;
         this.snackbar.timeoutMs = 5000;
-        if (actions && actions.isArray()) {
+        if (actions) {
             this.setActions(actions);
+        }
+        if (close) {
+            this.setClose();
         }
         this.snackbar.open();
     }
@@ -53,24 +57,20 @@ export class Snackbar {
         const materialHelper = new MaterialHelper();
         const snackbarActions = document.getElementById('snackbar-actions');
         actions.forEach(action => {
-            const button = materialHelper.button(
-                '',
-                [
-                    {name: 'type', value: 'button'},
-                    {name: 'class', value: 'mdc-button mdc-snackbar__action'}
-                ]
-            );
-            button.appendChild(
-                materialHelper.div(
-                    '', [{name: 'class', value: 'mdc-button__ripple'}]
-                )
-            );
+            const button = materialHelper.actionSnackbar();
             button.appendChild(
                 materialHelper.span(
-                    action.label, [{name: 'class', value: 'mdc-button__label'}]
+                    action.label,
+                    [{name: 'class', value: 'mdc-button__label'}]
                 )
             );
             snackbarActions.appendChild(button);
         });
+    }
+
+    setClose() {
+        const materialHelper = new MaterialHelper();
+        const snackbarActions = document.getElementById('snackbar-actions');
+        snackbarActions.appendChild(materialHelper.actionSnackbarClose());
     }
 }
