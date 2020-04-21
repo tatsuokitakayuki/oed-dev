@@ -32,8 +32,16 @@ export class MaterialHelper extends HtmlHelper {
         ]);
     }
 
+    listItemClose() {
+        return this.i('close', [
+            {name: 'class', value: 'mdc-list-item__meta mdc-list-item__graphic material-icons'},
+            {name: 'role', value: 'button'},
+            {name: 'aria-hidden', value: 'true'}
+        ]);
+    }
+
     listItemDivider() {
-        return this.span(null, [
+        return this.li(null, [
             {name: 'class', value: 'mdc-list-divider mdc-list-divider--padded'},
             {name: 'role', value: 'separator'}
         ]);
