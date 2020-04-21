@@ -92,42 +92,16 @@ export class Drawer extends UIHelper {
 
     buildItem(index, selected) {
         const materialHelper = new MaterialHelper();
-        const item = materialHelper.li(
-            null,
-            [
-                {
-                    name: 'class',
-                    value: 'mdc-list-item' + (selected ? ' mdc-list-item--selected' : '')
-                },
-                {
-                    name: 'id',
-                    value: 'file-list-item-' + String(this.core.getTime(index)) + '-' + String(index)
-                },
-                {name: 'role', value: 'menuitem'},
-                {name: 'aria-selected', value: selected},
-                {name: 'tabindex', value: '-1'},
-                {name: 'title', value: this.core.getUrl(index).href},
-            ]
+        const item = materialHelper.listItem(
+            'file-list-item-' + String(this.core.getTime(index)) + '-' + String(index)
         );
-        item.appendChild(
-            materialHelper.i(
-                this.getIconName(index),
-                [
-                    {
-                        name: 'class',
-                        value: 'mdc-list-item__graphic material-icons'
-                    },
-                    {name: 'role', value: 'button'},
-                    {name: 'aria-hidden', value: 'true'}
-                ]
-            )
-        );
-        item.appendChild(
-            materialHelper.span(
-                this.buildItemName(index),
-                [{name: 'class', value: 'mdc-list-item__text'}]
-            )
-        );
+        if (selected) {
+            item.setAttribute('class', 'mdc-list-item mdc-list-item--selected');
+        }
+        item.setAttribute('aria-selected', String(selected));
+        item.setAttribute('title', this.core.getUrl(index).href);
+        item.appendChild(materialHelper.listItemIcon(this.getIconName(index)));
+        item.appendChild(materialHelper.listItemText(this.buildItemName(index)));
         return item;
     }
 
