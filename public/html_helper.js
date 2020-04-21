@@ -57,10 +57,6 @@ export class HtmlHelper {
         return this.element('span', textContent, attributeList);
     }
 
-    i(textContent, attributeList) {
-        return this.element('i', textContent, attributeList);
-    }
-
     li(textContent, attributeList) {
         return this.element('li', textContent, attributeList);
     }

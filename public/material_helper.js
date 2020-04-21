@@ -25,16 +25,8 @@ export class MaterialHelper extends HtmlHelper {
     }
 
     listItemIcon(name) {
-        return this.i(name, [
+        return this.span(name, [
             {name: 'class', value: 'mdc-list-item__graphic material-icons'},
-            {name: 'role', value: 'button'},
-            {name: 'aria-hidden', value: 'true'}
-        ]);
-    }
-
-    listItemClose() {
-        return this.i('close', [
-            {name: 'class', value: 'mdc-list-item__meta mdc-list-item__graphic material-icons'},
             {name: 'role', value: 'button'},
             {name: 'aria-hidden', value: 'true'}
         ]);
@@ -68,10 +60,13 @@ export class MaterialHelper extends HtmlHelper {
     }
 
     actionSnackbar() {
-        const action = this.button(null, [
-            {name: 'type', value: 'button'},
-            {name: 'class', value: 'mdc-button mdc-snackbar__action'}
-        ]);
+        const action = this.button(
+            null,
+            [
+                {name: 'type', value: 'button'},
+                {name: 'class', value: 'mdc-button mdc-snackbar__action'}
+            ]
+        );
         action.appendChild(this.buttonRipple());
         return action;
     }
@@ -79,10 +74,13 @@ export class MaterialHelper extends HtmlHelper {
     actionSnackbarClose() {
         const action = this.actionSnackbar();
         action.appendChild(
-            this.span('close', [
-                {name: 'class', value: 'mdc-button__label material-icons'},
-                {name: 'aria-hidden', value: 'true'}
-            ])
+            this.span(
+                'close',
+                [
+                    {name: 'class', value: 'mdc-button__label material-icons'},
+                    {name: 'aria-hidden', value: 'true'}
+                ]
+            )
         );
         return action;
     }
@@ -117,13 +115,11 @@ export class MaterialHelper extends HtmlHelper {
     }
 
     selectAnchor() {
-        const anchor = this.div(null, [
-            {name: 'class', value: 'mdc-select__anchor'}
-        ]);
+        const anchor = this.div(
+            null, [{name: 'class', value: 'mdc-select__anchor'}]
+        );
         anchor.appendChild(
-            this.i(null, [
-                {name: 'class', value: 'mdc-select__dropdown-icon'}
-            ])
+            this.span(null, [{name: 'class', value: 'mdc-select__dropdown-icon'}])
         );
         anchor.appendChild(
             this.div(null, [{name: 'class', value: 'mdc-select__selected-text'}])

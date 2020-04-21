@@ -42,7 +42,7 @@ export class DialogSelect extends Dialog {
             null, [{name: 'class', value: 'mdc-select mdc-select--no-label'}]
         );
         div.appendChild(
-            materialHelper.i(
+            materialHelper.span(
                 null, [{name: 'class', value: 'mdc-select__dropdown-icon'}]
             )
         );
