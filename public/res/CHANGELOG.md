@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200422 (dev)
+- Removed some unnecessary imports.
 - Fixed Snackbar update event handling.
 
 ## Version 2.0.30200421 (dev)

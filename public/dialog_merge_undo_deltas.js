@@ -1,6 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
-import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class DialogMergeUndoDeltas extends DialogSelect {
