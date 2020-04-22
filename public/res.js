@@ -127,6 +127,7 @@ export class Res {
             {name: 'Ace', value: 'ace'},
             {name: 'Slim', value: 'slim'},
             {name: 'Smooth', value: 'smooth'},
+            {name: 'Slim and Smooth', value: 'smooth slim'},
             {name: 'Wide', value: 'wide'}
         ];
         this.encoding_names = [
