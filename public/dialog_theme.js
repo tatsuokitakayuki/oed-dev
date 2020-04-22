@@ -5,9 +5,10 @@ import {Res} from '/res.js';
 
 export class DialogTheme extends DialogSelect {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('theme');
+    constructor(core, initialValue) {
+        super();
+        this.core = core;
+        this.initialValue = initialValue;
     }
 
     onChange(event) {

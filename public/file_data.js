@@ -138,6 +138,6 @@ export class FileData {
 
     renameFile(callback, args) {
         const dialogRenameFile = new DialogRenameFile(this.core);
-        dialogRenameFile.open(this, callback, args);
+        dialogRenameFile.open(this.core.getActive(), this, callback, args);
     }
 }

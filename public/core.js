@@ -556,77 +556,77 @@ export class Core {
     }
 
     promptTabSize() {
-        const dialogTabSize = new DialogTabSize(this);
+        const dialogTabSize = new DialogTabSize(this.getOption('tabSize'));
         dialogTabSize.open();
     }
 
     selectTheme() {
-        const dialogTheme = new DialogTheme(this);
+        const dialogTheme = new DialogTheme(this, this.getOption('theme'));
         dialogTheme.open();
     }
 
     selectKeyboardHandler() {
-        const dialogKeyboardHandler = new DialogKeyboardHandler(this);
+        const dialogKeyboardHandler = new DialogKeyboardHandler(this, this.getOption('keyboardHandler'));
         dialogKeyboardHandler.open();
     }
 
     promptFontSize() {
-        const dialogFontSize = new DialogFontSize(this);
+        const dialogFontSize = new DialogFontSize(this, this.getOption('fontSize'));
         dialogFontSize.open();
     }
 
     selectCursorStyle() {
-        const dialogCursorStyle = new DialogCursorStyle(this);
+        const dialogCursorStyle = new DialogCursorStyle(this, this.getOption('cursorStyle'));
         dialogCursorStyle.open();
     }
 
     selectMergeUndoDeltas() {
-        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(this);
+        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(this, this.getOption('mergeUndoDeltas'));
         dialogMergeUndoDeltas.open();
     }
 
     promptPrintMarginColumn() {
-        const dialogPrintMarginColumn = new DialogPrintMarginColumn(this);
+        const dialogPrintMarginColumn = new DialogPrintMarginColumn(this, this.getOption('printMarginColumn'));
         dialogPrintMarginColumn.open();
     }
 
     selectScrollPastEnd() {
-        const dialogScrollPastEnd = new DialogScrollPastEnd(this);
+        const dialogScrollPastEnd = new DialogScrollPastEnd(this, this.getOption('scrollPastEnd'));
         dialogScrollPastEnd.open();
     }
 
     promptFontFamily() {
-        const dialogFontFamily = new DialogFontFamily(this);
+        const dialogFontFamily = new DialogFontFamily(this, this.getOption('fontFamily'));
         dialogFontFamily.open();
     }
 
     selectWrap() {
-        const dialogWrap = new DialogWrap(this);
+        const dialogWrap = new DialogWrap(this.getOption('wrap'));
         dialogWrap.open();
     }
 
     selectLanguageMode() {
-        const dialogLanguageMode = new DialogLanguageMode(this);
+        const dialogLanguageMode = new DialogLanguageMode(this.getOption('mode'));
         dialogLanguageMode.open();
     }
 
     selectFoldStyle() {
-        const dialogFoldStyle = new DialogFoldStyle(this);
+        const dialogFoldStyle = new DialogFoldStyle(this.getOption('foldStyle'));
         dialogFoldStyle.open();
     }
 
     selectNewLineMode() {
-        const dialogNewLineMode = new DialogNewLineMode(this);
+        const dialogNewLineMode = new DialogNewLineMode(this.getOption('newLineMode'));
         dialogNewLineMode.open();
     }
 
     promptFirstLineNumber() {
-        const dialogFirstLineNumber = new DialogFirstLineNumber(this);
+        const dialogFirstLineNumber = new DialogFirstLineNumber(this.getOption('firstLineNumber'));
         dialogFirstLineNumber.open();
     }
 
     selectFileDecoding() {
-        const dialogFileDecoding = new DialogFileDecoding(this);
+        const dialogFileDecoding = new DialogFileDecoding(this.getOption('fileDecoding'));
         dialogFileDecoding.open();
     }
 

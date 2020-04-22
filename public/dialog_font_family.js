@@ -4,9 +4,10 @@ import {Res} from '/res.js';
 
 export class DialogFontFamily extends DialogPrompt {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('fontFamily');
+    constructor(core, initialValue) {
+        super();
+        this.core = core;
+        this.initialValue = initialValue;
         if (!this.initialValue) {
             this.initialValue = '';
         }

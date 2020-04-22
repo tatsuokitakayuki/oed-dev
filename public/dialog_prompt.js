@@ -3,8 +3,8 @@ import {MaterialHelper} from '/material_helper.js';
 
 export class DialogPrompt extends Dialog {
 
-    constructor(core) {
-        super(core);
+    constructor() {
+        super();
         this.updateValue = null;
     }
 

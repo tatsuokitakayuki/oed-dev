@@ -3,8 +3,7 @@ import {Res} from '/res.js';
 
 export class Dialog {
 
-    constructor(core) {
-        this.core = core;
+    constructor() {
         this.dialog = new mdc.dialog.MDCDialog(this.getElement());
         this.dialog.escapeKeyAction = 'reset';
         this.dialog.scrimClickAction = 'reset';

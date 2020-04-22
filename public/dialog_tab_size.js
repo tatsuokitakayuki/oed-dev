@@ -4,9 +4,9 @@ import {Res} from '/res.js';
 
 export class DialogTabSize extends DialogPrompt {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('tabSize');
+    constructor(initialValue) {
+        super();
+        this.initialValue = initialValue;
     }
 
     onChange(event) {

@@ -4,9 +4,10 @@ import {Res} from '/res.js';
 
 export class DialogKeyboardHandler extends DialogSelect {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('keyboardHandler');
+    constructor(core, initialValue) {
+        super();
+        this.core = core;
+        this.initialValue = initialValue;
     }
 
     onChange(event) {

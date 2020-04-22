@@ -4,9 +4,9 @@ import {Res} from '/res.js';
 
 export class DialogFirstLineNumber extends DialogPrompt {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = Number(this.core.getOption('firstLineNumber'));
+    constructor(initialValue) {
+        super();
+        this.initialValue = Number(initialValue);
     }
 
     onChange(event) {

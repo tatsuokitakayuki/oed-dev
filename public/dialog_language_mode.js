@@ -4,9 +4,9 @@ import {Res} from '/res.js';
 
 export class DialogLanguageMode extends DialogSelect {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('mode');
+    constructor(initialValue) {
+        super();
+        this.initialValue = initialValue;
     }
 
     onChange(event) {

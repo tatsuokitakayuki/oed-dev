@@ -5,8 +5,9 @@ import {Res} from '/res.js';
 
 export class DialogRenameFile extends DialogPrompt {
 
-    constructor(core) {
-        super(core);
+    constructor() {
+        super();
+        this.index = -1;
         this.fileData = null;
         this.callback = null;
         this.args = null;
@@ -16,12 +17,13 @@ export class DialogRenameFile extends DialogPrompt {
         this.updateValue = event.target.value;
     }
 
-    open(fileData, callback, args) {
+    open(index, fileData, callback, args) {
         const res = new Res();
         super.open(
             res.descriptions.rename_file, null, res.placeholders.rename_file,
             fileData.name, 'text', null, null
         );
+        this.index = index;
         this.fileData = fileData;
         this.callback = callback;
         this.args = args;
@@ -43,10 +45,9 @@ export class DialogRenameFile extends DialogPrompt {
         );
         this.fileData.type = 'text/plain';
         this.fileData.editSession.setMode(fileHelper.getMode(sanitizedName));
-        const index = this.core.getActive();
         document.dispatchEvent(
             new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
+                this.index, this.index, {editor: true, draweritem: true, appbar: true}
             )
         );
         if (this.callback) {

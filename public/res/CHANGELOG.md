@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200422 (dev)
+- Fixed the argument of each dialog.
 - Fixed the Cursor Style option.
 - Removed some unnecessary imports.
 - Fixed Snackbar update event handling.

@@ -4,9 +4,10 @@ import {Res} from '/res.js';
 
 export class DialogFontSize extends DialogPrompt {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('fontSize').replace('px', '');
+    constructor(core, initialValue) {
+        super();
+        this.core = core;
+        this.initialValue = initialValue.replace('px', '');
     }
 
     onChange(event) {

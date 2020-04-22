@@ -4,9 +4,9 @@ import {Res} from '/res.js';
 
 export class DialogFileDecoding extends DialogSelect {
 
-    constructor(core) {
-        super(core);
-        this.initialValue = this.core.getOption('fileDecoding');
+    constructor(initialValue) {
+        super();
+        this.initialValue = initialValue;
     }
 
     onChange(event) {
