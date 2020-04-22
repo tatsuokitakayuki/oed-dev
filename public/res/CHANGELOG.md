@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200422 (dev)
+- Fixed Snackbar update event handling.
+
 ## Version 2.0.30200421 (dev)
 - Replaced element i with span.
 - Cleaned up MaterialHelper class and Drawer class.

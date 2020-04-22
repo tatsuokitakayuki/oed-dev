@@ -8,6 +8,7 @@ export class Snackbar {
         this.snackbar = new mdc.snackbar.MDCSnackbar(
             document.getElementById('snackbar-view')
         );
+        this.que = [];
     }
 
     initialize() {
@@ -34,9 +35,19 @@ export class Snackbar {
         const materialHelper = new MaterialHelper();
         const snackbarActions = document.getElementById('snackbar-actions');
         materialHelper.removeChildren(snackbarActions);
+        const next = this.que.shift();
+        if (next) {
+            this.update(next.label, next.close, next.actions);
+        }
     }
 
     onChange(event) {
+        if (this.snackbar.isOpen) {
+            this.que.push(
+                {label: event.detail.label, close: event.detail.close, actions: event.detail.actions}
+            );
+            return;
+        }
         this.update(event.detail.label, event.detail.close, event.detail.actions);
     }
 
