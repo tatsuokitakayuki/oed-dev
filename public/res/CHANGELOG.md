@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200423 (dev)
+- Fixed saving options.
+
 ## Version 2.0.30200422 (dev)
 - Fixed the argument of each dialog.
 - Fixed the Cursor Style option.

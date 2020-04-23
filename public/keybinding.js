@@ -1,5 +1,6 @@
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
+import {SaveOptionsEvent} from '/save_options_event.js';
 import {Res} from '/res.js';
 
 export class Keybinding {
@@ -179,8 +180,7 @@ export class Keybinding {
             name: 'oedSaveEditSessionOptions',
             description: res.descriptions.save_edit_session_options,
             exec: editor => {
-                this.core.saveSessionOptions();
-                this.core.saveOedOptions();
+                this.dispatchSaveOptionsEvent(editor, {session: true, oed: true});
                 document.dispatchEvent(
                     new ChangeSnackbarEvent('Saved edit session options.', true, null)
                 );
@@ -215,7 +215,7 @@ export class Keybinding {
                     'autoScrollEditorIntoView',
                     !editor.getOption('autoScrollEditorIntoView')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -226,7 +226,7 @@ export class Keybinding {
                 editor.setOption(
                     'behavioursEnabled', !editor.getOption('behavioursEnabled')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -238,7 +238,7 @@ export class Keybinding {
                     'copyWithEmptySelection',
                     !editor.getOption('copyWithEmptySelection')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -255,7 +255,7 @@ export class Keybinding {
                 editor.setOption(
                     'enableAutoIndent', !editor.getOption('enableAutoIndent')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -266,7 +266,7 @@ export class Keybinding {
                 editor.setOption(
                     'enableLinking', !editor.getOption('enableLinking')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -277,7 +277,7 @@ export class Keybinding {
                 editor.setOption(
                     'enableMultiselect', !editor.getOption('enableMultiselect')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -289,7 +289,7 @@ export class Keybinding {
                     'highlightActiveLine',
                     !editor.getOption('highlightActiveLine')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -301,7 +301,7 @@ export class Keybinding {
                     'highlightSelectedWord',
                     !editor.getOption('highlightSelectedWord')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -319,7 +319,7 @@ export class Keybinding {
                     'navigateWithinSoftTabs',
                     !editor.getOption('navigateWithinSoftTabs')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -349,7 +349,7 @@ export class Keybinding {
                     'selectionStyle',
                     editor.getOption('selectionStyle') === 'line' ? 'text' : 'line'
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -361,7 +361,7 @@ export class Keybinding {
                     'wrapBehavioursEnabled',
                     !editor.getOption('wrapBehavioursEnabled')
                 );
-                this.core.saveEditorOptions();
+                this.dispatchSaveOptionsEvent(editor, {editor: true});
             },
             readOnly: true
         });
@@ -370,7 +370,7 @@ export class Keybinding {
             description: res.descriptions.show_gutter,
             exec: editor => {
                 editor.setOption('showGutter', !editor.getOption('showGutter'));
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -381,7 +381,7 @@ export class Keybinding {
                 editor.setOption(
                     'fixedWidthGutter', !editor.getOption('fixedWidthGutter')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -393,7 +393,7 @@ export class Keybinding {
                     'highlightGutterLine',
                     !editor.getOption('highlightGutterLine')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -404,7 +404,7 @@ export class Keybinding {
                 editor.setOption(
                     'showLineNumbers', !editor.getOption('showLineNumbers')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -416,7 +416,7 @@ export class Keybinding {
                     'displayIndentGuides',
                     !editor.getOption('displayIndentGuides')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -433,7 +433,7 @@ export class Keybinding {
                 editor.setOption(
                     'showPrintMargin', !editor.getOption('showPrintMargin')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -444,7 +444,7 @@ export class Keybinding {
                 editor.setOption(
                     'animatedScroll', !editor.getOption('animatedScroll')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -455,7 +455,7 @@ export class Keybinding {
                 editor.setOption(
                     'fadeFoldWidgets', !editor.getOption('fadeFoldWidgets')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -472,7 +472,7 @@ export class Keybinding {
                 editor.setOption(
                     'showFoldWidgets', !editor.getOption('showFoldWidgets')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -483,7 +483,7 @@ export class Keybinding {
                 editor.setOption(
                     'showInvisibles', !editor.getOption('showInvisibles')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -495,7 +495,7 @@ export class Keybinding {
                     'vScrollBarAlwaysVisible',
                     !editor.getOption('vScrollBarAlwaysVisible')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -507,7 +507,7 @@ export class Keybinding {
                     'hScrollBarAlwaysVisible',
                     !editor.getOption('hScrollBarAlwaysVisible')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -518,7 +518,7 @@ export class Keybinding {
                 editor.setOption(
                     'useTextareaForIME', !editor.getOption('useTextareaForIME')
                 );
-                this.core.saveRendererOptions();
+                this.dispatchSaveOptionsEvent(editor, {renderer: true});
             },
             readOnly: true
         });
@@ -552,7 +552,7 @@ export class Keybinding {
                     'enableBasicAutocompletion',
                     !editor.getOption('enableBasicAutocompletion')
                 );
-                this.core.saveExtensionsOptions();
+                this.dispatchSaveOptionsEvent(editor, {extensions: true});
             },
             readOnly: true
         });
@@ -564,7 +564,7 @@ export class Keybinding {
                     'enableLiveAutocompletion',
                     !editor.getOption('enableLiveAutocompletion')
                 );
-                this.core.saveExtensionsOptions();
+                this.dispatchSaveOptionsEvent(editor, {extensions: true});
             },
             readOnly: true
         });
@@ -575,7 +575,7 @@ export class Keybinding {
                 editor.setOption(
                     'enableSnippets', !editor.getOption('enableSnippets')
                 );
-                this.core.saveExtensionsOptions();
+                this.dispatchSaveOptionsEvent(editor, {extensions: true});
             },
             readOnly: true
         });
@@ -586,7 +586,7 @@ export class Keybinding {
                 editor.setOption(
                     'enableEmmet', !editor.getOption('enableEmmet')
                 );
-                this.core.saveExtensionsOptions();
+                this.dispatchSaveOptionsEvent(editor, {extensions: true});
             },
             readOnly: true
         });
@@ -598,7 +598,7 @@ export class Keybinding {
                     'useElasticTabstops',
                     !editor.getOption('useElasticTabstops')
                 );
-                this.core.saveExtensionsOptions();
+                this.dispatchSaveOptionsEvent(editor, {extensions: true});
             },
             readOnly: true
         });
@@ -702,6 +702,10 @@ export class Keybinding {
             exec: editor => this.core.toggleHelpMenu(),
             readOnly: true
         });
+    }
+
+    dispatchSaveOptionsEvent(editor, options) {
+        document.dispatchEvent(new SaveOptionsEvent(editor, options));
     }
 
     initialize() {
