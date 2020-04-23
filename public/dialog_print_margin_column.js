@@ -1,12 +1,12 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
+import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
 
 export class DialogPrintMarginColumn extends DialogPrompt {
 
-    constructor(core, initialValue) {
+    constructor(initialValue) {
         super();
-        this.core = core;
         this.initialValue = initialValue;
     }
 
@@ -27,7 +27,7 @@ export class DialogPrintMarginColumn extends DialogPrompt {
 
     submit() {
         super.submit();
-        this.core.saveRendererOptions();
+        document.dispatchEvent(new SaveOptionsEditorEvent({renderer: true}));
     }
 
     reset() {
@@ -35,6 +35,5 @@ export class DialogPrintMarginColumn extends DialogPrompt {
         document.dispatchEvent(
             new ChangeEditorOptionEvent('printMarginColumn', this.initialValue)
         );
-        this.core.saveRendererOptions();
     }
 }

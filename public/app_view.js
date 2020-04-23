@@ -1,5 +1,6 @@
 import {ChangeAppBarEvent} from '/change_app_bar_event.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
+import {SaveOptionsEvent} from '/save_options_event.js';
 
 export class AppView {
 
@@ -8,14 +9,28 @@ export class AppView {
     }
 
     initialize() {
+        const options = {passive: true};
         document.addEventListener(
-            'View:change', event => this.onChange(event), {passive: true}
+            'View:change', event => this.onChange(event), options
+        );
+        document.addEventListener(
+            'Editor:saveoptions',
+            event => document.dispatchEvent(
+                new SaveOptionsEvent(this.core.editor, event.detail.options)
+            ),
+            options
         );
     }
 
     destory() {
         document.removeEventListener(
             'View:change', event => this.onChange(event)
+        );
+        document.removeEventListener(
+            'Editor:saveoptions',
+            event => document.dispatchEvent(
+                new SaveOptionsEvent(this.core.editor, event.detail.options)
+            )
         );
     }
 

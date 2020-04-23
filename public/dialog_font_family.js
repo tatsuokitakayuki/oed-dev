@@ -1,12 +1,12 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
+import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
 
 export class DialogFontFamily extends DialogPrompt {
 
-    constructor(core, initialValue) {
+    constructor(initialValue) {
         super();
-        this.core = core;
         this.initialValue = initialValue;
         if (!this.initialValue) {
             this.initialValue = '';
@@ -30,7 +30,7 @@ export class DialogFontFamily extends DialogPrompt {
 
     submit() {
         super.submit();
-        this.core.saveRendererOptions();
+        document.dispatchEvent(new SaveOptionsEditorEvent({renderer: true}));
     }
 
     reset() {
@@ -38,6 +38,5 @@ export class DialogFontFamily extends DialogPrompt {
         document.dispatchEvent(
             new ChangeEditorOptionEvent('fontFamily', this.initialValue)
         );
-        this.core.saveRendererOptions();
     }
 }

@@ -1,12 +1,12 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
+import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
 
 export class DialogKeyboardHandler extends DialogSelect {
 
-    constructor(core, initialValue) {
+    constructor(initialValue) {
         super();
-        this.core = core;
         this.initialValue = initialValue;
     }
 
@@ -23,7 +23,7 @@ export class DialogKeyboardHandler extends DialogSelect {
 
     submit() {
         super.submit();
-        this.core.saveOedOptions();
+        document.dispatchEvent(new SaveOptionsEditorEvent({oed: true}));
     }
 
     reset() {
@@ -31,6 +31,5 @@ export class DialogKeyboardHandler extends DialogSelect {
         document.dispatchEvent(
             new ChangeEditorOptionEvent('keyboardHandler', this.initialValue)
         );
-        this.core.saveOedOptions();
     }
 }

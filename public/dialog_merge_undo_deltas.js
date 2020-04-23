@@ -1,12 +1,12 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
+import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
 
 export class DialogMergeUndoDeltas extends DialogSelect {
 
-    constructor(core, initialValue) {
+    constructor(initialValue) {
         super();
-        this.core = core;
         this.initialValue = initialValue;
     }
 
@@ -23,7 +23,7 @@ export class DialogMergeUndoDeltas extends DialogSelect {
 
     submit() {
         super.submit();
-        this.core.saveEditorOptions();
+        document.dispatchEvent(new SaveOptionsEditorEvent({editor: true}));
     }
 
     reset() {
@@ -31,6 +31,5 @@ export class DialogMergeUndoDeltas extends DialogSelect {
         document.dispatchEvent(
             new ChangeEditorOptionEvent('mergeUndoDeltas', this.initialValue)
         );
-        this.core.saveEditorOptions();
     }
 }

@@ -561,42 +561,42 @@ export class Core {
     }
 
     selectTheme() {
-        const dialogTheme = new DialogTheme(this, this.getOption('theme'));
+        const dialogTheme = new DialogTheme(this.getOption('theme'));
         dialogTheme.open();
     }
 
     selectKeyboardHandler() {
-        const dialogKeyboardHandler = new DialogKeyboardHandler(this, this.getOption('keyboardHandler'));
+        const dialogKeyboardHandler = new DialogKeyboardHandler(this.getOption('keyboardHandler'));
         dialogKeyboardHandler.open();
     }
 
     promptFontSize() {
-        const dialogFontSize = new DialogFontSize(this, this.getOption('fontSize'));
+        const dialogFontSize = new DialogFontSize(this.getOption('fontSize'));
         dialogFontSize.open();
     }
 
     selectCursorStyle() {
-        const dialogCursorStyle = new DialogCursorStyle(this, this.getOption('cursorStyle'));
+        const dialogCursorStyle = new DialogCursorStyle(this.getOption('cursorStyle'));
         dialogCursorStyle.open();
     }
 
     selectMergeUndoDeltas() {
-        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(this, this.getOption('mergeUndoDeltas'));
+        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(this.getOption('mergeUndoDeltas'));
         dialogMergeUndoDeltas.open();
     }
 
     promptPrintMarginColumn() {
-        const dialogPrintMarginColumn = new DialogPrintMarginColumn(this, this.getOption('printMarginColumn'));
+        const dialogPrintMarginColumn = new DialogPrintMarginColumn(this.getOption('printMarginColumn'));
         dialogPrintMarginColumn.open();
     }
 
     selectScrollPastEnd() {
-        const dialogScrollPastEnd = new DialogScrollPastEnd(this, this.getOption('scrollPastEnd'));
+        const dialogScrollPastEnd = new DialogScrollPastEnd(this.getOption('scrollPastEnd'));
         dialogScrollPastEnd.open();
     }
 
     promptFontFamily() {
-        const dialogFontFamily = new DialogFontFamily(this, this.getOption('fontFamily'));
+        const dialogFontFamily = new DialogFontFamily(this.getOption('fontFamily'));
         dialogFontFamily.open();
     }
 

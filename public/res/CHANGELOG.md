@@ -1,7 +1,9 @@
 # CHANGELOG
 
 ## Version 2.0.30200423 (dev)
+- Fixed the behavior when closing the dialog.
 - Fixed saving options.
+- Added two events to save options.
 
 ## Version 2.0.30200422 (dev)
 - Fixed the argument of each dialog.
