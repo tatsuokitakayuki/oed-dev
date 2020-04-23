@@ -1,7 +1,21 @@
 # アップデート予定
 
 ## for OED
-* DialogManager クラスを作る
+* アプリの構造を整える
+    * oed.js
+        * Core
+            * FileManager
+            * View
+                * Editor（ACE Editor）
+                    * Keybinding
+                * TopAppBar
+                * MenuManager
+                * Drawer
+                * DialogManager
+                * Snackbar
+                * Statusbar
+            * Options
+        * Service Worker
 * ファイルリストの各ファイル項目に閉じるボタン「×」を追加する
 * TopAppBar と Menu のソースを整理する
 * メニューが開いているときに他のメニューボタンにホバリングしたときにはメニューを切り替える
