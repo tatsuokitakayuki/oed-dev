@@ -14,6 +14,9 @@ export class Options {
         await this.initializeRendererOptionsA(core.editor);
         await this.initializeSessionOptionsA(core.editor.session);
         await this.initializeExtensionsOptionsA(core.editor);
+        document.addEventListener(
+            'Options:save', event => this.saveOptions(event), {passive: true}
+        );
     }
 
     getDefaultEditorOptions() {
@@ -62,8 +65,7 @@ export class Options {
     }
 
     saveEditorOptions(editor) {
-        const options = this.getEditorOptions(editor);
-        localforage.setItem('options_editor', options);
+        localforage.setItem('options_editor', this.getEditorOptions(editor));
     }
 
     getDefaultRendererOptions() {
@@ -148,8 +150,9 @@ export class Options {
     }
 
     saveMouseHandlerOptions(editor) {
-        localforage
-            .setItem('options_mouse_handler', this.getMouseHandlerOptions(editor));
+        localforage.setItem(
+            'options_mouse_handler', this.getMouseHandlerOptions(editor)
+        );
     }
 
     getDefaultSessionOptions() {
@@ -292,6 +295,26 @@ export class Options {
             core.getEditor().setOptions(options.options.session);
             core.getEditor().setOptions(options.options.extensions);
             Object.assign(this.oed, options.options.oed);
+        }
+    }
+
+    saveOptions(event) {
+        const editor = event.detail.editor;
+        const options = event.detail.options;
+        if (options.all || options.editor) {
+            this.saveEditorOptions(editor);
+        }
+        if (options.all || options.renderer) {
+            this.saveRendererOptions(editor);
+        }
+        if (options.all || options.session) {
+            this.saveSessionOptions(editor.session);
+        }
+        if (options.all || options.extensions) {
+            this.saveExtensionsOptions(editor);
+        }
+        if (options.all || options.oed) {
+            this.saveOedOptions();
         }
     }
 }
