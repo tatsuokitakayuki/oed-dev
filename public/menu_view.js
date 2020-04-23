@@ -11,14 +11,14 @@ export class MenuView extends Menu {
             items: [
                 // Editor options
                 {
-                    id: 'menu-view-oed-auto-scroll-editor-into-view', // Editor
-                    text: res.descriptions.auto_scroll_editor_info_view,
+                    id: 'menu-view-oed-navigate-within-soft-tabs', // Editor
+                    text: res.descriptions.navigate_within_soft_tabs,
                     meta: '',
                     update: true
                 },
                 {
-                    id: 'menu-view-oed-behaviours-enabled', // Editor
-                    text: res.descriptions.behaviours_enabled,
+                    id: 'menu-view-oed-auto-scroll-editor-into-view', // Editor
+                    text: res.descriptions.auto_scroll_editor_info_view,
                     meta: '',
                     update: true
                 },
@@ -41,6 +41,12 @@ export class MenuView extends Menu {
                     update: true
                 },
                 {
+                    id: 'menu-view-oed-behaviours-enabled', // Editor
+                    text: res.descriptions.behaviours_enabled,
+                    meta: '',
+                    update: true
+                },
+                {
                     id: 'menu-view-oed-enable-linking', // Editor
                     text: res.descriptions.enable_linking,
                     meta: '',
@@ -49,6 +55,12 @@ export class MenuView extends Menu {
                 {
                     id: 'menu-view-oed-enable-multiselect', // Editor
                     text: res.descriptions.enable_multiselect,
+                    meta: '',
+                    update: true
+                },
+                {
+                    id: 'menu-view-oed-selection-style', // Editor
+                    text: res.descriptions.selection_style,
                     meta: '',
                     update: true
                 },
@@ -71,20 +83,8 @@ export class MenuView extends Menu {
                     update: true
                 },
                 {
-                    id: 'menu-view-oed-navigate-within-soft-tabs', // Editor
-                    text: res.descriptions.navigate_within_soft_tabs,
-                    meta: '',
-                    update: true
-                },
-                {
                     id: 'menu-view-oed-read-only', // Editor
                     text: res.descriptions.read_only,
-                    meta: '',
-                    update: true
-                },
-                {
-                    id: 'menu-view-oed-selection-style', // Editor
-                    text: res.descriptions.selection_style,
                     meta: '',
                     update: true
                 },

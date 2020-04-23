@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200423 (dev)
+- Fixed some View menu items.
 - Fixed the behavior when closing the dialog.
 - Fixed saving options.
 - Added two events to save options.
