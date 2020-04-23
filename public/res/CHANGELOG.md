@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200423 (dev)
+- Moved Read only from View menu to File menu.
 - Fixed some View menu items.
 - Fixed the behavior when closing the dialog.
 - Fixed saving options.

@@ -33,6 +33,12 @@ export class MenuFile extends Menu {
                     meta: 'Alt+R',
                     update: false
                 },
+                {
+                    id: 'menu-file-oed-read-only', // Editor
+                    text: res.descriptions.read_only,
+                    meta: '',
+                    update: true
+                },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-toggle-file-list',

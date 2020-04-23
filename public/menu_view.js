@@ -83,12 +83,6 @@ export class MenuView extends Menu {
                     update: true
                 },
                 {
-                    id: 'menu-view-oed-read-only', // Editor
-                    text: res.descriptions.read_only,
-                    meta: '',
-                    update: true
-                },
-                {
                     id: 'menu-view-oed-wrap-behaviours-enabled', // Editor
                     text: res.descriptions.wrap_behaviours_enabled,
                     meta: '',
