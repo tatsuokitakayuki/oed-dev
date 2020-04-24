@@ -10,6 +10,23 @@ export class FileManager {
         this.untitledCount = 0;
     }
 
+    addEventListener() {
+        document.addEventListener(
+            'File:rename',
+            event => this.onRenameFile(event),
+            {passive: true, once: true}
+        );
+    }
+
+    onRenameFile(event) {
+        if (event.detail.name) {
+            this.list[this.active].renameFile(event.detail.name);
+            if (event.detail.callback) {
+                event.detail.callback(event.detail.args);
+            }
+        }
+    }
+
     getActive() {
         return this.active;
     }
@@ -137,9 +154,5 @@ export class FileManager {
 
     downloadFile(index) {
         return this.list[index].downloadFile();
-    }
-
-    renameFile(index, callback, args) {
-        return this.list[index].renameFile(callback, args);
     }
 }

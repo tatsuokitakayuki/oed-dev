@@ -1,57 +1,39 @@
 import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {FileHelper} from '/file_helper.js';
+import {RenameFileEvent} from '/rename_file_event.js';
 import {Res} from '/res.js';
 
 export class DialogRenameFile extends DialogPrompt {
 
-    constructor() {
+    constructor(initialValue, callback, args) {
         super();
-        this.index = -1;
-        this.fileData = null;
-        this.callback = null;
-        this.args = null;
+        this.updateValue = initialValue;
+        this.callback = callback;
+        this.args = args;
     }
 
     onChange(event) {
         this.updateValue = event.target.value;
     }
 
-    open(index, fileData, callback, args) {
+    open() {
         const res = new Res();
         super.open(
             res.descriptions.rename_file, null, res.placeholders.rename_file,
-            fileData.name, 'text', null, null
+            this.updateValue, 'text', null, null
         );
-        this.index = index;
-        this.fileData = fileData;
-        this.callback = callback;
-        this.args = args;
     }
 
     submit() {
-        if (!this.updateValue) {
-            return;
-        }
-        const fileHelper = new FileHelper();
-        const sanitizedName = fileHelper.sanitizeName(this.updateValue);
-        this.fileData.setName(sanitizedName);
-        this.fileData.setDisplayName(sanitizedName);
-        const res = new Res();
-        this.fileData.url = new URL(
-            res.protocols.oed + '//' +
-            res.hosts.edit_session + '/' +
-            res.dirs.files + '/' + sanitizedName
-        );
-        this.fileData.type = 'text/plain';
-        this.fileData.editSession.setMode(fileHelper.getMode(sanitizedName));
+        super.submit();
         document.dispatchEvent(
-            new ChangeViewEvent(
-                this.index, this.index, {editor: true, draweritem: true, appbar: true}
-            )
+            new RenameFileEvent(this.updateValue, this.callback, this.args)
         );
-        if (this.callback) {
-            this.callback(this.args);
-        }
+    }
+
+    reset() {
+        super.reset();
+        document.dispatchEvent(new RenameFileEvent(null, null, null));
     }
 }

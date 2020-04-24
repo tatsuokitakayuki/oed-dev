@@ -13,6 +13,7 @@ import {DialogKeyboardHandler} from '/dialog_keyboard_handler.js';
 import {DialogMergeUndoDeltas} from '/dialog_merge_undo_deltas.js';
 import {DialogLanguageMode} from '/dialog_language_mode.js';
 import {DialogNewLineMode} from '/dialog_new_line_mode.js';
+import {DialogRenameFile} from '/dialog_rename_file.js';
 import {DialogPrintMarginColumn} from '/dialog_print_margin_column.js';
 import {DialogScrollPastEnd} from '/dialog_scroll_past_end.js';
 import {DialogSelectFile} from '/dialog_select_file.js';
@@ -410,7 +411,7 @@ export class Core {
         const url = this.getUrl(index);
         const res = new Res();
         if (url.pathname.includes('/' + res.dirs.res + '/')) {
-            this.renameFile(index, () => this.getEditor().execCommand('oedDownloadFile'), index);
+            this.renameFile(index, () => this.getEditor().execCommand('oedDownloadFile'), {});
             return;
         }
         this.fileManager.downloadFile(index);
@@ -426,15 +427,9 @@ export class Core {
         if (this.isCoreFile(index)) {
             return;
         }
-        const result = this.fileManager.renameFile(index, callback, args);
-        this.focusEditor();
-        if (result) {
-            document.dispatchEvent(
-                new ChangeViewEvent(
-                    index, index, {editor: true, draweritem: true, appbar: true}
-                )
-            );
-        }
+        this.fileManager.addEventListener();
+        const dialogRenameFile = new DialogRenameFile(this.getName(index), callback, args);
+        dialogRenameFile.open();
     }
 
     async closeFileA(index) {

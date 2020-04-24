@@ -1,5 +1,6 @@
 import {CacheManager} from '/cache_manager.js';
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
+import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogRenameFile} from '/dialog_rename_file.js';
 import {FileHelper} from '/file_helper.js';
 import {Res} from '/res.js';
@@ -133,11 +134,29 @@ export class FileData {
         const fileHelper = new FileHelper();
         const blob = fileHelper.buildBlob(this.editSession.getValue(), this.type);
         fileHelper.writeBlob(blob, this.name);
-        document.dispatchEvent(new ChangeSnackbarEvent('Download file: ' + this.name, true, null));
+        document.dispatchEvent(
+            new ChangeSnackbarEvent('Download file: ' + this.name, true, null)
+        );
     }
 
-    renameFile(callback, args) {
-        const dialogRenameFile = new DialogRenameFile(this.core);
-        dialogRenameFile.open(this.core.getActive(), this, callback, args);
+    renameFile(name) {
+        const fileHelper = new FileHelper();
+        const sanitizedName = fileHelper.sanitizeName(name);
+        this.setName(sanitizedName);
+        this.setDisplayName(sanitizedName);
+        const res = new Res();
+        this.url = new URL(
+            res.protocols.oed + '//' +
+            res.hosts.edit_session + '/' +
+            res.dirs.files + '/' + sanitizedName
+        );
+        this.type = 'text/plain';
+        this.editSession.setMode(fileHelper.getMode(sanitizedName));
+        const index = this.core.getActive();
+        document.dispatchEvent(
+            new ChangeViewEvent(
+                index, index, {editor: true, draweritem: true, appbar: true}
+            )
+        );
     }
 }

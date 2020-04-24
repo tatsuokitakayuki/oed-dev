@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200424 (dev)
+- Improved the behavior of Rename file.
 - Replaced some import modules.
 
 ## Version 2.0.30200423 (dev)
