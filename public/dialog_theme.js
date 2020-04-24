@@ -1,6 +1,6 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
 import {DialogSelect} from '/dialog_select.js';
-import {MaterialHelper} from '/material_helper.js';
+import {HtmlHelper} from '/html_helper.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
 
@@ -18,8 +18,8 @@ export class DialogTheme extends DialogSelect {
     }
 
     buildSelectList(themes) {
-        const materialHelper = new MaterialHelper();
-        const brightGroup = materialHelper.optgroup(
+        const htmlHelper = new HtmlHelper();
+        const brightGroup = htmlHelper.optgroup(
             null, [{name: 'label', value: 'Bright'}]
         );
         themes.bright.forEach(item => {
@@ -30,9 +30,9 @@ export class DialogTheme extends DialogSelect {
                 attributeList.push({name: 'class', value: 'mdc-list-item mdc-list-item--selected'});
                 attributeList.push({name: 'selected', value: 'selected'});
             }
-            brightGroup.appendChild(materialHelper.option(String(item.caption), attributeList));
+            brightGroup.appendChild(htmlHelper.option(String(item.caption), attributeList));
         });
-        const darkGroup = materialHelper.optgroup(
+        const darkGroup = htmlHelper.optgroup(
             null, [{name: 'label', value: 'Dark'}]
         );
         themes.dark.forEach(item => {
@@ -43,7 +43,7 @@ export class DialogTheme extends DialogSelect {
                 attributeList.push({name: 'class', value: 'mdc-list-item mdc-list-item--selected'});
                 attributeList.push({name: 'selected', value: 'selected'});
             }
-            darkGroup.appendChild(materialHelper.option(String(item.caption), attributeList));
+            darkGroup.appendChild(htmlHelper.option(String(item.caption), attributeList));
         });
         return [brightGroup, darkGroup];
     }

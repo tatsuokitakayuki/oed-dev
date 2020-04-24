@@ -1,5 +1,5 @@
 import {Dialog} from '/dialog.js';
-import {MaterialHelper} from '/material_helper.js';
+import {HtmlHelper} from '/html_helper.js';
 
 export class DialogConfirm extends Dialog {
 
@@ -13,8 +13,8 @@ export class DialogConfirm extends Dialog {
         if (!message) {
             return;
         }
-        const materialHelper = new MaterialHelper();
-        this.dialogContent.appendChild(materialHelper.p(message, []));
+        const htmlHelper = new HtmlHelper();
+        this.dialogContent.appendChild(htmlHelper.p(message, []));
     }
 
     open(title, message, callback, args) {

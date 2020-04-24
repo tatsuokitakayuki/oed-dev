@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200424 (dev)
+- Replaced some import modules.
+
 ## Version 2.0.30200423 (dev)
 - Moved Read only from View menu to File menu.
 - Fixed some View menu items.
