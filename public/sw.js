@@ -1,4 +1,4 @@
-const OED_VERSION = '2.0.20200427.0';
+const OED_VERSION = '2.0.20200427.1';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.10';
 const ACE_BASE = 'Ace';
@@ -70,6 +70,7 @@ const OED_URLS = [
     './menu_view.js',
     './oed.js',
     './options.js',
+    './rename_file_event.js',
     './res.js',
     './res/ABOUT.md',
     './res/CHANGELOG.md',
