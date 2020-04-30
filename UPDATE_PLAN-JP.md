@@ -1,23 +1,25 @@
 # アップデート予定
 
 ## for OED
-* アプリの構造を整える
-    * oed.js
+* Native File System API を導入する
+* アップデートを通知する
+* 編集中の文書ステータスを表示する
+* メニューが開いているときに他のメニューボタンにホバリングしたときにはメニューを切り替える
+* ファイルリストの各ファイル項目に閉じるボタン「×」を追加する
+* アプリの構造を整える（随時）
+    * Starter (oed.js)
         * Core
             * FileManager
-            * View
+            * AppView
                 * Editor（ACE Editor）
                     * Keybinding
                 * TopAppBar
                 * MenuManager
+                    * 各メニュー
                 * Drawer
                 * DialogManager
+                    * 各ダイアログ
                 * Snackbar
                 * Statusbar
             * Options
-        * Service Worker
-* ファイルリストの各ファイル項目に閉じるボタン「×」を追加する
-* TopAppBar と Menu のソースを整理する
-* メニューが開いているときに他のメニューボタンにホバリングしたときにはメニューを切り替える
-* 編集中の文書ステータスを表示する
-* アップデートを通知する
+        * Service Worker (sw.js)
