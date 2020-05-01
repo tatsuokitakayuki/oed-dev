@@ -1,5 +1,4 @@
 export class HtmlHelper {
-
     attribute(element, attributeList) {
         attributeList.forEach(
             attribute => element.setAttribute(attribute.name, attribute.value)

@@ -3,7 +3,6 @@ import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
 
 export class DialogFirstLineNumber extends DialogPrompt {
-
     constructor(initialValue) {
         super();
         this.initialValue = Number(initialValue);

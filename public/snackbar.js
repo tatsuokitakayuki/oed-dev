@@ -2,7 +2,6 @@ import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class Snackbar {
-
     constructor(core) {
         this.core = core;
         this.snackbar = new mdc.snackbar.MDCSnackbar(

@@ -4,7 +4,6 @@ import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
 
 export class DialogCursorStyle extends DialogSelect {
-
     constructor(initialValue) {
         super();
         this.initialValue = initialValue;

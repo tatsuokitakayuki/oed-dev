@@ -16,7 +16,6 @@ const selectFileA = (multiple => {
 });
 
 export class DialogSelectFile {
-
     async openA(multiple) {
         return await selectFileA(multiple);
     }

@@ -3,7 +3,6 @@ import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
 export class DialogLanguageMode extends DialogSelect {
-
     constructor(initialValue) {
         super();
         this.initialValue = initialValue;

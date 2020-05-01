@@ -1,5 +1,4 @@
 export class CacheManager {
-
     constructor(core) {
         this.core = core;
     }

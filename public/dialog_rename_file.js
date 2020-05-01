@@ -5,7 +5,6 @@ import {RenameFileEvent} from '/rename_file_event.js';
 import {Res} from '/res.js';
 
 export class DialogRenameFile extends DialogPrompt {
-
     constructor(initialValue, callback, args) {
         super();
         this.updateValue = initialValue;

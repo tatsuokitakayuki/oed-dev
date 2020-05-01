@@ -2,7 +2,6 @@ import {HtmlHelper} from '/html_helper.js';
 import {Res} from '/res.js';
 
 export class MaterialHelper extends HtmlHelper {
-
     underline() {
         return this.div(null, [{name: 'class', value: 'mdc-line-ripple'}]);
     }

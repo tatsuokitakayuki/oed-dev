@@ -8,7 +8,6 @@ import {Res} from '/res.js';
 const EditDocument = ace.require('ace/document').Document;
 
 export class FileData {
-
     constructor(core) {
         this.core = core;
         this.editSession = new ace.EditSession(new EditDocument('')); // Ace EditSession API

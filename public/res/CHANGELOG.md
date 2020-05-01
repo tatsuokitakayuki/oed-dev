@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200501 (dev)
+- Cleaned up some code.
+
 ## Version 2.0.30200430 (stable)
 - Updated for stable (version 2, maintenance 2) release.
 

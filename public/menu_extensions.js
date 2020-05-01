@@ -2,7 +2,6 @@ import {Menu} from '/menu.js';
 import {Res} from '/res.js';
 
 export class MenuExtensions extends Menu {
-
     constructor(core) {
         super(core, 'menu-extensions');
         const res = new Res();

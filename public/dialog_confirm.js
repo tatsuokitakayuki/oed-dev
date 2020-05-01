@@ -2,7 +2,6 @@ import {Dialog} from '/dialog.js';
 import {HtmlHelper} from '/html_helper.js';
 
 export class DialogConfirm extends Dialog {
-
     constructor() {
         super();
         this.callback = null;

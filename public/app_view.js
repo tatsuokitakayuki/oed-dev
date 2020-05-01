@@ -3,7 +3,6 @@ import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
 import {SaveOptionsEvent} from '/save_options_event.js';
 
 export class AppView {
-
     constructor(core) {
         this.core = core;
     }

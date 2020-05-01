@@ -2,7 +2,6 @@ import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
 export class Dialog {
-
     constructor() {
         this.dialog = new mdc.dialog.MDCDialog(this.getElement());
         this.dialog.escapeKeyAction = 'reset';

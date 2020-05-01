@@ -4,7 +4,6 @@ import {SaveOptionsEvent} from '/save_options_event.js';
 import {Res} from '/res.js';
 
 export class Keybinding {
-    
     constructor(core) {
         this.core = core;
     }

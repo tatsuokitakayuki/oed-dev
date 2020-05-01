@@ -1,12 +1,9 @@
 export class UIHelper {
-
     constructor() {
         this.tabindexList = [];
     }
 
-    initialize() {
-        
-    }
+    initialize() {}
 
     setTabindex() {
         this.tabindex('0');

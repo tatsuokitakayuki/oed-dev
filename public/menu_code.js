@@ -1,7 +1,6 @@
 import {Menu} from '/menu.js';
 
 export class MenuCode extends Menu {
-
     constructor(core) {
         super(core, 'menu-code');
         this.itemData = {

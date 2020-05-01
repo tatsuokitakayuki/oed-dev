@@ -2,7 +2,6 @@ import {Res} from '/res.js';
 import {UIHelper} from '/ui_helper.js';
 
 export class AppBar extends UIHelper {
-
     constructor(core) {
         super();
         this.core = core;

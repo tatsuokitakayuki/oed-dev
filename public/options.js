@@ -3,7 +3,6 @@ import {DialogSelectFile} from '/dialog_select_file.js';
 import {FileHelper} from '/file_helper.js';
 
 export class Options {
-
     constructor() {
         this.oed = this.getDefaultOedOptions();
     }

@@ -1,7 +1,6 @@
 import {HtmlHelper} from '/html_helper.js';
 
 export class FileHelper {
-
     async fetchTextUrlA(url, encodingName) {
         const response = await fetch(url);
         const arrayBuffer = await response.arrayBuffer();

@@ -3,7 +3,6 @@ import {MaterialHelper} from '/material_helper.js';
 import {UIHelper} from '/ui_helper.js';
 
 export class Drawer extends UIHelper {
-
     constructor(core) {
         super();
         this.core = core;

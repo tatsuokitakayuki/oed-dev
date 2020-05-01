@@ -1,5 +1,4 @@
 export class ChangeViewEvent extends CustomEvent {
-    
     constructor(index, active, flags) {
         super(
             'View:change',

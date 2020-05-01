@@ -3,7 +3,6 @@ import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
 
 export class DialogTabSize extends DialogPrompt {
-
     constructor(initialValue) {
         super();
         this.initialValue = initialValue;

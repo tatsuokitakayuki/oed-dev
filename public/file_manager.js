@@ -2,7 +2,6 @@ import {FileData} from '/file_data.js';
 import {Res} from '/res.js';
 
 export class FileManager {
-
     constructor(core) {
         this.core = core;
         this.list = [];

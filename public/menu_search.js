@@ -1,7 +1,6 @@
 import {Menu} from '/menu.js';
 
 export class MenuSearch extends Menu {
-
     constructor(core) {
         super(core, 'menu-search');
         this.itemData = {

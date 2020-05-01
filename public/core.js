@@ -35,7 +35,6 @@ import {Res} from '/res.js';
 import {Snackbar} from '/snackbar.js';
 
 export class Core {
-
     constructor() {
         this.editor = ace.edit('editor');
         this.appView = new AppView(this);
