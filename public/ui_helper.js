@@ -1,4 +1,4 @@
-export class UIHelper {
+export class UiHelper {
     constructor() {
         this.tabindexList = [];
     }

@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200501 (dev)
+- Renamed the class name from UIHelper to UiHelper.
 - Cleaned up some code.
 
 ## Version 2.0.30200430 (stable)

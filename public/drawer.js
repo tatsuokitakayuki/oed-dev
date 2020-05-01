@@ -1,8 +1,8 @@
 import {ChangeViewEvent} from '/change_view_event.js';
 import {MaterialHelper} from '/material_helper.js';
-import {UIHelper} from '/ui_helper.js';
+import {UiHelper} from '/ui_helper.js';
 
-export class Drawer extends UIHelper {
+export class Drawer extends UiHelper {
     constructor(core) {
         super();
         this.core = core;

@@ -1,7 +1,7 @@
 import {MaterialHelper} from '/material_helper.js';
-import {UIHelper} from '/ui_helper.js';
+import {UiHelper} from '/ui_helper.js';
 
-export class Menu extends UIHelper {
+export class Menu extends UiHelper {
     constructor(core, menuId) {
         super();
         this.core = core;
