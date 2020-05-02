@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.30200502 (dev)
+- Fixed app icon settings.
+
 ## Version 2.0.30200501 (dev)
 - Renamed the class name from UIHelper to UiHelper.
 - Cleaned up some code.
