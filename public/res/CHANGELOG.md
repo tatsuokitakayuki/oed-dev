@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 2.0.30200504 (dev)
+- Changed the design of the app icon.
 - Added options found in the kitchen sink demo.
 
 ## Version 2.0.30200502 (dev)
