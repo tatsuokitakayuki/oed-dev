@@ -101,6 +101,12 @@ export class Res {
             font_family: 'Font family',
             font_size: 'Font size',
             theme: 'Theme',
+            
+            rtl: 'RTL',
+            rtl_text: 'Line based RTL switching',
+            show_token_info: 'Show token info',
+            text_position_debugger: 'Show textarea position',
+            
             enable_basic_autocompletion: 'Basic autocompletion',
             enable_live_autocompletion: 'Live autocompletion',
             enable_snippets: 'Snippets',
