@@ -49,7 +49,7 @@ body {
     --mdc-theme-error: black;
     --mdc-theme-on-primary: white;
     --mdc-theme-on-secondary: white;
-    --mdc-theme-on-error: cyan;
+    --mdc-theme-on-error: magenta;
 }
 
 .oed-light {
