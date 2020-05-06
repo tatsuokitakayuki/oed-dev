@@ -1,6 +1,7 @@
 # CHANGELOG
 
-## Version 3.0.20200505 (dev)
+## Version 3.0.20200506 (dev)
+- Fixed a subtle shade of app icons.
 - Fixed the initial value.
 
 ## Version 3.0.20200505 (dev)
