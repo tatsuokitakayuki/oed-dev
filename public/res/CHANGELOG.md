@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## Version 3.0.20200505 (dev)
+- Fixed the initial value.
+
+## Version 3.0.20200505 (dev)
 - Fixed a mistake in color name.
 
 ## Version 3.0.20200504 (dev)
