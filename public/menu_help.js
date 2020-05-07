@@ -21,6 +21,12 @@ export class MenuHelp extends Menu {
                     meta: '',
                     update: true
                 },
+                {
+                    id: 'menu-help-oed-menu-button',
+                    text: res.descriptions.menu_button + '...',
+                    meta: '',
+                    update: true
+                },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-export-options',
@@ -76,6 +82,11 @@ export class MenuHelp extends Menu {
                 switch (item.id) {
                     case 'menu-help-oed-keyboard-handler':
                         optionText = res.keyboard_handler.find(
+                            item => item.value == optionValue
+                        ).name;
+                        break;
+                    case 'menu-help-oed-menu-button':
+                        optionText = res.menu_button.find(
                             item => item.value == optionValue
                         ).name;
                         break;

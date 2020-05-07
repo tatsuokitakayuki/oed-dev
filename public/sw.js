@@ -1,4 +1,4 @@
-const OED_VERSION = '3.0.20200506.0';
+const OED_VERSION = '3.0.20200507.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.10';
 const ACE_BASE = 'Ace';
@@ -31,6 +31,7 @@ const OED_URLS = [
     './dialog_font_size.js',
     './dialog_keyboard_handler.js',
     './dialog_language_mode.js',
+    './dialog_menu_button.js',
     './dialog_merge_undo_deltas.js',
     './dialog_new_line_mode.js',
     './dialog_print_margin_column.js',

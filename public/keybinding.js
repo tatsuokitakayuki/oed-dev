@@ -612,6 +612,12 @@ export class Keybinding {
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
+            name: 'oedMenuButton',
+            description: res.descriptions.menu_button + '...',
+            exec: editor => this.core.selectMenuButton(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
             name: 'oedExportOptions',
             description: res.descriptions.export_options,
             exec: editor => this.core.exportOptionsA(),

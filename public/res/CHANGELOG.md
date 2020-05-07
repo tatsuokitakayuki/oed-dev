@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.0.20200507 (dev)
+- Added Menu button option.
+
 ## Version 3.0.20200506 (dev)
 - Fixed a subtle shade of app icons.
 - Fixed the initial value.

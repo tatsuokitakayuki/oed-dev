@@ -10,6 +10,7 @@ import {DialogFoldStyle} from '/dialog_fold_style.js';
 import {DialogFontFamily} from '/dialog_font_family.js';
 import {DialogFontSize} from '/dialog_font_size.js';
 import {DialogKeyboardHandler} from '/dialog_keyboard_handler.js';
+import {DialogMenuButton} from '/dialog_menu_button.js';
 import {DialogMergeUndoDeltas} from '/dialog_merge_undo_deltas.js';
 import {DialogLanguageMode} from '/dialog_language_mode.js';
 import {DialogNewLineMode} from '/dialog_new_line_mode.js';
@@ -84,6 +85,10 @@ export class Core {
                     case 'keyboardHandler':
                         this.getOedOptions().keyboardHandler = event.detail.value;
                         this.setKeyboardHandler(event.detail.value);
+                        break;
+                    case 'menuButton':
+                        this.getOedOptions().menuButton = event.detail.value;
+                        this.setMenuButton(event.detail.value);
                         break;
                     default:
                         this.getEditor().setOption(event.detail.name, event.detail.value);
@@ -163,6 +168,9 @@ export class Core {
                 break;
             case 'keyboardHandler':
                 optionValue = this.getOedOptions().keyboardHandler;
+                break;
+            case 'menuButton':
+                optionValue = this.getOedOptions().menuButton;
                 break;
             default:
                 optionValue = this.getEditor().getOption(name);
@@ -288,6 +296,10 @@ export class Core {
             value = 'ace/keyboard/' + name.toLowerCase();
         }
         this.editor.setKeyboardHandler(value);
+    }
+
+    setMenuButton(value) {
+        
     }
 
     setHello(hello) {
@@ -562,6 +574,11 @@ export class Core {
     selectKeyboardHandler() {
         const dialogKeyboardHandler = new DialogKeyboardHandler(this.getOption('keyboardHandler'));
         dialogKeyboardHandler.open();
+    }
+
+    selectMenuButton() {
+        const dialogMenuButton = new DialogMenuButton(this.getOption('menuButton'));
+        dialogMenuButton.open();
     }
 
     promptFontSize() {

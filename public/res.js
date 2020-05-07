@@ -114,6 +114,7 @@ export class Res {
             use_elastic_tabstops: 'Elastic tabstops',
             command_pallete: 'Command pallete',
             keyboard_handler: 'Keybinding',
+            menu_button: 'Menu button',
             export_options: 'Export options',
             import_options: 'Import options',
             cache_list: 'Cache list',
@@ -190,6 +191,11 @@ export class Res {
             {name: 'Sublime', value: 'Sublime'},
             {name: 'VSCode', value: 'VSCode'}
         ];
+        this.menu_button = [
+            {name: 'Label', value: 'label'},
+            {name: 'Icon', value: 'icon'},
+            {name: 'Icon + Label', value: 'iconlabel'},
+        ];
         this.merge_undo_deltas = [
             {name: 'Always', value: 'always'},
             {name: 'Never', value: 'false'},
@@ -236,7 +242,9 @@ export class Res {
         };
         this.strings = {
             confirm_close_file: 'Discard $filename$ edits and close.',
-            hello: 'Hello, OED.\nOED - Open, edit, and download.\n',
+            hello: 'Welcome to OED.\n\nO: Open\nE: Edit\nD: Download\n\n'+
+                'OED is a text / code editor implemented only in web technology.\n'+
+                'Enjoy editing text and code.\n',
             modified: 'Modified',
             read_only: 'Read only',
             untitled: 'untitled',

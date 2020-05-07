@@ -232,7 +232,8 @@ export class Options {
         return {
             fileDecoding: 'utf-8',      // string ["utf-8"]
             hello: false,               // true|[false]
-            keyboardHandler: 'Ace',          // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
+            keyboardHandler: 'Ace',     // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
+            menuButton: 'label',       // ["label"]|"icon"|"iconlabel"
             theme: 'Dark',              // ["Dark"]|"Light"|"Ace"|"AceReverse"
         };
     }
