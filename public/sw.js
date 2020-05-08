@@ -1,4 +1,4 @@
-const OED_VERSION = '3.0.20200507.0';
+const OED_VERSION = '3.0.20200508.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.10';
 const ACE_BASE = 'Ace';
@@ -18,6 +18,7 @@ const OED_URLS = [
     './change_app_bar_event.js',
     './change_drawer_item_event.js',
     './change_editor_option_event.js',
+    './change_menu_button_event.js',
     './change_snackbar_event.js',
     './change_view_event.js',
     './core.js',
