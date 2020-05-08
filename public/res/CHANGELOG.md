@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.0.20200508 (dev)
+- Cleaned up some elements.
 - Fixed initial data of AppBar.
 - Implemented the function of Menu button option.
 
