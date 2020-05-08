@@ -2,7 +2,13 @@ export class Res {
     constructor() {
         this.buttons = {
             cancel: 'Cancel',
+            code: 'Code',
+            edit: 'Edit',
+            extensions: 'Extensions',
+            file: 'File',
+            help: 'Help',
             ok: 'OK',
+            search: 'Search',
             view: 'View',
         };
         this.descriptions = {
@@ -192,9 +198,9 @@ export class Res {
             {name: 'VSCode', value: 'VSCode'}
         ];
         this.menu_button = [
+            {name: 'Icon + Label', value: 'iconlabel'},
             {name: 'Label', value: 'label'},
             {name: 'Icon', value: 'icon'},
-            {name: 'Icon + Label', value: 'iconlabel'},
         ];
         this.merge_undo_deltas = [
             {name: 'Always', value: 'always'},

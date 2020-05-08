@@ -1,6 +1,7 @@
 import {AppBar} from '/app_bar.js';
 import {AppView} from '/app_view.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
+import {ChangeMenuButtonEvent} from '/change_menu_button_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogConfirm} from '/dialog_confirm.js';
 import {DialogCursorStyle} from '/dialog_cursor_style.js';
@@ -10,12 +11,12 @@ import {DialogFoldStyle} from '/dialog_fold_style.js';
 import {DialogFontFamily} from '/dialog_font_family.js';
 import {DialogFontSize} from '/dialog_font_size.js';
 import {DialogKeyboardHandler} from '/dialog_keyboard_handler.js';
+import {DialogLanguageMode} from '/dialog_language_mode.js';
 import {DialogMenuButton} from '/dialog_menu_button.js';
 import {DialogMergeUndoDeltas} from '/dialog_merge_undo_deltas.js';
-import {DialogLanguageMode} from '/dialog_language_mode.js';
 import {DialogNewLineMode} from '/dialog_new_line_mode.js';
-import {DialogRenameFile} from '/dialog_rename_file.js';
 import {DialogPrintMarginColumn} from '/dialog_print_margin_column.js';
+import {DialogRenameFile} from '/dialog_rename_file.js';
 import {DialogScrollPastEnd} from '/dialog_scroll_past_end.js';
 import {DialogSelectFile} from '/dialog_select_file.js';
 import {DialogTabSize} from '/dialog_tab_size.js';
@@ -88,7 +89,7 @@ export class Core {
                         break;
                     case 'menuButton':
                         this.getOedOptions().menuButton = event.detail.value;
-                        this.setMenuButton(event.detail.value);
+                        document.dispatchEvent(new ChangeMenuButtonEvent(event.detail.value));
                         break;
                     default:
                         this.getEditor().setOption(event.detail.name, event.detail.value);
@@ -125,6 +126,9 @@ export class Core {
             new ChangeViewEvent(
                 0, 0, {editor: true, draweritem: true, appbar: true}
             )
+        );
+        document.dispatchEvent(
+            new ChangeMenuButtonEvent(this.getOption('menuButton'))
         );
     }
 
@@ -296,10 +300,6 @@ export class Core {
             value = 'ace/keyboard/' + name.toLowerCase();
         }
         this.editor.setKeyboardHandler(value);
-    }
-
-    setMenuButton(value) {
-        
     }
 
     setHello(hello) {

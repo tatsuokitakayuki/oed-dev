@@ -1,3 +1,4 @@
+import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 import {UiHelper} from '/ui_helper.js';
 
@@ -38,6 +39,7 @@ export class AppBar extends UiHelper {
         this.buttonExtensions.addEventListener('click', () => this.onClickButton('menu-extensions'), options);
         this.buttonHelp.addEventListener('click', () => this.onClickButton('menu-help'), options);
         document.addEventListener('AppBar:change', event => this.onChange(event), options);
+        document.addEventListener('MenuButton:change', event => this.onChange(event), options);
     }
 
     onNavIcon() {
@@ -76,15 +78,20 @@ export class AppBar extends UiHelper {
     }
 
     onChange(event) {
-        const index = event.detail.index;
-        const titleData = {
-            title: this.core.getDisplayName(index),
-            options: {
-                modified: !this.core.isClean(index),
-                read_only: this.core.isReadOnly(index),
-            }
-        };
-        this.setTitle(this.buildTitle(titleData));
+        if (event.detail.index !== undefined) {
+            const index = event.detail.index;
+            const titleData = {
+                title: this.core.getDisplayName(index),
+                options: {
+                    modified: !this.core.isClean(index),
+                    read_only: this.core.isReadOnly(index),
+                }
+            };
+            this.setTitle(this.buildTitle(titleData));
+        }
+        if (event.detail.style) {
+            this.updateButtons(event.detail.style);
+        }
     }
 
     getElement() {
@@ -116,5 +123,38 @@ export class AppBar extends UiHelper {
 
     blur() {
         this.getElement().blur();
+    }
+
+    updateButtons(style) {
+        const res = new Res();
+        const materialHelper = new MaterialHelper();
+        [
+            {label: res.buttons.file, button: this.buttonFile, icon: 'folder'},
+            {label: res.buttons.edit, button: this.buttonEdit, icon: 'edit'},
+            {label: res.buttons.search, button: this.buttonSearch, icon: 'search'},
+            {label: res.buttons.code, button: this.buttonCode, icon: 'code'},
+            {label: res.buttons.view, button: this.buttonView, icon: 'pageview'},
+            {label: res.buttons.extensions, button: this.buttonExtensions, icon: 'extension'},
+            {label: res.buttons.help, button: this.buttonHelp, icon: 'help'},
+        ]
+        .forEach(item => {
+            materialHelper.removeChildren(item.button);
+            item.button.appendChild(materialHelper.buttonRipple());
+            switch (style) {
+                case res.menu_button[0].value:
+                    item.button.appendChild(materialHelper.buttonIcon(item.icon));
+                    item.button.appendChild(materialHelper.buttonLabel(item.label));
+                    break;
+                case res.menu_button[1].value:
+                    item.button.appendChild(materialHelper.buttonLabel(item.label));
+                    break;
+                case res.menu_button[2].value:
+                    item.button.appendChild(materialHelper.icon(item.icon));
+                    break;
+                default:
+                    break;
+            }
+            item.button.appendChild(materialHelper.buttonTouch());
+        });
     }
 }

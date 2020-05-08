@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.0.20200508 (dev)
+- Implemented the function of Menu button option.
+
 ## Version 3.0.20200507 (dev)
 - Added Menu button option.
 

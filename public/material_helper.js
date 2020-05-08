@@ -58,6 +58,34 @@ export class MaterialHelper extends HtmlHelper {
         return this.div(null, [{name: 'class', value: 'mdc-button__ripple'}]);
     }
 
+    buttonTouch() {
+        return this.div(null, [{name: 'class', value: 'mdc-button__touch'}]);
+    }
+
+    buttonLabel(label) {
+        return this.span(label, [{name: 'class', value: 'mdc-button__label'}]);
+    }
+
+    buttonIcon(iconName) {
+        return this.span(
+            iconName,
+            [
+                {name: 'class', value: 'material-icons mdc-button__icon'},
+                {name: 'aria-hidden', value: 'true'}
+            ]
+        );
+    }
+
+    icon(name) {
+        return this.span(
+            name,
+            [
+                {name: 'class', value: 'material-icons'},
+                {name: 'aria-hidden', value: 'true'}
+            ]
+        );
+    }
+
     actionSnackbar() {
         const action = this.button(
             null,
