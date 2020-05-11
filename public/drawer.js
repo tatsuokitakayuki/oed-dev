@@ -22,6 +22,9 @@ export class Drawer extends UiHelper {
         document.addEventListener(
             'Drawer:changeitem', event => this.onChange(event), options
         );
+        document.addEventListener(
+            'Drawer:toggle', () => this.toggle(), options
+        );
     }
 
     onOpened() {

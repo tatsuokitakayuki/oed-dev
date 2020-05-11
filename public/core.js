@@ -682,10 +682,6 @@ export class Core {
         this.selectFile(this.getLength() - 1);
     }
 
-    toggleFileList() {
-        this.drawer.toggle();
-    }
-
     toggleFileMenu() {
         this.menuFile.updateMenuItems();
         this.menuFile.toggle();

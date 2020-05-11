@@ -1,5 +1,6 @@
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
+import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
 import {UiHelper} from '/ui_helper.js';
 
 export class AppBar extends UiHelper {
@@ -30,43 +31,61 @@ export class AppBar extends UiHelper {
     initialize() {
         this.topAppBar.setScrollTarget(document.getElementById('editor'));
         const options = {passive: true};
-        this.topAppBar.listen('MDCTopAppBar:nav', () => this.onNavIcon(), options);
-        this.buttonFile.addEventListener('click', () => this.onClickButton('menu-file'), options);
-        this.buttonEdit.addEventListener('click', () => this.onClickButton('menu-edit'), options);
-        this.buttonSearch.addEventListener('click', () => this.onClickButton('menu-search'), options);
-        this.buttonCode.addEventListener('click', () => this.onClickButton('menu-code'), options);
-        this.buttonView.addEventListener('click', () => this.onClickButton('menu-view'), options);
-        this.buttonExtensions.addEventListener('click', () => this.onClickButton('menu-extensions'), options);
-        this.buttonHelp.addEventListener('click', () => this.onClickButton('menu-help'), options);
-        document.addEventListener('AppBar:change', event => this.onChange(event), options);
-        document.addEventListener('MenuButton:change', event => this.onChange(event), options);
-    }
-
-    onNavIcon() {
-        this.core.toggleFileList();
+        this.topAppBar.listen(
+            'MDCTopAppBar:nav',
+            () => document.dispatchEvent(new ToggleDrawerEvent()),
+            options
+        );
+        this.buttonFile.addEventListener(
+            'click', () => this.onClickButton('file'), options
+        );
+        this.buttonEdit.addEventListener(
+            'click', () => this.onClickButton('edit'), options
+        );
+        this.buttonSearch.addEventListener(
+            'click', () => this.onClickButton('search'), options
+        );
+        this.buttonCode.addEventListener(
+            'click', () => this.onClickButton('code'), options
+        );
+        this.buttonView.addEventListener(
+            'click', () => this.onClickButton('view'), options
+        );
+        this.buttonExtensions.addEventListener(
+            'click', () => this.onClickButton('extensions'), options
+        );
+        this.buttonHelp.addEventListener(
+            'click', () => this.onClickButton('help'), options
+        );
+        document.addEventListener(
+            'AppBar:change', event => this.onChange(event), options
+        );
+        document.addEventListener(
+            'MenuButton:change', event => this.onChange(event), options
+        );
     }
 
     onClickButton(id) {
         switch (id) {
-            case 'menu-file':
+            case 'file':
                 this.core.toggleFileMenu();
                 break;
-            case 'menu-edit':
+            case 'edit':
                 this.core.toggleEditMenu();
                 break;
-            case 'menu-search':
+            case 'search':
                 this.core.toggleSearchMenu();
                 break;
-            case 'menu-code':
+            case 'code':
                 this.core.toggleCodeMenu();
                 break;
-            case 'menu-view':
+            case 'view':
                 this.core.toggleViewMenu();
                 break;
-            case 'menu-extensions':
+            case 'extensions':
                 this.core.toggleExtensionsMenu();
                 break;
-            case 'menu-help':
+            case 'help':
                 this.core.toggleHelpMenu();
                 break;
             default:

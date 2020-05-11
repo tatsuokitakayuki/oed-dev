@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.0.20200511 (dev)
+- Changed Toggle file list command to ToggleDrawerEvent class.
 - Added ToggleDrawerEvent class.
 
 ## Version 3.0.20200508 (dev)

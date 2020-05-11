@@ -1,7 +1,8 @@
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
-import {SaveOptionsEvent} from '/save_options_event.js';
 import {Res} from '/res.js';
+import {SaveOptionsEvent} from '/save_options_event.js';
+import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
 
 export class Keybinding {
     constructor(core) {
@@ -655,7 +656,7 @@ export class Keybinding {
             name: 'oedToggleFileList',
             description: res.descriptions.toggle_file_list,
             bindKey: {win: 'Ctrl-Shift-F', mac: 'Command-Shift-F'},
-            exec: editor => this.core.toggleFileList(),
+            exec: editor => document.dispatchEvent(new ToggleDrawerEvent()),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
