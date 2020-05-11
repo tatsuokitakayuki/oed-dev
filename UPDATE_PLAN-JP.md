@@ -1,7 +1,6 @@
 # アップデート予定
 
 ## for OED
-* Native File System API を導入する
 * アップデートを通知する
 * 編集中の文書ステータスを表示する
 * メニューが開いているときに他のメニューボタンにホバリングしたときにはメニューを切り替える
@@ -23,3 +22,5 @@
                 * Statusbar
             * Options
         * Service Worker (sw.js)
+* Native File System API を導入する
+    * プライバシーポリシーの策定が必要で、しっかり考えないといけない
