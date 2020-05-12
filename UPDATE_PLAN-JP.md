@@ -13,8 +13,8 @@
                 * Editor（ACE Editor）
                     * Keybinding
                 * TopAppBar
-                * MenuManager
-                    * 各メニュー
+                    * MenuManager
+                        * 各メニュー
                 * Drawer
                 * DialogManager
                     * 各ダイアログ
