@@ -254,6 +254,7 @@ export class Res {
             modified: 'Modified',
             read_only: 'Read only',
             untitled: 'untitled',
+            updated_oed: 'Updated OED',
         };
     }
 
