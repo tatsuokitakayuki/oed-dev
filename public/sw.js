@@ -1,4 +1,4 @@
-const OED_VERSION = '3.0.20200511.0';
+const OED_VERSION = '3.0.20200515.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.10';
 const ACE_BASE = 'Ace';
@@ -595,6 +595,12 @@ self.addEventListener('activate', event => {
             })
             .catch(error => console.error(error))
     );
+});
+
+self.addEventListener('message', event => {
+    if (event.data.action === 'skipWaiting') {
+        self.skipWaiting();
+    }
 });
 
 self.addEventListener('fetch', event => {

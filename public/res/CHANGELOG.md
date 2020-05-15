@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.0.20200515 (dev)
+- Added OED update notification.
+
 ## Version 3.0.20200511 (dev)
 - Changed Toggle file list command to ToggleDrawerEvent class.
 - Added ToggleDrawerEvent class.
