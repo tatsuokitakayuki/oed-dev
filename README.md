@@ -1,7 +1,8 @@
 # OED - Open, edit, and download.
 
 ## What is this
-"OED" is an example of text editor implementation by PWA (Progressive Web Apps).
+"OED" is a text / code editor implemented only in web technology.
+"OED" is the Progressive Web Apps (PWA).
 We make "OED" mainly for Chromebook (or Chromium OS and OS based) users.
 
 ## Goal
@@ -71,8 +72,7 @@ This app is developed using the following libraries and frameworks.
     - [MIT License](https://github.com/cloud9ide/emmet-core/blob/master/LICENSE)
 
 ## Legal notice
-Copyright [Comeluck Lab](https://www.comeluck.jp/).
-Developed by Tatsuoki, Takayuki
+Copyright Tatsuoki, Takayuki.
 - [GitHub - tatsuokitakayuki/oed-dev: OED - Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
 - [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 

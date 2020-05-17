@@ -1,7 +1,8 @@
 # OED（おえど） - Open, edit, and download.
 
 ## これはなにか
-「OED」は PWA (Progressive Web Apps)によるテキストエディターの実装例です。
+「OED」はウェブ技術のみで作ったテキスト・コードエディターです。
+「OED」はプログレッシブウェブアプリ（Progressive Web Apps）です。
 私達は主に Chromebook （あるいは Chromium OS やそれを元とした OS の） ユーザーのために「OED」を開発しています。
 
 ## 目的
@@ -71,8 +72,7 @@
     - [MIT License](https://github.com/cloud9ide/emmet-core/blob/master/LICENSE)
 
 ## 法的通知
-Copyright [Comeluck Lab](https://www.comeluck.jp/).
-Developed by 龍興 尚幸 （Tatsuoki, Takayuki）
+Copyright 龍興 尚幸 (Tatsuoki, Takayuki).
 - [GitHub - tatsuokitakayuki/oed-dev: OED - Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
 - [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
 

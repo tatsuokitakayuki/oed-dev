@@ -249,7 +249,8 @@ export class Res {
         this.strings = {
             confirm_close_file: 'Discard $filename$ edits and close.',
             hello: 'Welcome to OED.\n\nO: Open\nE: Edit\nD: Download\n\n'+
-                'OED is a text / code editor implemented only in web technology.\n'+
+                '\"OED\" is a text / code editor implemented only in web technology.\n'+
+                '\"OED\" is the Progressive Web Apps (PWA).\n'+
                 'Enjoy editing text and code.\n',
             modified: 'Modified',
             read_only: 'Read only',
