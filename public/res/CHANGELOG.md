@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.0.20200520 (dev)
+- Fixed the value of data-mdc-dialog-button-default.
+
 ## Version 3.0.20200515 (dev)
 - Added OED update notification.
 

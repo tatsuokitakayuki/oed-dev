@@ -129,7 +129,7 @@ export class MaterialHelper extends HtmlHelper {
         const button = this.buttonDialog(res.buttons.ok);
         button.setAttribute('id', 'dialog-button-ok');
         button.setAttribute('data-mdc-dialog-action', 'submit');
-        button.setAttribute('data-mdc-dialog-button-default', 'true');
+        button.setAttribute('data-mdc-dialog-button-default', 'data-mdc-dialog-button-default');
         return button;
     }
 
