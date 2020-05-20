@@ -59,11 +59,12 @@ export class Dialog {
     open() {
         this.buildContent();
         this.buildFooter();
+        const options = {passive: true, once: true};
         this.dialog.listen(
-            'MDCDialog:closed', event => this.onClosed(event), {once: true}
+            'MDCDialog:closed', event => this.onClosed(event), options
         );
         this.dialog.listen(
-            'MDCDialog:opened', () => this.onOpened(), {once: true}
+            'MDCDialog:opened', () => this.onOpened(), options
         );
         this.dialog.open();
     }
