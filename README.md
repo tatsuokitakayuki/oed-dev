@@ -52,29 +52,15 @@ We make "OED" mainly for Chromebook (or Chromium OS and OS based) users.
     - Edge (Tested on EdgeHTML and Chromium)
     - Safari
 
-## Open Source Software License
-This app is developed using the following libraries and frameworks.
+## List of libraries and frameworks used
+* [Ace](https://ace.c9.io/)
+* [Material Design Component for Web](https://material.io/develop/web/)
+* [Material Design Icons](https://google.github.io/material-design-icons/)
+* [localForage](https://localforage.github.io/localForage/)
+* [emmet-core](https://github.com/cloud9ide/emmet-core)
 
-- [Ace](https://ace.c9.io/)
-    - [GitHub - ajaxorg/ace-builds: Packaged version of Ace code editor](https://github.com/ajaxorg/ace-builds/)
-    - [BSD License](https://github.com/ajaxorg/ace-builds/blob/master/LICENSE)
-- [Material Design Component for Web](https://material.io/develop/web/)
-    - [GitHub - material-components/material-components-web: Modular and customizable Material Design UI components for the web](https://github.com/material-components/material-components-web)
-    - [MIT License](https://github.com/material-components/material-components-web/blob/master/LICENSE)
-- [Material Design Icons](https://google.github.io/material-design-icons/)
-    - [GitHub - google/material-design-icons: Material Design icons by Google](https://github.com/google/material-design-icons)
-    - [Apache License Version 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE)
-- [localForage](https://localforage.github.io/localForage/)
-    - [localForage/localForage: 💾 Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.](https://github.com/localForage/localForage)
-    - [Apache License Version 2.0](https://github.com/localForage/localForage/blob/master/LICENSE)
-- [emmet-core](https://github.com/cloud9ide/emmet-core)
-    - [GitHub - cloud9ide/emmet-core](https://github.com/cloud9ide/emmet-core)
-    - [MIT License](https://github.com/cloud9ide/emmet-core/blob/master/LICENSE)
-
-## Legal notice
-Copyright Tatsuoki, Takayuki.
-- [GitHub - tatsuokitakayuki/oed-dev: OED - Open, edit, and download.](https://github.com/tatsuokitakayuki/oed-dev)
-- [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE)
+## License
+This program is free software; it is distributed under an [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE).
 
 ## How to use
 ### How to try immediately
