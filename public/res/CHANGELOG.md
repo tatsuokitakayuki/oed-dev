@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.0.20200522 (dev)
+- Fixed some strings.
 - Fixed the color of the close button on Snackbar.
 
 ## Version 3.0.20200520 (dev)
