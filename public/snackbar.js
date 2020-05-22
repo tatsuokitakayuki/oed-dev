@@ -71,7 +71,10 @@ export class Snackbar {
             button.appendChild(
                 materialHelper.span(
                     action.label,
-                    [{name: 'class', value: 'mdc-button__label'}]
+                    [
+                        {name: 'class', value: 'mdc-button__label'},
+                        {name: 'style', value: 'color: magenta;'},
+                    ]
                 )
             );
             snackbarActions.appendChild(button);

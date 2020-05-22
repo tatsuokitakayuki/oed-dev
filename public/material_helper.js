@@ -105,7 +105,8 @@ export class MaterialHelper extends HtmlHelper {
                 'close',
                 [
                     {name: 'class', value: 'mdc-button__label material-icons'},
-                    {name: 'aria-hidden', value: 'true'}
+                    {name: 'aria-hidden', value: 'true'},
+                    {name: 'style', value: 'color: white;'},
                 ]
             )
         );

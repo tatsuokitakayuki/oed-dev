@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.0.20200522 (dev)
+- Fixed the color of the close button on Snackbar.
+
 ## Version 3.0.20200520 (dev)
 - Fixed options for event listener.
 - Fixed the value of data-mdc-dialog-button-default.
