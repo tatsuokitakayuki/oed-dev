@@ -1,40 +1,40 @@
-# OED - Open, edit, and download.
+# OED - Open, Edit, and Download.
 
 ## What is this
-"OED" is a text / code editor implemented only in web technology.
-"OED" is the Progressive Web Apps (PWA).
-We make "OED" mainly for Chromebook (or Chromium OS and OS based) users.
+"OED" is a text / code editor made only by web technology.
+"OED" is a progressive web app.
+We are developing "OED" mainly for Chromebook (or Chromium OS and its based OS) users.
 
-## Goal
-- Turn "OED" into a worthy text editor.
-    - Add features.
+## Project goals
+- Turn "OED" into a fine text / code editor.
+    - Add functionality.
         1. Make all Ace features as accessible as possible.
-            - Immediate priority goals.
-        2. Implement functions to be provided as PWA.
-        3. Implements functions unique to "OED".
-    - Correct the bug.
-    - Prepare source code.
+            - This is an important goal for the time being.
+        2. Implement the functions that PWA should have.
+        3. The functions unique to "OED" are implemented.
+    - We will fix the problems that occurred during the development of "OED".
+    - Prepare the source code of "OED".
 
 ## Features of "OED"
-- A complete progressive web app (PWA). Perhaps.
-    - We are not using the Chrome API.
-    - Usability differs from a general text editor.
-        - For example, there is no "Save file". Instead, there is a "Download file".
-- Cache all files needed to run the app in local storage.
-    - Works offline. Perhaps.
-- Updates automatically in the background.
+- "OED" is a complete progressive web app (PWA).
+    - We are developing without using Chrome API.
+    - The usability differs from that of a general text code editor.
+        - For example, there is no "Save file". There is a "Download file" instead.
+- Caches all files needed to perform an "OED" to local storage.
+    - "OED" works offline.
+- "OED" is updated automatically in the background.
     - Always keep the latest version.
-        - The dev channel sometimes releases with bugs.
-- We use material design.
-    - Most web apps that come pre-installed with Chrome OS use material design.
-    - We have no idea why we can adopt other designs in this app.
-    - And above all, we wanted to use material design.
-        - You can't measure the good or bad without actually using it.
-- No special permissions are required.
-    - To prevent unnecessary access to browsers, operating systems, and hardware.
-- No cookies.
-    - We use IndexedDB instead.
-- Open source software.
+        - The dev channel is sometimes released with defects.
+- We are building an "OED" UI with Material Design.
+    - Most web apps preinstalled on Chrome OS use Material Design.
+    - We can't come up with a reason to adopt other designs in "OED".
+    - And above all, we wanted to build an "OED" UI with material design.
+        - We wanted to identify the various issues that arise when building a UI with material design.
+- "OED" does not require special permissions.
+    - This is to prevent unnecessary access to your browser, OS, and hardware.
+- "OED" does not use cookies.
+    - Use IndexedDB instead.
+- "OED" is open source software.
     - Open source software.
 
 ## System requirements
@@ -60,7 +60,7 @@ We make "OED" mainly for Chromebook (or Chromium OS and OS based) users.
 * [emmet-core](https://github.com/cloud9ide/emmet-core)
 
 ## License
-This program is free software; it is distributed under an [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE).
+This program is open source software; it is distributed under the [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE).
 
 ## How to use
 ### How to try immediately
