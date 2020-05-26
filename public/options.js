@@ -233,7 +233,7 @@ export class Options {
             fileDecoding: 'utf-8',      // string ["utf-8"]
             hello: false,               // true|[false]
             keyboardHandler: 'Ace',     // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
-            menuButton: 'label',        // ["iconlabel"]|"label"|"icon"
+            menuButton: 'label',        // "iconlabel"|["label"]|"icon"
             theme: 'Dark',              // ["Dark"]|"Light"|"Ace"|"AceReverse"
         };
     }
