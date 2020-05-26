@@ -483,12 +483,11 @@ export class Core {
         let index = this.getActive();
         document.dispatchEvent(new ChangeDrawerItemEvent(index, -1));
         const res = new Res();
-        index = this.findIndex(
-            new URL(res.protocols.oed + '//' +
-                res.hosts.edit_session + '/' +
-                res.dirs.res + '/' + coreName
-            ).href
+        const coreFileUrl = new URL(res.protocols.oed + '//' +
+            res.hosts.edit_session + '/' +
+            res.dirs.res + '/' + coreName
         );
+        index = this.findIndex(coreFileUrl.href);
         if (index != -1) {
             this.updateEditSession(index);
             document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
@@ -500,14 +499,7 @@ export class Core {
             if (result.success) {
                 this.setName(index, filename);
                 this.setDisplayName(index, coreName);
-                this.setUrl(
-                    new URL(
-                        res.protocols.oed + '//' +
-                        res.hosts.edit_session + '/' +
-                        res.dirs.res + '/' + coreName
-                    ),
-                    index
-                );
+                this.setUrl(coreFileUrl, index);
                 this.setReadOnly(true, index);
                 this.updateEditSession(index);
                 if (this.drawer.hasItem(index)) {
@@ -536,6 +528,17 @@ export class Core {
     async changeLogA() {
         const res = new Res();
         await this.openCoreFileA(res.files.change_log);
+        const index = this.getActive();
+        document.dispatchEvent(
+            new ChangeViewEvent(
+                index, index, {editor: true, draweritem: true, appbar: true}
+            )
+        );
+    }
+
+    async openSourceLisenceA() {
+        const res = new Res();
+        await this.openCoreFileA(res.files.open_source_lisence);
         const index = this.getActive();
         document.dispatchEvent(
             new ChangeViewEvent(

@@ -125,6 +125,7 @@ export class Res {
             import_options: 'Import options',
             cache_list: 'Cache list',
             change_log: 'Change log',
+            open_source_lisence: 'Open source lisence',
             about: 'About',
             toggle_file_menu: 'Toggle file menu',
             toggle_edit_menu: 'Toggle edit menu',
@@ -225,6 +226,7 @@ export class Res {
         ];
         this.files = {
             about: 'ABOUT',
+            open_source_lisence: 'OPEN_SOURCE_LISENCE',
             change_log: 'CHANGELOG',
             cache_list: 'CACHELIST',
         };

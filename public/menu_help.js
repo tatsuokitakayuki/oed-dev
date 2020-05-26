@@ -55,6 +55,12 @@ export class MenuHelp extends Menu {
                     update: false
                 },
                 {
+                    id: 'menu-help-oed-open-source-lisence',
+                    text: res.descriptions.open_source_lisence,
+                    meta: '',
+                    update: false
+                },
+                {
                     id: 'menu-help-oed-about',
                     text: res.descriptions.about,
                     meta: '',

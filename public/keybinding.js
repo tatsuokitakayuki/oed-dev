@@ -643,6 +643,12 @@ export class Keybinding {
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
+            name: 'oedOpenSourceLisence',
+            description: res.descriptions.open_source_lisence,
+            exec: editor => this.core.openSourceLisenceA(),
+            readOnly: true
+        });
+        this.core.getEditor().commands.addCommand({
             name: 'oedAbout',
             description: res.descriptions.about,
             exec: editor => this.core.aboutA(),
