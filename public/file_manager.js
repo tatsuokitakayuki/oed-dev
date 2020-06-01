@@ -119,7 +119,7 @@ export class FileManager {
         return this.list[index].setDisplayName(displayName);
     }
 
-    setUrl(url, index) {
+    setUrl(index, url) {
         this.list[index].url = url;
     }
 

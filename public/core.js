@@ -282,8 +282,8 @@ export class Core {
         this.fileManager.setDisplayName(index, displayName);
     }
 
-    setUrl(url, index) {
-        this.fileManager.setUrl(url, index);
+    setUrl(index, url) {
+        this.fileManager.setUrl(index, url);
     }
 
     setReadOnly(readOnly, index) {
@@ -499,7 +499,7 @@ export class Core {
             if (result.success) {
                 this.setName(index, filename);
                 this.setDisplayName(index, coreName);
-                this.setUrl(coreFileUrl, index);
+                this.setUrl(index, coreFileUrl);
                 this.setReadOnly(true, index);
                 this.updateEditSession(index);
                 if (this.drawer.hasItem(index)) {
