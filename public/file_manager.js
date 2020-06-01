@@ -143,7 +143,7 @@ export class FileManager {
         this.setActive(index);
     }
 
-    async openFileA(file, index) {
+    async openFileA(index, file) {
         return await this.list[index].openFileA(file);
     }
 

@@ -389,7 +389,7 @@ export class Core {
         document.dispatchEvent(new ChangeDrawerItemEvent(index, -1));
         for (let i = 0; i < files.length; i++) {
             index = await this.createFileDataA();
-            const result = await this.fileManager.openFileA(files[i], index);
+            const result = await this.fileManager.openFileA(index, files[i]);
             if (result.success) {
                 this.updateEditSession(index);
                 if (oldIndex != index) {
