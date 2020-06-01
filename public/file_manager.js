@@ -147,7 +147,7 @@ export class FileManager {
         return await this.list[index].openFileA(file);
     }
 
-    async openUrlA(url, index) {
+    async openUrlA(index, url) {
         return await this.list[index].openUrlA(url);
     }
 

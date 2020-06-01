@@ -475,8 +475,8 @@ export class Core {
         );
     }
 
-    async openUrlA(url, index) {
-        return await this.fileManager.openUrlA(url, index);
+    async openUrlA(index, url) {
+        return await this.fileManager.openUrlA(index, url);
     }
 
     async openCoreFileA(coreName) {
@@ -495,7 +495,7 @@ export class Core {
             index = await this.createFileDataA();
             const filename = coreName + '.md';
             const url = new URL('/res/' + filename, window.location.href);
-            const result = await this.openUrlA(url, index);
+            const result = await this.openUrlA(index, url);
             if (result.success) {
                 this.setName(index, filename);
                 this.setDisplayName(index, coreName);
