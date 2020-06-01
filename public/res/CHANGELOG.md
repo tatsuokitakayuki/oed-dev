@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 3.1.20200601 (dev)
+- Fixed the Snackbar.
+- Arranged the order of arguments.
+
 ## Version 3.0.20200526 (dev)
 - Added Open source license to the help menu.
 
