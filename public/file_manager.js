@@ -123,7 +123,7 @@ export class FileManager {
         this.list[index].url = url;
     }
 
-    setReadOnly(readOnly, index) {
+    setReadOnly(index, readOnly) {
         this.list[index].readOnly = readOnly;
     }
 

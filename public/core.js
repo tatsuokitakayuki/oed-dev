@@ -286,8 +286,8 @@ export class Core {
         this.fileManager.setUrl(index, url);
     }
 
-    setReadOnly(readOnly, index) {
-        this.fileManager.setReadOnly(readOnly, index);
+    setReadOnly(index, readOnly) {
+        this.fileManager.setReadOnly(index, readOnly);
     }
 
     setUntitledName(index) {
@@ -500,7 +500,7 @@ export class Core {
                 this.setName(index, filename);
                 this.setDisplayName(index, coreName);
                 this.setUrl(index, coreFileUrl);
-                this.setReadOnly(true, index);
+                this.setReadOnly(index, true);
                 this.updateEditSession(index);
                 if (this.drawer.hasItem(index)) {
                     document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
@@ -560,7 +560,7 @@ export class Core {
 
     flipReadOnly(index) {
         const readOnly = !this.isReadOnly(index);
-        this.setReadOnly(readOnly, index);
+        this.setReadOnly(index, readOnly);
         return readOnly;
     }
 
