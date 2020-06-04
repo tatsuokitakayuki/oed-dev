@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200604 (dev)
+- Added Snackbar to Export options and Import options.
+
 ## Version 3.1.20200601 (dev)
 - Fixed the Snackbar.
 - Arranged the order of arguments.
