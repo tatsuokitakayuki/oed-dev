@@ -1,6 +1,7 @@
 import {CacheManager} from '/cache_manager.js';
 import {DialogSelectFile} from '/dialog_select_file.js';
 import {FileHelper} from '/file_helper.js';
+import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 
 export class Options {
     constructor() {
@@ -281,6 +282,9 @@ export class Options {
         const fileHelper = new FileHelper();
         const blob = fileHelper.buildBlob(json, 'application/json');
         fileHelper.writeBlob(blob, 'export_options.json');
+        document.dispatchEvent(
+            new ChangeSnackbarEvent('Exported options.', true, null)
+        );
     }
 
     async importOptionsA(core) {
@@ -295,6 +299,9 @@ export class Options {
             core.getEditor().setOptions(options.options.session);
             core.getEditor().setOptions(options.options.extensions);
             Object.assign(this.oed, options.options.oed);
+            document.dispatchEvent(
+                new ChangeSnackbarEvent('Imported options.', true, null)
+            );
         }
     }
 
