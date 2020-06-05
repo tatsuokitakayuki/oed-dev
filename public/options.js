@@ -1,7 +1,9 @@
 import {CacheManager} from '/cache_manager.js';
+import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
+import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogSelectFile} from '/dialog_select_file.js';
 import {FileHelper} from '/file_helper.js';
-import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
+import {SaveOptionsEvent} from '/save_options_event.js';
 
 export class Options {
     constructor() {
@@ -301,6 +303,15 @@ export class Options {
             Object.assign(this.oed, options.options.oed);
             document.dispatchEvent(
                 new ChangeSnackbarEvent('Imported options.', true, null)
+            );
+            document.dispatchEvent(
+                new SaveOptionsEvent(core.getEditor(), {all: true})
+            );
+            const index = core.getActive();
+            document.dispatchEvent(
+                new ChangeViewEvent(
+                    index, index, {editor: true, draweritem: true, appbar: true}
+                )
             );
         }
     }
