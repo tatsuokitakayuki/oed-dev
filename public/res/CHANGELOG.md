@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200605 (dev)
+- Fixed to save options with Import options.
+
 ## Version 3.1.20200604 (dev)
 - Added Snackbar to Export options and Import options.
 
