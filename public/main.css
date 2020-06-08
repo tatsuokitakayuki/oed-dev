@@ -44,22 +44,74 @@ body {
 }
 
 .oed-dark {
+    color: white;
+    background-color: black;
     --mdc-theme-primary: black;
     --mdc-theme-secondary: black;
+    --mdc-theme-background: black;
+    --mdc-theme-surface: black;
     --mdc-theme-error: black;
     --mdc-theme-on-primary: white;
     --mdc-theme-on-secondary: white;
+    --mdc-theme-on-surface: white;
     --mdc-theme-on-error: magenta;
 }
 
 .oed-light {
+    color: black;
+    background-color: white;
     --mdc-theme-primary: white;
     --mdc-theme-secondary: white;
+    --mdc-theme-background: white;
+    --mdc-theme-surface: white;
     --mdc-theme-error: white;
     --mdc-theme-on-primary: black;
     --mdc-theme-on-secondary: black;
+    --mdc-theme-on-surface: black;
     --mdc-theme-on-error: red;
 }
+
+/* ここから将来削除予定 */
+.mdc-menu .mdc-list {
+    color: inherit;
+}
+
+.mdc-menu .mdc-list-item__meta {
+    color: inherit;
+}
+
+.mdc-top-app-bar {
+    color: inherit;
+}
+
+.mdc-button:not(:disabled) {
+    color: inherit;
+}
+
+.mdc-dialog .mdc-dialog__title {
+    color: inherit;
+}
+
+.mdc-list-item--selected .mdc-list-item__graphic, .mdc-list-item--activated .mdc-list-item__graphic {
+    color: inherit;
+}
+
+.mdc-drawer {
+    background-color: inherit;
+}
+
+.mdc-drawer .mdc-list-item {
+    color: inherit;
+}
+
+.mdc-drawer .mdc-drawer__title {
+    color: inherit;
+}
+
+.mdc-list {
+    color: inherit;
+}
+/* ここまで将来削除予定 */
 
 select {
     width: 100%;

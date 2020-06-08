@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.1.20200608 (dev)
+- Added dark mode and light mode.
 - Updated localForage to version 1.7.4.
 
 ## Version 3.1.20200605 (dev)
