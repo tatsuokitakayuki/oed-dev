@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200608 (dev)
+- Updated localForage to version 1.7.4.
+
 ## Version 3.1.20200605 (dev)
 - Fixed to save options with Import options.
 
