@@ -48,6 +48,13 @@ export class MenuSearch extends Menu {
                     text: 'Replace...',
                     meta: 'Ctrl+H',
                     update: false
+                },
+                {id: '-', text: '', meta: ''},
+                {
+                    id: 'menu-search-gotoline',
+                    text: 'Go to line...',
+                    meta: 'Ctrl+L',
+                    update: false
                 }
             ]
         };

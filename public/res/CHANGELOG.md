@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.1.20200609 (dev)
+- Added Go to line.
 - Fixed CSS.
 
 ## Version 3.1.20200608 (dev)
