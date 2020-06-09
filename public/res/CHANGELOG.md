@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200609 (dev)
+- Fixed CSS.
+
 ## Version 3.1.20200608 (dev)
 - Added dark mode and light mode.
 - Updated localForage to version 1.7.4.

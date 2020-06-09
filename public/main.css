@@ -46,28 +46,28 @@ body {
 .oed-dark {
     color: white;
     background-color: black;
-    --mdc-theme-primary: black;
-    --mdc-theme-secondary: black;
-    --mdc-theme-background: black;
-    --mdc-theme-surface: black;
-    --mdc-theme-error: black;
+    --mdc-theme-primary: rgba(0, 0, 0, 0.87);
+    --mdc-theme-secondary: rgba(0, 0, 0, 0.54);
+    --mdc-theme-background: rgba(0, 0, 0, 0.87);
+    --mdc-theme-surface: rgba(0, 0, 0, 0.87);
+    --mdc-theme-error: rgba(0, 0, 0, 0.87);
     --mdc-theme-on-primary: white;
-    --mdc-theme-on-secondary: white;
-    --mdc-theme-on-surface: white;
+    --mdc-theme-on-secondary: rgba(255, 255, 255, 0.7);
+    --mdc-theme-on-surface: rgba(255, 255, 255, 0.7);
     --mdc-theme-on-error: magenta;
 }
 
 .oed-light {
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
     background-color: white;
-    --mdc-theme-primary: white;
-    --mdc-theme-secondary: white;
-    --mdc-theme-background: white;
-    --mdc-theme-surface: white;
-    --mdc-theme-error: white;
-    --mdc-theme-on-primary: black;
-    --mdc-theme-on-secondary: black;
-    --mdc-theme-on-surface: black;
+    --mdc-theme-primary: rgba(255, 255, 255, 0.87);
+    --mdc-theme-secondary: rgba(255, 255, 255, 0.54);
+    --mdc-theme-background: rgba(255, 255, 255, 0.87);
+    --mdc-theme-surface: rgba(255, 255, 255, 0.87);
+    --mdc-theme-error: rgba(255, 255, 255, 0.87);
+    --mdc-theme-on-primary: rgba(0, 0, 0, 0.7);
+    --mdc-theme-on-secondary: rgba(0, 0, 0, 0.5);
+    --mdc-theme-on-surface: rgba(0, 0, 0, 0.5);
     --mdc-theme-on-error: red;
 }
 
@@ -105,6 +105,10 @@ body {
 }
 
 .mdc-drawer .mdc-drawer__title {
+    color: inherit;
+}
+
+.mdc-drawer .mdc-list-item__graphic {
     color: inherit;
 }
 
