@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200610 (dev)
+- Fixed initial value of Font family to "monospace".
+
 ## Version 3.1.20200609 (dev)
 - Added Go to line.
 - Fixed CSS.

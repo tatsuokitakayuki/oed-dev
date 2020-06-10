@@ -75,24 +75,32 @@ export class Core {
         document.addEventListener(
             'Editor:changeoption',
             event => {
-                switch (event.detail.name) {
+                let name = event.detail.name;
+                let value = event.detail.value;
+                switch (name) {
                     case 'fontSize':
-                        this.getEditor().setOption(event.detail.name, event.detail.value);
-                        document.getElementById('editor').style.fontSize = event.detail.value;
+                        this.getEditor().setOption(name, value);
+                        document.getElementById('editor').style.fontSize = value;
+                        break;
+                    case 'fontFamily':
+                        if (!value) {
+                            value = 'monospace';
+                        }
+                        this.getEditor().setOption(name, value);
                         break;
                     case 'fileDecoding':
-                        this.getOedOptions().fileDecoding = event.detail.value;
+                        this.getOedOptions().fileDecoding = value;
                         break;
                     case 'keyboardHandler':
-                        this.getOedOptions().keyboardHandler = event.detail.value;
-                        this.setKeyboardHandler(event.detail.value);
+                        this.getOedOptions().keyboardHandler = value;
+                        this.setKeyboardHandler(value);
                         break;
                     case 'menuButton':
-                        this.getOedOptions().menuButton = event.detail.value;
-                        document.dispatchEvent(new ChangeMenuButtonEvent(event.detail.value));
+                        this.getOedOptions().menuButton = value;
+                        document.dispatchEvent(new ChangeMenuButtonEvent(value));
                         break;
                     default:
-                        this.getEditor().setOption(event.detail.name, event.detail.value);
+                        this.getEditor().setOption(name, value);
                         break;
                 }
             },

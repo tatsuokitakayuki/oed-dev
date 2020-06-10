@@ -76,7 +76,7 @@ export class Options {
             displayIndentGuides: true,      // [true]|false
             fadeFoldWidgets: false,         // true|[false]
             fixedWidthGutter: true,         // [true]|false
-            fontFamily: undefined,          // css font-family value [undefined]
+            fontFamily: 'monospace',        // css font-family value ["monospace"]
             fontSize: '16px',               // number or css font-size string [16]
             hScrollBarAlwaysVisible: false, // true|[false]
             highlightGutterLine: true,      // [true]|false
