@@ -140,7 +140,7 @@ export class Core {
         const index = this.getActive();
         document.dispatchEvent(
             new ChangeViewEvent(
-                index, index, {editor: false, draweritem: true, appbar: true}
+                index, index, {draweritem: true, appbar: true}
             )
         );
     }
@@ -626,7 +626,7 @@ export class Core {
         }
         document.dispatchEvent(
             new ChangeViewEvent(
-                this.getActive(), -1, {editor: false, draweritem: true, appbar: false}
+                this.getActive(), -1, {draweritem: true}
             )
         );
         this.updateEditSession(index);

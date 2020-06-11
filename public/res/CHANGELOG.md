@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.1.20200611 (dev)
+- Fixed the argument of ChangeViewEvent.
 - Removed some unnecessary imports.
 - Fixed CSS.
 

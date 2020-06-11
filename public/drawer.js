@@ -45,7 +45,7 @@ export class Drawer extends UiHelper {
         this.core.focusEditor();
         document.dispatchEvent(
             new ChangeViewEvent(
-                index, index, {editor: true, draweritem: false, appbar: true}
+                index, index, {editor: true, appbar: true}
             )
         );
         this.updateItem(index, index);
