@@ -1,4 +1,3 @@
-import {ChangeViewEvent} from '/change_view_event.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {FileHelper} from '/file_helper.js';
 import {RenameFileEvent} from '/rename_file_event.js';
