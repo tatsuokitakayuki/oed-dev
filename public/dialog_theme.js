@@ -3,6 +3,7 @@ import {DialogSelect} from '/dialog_select.js';
 import {HtmlHelper} from '/html_helper.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
+import {ThemeHelper} from '/theme_helper.js';
 
 export class DialogTheme extends DialogSelect {
     constructor(initialValue) {
@@ -49,7 +50,8 @@ export class DialogTheme extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.descriptions.theme, res.getThemes());
+        const themeHelper = new ThemeHelper();
+        super.open(res.descriptions.theme, themeHelper.getThemes());
     }
 
     submit() {

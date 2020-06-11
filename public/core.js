@@ -99,6 +99,10 @@ export class Core {
                         this.getOedOptions().menuButton = value;
                         document.dispatchEvent(new ChangeMenuButtonEvent(value));
                         break;
+                    case 'theme':
+                        this.getEditor().setOption(name, value);
+                        document.dispatchEvent(new ChangeViewEvent(-1, -1, {theme:true}));
+                        break;
                     default:
                         this.getEditor().setOption(name, value);
                         break;

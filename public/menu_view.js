@@ -1,5 +1,6 @@
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
+import {ThemeHelper} from '/theme_helper.js';
 
 export class MenuView extends Menu {
     constructor(core) {
@@ -203,6 +204,7 @@ export class MenuView extends Menu {
 
     updateMenuItems() {
         const res = new Res();
+        const themeHelper = new ThemeHelper();
         this.menu.items.forEach(item => {
             const data = this.itemData.items.find(
                 data => item.id == data.id
@@ -233,11 +235,11 @@ export class MenuView extends Menu {
                         ).name;
                         break;
                     case 'menu-view-oed-theme':
-                        let theme = res.getThemes().bright.find(
+                        let theme = themeHelper.getThemes().bright.find(
                             theme => theme.value == optionValue
                         );
                         if (!theme) {
-                            theme = res.getThemes().dark.find(
+                            theme = themeHelper.getThemes().dark.find(
                                 theme => theme.value == optionValue
                             );
                         }

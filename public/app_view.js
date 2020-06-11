@@ -1,5 +1,6 @@
 import {ChangeAppBarEvent} from '/change_app_bar_event.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
+import {ThemeHelper} from '/theme_helper.js';
 import {SaveOptionsEvent} from '/save_options_event.js';
 
 export class AppView {
@@ -62,6 +63,15 @@ export class AppView {
     }
 
     updateTheme() {
-        
+        const theme = this.core.getOption('theme');
+        if (theme) {
+            const element = document.getElementById('app-view');
+            const themeHelper = new ThemeHelper();
+            if (themeHelper.isDark(theme)) {
+                element.setAttribute('class', 'mdc-typography oed-dark');
+            } else {
+                element.setAttribute('class', 'mdc-typography oed-light');
+            }
+        }
     }
 }
