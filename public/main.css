@@ -92,6 +92,10 @@ body {
     color: inherit;
 }
 
+.mdc-dialog .mdc-dialog__content {
+    color: inherit;
+}
+
 .mdc-list-item--selected .mdc-list-item__graphic, .mdc-list-item--activated .mdc-list-item__graphic {
     color: inherit;
 }
