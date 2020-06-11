@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.1.20200611 (dev)
+- Removed some unnecessary imports.
 - Fixed CSS.
 
 ## Version 3.1.20200610 (dev)

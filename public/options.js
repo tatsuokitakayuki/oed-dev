@@ -309,9 +309,7 @@ export class Options {
             );
             const index = core.getActive();
             document.dispatchEvent(
-                new ChangeViewEvent(
-                    index, index, {editor: true, draweritem: true, appbar: true}
-                )
+                new ChangeViewEvent(index, index, {all: true})
             );
         }
     }

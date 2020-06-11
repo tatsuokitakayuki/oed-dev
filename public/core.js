@@ -130,11 +130,7 @@ export class Core {
         this.focusEditor();
         this.helloOed();
         this.setWindowTitle();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                0, 0, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(0, 0, {all: true}));
         document.dispatchEvent(
             new ChangeMenuButtonEvent(this.getOption('menuButton'))
         );
@@ -384,11 +380,7 @@ export class Core {
         if (!this.drawer.hasItem(index)) {
             this.drawer.addItem(index, index);
         }
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     async openFileA(files) {
@@ -408,11 +400,7 @@ export class Core {
             } else {
                 this.dropFileData(index);
             }
-            document.dispatchEvent(
-                new ChangeViewEvent(
-                    index, -1, {editor: true, draweritem: true, appbar: true}
-                )
-            );
+            document.dispatchEvent(new ChangeViewEvent(index, -1, {all: true}));
         }
         document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
     }
@@ -435,11 +423,7 @@ export class Core {
         }
         this.fileManager.downloadFile(index);
         this.fileManager.markClean(index);
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     renameFile(index, callback, args) {
@@ -476,11 +460,7 @@ export class Core {
             await this.newFileA();
         }
         const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     async openUrlA(index, url) {
@@ -526,44 +506,28 @@ export class Core {
         const res = new Res();
         await this.openCoreFileA(res.files.cache_list);
         const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     async changeLogA() {
         const res = new Res();
         await this.openCoreFileA(res.files.change_log);
         const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     async openSourceLisenceA() {
         const res = new Res();
         await this.openCoreFileA(res.files.open_source_lisence);
         const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     async aboutA() {
         const res = new Res();
         await this.openCoreFileA(res.files.about);
         const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     flipReadOnly(index) {
@@ -666,11 +630,7 @@ export class Core {
             )
         );
         this.updateEditSession(index);
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
     nextFile() {

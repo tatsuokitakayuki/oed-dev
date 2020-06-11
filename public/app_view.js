@@ -42,19 +42,26 @@ export class AppView {
     }
 
     update(index, active, flags) {
-        if (flags.editor) {
+        if (flags.all || flags.editor) {
             this.updateEditor(index);
         }
-        if (flags.draweritem) {
+        if (flags.all || flags.draweritem) {
             document.dispatchEvent(new ChangeDrawerItemEvent(index, active));
         }
-        if (flags.appbar) {
+        if (flags.all || flags.appbar) {
             document.dispatchEvent(new ChangeAppBarEvent(index));
+        }
+        if (flags.all || flags.theme) {
+            this.updateTheme();
         }
     }
 
     updateEditor(index) {
         this.core.editor.setSession(this.core.getEditSession(index));
         this.core.editor.setReadOnly(this.core.isReadOnly(index));
+    }
+
+    updateTheme() {
+        
     }
 }

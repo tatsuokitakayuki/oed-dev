@@ -152,10 +152,6 @@ export class FileData {
         this.type = 'text/plain';
         this.editSession.setMode(fileHelper.getMode(sanitizedName));
         const index = this.core.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {editor: true, draweritem: true, appbar: true}
-            )
-        );
+        document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 }

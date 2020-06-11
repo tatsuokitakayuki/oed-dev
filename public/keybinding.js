@@ -331,11 +331,7 @@ export class Keybinding {
                 if (!this.core.isCoreFile(index)) {
                     editor.setReadOnly(this.core.flipReadOnly(index));
                     document.dispatchEvent(
-                        new ChangeViewEvent(
-                            index,
-                            index,
-                            {editor: true, draweritem: true, appbar: true}
-                        )
+                        new ChangeViewEvent(index, index, {all: true})
                     );
                 }
             },
