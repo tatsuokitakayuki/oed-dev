@@ -1,4 +1,4 @@
-const OED_VERSION = '3.1.20200611.0';
+const OED_VERSION = '3.1.20200612.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.10';
 const ACE_BASE = 'Ace';
@@ -76,10 +76,12 @@ const OED_URLS = [
     './res.js',
     './res/ABOUT.md',
     './res/CHANGELOG.md',
+    './res/OPEN_SOURCE_LISENCE.md',
     './save_options_editor_event.js',
     './save_options_event.js',
     './snackbar.js',
     './sw.js',
+    './theme_helper.js',
     './toggle_drawer_event.js',
     './ui_helper.js',
 ];
