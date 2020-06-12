@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## Version 3.1.20200611 (dev)
+- Fixed CSS.
+
+## Version 3.1.20200611 (dev)
 - Fixed Ace Dark/Light settings to be applied to OED display.
 - Extracted the definition of Theme from Res class to ThemeHelper class.
 - Fixed the argument of ChangeViewEvent.
