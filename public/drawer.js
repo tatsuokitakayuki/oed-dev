@@ -103,19 +103,25 @@ export class Drawer extends UiHelper {
         item.setAttribute('aria-selected', String(selected));
         item.setAttribute('title', this.core.getUrl(index).href);
         item.appendChild(materialHelper.listItemIcon(this.getIconName(index)));
-        item.appendChild(materialHelper.listItemText(this.buildItemName(index)));
+        const text = materialHelper.listItemText(null);
+        text.appendChild(materialHelper.listItemPrimaryText(this.core.getDisplayName(index)));
+        text.appendChild(materialHelper.listItemSecondaryText(this.buildItemName(index)));
+        item.appendChild(text);
         return item;
     }
 
     buildItemName(index) {
-        let itemName = this.core.getDisplayName(index);
+        const items = [];
+        const cursorPosition = this.core.getEditor().getCursorPosition();
+        cursorPosition.row += Number(this.core.getOption('firstLineNumber'));
+        items.push(`${cursorPosition.row}:${cursorPosition.column}`);
         if (!this.core.isClean(index)) {
-            itemName += ' (Mod)';
+            items.push('(Mod)');
         }
         if (this.core.isReadOnly(index)) {
-            itemName += ' (RO)';
+            items.push('(RO)');
         }
-        return itemName;
+        return items.join(' ');
     }
 
     getIconName(index) {

@@ -19,6 +19,14 @@ export class MaterialHelper extends HtmlHelper {
         return this.span(text, [{name: 'class', value: 'mdc-list-item__text'}]);
     }
 
+    listItemPrimaryText(text) {
+        return this.span(text, [{name: 'class', value: 'mdc-list-item__primary-text'}]);
+    }
+
+    listItemSecondaryText(text) {
+        return this.span(text, [{name: 'class', value: 'mdc-list-item__secondary-text'}]);
+    }
+
     listItemMeta(text) {
         return this.span(text, [{name: 'class', value: 'mdc-list-item__meta'}]);
     }

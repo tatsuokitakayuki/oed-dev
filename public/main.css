@@ -43,6 +43,11 @@ body {
     white-space: nowrap;
 }
 
+/* The width of the space to the right of the File list icon. */
+.mdc-list--dense .mdc-list-item__graphic {
+    margin-right: 0.5em;
+}
+
 .oed-dark {
     color: white;
     background-color: black;

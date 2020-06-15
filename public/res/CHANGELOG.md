@@ -1,6 +1,9 @@
 # CHANGELOG
 
-## Version 3.1.20200611 (dev)
+## Version 3.1.20200615 (dev)
+- Adjusted the display of File list.
+
+## Version 3.1.20200612 (dev)
 - Fixed CSS.
 
 ## Version 3.1.20200611 (dev)
