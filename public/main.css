@@ -71,7 +71,8 @@ body {
     --mdc-theme-on-error: red;
 }
 
-/* ここから将来削除予定 */
+/* The part to be deleted when Dark Mode is implemented in Material Design Components for Web. */
+/* ここから */
 .mdc-menu .mdc-list {
     color: inherit;
 }
@@ -127,7 +128,7 @@ body {
 :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
     background-color: var(--mdc-theme-on-primary, --mdc-theme-on-primary);
 }
-/* ここまで将来削除予定 */
+/* ここまで */
 
 select {
     width: 100%;
