@@ -127,11 +127,11 @@ body {
 }
 
 :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--selected::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--selected::after {
-    background-color: var(--mdc-theme-on-primary, --mdc-theme-on-primary);
+    background-color: var(--mdc-theme-on-primary);
 }
 
 :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
-    background-color: var(--mdc-theme-on-primary, --mdc-theme-on-primary);
+    background-color: var(--mdc-theme-on-primary);
 }
 /* ここまで */
 
