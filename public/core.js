@@ -65,12 +65,9 @@ export class Core {
     }
 
     async initializeA() {
-        window.addEventListener('beforeunload', event => {
-            if (!this.isSafe()) {
-                event.preventDefault();
-                event.returnValue = '';
-            }
-        });
+        window.addEventListener(
+            'beforeunload', event => this.onBeforeUnload(event)
+        );
         this.appView.initialize();
         document.addEventListener(
             'Editor:changeoption',
@@ -105,6 +102,13 @@ export class Core {
         document.dispatchEvent(
             new ChangeMenuButtonEvent(this.getOption('menuButton'))
         );
+    }
+
+    onBeforeUnload(event) {
+        if (!this.isSafe()) {
+            event.preventDefault();
+            event.returnValue = '';
+        }
     }
 
     onChange(event) {
