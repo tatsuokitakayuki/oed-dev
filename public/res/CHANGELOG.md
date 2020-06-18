@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200618 (dev)
+- Modified the definition of EventListener.
+
 ## Version 3.1.20200615 (dev)
 - Adjusted the display of File list.
 
