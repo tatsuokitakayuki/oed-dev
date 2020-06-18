@@ -77,11 +77,16 @@ export class Core {
         await this.newFileA();
         await this.options.initializeA(this);
         this.keybinding.initialize();
-        this.editor.on('change', event => this.onChange(event));
+        /*
+        this.editor.on('change', editor => this.onChangeEditor(editor));
         document.getElementById('editor')
             .addEventListener(
-                'keyup', event => this.onChange(event), {passive: true}
+                'keyup', editor => this.onChangeEditor(editor), {passive: true}
             );
+        */
+        this.editor.on("changeStatus", editor => this.onChangeEditor(editor));
+        this.editor.on("changeSelection", editor => this.onChangeEditor(editor));
+        this.editor.on("keyboardActivity", editor => this.onChangeEditor(editor));
         this.appBar.initialize();
         this.drawer.initialize();
         this.snackbar.initialize();
@@ -111,15 +116,6 @@ export class Core {
         }
     }
 
-    onChange(event) {
-        const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {draweritem: true, appbar: true}
-            )
-        );
-    }
-
     onDragOver(event) {
         event.stopPropagation();
         event.preventDefault();
@@ -133,6 +129,15 @@ export class Core {
         if (files) {
             await this.openFileA(files);
         }
+    }
+
+    onChangeEditor(editor) {
+        const index = this.getActive();
+        document.dispatchEvent(
+            new ChangeViewEvent(
+                index, index, {draweritem: true, appbar: true}
+            )
+        );
     }
 
     onChangeOption(event) {
