@@ -74,40 +74,7 @@ export class Core {
         this.appView.initialize();
         document.addEventListener(
             'Editor:changeoption',
-            event => {
-                let name = event.detail.name;
-                let value = event.detail.value;
-                switch (name) {
-                    case 'fontSize':
-                        this.getEditor().setOption(name, value);
-                        document.getElementById('editor').style.fontSize = value;
-                        break;
-                    case 'fontFamily':
-                        if (!value) {
-                            value = 'monospace';
-                        }
-                        this.getEditor().setOption(name, value);
-                        break;
-                    case 'fileDecoding':
-                        this.getOedOptions().fileDecoding = value;
-                        break;
-                    case 'keyboardHandler':
-                        this.getOedOptions().keyboardHandler = value;
-                        this.setKeyboardHandler(value);
-                        break;
-                    case 'menuButton':
-                        this.getOedOptions().menuButton = value;
-                        document.dispatchEvent(new ChangeMenuButtonEvent(value));
-                        break;
-                    case 'theme':
-                        this.getEditor().setOption(name, value);
-                        document.dispatchEvent(new ChangeViewEvent(-1, -1, {theme:true}));
-                        break;
-                    default:
-                        this.getEditor().setOption(name, value);
-                        break;
-                }
-            },
+            event => this.onChangeOption(event),
             {passive: true}
         );
         await this.newFileA();
@@ -161,6 +128,41 @@ export class Core {
         const files = event.dataTransfer.files;
         if (files) {
             await this.openFileA(files);
+        }
+    }
+
+    onChangeOption(event) {
+        let name = event.detail.name;
+        let value = event.detail.value;
+        switch (name) {
+            case 'fontSize':
+                this.getEditor().setOption(name, value);
+                document.getElementById('editor').style.fontSize = value;
+                break;
+            case 'fontFamily':
+                if (!value) {
+                    value = 'monospace';
+                }
+                this.getEditor().setOption(name, value);
+                break;
+            case 'fileDecoding':
+                this.getOedOptions().fileDecoding = value;
+                break;
+            case 'keyboardHandler':
+                this.getOedOptions().keyboardHandler = value;
+                this.setKeyboardHandler(value);
+                break;
+            case 'menuButton':
+                this.getOedOptions().menuButton = value;
+                document.dispatchEvent(new ChangeMenuButtonEvent(value));
+                break;
+            case 'theme':
+                this.getEditor().setOption(name, value);
+                document.dispatchEvent(new ChangeViewEvent(-1, -1, {theme:true}));
+                break;
+            default:
+                this.getEditor().setOption(name, value);
+                break;
         }
     }
 
