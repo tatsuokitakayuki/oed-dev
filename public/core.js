@@ -748,22 +748,22 @@ export class Core {
 
     buildStatusText(index) {
         const items = [];
+        items.push(this.buildModeTextArray());
+        items.push(this.getEditor().commands.recording ? ['(Rec)', ' '] : []);
+        items.push(this.buildCursorPositionText(), ' ');
+        items.push(this.buildSelectionTextArray());
+        items.push(String(this.getEditSession(index).getValue().length), ' ');
+        items.push(!this.isClean(index) ? ['(Mod)', ' '] : []);
+        items.push(this.isReadOnly(index) ? ['(RO)', ' '] : []);
+        return items.join('').trim();
+    }
+
+    buildModeTextArray() {
         const modeText = this.getEditor().keyBinding.getStatusText(this.getEditor());
         if (modeText) {
-            items.push(modeText, ' ');
+            return [modeText, ' '];
         }
-        if (this.getEditor().commands.recording) {
-            items.push('(Rec)', ' ');
-        }
-        items.push(this.buildCursorPositionText(), ' ');
-        items.push(this.buildSelectionText());
-        if (!this.isClean(index)) {
-            items.push('(Mod)', ' ');
-        }
-        if (this.isReadOnly(index)) {
-            items.push('(RO)', ' ');
-        }
-        return items.join('').trim();
+        return [];
     }
 
     buildCursorPositionText() {
@@ -772,14 +772,18 @@ export class Core {
         return `${cursorPosition.row}:${cursorPosition.column}`;
     }
 
-    buildSelectionText() {
+    buildSelectionTextArray() {
         const selection = this.getEditor().selection;
-        if (selection.isEmpty()) {
-            return '';
+        if (!selection.isEmpty()) {
+            const range = this.getEditor().getSelectionRange();
+            return [
+                '(' +
+                range.end.row - range.start.row + ':' +
+                range.end.column - range.start.column +
+                ')',
+                ' '
+            ];
         }
-        const range = this.getEditor().getSelectionRange();
-        const rangeRow = range.end.row - range.start.row;
-        const rangeColumn = range.end.column - range.start.column;
-        return [`(${rangeRow}:${rangeColumn}) `];
+        return [];
     }
 }
