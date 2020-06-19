@@ -105,23 +105,9 @@ export class Drawer extends UiHelper {
         item.appendChild(materialHelper.listItemIcon(this.getIconName(index)));
         const text = materialHelper.listItemText(null);
         text.appendChild(materialHelper.listItemPrimaryText(this.core.getDisplayName(index)));
-        text.appendChild(materialHelper.listItemSecondaryText(this.buildItemName(index)));
+        text.appendChild(materialHelper.listItemSecondaryText(this.core.buildStatusText(index)));
         item.appendChild(text);
         return item;
-    }
-
-    buildItemName(index) {
-        const items = [];
-        const cursorPosition = this.core.getEditor().getCursorPosition();
-        cursorPosition.row += Number(this.core.getOption('firstLineNumber'));
-        items.push(`${cursorPosition.row}:${cursorPosition.column}`);
-        if (!this.core.isClean(index)) {
-            items.push('(Mod)');
-        }
-        if (this.core.isReadOnly(index)) {
-            items.push('(RO)');
-        }
-        return items.join(' ');
     }
 
     getIconName(index) {

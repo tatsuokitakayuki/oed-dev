@@ -745,4 +745,41 @@ export class Core {
     async importOptionsA() {
         await this.options.importOptionsA(this);
     }
+
+    buildStatusText(index) {
+        const items = [];
+        const modeText = this.getEditor().keyBinding.getStatusText(this.getEditor());
+        if (modeText) {
+            items.push(modeText, ' ');
+        }
+        if (this.getEditor().commands.recording) {
+            items.push('(Rec)', ' ');
+        }
+        items.push(this.buildCursorPositionText(), ' ');
+        items.push(this.buildSelectionText());
+        if (!this.isClean(index)) {
+            items.push('(Mod)', ' ');
+        }
+        if (this.isReadOnly(index)) {
+            items.push('(RO)', ' ');
+        }
+        return items.join('').trim();
+    }
+
+    buildCursorPositionText() {
+        const cursorPosition = this.getEditor().getCursorPosition();
+        cursorPosition.row += Number(this.getOption('firstLineNumber'));
+        return `${cursorPosition.row}:${cursorPosition.column}`;
+    }
+
+    buildSelectionText() {
+        const selection = this.getEditor().selection;
+        if (selection.isEmpty()) {
+            return '';
+        }
+        const range = this.getEditor().getSelectionRange();
+        const rangeRow = range.end.row - range.start.row;
+        const rangeColumn = range.end.column - range.start.column;
+        return [`(${rangeRow}:${rangeColumn}) `];
+    }
 }

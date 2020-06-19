@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200619 (dev)
+- Fixed status message.
+
 ## Version 3.1.20200618 (dev)
 - Modified the definition of EventListener.
 
