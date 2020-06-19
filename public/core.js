@@ -747,43 +747,45 @@ export class Core {
     }
 
     buildStatusText(index) {
+        const separator = ' ';
         const items = [];
-        items.push(this.buildModeTextArray());
-        items.push(this.getEditor().commands.recording ? ['(Rec)', ' '] : []);
-        items.push(this.buildCursorPositionText(), ' ');
-        items.push(this.buildSelectionTextArray());
-        items.push(String(this.getEditSession(index).getValue().length), ' ');
-        items.push(!this.isClean(index) ? ['(Mod)', ' '] : []);
-        items.push(this.isReadOnly(index) ? ['(RO)', ' '] : []);
+        items.push(this.buildModeText(separator));
+        items.push(
+            this.getEditor().commands.recording ? '(Rec)' + separator : ''
+        );
+        items.push(this.buildCursorPositionText(separator));
+        items.push(this.buildSelectionText(separator));
+        items.push(
+            String(this.getEditSession(index).getValue().length) + separator
+        );
+        items.push(!this.isClean(index) ? '(Mod)' + separator : '');
+        items.push(this.isReadOnly(index) ? '(RO)' + separator : '');
         return items.join('').trim();
     }
 
-    buildModeTextArray() {
-        const modeText = this.getEditor().keyBinding.getStatusText(this.getEditor());
-        if (modeText) {
-            return [modeText, ' '];
+    buildModeText(separator) {
+        let modeText =
+            this.getEditor().keyBinding.getStatusText(this.getEditor());
+        if (!modeText) {
+            return '';
         }
-        return [];
+        return modeText + separator;
     }
 
-    buildCursorPositionText() {
+    buildCursorPositionText(separator) {
         const cursorPosition = this.getEditor().getCursorPosition();
         cursorPosition.row += Number(this.getOption('firstLineNumber'));
-        return `${cursorPosition.row}:${cursorPosition.column}`;
+        return `${cursorPosition.row}:${cursorPosition.column}${separator}`;
     }
 
-    buildSelectionTextArray() {
+    buildSelectionText(separator) {
         const selection = this.getEditor().selection;
-        if (!selection.isEmpty()) {
-            const range = this.getEditor().getSelectionRange();
-            return [
-                '(' +
-                range.end.row - range.start.row + ':' +
-                range.end.column - range.start.column +
-                ')',
-                ' '
-            ];
+        if (selection.isEmpty()) {
+            return '';
         }
-        return [];
+        const range = this.getEditor().getSelectionRange();
+        return '(' + String(range.end.row - range.start.row) + ':' +
+            String(range.end.column - range.start.column) + ')' +
+            separator;
     }
 }
