@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200622 (dev)
+- Fixed CSS.
+
 ## Version 3.1.20200619 (dev)
 - Fixed status message.
 
