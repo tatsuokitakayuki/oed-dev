@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.1.20200622 (dev)
+- Fixed the behavior of dialog buttons.
 - Fixed CSS.
 
 ## Version 3.1.20200619 (dev)

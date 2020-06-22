@@ -125,6 +125,8 @@ export class MaterialHelper extends HtmlHelper {
         const button = this.button(null, [
             {name: 'type', value: 'button'},
             {name: 'class', value: 'mdc-button mdc-dialog__button mdc-button--outlined'},
+            {name: 'role', value: 'button'},
+            {name: 'tabindex', value: '0'},
         ]);
         button.appendChild(this.buttonRipple());
         button.appendChild(

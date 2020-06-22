@@ -9,6 +9,8 @@ export class Dialog {
         this.dialogTitle = document.getElementById('dialog-title');
         this.dialogContent = document.getElementById('dialog-content');
         this.dialogFooter = document.getElementById('dialog-footer');
+        this.buttonOk = null;
+        this.buttonCancel = null;
     }
 
     onOpened() {}
@@ -50,10 +52,14 @@ export class Dialog {
     buildFooter() {
         const res = new Res();
         const materialHelper = new MaterialHelper();
-        this.buttonCancel = materialHelper.buttonDialogCancel();
-        this.dialogFooter.appendChild(this.buttonCancel);
-        this.buttonOk = materialHelper.buttonDialogOk();
-        this.dialogFooter.appendChild(this.buttonOk);
+        this.dialogFooter.appendChild(materialHelper.buttonDialogCancel());
+        this.rippleCancel = new mdc.ripple.MDCRipple(
+            document.getElementById('dialog-button-cancel')
+        );
+        this.dialogFooter.appendChild(materialHelper.buttonDialogOk());
+        this.rippleOk = new mdc.ripple.MDCRipple(
+            document.getElementById('dialog-button-ok')
+        );
     }
 
     open() {
