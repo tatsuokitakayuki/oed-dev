@@ -68,11 +68,11 @@ body {
     --mdc-theme-primary: rgba(255, 255, 255, 0.87);
     --mdc-theme-secondary: rgba(255, 255, 255, 0.54);
     --mdc-theme-background: rgba(255, 255, 255, 0.87);
-    --mdc-theme-surface: rgba(255, 255, 255, 0.87);
+    --mdc-theme-surface: rgba(255, 255, 255, 1);
     --mdc-theme-error: rgba(255, 255, 255, 0.87);
     --mdc-theme-on-primary: rgba(0, 0, 0, 0.7);
     --mdc-theme-on-secondary: rgba(0, 0, 0, 0.5);
-    --mdc-theme-on-surface: rgba(0, 0, 0, 0.5);
+    --mdc-theme-on-surface: rgba(0, 0, 0, 0.7);
     --mdc-theme-on-error: red;
 }
 
