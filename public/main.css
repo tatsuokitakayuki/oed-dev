@@ -60,21 +60,6 @@ body {
     --mdc-theme-on-secondary: rgba(255, 255, 255, 0.7);
     --mdc-theme-on-surface: rgba(255, 255, 255, 0.7);
     --mdc-theme-on-error: magenta;
-    --mdc-theme-text-primary-on-background: rgba(255, 255, 255, 0.87);
-    --mdc-theme-text-secondary-on-background: rgba(255, 255, 255, 0.54);
-    --mdc-theme-text-hint-on-background: rgba(255, 255, 255, 0.38);
-    --mdc-theme-text-disabled-on-background: rgba(255, 255, 255, 0.38);
-    --mdc-theme-text-icon-on-background: rgba(255, 255, 255, 0.38);
-    --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
-    --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
-    --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-primary-on-dark: white;
-    --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
-    --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
-    --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
-    --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
 }
 
 .oed-light {
@@ -89,21 +74,6 @@ body {
     --mdc-theme-on-secondary: rgba(0, 0, 0, 0.5);
     --mdc-theme-on-surface: rgba(0, 0, 0, 0.7);
     --mdc-theme-on-error: red;
-    --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
-    --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
-    --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
-    --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
-    --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-primary-on-dark: white;
-    --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
-    --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
-    --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
-    --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
 }
 
 /* The part to be deleted when Dark Mode is implemented in Material Design Components for Web. */
