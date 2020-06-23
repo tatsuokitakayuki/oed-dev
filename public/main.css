@@ -77,7 +77,7 @@ body {
 }
 
 /* The part to be deleted when Dark Mode is implemented in Material Design Components for Web. */
-/* ここから */
+/* start */
 .mdc-menu .mdc-list {
     color: inherit;
 }
@@ -141,7 +141,23 @@ body {
 .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
     background-color: var(--mdc-theme-on-primary);
 }
-/* ここまで */
+
+.mdc-text-field .mdc-text-field__input {
+    caret-color: var(--mdc-theme-on-primary);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: inherit;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+    background-color: inherit;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+    border-bottom-color: var(--mdc-theme-on-secondary);
+}
+/* end */
 
 select {
     width: 100%;
