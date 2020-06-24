@@ -133,11 +133,13 @@ export class Core {
 
     onChangeEditor(editor) {
         const index = this.getActive();
-        document.dispatchEvent(
-            new ChangeViewEvent(
-                index, index, {draweritem: true, appbar: true}
-            )
-        );
+        if (index != -1) {
+            document.dispatchEvent(
+                new ChangeViewEvent(
+                    index, index, {draweritem: true, appbar: true}
+                )
+            );
+        }
     }
 
     onChangeOption(event) {

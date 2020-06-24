@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.1.20200623 (dev)
+- Fixed a bug that it may stop at Close file processing.
 - Fixed CSS.
 
 ## Version 3.1.20200623 (dev)
