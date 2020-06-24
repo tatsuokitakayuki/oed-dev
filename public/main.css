@@ -157,6 +157,10 @@ body {
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
     border-bottom-color: var(--mdc-theme-on-secondary);
 }
+
+.mdc-list-item__secondary-text {
+    color: var(--mdc-theme-on-secondary);
+}
 /* end */
 
 select {
