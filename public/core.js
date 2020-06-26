@@ -77,16 +77,10 @@ export class Core {
         await this.newFileA();
         await this.options.initializeA(this);
         this.keybinding.initialize();
-        /*
-        this.editor.on('change', editor => this.onChangeEditor(editor));
-        document.getElementById('editor')
-            .addEventListener(
-                'keyup', editor => this.onChangeEditor(editor), {passive: true}
-            );
-        */
-        this.editor.on("changeStatus", editor => this.onChangeEditor(editor));
-        this.editor.on("changeSelection", editor => this.onChangeEditor(editor));
-        this.editor.on("keyboardActivity", editor => this.onChangeEditor(editor));
+        this.editor.on('focus', editor => this.onChangeEditor(editor));
+        this.editor.on('changeStatus', editor => this.onChangeEditor(editor));
+        this.editor.on('changeSelection', editor => this.onChangeEditor(editor));
+        this.editor.on('keyboardActivity', editor => this.onChangeEditor(editor));
         this.appBar.initialize();
         this.drawer.initialize();
         this.snackbar.initialize();

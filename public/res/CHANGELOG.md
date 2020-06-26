@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.1.20200626 (dev)
+- Fixed to update the display when the app gets focus.
+
 ## Version 3.1.20200623 (dev)
 - Fixed a bug that it may stop at Close file processing.
 - Fixed CSS.
