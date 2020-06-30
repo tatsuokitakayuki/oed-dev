@@ -77,10 +77,10 @@ export class Core {
         await this.newFileA();
         await this.options.initializeA(this);
         this.keybinding.initialize();
-        this.editor.on('focus', editor => this.onChangeEditor(editor));
-        this.editor.on('changeStatus', editor => this.onChangeEditor(editor));
-        this.editor.on('changeSelection', editor => this.onChangeEditor(editor));
-        this.editor.on('keyboardActivity', editor => this.onChangeEditor(editor));
+        this.getEditor().on('focus', editor => this.onChangeEditor(editor));
+        this.getEditor().on('changeStatus', editor => this.onChangeEditor(editor));
+        this.getEditor().on('changeSelection', editor => this.onChangeEditor(editor));
+        this.getEditor().on('keyboardActivity', editor => this.onChangeEditor(editor));
         this.appBar.initialize();
         this.drawer.initialize();
         this.snackbar.initialize();
@@ -314,7 +314,7 @@ export class Core {
         if (name && name !== 'Ace') {
             value = 'ace/keyboard/' + name.toLowerCase();
         }
-        this.editor.setKeyboardHandler(value);
+        this.getEditor().setKeyboardHandler(value);
     }
 
     setHello(hello) {
@@ -350,7 +350,7 @@ export class Core {
             return;
         }
         const res = new Res();
-        this.editor.insert(res.strings.hello);
+        this.getEditor().insert(res.strings.hello);
         this.setHello(true);
         this.saveOedOptions();
     }
@@ -731,7 +731,7 @@ export class Core {
     }
 
     focusEditor() {
-        this.editor.focus();
+        this.getEditor().focus();
     }
 
     async exportOptionsA() {

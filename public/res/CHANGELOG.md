@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200630 (dev)
+- Fixed to get editor with getter.
+
 ## Version 3.1.20200626 (dev)
 - Fixed to update the display when the app gets focus.
 

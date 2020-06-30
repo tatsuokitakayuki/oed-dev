@@ -16,7 +16,7 @@ export class AppView {
         document.addEventListener(
             'Editor:saveoptions',
             event => document.dispatchEvent(
-                new SaveOptionsEvent(this.core.editor, event.detail.options)
+                new SaveOptionsEvent(this.core.getEditor(), event.detail.options)
             ),
             options
         );
@@ -29,7 +29,7 @@ export class AppView {
         document.removeEventListener(
             'Editor:saveoptions',
             event => document.dispatchEvent(
-                new SaveOptionsEvent(this.core.editor, event.detail.options)
+                new SaveOptionsEvent(this.core.getEditor(), event.detail.options)
             )
         );
     }
@@ -58,8 +58,8 @@ export class AppView {
     }
 
     updateEditor(index) {
-        this.core.editor.setSession(this.core.getEditSession(index));
-        this.core.editor.setReadOnly(this.core.isReadOnly(index));
+        this.core.getEditor().setSession(this.core.getEditSession(index));
+        this.core.getEditor().setReadOnly(this.core.isReadOnly(index));
     }
 
     updateTheme() {
