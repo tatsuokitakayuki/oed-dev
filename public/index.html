@@ -122,9 +122,12 @@
                 <ul class="mdc-list mdc-list--dense mdc-list--two-line" role="menu" aria-hidden="true" aria-orientation="vertical" id="file-list"></ul>
             </div>
         </aside>
-        <!-- Ace Editor View -->
-        <div class="mdc-drawer-app-content mdc-top-app-bar--dense-fixed-adjust">
+        <!-- Editor container -->
+        <div class="mdc-drawer-app-content mdc-top-app-bar--dense-fixed-adjust" id="editor-container">
+            <!-- Editor view -->
             <main class="main-content" id="editor"></main>
+            <!-- Statusbar -->
+            <div class="mdc-typography--caption" id="statusbar"></div>
         </div>
         <!-- Dialog View -->
         <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content" id="dialog">

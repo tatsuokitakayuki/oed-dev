@@ -35,6 +35,7 @@ import {MenuView} from '/menu_view.js';
 import {Options} from '/options.js';
 import {Res} from '/res.js';
 import {Snackbar} from '/snackbar.js';
+import {Statusbar} from '/statusbar.js';
 
 export class Core {
     constructor() {
@@ -51,6 +52,7 @@ export class Core {
         this.menuHelp = new MenuHelp(this);
         this.options = new Options(this);
         this.snackbar = new Snackbar(this);
+        this.statusbar = new Statusbar();
         this.fileManager = new FileManager(this);
         this.keybinding = new Keybinding(this);
         this.menuList = [
@@ -84,6 +86,7 @@ export class Core {
         this.appBar.initialize();
         this.drawer.initialize();
         this.snackbar.initialize();
+        this.statusbar.initialize();
         this.menuFile.initialize();
         this.menuEdit.initialize();
         this.menuSearch.initialize();
@@ -130,7 +133,8 @@ export class Core {
         if (index != -1) {
             document.dispatchEvent(
                 new ChangeViewEvent(
-                    index, index, {draweritem: true, appbar: true}
+                    index, index,
+                    {draweritem: true, appbar: true, statusbar: true}
                 )
             );
         }

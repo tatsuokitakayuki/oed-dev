@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200702 (dev)
+- Added Statusbar.
+
 ## Version 3.2.20200630 (dev)
 - Fixed to get editor with getter.
 

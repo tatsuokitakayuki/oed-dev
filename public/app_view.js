@@ -1,5 +1,6 @@
 import {ChangeAppBarEvent} from '/change_app_bar_event.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
+import {ChangeStatusbarEvent} from '/change_statusbar_event.js';
 import {ThemeHelper} from '/theme_helper.js';
 import {SaveOptionsEvent} from '/save_options_event.js';
 
@@ -54,6 +55,9 @@ export class AppView {
         }
         if (flags.all || flags.theme) {
             this.updateTheme();
+        }
+        if (flags.all || flags.statusbar) {
+            document.dispatchEvent(new ChangeStatusbarEvent(this.core.getEditor()));
         }
     }
 
