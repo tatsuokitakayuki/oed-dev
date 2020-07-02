@@ -745,47 +745,4 @@ export class Core {
     async importOptionsA() {
         await this.options.importOptionsA(this);
     }
-
-    buildStatusText(index) {
-        const separator = ' ';
-        const items = [];
-        items.push(this.buildModeText(separator));
-        items.push(
-            this.getEditor().commands.recording ? '(Rec)' + separator : ''
-        );
-        items.push(this.buildCursorPositionText(separator));
-        items.push(this.buildSelectionText(separator));
-        items.push(
-            String(this.getEditSession(index).getValue().length) + separator
-        );
-        items.push(!this.isClean(index) ? '(Mod)' + separator : '');
-        items.push(this.isReadOnly(index) ? '(RO)' + separator : '');
-        return items.join('').trim();
-    }
-
-    buildModeText(separator) {
-        let modeText =
-            this.getEditor().keyBinding.getStatusText(this.getEditor());
-        if (!modeText) {
-            return '';
-        }
-        return modeText + separator;
-    }
-
-    buildCursorPositionText(separator) {
-        const cursorPosition = this.getEditor().getCursorPosition();
-        cursorPosition.row += Number(this.getOption('firstLineNumber'));
-        return `${cursorPosition.row}:${cursorPosition.column}${separator}`;
-    }
-
-    buildSelectionText(separator) {
-        const selection = this.getEditor().selection;
-        if (selection.isEmpty()) {
-            return '';
-        }
-        const range = this.getEditor().getSelectionRange();
-        return '(' + String(range.end.row - range.start.row) + ':' +
-            String(range.end.column - range.start.column) + ')' +
-            separator;
-    }
 }

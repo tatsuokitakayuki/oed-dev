@@ -1,5 +1,6 @@
 import {ChangeViewEvent} from '/change_view_event.js';
 import {MaterialHelper} from '/material_helper.js';
+import {StatusHelper} from '/status_helper.js';
 import {UiHelper} from '/ui_helper.js';
 
 export class Drawer extends UiHelper {
@@ -104,8 +105,15 @@ export class Drawer extends UiHelper {
         item.setAttribute('title', this.core.getUrl(index).href);
         item.appendChild(materialHelper.listItemIcon(this.getIconName(index)));
         const text = materialHelper.listItemText(null);
-        text.appendChild(materialHelper.listItemPrimaryText(this.core.getDisplayName(index)));
-        text.appendChild(materialHelper.listItemSecondaryText(this.core.buildStatusText(index)));
+        text.appendChild(materialHelper.listItemPrimaryText(
+            this.core.getDisplayName(index))
+        );
+        const statusHelper = new StatusHelper();
+        text.appendChild(materialHelper.listItemSecondaryText(
+            statusHelper.buildStatusText(
+                this.core.getEditor(), this.core.getEditSession(index))
+            )
+        );
         item.appendChild(text);
         return item;
     }
