@@ -167,6 +167,10 @@ select {
     width: 100%;
 }
 
+#app-bar-title, #drawer-header, #drawer-content, #statusbar {
+    user-select: none;
+}
+
 #editor-container {
     display: grid;
     grid-template: 1fr 1.5em / 1fr;

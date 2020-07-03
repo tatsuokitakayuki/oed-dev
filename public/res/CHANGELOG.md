@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200703 (dev)
+- Fixed some display not selectable.
 - Fixed the contents of Statusbar.
 - Fixed id.
 
