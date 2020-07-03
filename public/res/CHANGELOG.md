@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200703 (dev)
+- Fixed id.
+
 ## Version 3.2.20200702 (dev)
 - Added Statusbar.
 

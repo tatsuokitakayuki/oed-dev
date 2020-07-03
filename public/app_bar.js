@@ -29,7 +29,7 @@ export class AppBar extends UiHelper {
     }
 
     initialize() {
-        this.topAppBar.setScrollTarget(document.getElementById('editor'));
+        this.topAppBar.setScrollTarget(document.getElementById('editor-container'));
         const options = {passive: true};
         this.topAppBar.listen(
             'MDCTopAppBar:nav',
