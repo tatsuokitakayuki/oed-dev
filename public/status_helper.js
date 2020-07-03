@@ -4,39 +4,44 @@ export class StatusHelper {
         this.readOnly = '(RO)';
         this.modified = '(Mod)';
         this.recording = '(Rec)';
+        this.overwrite = 'Overwrite';
+        this.insert = 'Insert';
     }
 
     buildStatusText(editor, editSession = editor.getSession()) {
         const items = [];
-        items.push(this.buildModeText(editor));
-        items.push(
-            editor.commands.recording ? this.recording + this.separator : ''
-        );
+        items.push(this.buildInputModeText(editor));
+        items.push(this.buildRecordingText(editor));
         items.push(this.buildCursorPositionText(editor));
         items.push(this.buildSelectionText(editor));
-        items.push(String(editSession.getValue().length) + this.separator);
-        items.push(
-            !editSession.getUndoManager().isClean() ? this.modified + this.separator : ''
-        );
-        items.push(
-            editor.getOption('readOnly') ? this.readOnly + this.separator : ''
-        );
+        items.push(this.buildLengthText(editSession));
+        items.push(this.buildModifiedText(editSession));
+        items.push(this.buildReadOnlyText(editor));
+        items.push(this.buildOverwriteText(editSession));
+        items.push(this.buildLanguageModeText(editSession));
         return items.join('').trim();
     }
 
-    buildModeText(editor) {
-        let modeText =
-            editor.keyBinding.getStatusText(editor);
-        if (!modeText) {
-            return '';
+    buildInputModeText(editor) {
+        let inputMode = editor.keyBinding.getStatusText(editor);
+        if (inputMode) {
+            return inputMode + this.separator;
         }
-        return modeText + this.separator;
+        return '';
+    }
+
+    buildRecordingText(editor) {
+        if (editor.commands.recording) {
+            return this.recording + this.separator;
+        }
+        return '';
     }
 
     buildCursorPositionText(editor) {
         const cursorPosition = editor.getCursorPosition();
         cursorPosition.row += Number(editor.getOption('firstLineNumber'));
-        return `${cursorPosition.row}:${cursorPosition.column}${this.separator}`;
+        return String(cursorPosition.row) + ':' +
+            String(cursorPosition.column) + this.separator;
     }
 
     buildSelectionText(editor) {
@@ -48,5 +53,38 @@ export class StatusHelper {
         return '(' + String(range.end.row - range.start.row) + ':' +
             String(range.end.column - range.start.column) + ')' +
             this.separator;
+    }
+
+    buildLengthText(editSession) {
+        return String(editSession.getValue().length) + this.separator;
+    }
+
+    buildModifiedText(editSession) {
+        if (!editSession.getUndoManager().isClean()) {
+            return this.modified + this.separator;
+        }
+        return '';
+    }
+
+    buildReadOnlyText(editor) {
+        if (editor.getOption('readOnly')) {
+            return this.readOnly + this.separator;
+        }
+        return '';
+    }
+
+    buildOverwriteText(editSession) {
+        if (editSession.getOption('overwrite')) {
+            return this.overwrite + this.separator;
+        }
+        return this.insert + this.separator;
+    }
+
+    buildLanguageModeText(editSession) {
+        const modeList = ace.require('ace/ext/modelist');
+        const value = editSession.getOption('mode');
+        const caption = modeList.modes
+            .find(item => item.mode == value).caption;
+        return caption + this.separator;
     }
 }
