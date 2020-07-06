@@ -167,7 +167,7 @@ select {
     width: 100%;
 }
 
-#app-bar-title, #drawer-header, #drawer-content, #statusbar {
+#app-bar-title, #drawer-header, #drawer-content, #dialog-title, #statusbar {
     user-select: none;
 }
 
