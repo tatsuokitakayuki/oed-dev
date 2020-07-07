@@ -3,6 +3,7 @@
 ## [Ace](https://ace.c9.io/)
 [BSD License](https://github.com/ajaxorg/ace-builds/blob/master/LICENSE)
 
+```text:LICENSE
 Copyright (c) 2010, Ajax.org B.V.
 All rights reserved.
 
@@ -27,10 +28,12 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
 
 ## [Material Design Component for Web](https://material.io/develop/web/)
 [MIT License](https://github.com/material-components/material-components-web/blob/master/LICENSE)
 
+```text:LICENSE
 The MIT License
 
 Copyright (c) 2014-2020 Google, Inc.
@@ -52,10 +55,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+```
 
 ## [Material Design Icons](https://google.github.io/material-design-icons/)
 [Apache License Version 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE)
 
+```text:LICENSE
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -257,10 +262,12 @@ THE SOFTWARE.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
 
 ## [localForage](https://localforage.github.io/localForage/)
 [Apache License Version 2.0](https://github.com/localForage/localForage/blob/master/LICENSE)
 
+```text:LICENSE
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -462,10 +469,12 @@ THE SOFTWARE.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
 
 ## [emmet-core](https://github.com/cloud9ide/emmet-core)
 [MIT License](https://github.com/cloud9ide/emmet-core/blob/master/LICENSE)
 
+```text:LICENSE
 The MIT License (MIT)
 
 Copyright (c) 2015, Ajax.org B.V.
@@ -487,3 +496,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+```
