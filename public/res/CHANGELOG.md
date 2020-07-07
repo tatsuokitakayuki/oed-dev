@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## Version 3.2.20200706 (dev)
+- Fixed OPEN_SOURCE_LICENSE.md.
+
+## Version 3.2.20200706 (dev)
 - Fixed some display not selectable.
 
 ## Version 3.2.20200703 (dev)
