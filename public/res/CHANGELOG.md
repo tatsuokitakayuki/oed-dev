@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200706 (dev)
+- Updated ace-builds to version 1.4.12.
 - Fixed OPEN_SOURCE_LICENSE.md.
 
 ## Version 3.2.20200706 (dev)

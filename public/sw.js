@@ -1,6 +1,6 @@
 const OED_VERSION = '3.2.20200707.0';
 const OED_BASE = 'OED';
-const ACE_VERSION = '1.4.10';
+const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
 const MDC_VERSION = '5.1.0';
 const MDC_BASE = 'MDC';
@@ -495,6 +495,7 @@ const ACE_URLS = [
     './ace/theme-twilight.js',
     './ace/theme-vibrant_ink.js',
     './ace/theme-xcode.js',
+    './ace/worker-base.js',
     './ace/worker-coffee.js',
     './ace/worker-css.js',
     './ace/worker-html.js',
