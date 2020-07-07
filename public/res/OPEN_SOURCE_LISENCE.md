@@ -1,6 +1,9 @@
 # Open Source Software License
 
+[Latest version on GitHub](https://github.com/tatsuokitakayuki/oed-dev/blob/master/public/res/OPEN_SOURCE_LISENCE.md)
+
 ## [Ace](https://ace.c9.io/)
+
 [BSD License](https://github.com/ajaxorg/ace-builds/blob/master/LICENSE)
 
 ```text:LICENSE
@@ -31,6 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 
 ## [Material Design Component for Web](https://material.io/develop/web/)
+
 [MIT License](https://github.com/material-components/material-components-web/blob/master/LICENSE)
 
 ```text:LICENSE
@@ -58,6 +62,7 @@ THE SOFTWARE.
 ```
 
 ## [Material Design Icons](https://google.github.io/material-design-icons/)
+
 [Apache License Version 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE)
 
 ```text:LICENSE
@@ -265,6 +270,7 @@ THE SOFTWARE.
 ```
 
 ## [localForage](https://localforage.github.io/localForage/)
+
 [Apache License Version 2.0](https://github.com/localForage/localForage/blob/master/LICENSE)
 
 ```text:LICENSE
@@ -472,6 +478,7 @@ THE SOFTWARE.
 ```
 
 ## [emmet-core](https://github.com/cloud9ide/emmet-core)
+
 [MIT License](https://github.com/cloud9ide/emmet-core/blob/master/LICENSE)
 
 ```text:LICENSE
