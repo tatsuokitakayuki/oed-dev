@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200709 (dev)
+- Fixed all item names to refer to res.js.
+
 ## Version 3.2.20200706 (dev)
 - Updated ace-builds to version 1.4.12.
 - Fixed OPEN_SOURCE_LICENSE.md.

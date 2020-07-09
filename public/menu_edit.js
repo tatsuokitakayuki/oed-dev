@@ -1,40 +1,42 @@
 import {Menu} from '/menu.js';
+import {Res} from '/res.js';
 
 export class MenuEdit extends Menu {
     constructor(core) {
         super(core, 'menu-edit');
+        const res = new Res();
         this.itemData = {
             id: 'menu-list-edit',
             items: [
                 {
                     id: 'menu-edit-undo',
-                    text: 'Undo',
+                    text: res.descriptions.undo,
                     meta: 'Ctrl+Z',
                     update: false
                 },
                 {
                     id: 'menu-edit-redo',
-                    text: 'Redo',
+                    text: res.descriptions.redo,
                     meta: 'Ctrl+Shift+Z',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
-                    id: 'menu-edit-cut',
+                    id: res.descriptions.cut,
                     text: 'Cut',
                     meta: 'Ctrl+X',
                     update: false
                 },
                 {
                     id: 'menu-edit-copy',
-                    text: 'Copy',
+                    text: res.descriptions.copy,
                     meta: 'Ctrl+C',
                     update: false
                 },
                 /*
                 {
                     id: 'menu-edit-paste',
-                    text: 'Paste',
+                    text: res.descriptions.paste,
                     meta: 'Ctrl+V',
                     update: false
                 },
@@ -42,84 +44,84 @@ export class MenuEdit extends Menu {
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-overwrite',
-                    text: 'Overwrite',
+                    text: res.descriptions.overwrite,
                     meta: 'Ins',
                     update: false
                 },
                 {
                     id: 'menu-edit-delete',
-                    text: 'Delete',
+                    text: res.descriptions.delete,
                     meta: 'Del',
                     update: false
                 },
                 {
                     id: 'menu-edit-backspace',
-                    text: 'Backspace',
+                    text: res.descriptions.backspace,
                     meta: 'Bs',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-selectall',
-                    text: 'Select all',
+                    text: res.descriptions.select_all,
                     meta: 'Ctrl+A',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-indent',
-                    text: 'Indent',
+                    text: res.descriptions.indent,
                     meta: 'Tab',
                     update: false
                 },
                 {
                     id: 'menu-edit-outdent',
-                    text: 'Outdent',
+                    text: res.descriptions.outdent,
                     meta: 'Shift+Tab',
                     update: false
                 },
                 {
                     id: 'menu-edit-blockindent',
-                    text: 'Block indent',
+                    text: res.descriptions.block_indent,
                     meta: 'Ctrl+]',
                     update: false
                 },
                 {
                     id: 'menu-edit-blockoutdent',
-                    text: 'Block outdent',
+                    text: res.descriptions.block_outdent,
                     meta: 'Ctrl+[',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-touppercase',
-                    text: 'To upper case',
+                    text: res.descriptions.to_upper_case,
                     meta: 'Ctrl+U',
                     update: false
                 },
                 {
                     id: 'menu-edit-tolowercase',
-                    text: 'To lower case',
+                    text: res.descriptions.to_lower_case,
                     meta: 'Ctrl+Shift+U',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-sortlines',
-                    text: 'Sort lines',
+                    text: res.descriptions.sort_lines,
                     meta: 'Ctrl+Alt+S',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-togglerecording',
-                    text: 'Toggle recording macro',
+                    text: res.descriptions.toggle_recording_macro,
                     meta: 'Ctrl+Alt+E',
                     update: false
                 },
                 {
                     id: 'menu-edit-replaymacro',
-                    text: 'Replay macro',
+                    text: res.descriptions.replay_macro,
                     meta: 'Ctrl+Shift+E',
                     update: false
                 }
