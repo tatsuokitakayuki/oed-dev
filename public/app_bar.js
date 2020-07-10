@@ -1,3 +1,4 @@
+import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
@@ -92,7 +93,7 @@ export class AppBar extends UiHelper {
                 break;
         }
         if (!this.core.isOpen(id)) {
-            this.core.focusEditor();
+            document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         }
     }
 

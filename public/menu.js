@@ -1,3 +1,4 @@
+import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {UiHelper} from '/ui_helper.js';
 
@@ -39,7 +40,7 @@ export class Menu extends UiHelper {
             console.error(e);
         }
         if (!this.menu.items[event.detail.index].id.endsWith('...')) {
-            this.core.focusEditor();
+            document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         }
     }
 

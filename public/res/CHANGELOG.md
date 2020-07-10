@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200710 (dev)
+- Fixed focus getting in editor.
+
 ## Version 3.2.20200709 (dev)
 - Fixed all item names to refer to res.js.
 

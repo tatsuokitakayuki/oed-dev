@@ -24,6 +24,7 @@ import {DialogTheme} from '/dialog_theme.js';
 import {DialogWrap} from '/dialog_wrap.js';
 import {Drawer} from '/drawer.js';
 import {FileManager} from '/file_manager.js';
+import {FocusEditorEvent} from '/focus_editor_event.js';
 import {Keybinding} from '/keybinding.js';
 import {MenuCode} from '/menu_code.js'; 
 import {MenuEdit} from '/menu_edit.js'; 
@@ -72,6 +73,11 @@ export class Core {
         );
         this.appView.initialize();
         document.addEventListener(
+            'OED:focuseditor',
+            event => this.onFocusEditor(event),
+            {passive: true}
+        );
+        document.addEventListener(
             'Editor:changeoption',
             event => this.onChangeOption(event),
             {passive: true}
@@ -97,7 +103,7 @@ export class Core {
         const appView = document.getElementById('app-view');
         appView.addEventListener('dragover', event => this.onDragOver(event), false);
         appView.addEventListener('drop', event => this.onDropA(event), false);
-        this.focusEditor();
+        document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         this.helloOed();
         this.setWindowTitle();
         document.dispatchEvent(new ChangeViewEvent(0, 0, {all: true}));
@@ -173,6 +179,10 @@ export class Core {
                 this.getEditor().setOption(name, value);
                 break;
         }
+    }
+
+    onFocusEditor(event) {
+        event.detail.editor.focus();
     }
 
     getEditor() {
@@ -423,7 +433,7 @@ export class Core {
     async openSelectFileA() {
         const dialogSelectFile = new DialogSelectFile();
         const files = await dialogSelectFile.openA(true);
-        this.focusEditor();
+        document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         if (files) {
             await this.openFileA(files);
         }
@@ -461,7 +471,7 @@ export class Core {
                 args => this.closeFileCallbackA(args),
                 {index: index}
             );
-            this.focusEditor();
+            document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         } else {
             await this.closeFileCallbackA({index: index});
         }
@@ -732,10 +742,6 @@ export class Core {
             menuIndex = this.menuList.length - 1;
         }
         this.menuList[menuIndex].exec();
-    }
-
-    focusEditor() {
-        this.getEditor().focus();
     }
 
     async exportOptionsA() {

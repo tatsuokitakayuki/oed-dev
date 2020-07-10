@@ -1,4 +1,5 @@
 import {ChangeViewEvent} from '/change_view_event.js';
+import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {StatusHelper} from '/status_helper.js';
 import {UiHelper} from '/ui_helper.js';
@@ -36,19 +37,19 @@ export class Drawer extends UiHelper {
     onClosed() {
         this.core.getEditor().resize();
         this.getFileListView().childNodes[this.core.getActive()].blur();
-        this.core.focusEditor();
+        document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
     }
 
     onAction(event) {
         this.updateItem(this.core.getActive(), -1);
         const index = event.detail.index;
         this.core.updateEditSession(index);
-        this.core.focusEditor();
         document.dispatchEvent(
             new ChangeViewEvent(
                 index, index, {editor: true, appbar: true}
             )
         );
+        document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         this.updateItem(index, index);
     }
 

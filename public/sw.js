@@ -1,4 +1,4 @@
-const OED_VERSION = '3.2.20200709.0';
+const OED_VERSION = '3.2.20200710.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -49,6 +49,7 @@ const OED_URLS = [
     './file_data.js',
     './file_helper.js',
     './file_manager.js',
+    './focus_editor_event.js',
     './html_helper.js',
     './images/icons/favicon.png',
     './images/icons/icon-128x128.png',
