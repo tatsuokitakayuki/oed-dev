@@ -2,41 +2,40 @@ import {ChangeViewEvent} from '/change_view_event.js';
 import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {StatusHelper} from '/status_helper.js';
-import {UiHelper} from '/ui_helper.js';
 
-export class Drawer extends UiHelper {
+export class Drawer {
     constructor(core) {
-        super();
         this.core = core;
         this.drawer = new mdc.drawer.MDCDrawer(document.getElementById('drawer-view'));
+        this.fileListView = document.getElementById('file-list');
+        this.fileList = mdc.list.MDCList.attachTo(this.fileListView);
     }
 
     initialize() {
         const options = {passive: true};
         this.drawer.listen('MDCDrawer:opened', () => this.onOpened(), options);
         this.drawer.listen('MDCDrawer:closed', () => this.onClosed(), options);
-        const fileListView = this.getFileListView();
-        fileListView.singleSelection = true;
-        fileListView.wrapFocus = true;
-        fileListView.addEventListener(
+        this.fileList.singleSelection = true;
+        this.fileList.wrapFocus = true;
+        this.fileList.listen(
             'MDCList:action', event => this.onAction(event), options
         );
         document.addEventListener(
-            'Drawer:changeitem', event => this.onChange(event), options
+            'Drawer:changeitem', event => this.onChangeItem(event), options
         );
         document.addEventListener(
-            'Drawer:toggle', () => this.toggle(), options
+            'Drawer:toggle', () => this.onToggle(), options
         );
     }
 
     onOpened() {
         this.core.getEditor().resize();
-        this.getFileListView().childNodes[this.core.getActive()].focus();
+        this.fileListView.childNodes[this.core.getActive()].focus();
     }
 
     onClosed() {
         this.core.getEditor().resize();
-        this.getFileListView().childNodes[this.core.getActive()].blur();
+        this.fileListView.childNodes[this.core.getActive()].blur();
         document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
     }
 
@@ -53,8 +52,12 @@ export class Drawer extends UiHelper {
         this.updateItem(index, index);
     }
 
-    onChange(event) {
+    onChangeItem(event) {
         this.updateItem(event.detail.index, event.detail.active);
+    }
+
+    onToggle() {
+        this.toggle();
     }
 
     isOpen() {
@@ -65,33 +68,27 @@ export class Drawer extends UiHelper {
         this.drawer.open = !this.isOpen();
     }
 
-    getFileListView() {
-        return document.getElementById('file-list');
-    }
-
     addItem(index, active) {
         const item = this.buildItem(index, index == active);
-        this.getFileListView().appendChild(item);
+        this.fileListView.appendChild(item);
     }
 
     removeItem(index) {
-        const fileListView = this.getFileListView();
-        fileListView.removeChild(fileListView.childNodes[index]);
+        this.fileListView.removeChild(this.fileListView.childNodes[index]);
     }
 
     updateItem(index, active) {
         const newItem = this.buildItem(index, index == active);
-        const fileListView = this.getFileListView();
-        fileListView.replaceChild(newItem, fileListView.childNodes[index]);
+        this.fileListView.replaceChild(newItem, this.fileListView.childNodes[index]);
         if (index == active) {
-            fileListView.childNodes[index].scrollIntoView(
+            this.fileListView.childNodes[index].scrollIntoView(
                 {behavior: 'auto', block: 'center'}
             );
         }
     }
 
     hasItem(index) {
-        return Boolean(this.getFileListView().childNodes[index]);
+        return Boolean(this.fileListView.childNodes[index]);
     }
 
     buildItem(index, selected) {

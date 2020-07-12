@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200712 (dev)
+- Refactored Drawer class.
+
 ## Version 3.2.20200710 (dev)
 - Fixed focus getting in editor.
 
