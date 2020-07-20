@@ -39,7 +39,7 @@ export class Menu extends UiHelper {
         } catch (e) {
             console.error(e);
         }
-        if (!this.itemData.items[event.detail.index].text.endsWith('...')) {
+        if (!this.menu.items[event.detail.index].textContent.includes('...')) {
             document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         }
     }
