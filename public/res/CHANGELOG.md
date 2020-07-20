@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200720 (dev)
+- Fixed a bug that crashes when updating the status.
 - Fixed to update the status after selecting a menu item.
 - Fixed the behavior of the menu.
 

@@ -45,8 +45,10 @@ export class Menu extends UiHelper {
             document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         }
         const index = this.core.getActive();
-        document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
-        document.dispatchEvent(new ChangeStatusbarEvent(this.core.getEditor()));
+        if (index != -1) {
+            document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
+            document.dispatchEvent(new ChangeStatusbarEvent(this.core.getEditor()));
+        }
     }
 
     onKeyUp(event) {
