@@ -56,6 +56,7 @@ export class Core {
         this.statusbar = new Statusbar();
         this.fileManager = new FileManager(this);
         this.keybinding = new Keybinding(this);
+/*
         this.menuList = [
             {id: 'menu-file', exec: () => this.toggleFileMenu()},
             {id: 'menu-edit', exec: () => this.toggleEditMenu()},
@@ -65,6 +66,7 @@ export class Core {
             {id: 'menu-extensions', exec: () => this.toggleExtensionsMenu()},
             {id: 'menu-help', exec: () => this.toggleHelpMenu()},
         ];
+*/
     }
 
     async initializeA() {
@@ -183,6 +185,27 @@ export class Core {
 
     onFocusEditor(event) {
         event.detail.editor.focus();
+    }
+
+    getMenu(name) {
+        switch (name) {
+            case 'file':
+                return this.menuFile;
+            case 'edit':
+                return this.menuEdit;
+            case 'search':
+                return this.menuSearch;
+            case 'code':
+                return this.menuCode;
+            case 'view':
+                return this.menuView;
+            case 'extensions':
+                return this.menuExtensions;
+            case 'help':
+                return this.menuHelp;
+            default:
+                return null;
+        }
     }
 
     getEditor() {
@@ -678,6 +701,7 @@ export class Core {
         this.selectFile(this.getLength() - 1);
     }
 
+/*
     toggleFileMenu() {
         this.menuFile.updateMenuItems();
         this.menuFile.toggle();
@@ -719,11 +743,13 @@ export class Core {
         this.menuHelp.toggle();
         this.blurTopAppBer();
     }
+*/
 
     blurTopAppBer() {
         this.appBar.blur();
     }
 
+/*
     nextMenu(menuId) {
         let menuIndex = this.menuList
             .findIndex(toggleMenu => toggleMenu.id == menuId);
@@ -743,6 +769,7 @@ export class Core {
         }
         this.menuList[menuIndex].exec();
     }
+*/
 
     async exportOptionsA() {
         await this.options.exportOptionsA(this);

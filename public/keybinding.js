@@ -665,49 +665,49 @@ export class Keybinding {
             name: 'oedToggleFileMenu',
             description: res.descriptions.toggle_file_menu,
             bindKey: {win: 'Alt-I'},
-            exec: editor => this.core.toggleFileMenu(),
+            exec: editor => document.getElementById('button-file').click(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleEditMenu',
             description: res.descriptions.toggle_edit_menu,
             bindKey: {win: 'Alt-D'},
-            exec: editor => this.core.toggleEditMenu(),
+            exec: editor => document.getElementById('button-edit').click(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleSearchMenu',
             description: res.descriptions.toggle_search_menu,
             bindKey: {win: 'Alt-S'},
-            exec: editor => this.core.toggleSearchMenu(),
+            exec: editor => document.getElementById('button-search').click(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleCodeMenu',
             description: res.descriptions.toggle_code_menu,
             bindKey: {win: 'Alt-C'},
-            exec: editor => this.core.toggleCodeMenu(),
+            exec: editor => document.getElementById('button-code').click(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleViewMenu',
             description: res.descriptions.toggle_view_menu,
             bindKey: {win: 'Alt-V'},
-            exec: editor => this.core.toggleViewMenu(),
+            exec: editor => document.getElementById('button-view').click(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleExtensionsMenu',
             description: res.descriptions.toggle_extensions_menu,
             bindKey: {win: 'Alt-X'},
-            exec: editor => this.core.toggleExtensionsMenu(),
+            exec: editor => document.getElementById('button-extensions').click(),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedToggleHelpMenu',
             description: res.descriptions.toggle_help_menu,
             bindKey: {win: 'Alt-H'},
-            exec: editor => this.core.toggleHelpMenu(),
+            exec: editor => document.getElementById('button-help').click(),
             readOnly: true
         });
     }

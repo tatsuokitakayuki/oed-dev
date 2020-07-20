@@ -39,7 +39,7 @@ export class Menu extends UiHelper {
         } catch (e) {
             console.error(e);
         }
-        if (!this.menu.items[event.detail.index].id.endsWith('...')) {
+        if (!this.itemData.items[event.detail.index].text.endsWith('...')) {
             document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         }
     }
@@ -66,6 +66,7 @@ export class Menu extends UiHelper {
     toggle() {
         this.menu.open = !this.isOpen();
         if (this.isOpen()) {
+            this.updateMenuItems();
             this.setTabindex();
             document.getElementById(this.menuId).focus();
         } else {

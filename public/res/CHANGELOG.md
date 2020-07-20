@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200720 (dev)
+- Fixed the behavior of the menu.
+
 ## Version 3.2.20200712 (dev)
 - Refactored Drawer class.
 

@@ -2,11 +2,9 @@ import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
-import {UiHelper} from '/ui_helper.js';
 
-export class AppBar extends UiHelper {
+export class AppBar {
     constructor(core) {
-        super();
         this.core = core;
         this.topAppBar = new mdc.topAppBar.MDCTopAppBar(this.getElement());
         this.appBarTitle = document.getElementById('app-bar-title');
@@ -18,15 +16,6 @@ export class AppBar extends UiHelper {
         this.buttonView = document.getElementById('button-view');
         this.buttonExtensions = document.getElementById('button-extensions');
         this.buttonHelp = document.getElementById('button-help');
-        this.tabindexList = [
-            this.appNavIcon,
-            this.buttonFile,
-            this.buttonEdit,
-            this.buttonSearch,
-            this.buttonView,
-            this.buttonExtensions,
-            this.buttonHelp,
-        ];
     }
 
     initialize() {
@@ -38,25 +27,39 @@ export class AppBar extends UiHelper {
             options
         );
         this.buttonFile.addEventListener(
-            'click', () => this.onClickButton('file'), options
+            'click',
+            () => this.openMenu('file'),
+            options
         );
         this.buttonEdit.addEventListener(
-            'click', () => this.onClickButton('edit'), options
+            'click',
+            () => this.openMenu('edit'),
+            options
         );
         this.buttonSearch.addEventListener(
-            'click', () => this.onClickButton('search'), options
+            'click',
+            () => this.openMenu('search'),
+            options
         );
         this.buttonCode.addEventListener(
-            'click', () => this.onClickButton('code'), options
+            'click',
+            () => this.openMenu('code'),
+            options
         );
         this.buttonView.addEventListener(
-            'click', () => this.onClickButton('view'), options
+            'click',
+            () => this.openMenu('view'),
+            options
         );
         this.buttonExtensions.addEventListener(
-            'click', () => this.onClickButton('extensions'), options
+            'click',
+            () => this.openMenu('extensions'),
+            options
         );
         this.buttonHelp.addEventListener(
-            'click', () => this.onClickButton('help'), options
+            'click',
+            () => this.openMenu('help'),
+            options
         );
         document.addEventListener(
             'AppBar:change', event => this.onChange(event), options
@@ -64,37 +67,6 @@ export class AppBar extends UiHelper {
         document.addEventListener(
             'MenuButton:change', event => this.onChange(event), options
         );
-    }
-
-    onClickButton(id) {
-        switch (id) {
-            case 'file':
-                this.core.toggleFileMenu();
-                break;
-            case 'edit':
-                this.core.toggleEditMenu();
-                break;
-            case 'search':
-                this.core.toggleSearchMenu();
-                break;
-            case 'code':
-                this.core.toggleCodeMenu();
-                break;
-            case 'view':
-                this.core.toggleViewMenu();
-                break;
-            case 'extensions':
-                this.core.toggleExtensionsMenu();
-                break;
-            case 'help':
-                this.core.toggleHelpMenu();
-                break;
-            default:
-                break;
-        }
-        if (!this.core.isOpen(id)) {
-            document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
-        }
     }
 
     onChange(event) {
@@ -116,6 +88,13 @@ export class AppBar extends UiHelper {
 
     getElement() {
         return document.getElementById('app-bar');
+    }
+
+    openMenu(name) {
+        let menu = this.core.getMenu(name);
+        if (menu && !menu.isOpen()) {
+            menu.toggle();
+        }
     }
 
     buildTitle(titleData) {
