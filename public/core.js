@@ -56,17 +56,15 @@ export class Core {
         this.statusbar = new Statusbar();
         this.fileManager = new FileManager(this);
         this.keybinding = new Keybinding(this);
-/*
         this.menuList = [
-            {id: 'menu-file', exec: () => this.toggleFileMenu()},
-            {id: 'menu-edit', exec: () => this.toggleEditMenu()},
-            {id: 'menu-search', exec: () => this.toggleSearchMenu()},
-            {id: 'menu-code', exec: () => this.toggleCodeMenu()},
-            {id: 'menu-view', exec: () => this.toggleViewMenu()},
-            {id: 'menu-extensions', exec: () => this.toggleExtensionsMenu()},
-            {id: 'menu-help', exec: () => this.toggleHelpMenu()},
+            {id: 'menu-file', exec: () => document.getElementById('button-file').click()},
+            {id: 'menu-edit', exec: () => document.getElementById('button-edit').click()},
+            {id: 'menu-search', exec: () => document.getElementById('button-search').click()},
+            {id: 'menu-code', exec: () => document.getElementById('button-code').click()},
+            {id: 'menu-view', exec: () => document.getElementById('button-view').click()},
+            {id: 'menu-extensions', exec: () => document.getElementById('button-extensions').click()},
+            {id: 'menu-help', exec: () => document.getElementById('button-help').click()},
         ];
-*/
     }
 
     async initializeA() {
@@ -701,55 +699,10 @@ export class Core {
         this.selectFile(this.getLength() - 1);
     }
 
-/*
-    toggleFileMenu() {
-        this.menuFile.updateMenuItems();
-        this.menuFile.toggle();
-        this.blurTopAppBer();
-    }
-
-    toggleEditMenu() {
-        this.menuEdit.updateMenuItems();
-        this.menuEdit.toggle();
-        this.blurTopAppBer();
-    }
-
-    toggleSearchMenu() {
-        this.menuSearch.updateMenuItems();
-        this.menuSearch.toggle();
-        this.blurTopAppBer();
-    }
-
-    toggleCodeMenu() {
-        this.menuCode.updateMenuItems();
-        this.menuCode.toggle();
-        this.blurTopAppBer();
-    }
-
-    toggleViewMenu() {
-        this.menuView.updateMenuItems();
-        this.menuView.toggle();
-        this.blurTopAppBer();
-    }
-
-    toggleExtensionsMenu() {
-        this.menuExtensions.updateMenuItems();
-        this.menuExtensions.toggle();
-        this.blurTopAppBer();
-    }
-
-    toggleHelpMenu() {
-        this.menuHelp.updateMenuItems();
-        this.menuHelp.toggle();
-        this.blurTopAppBer();
-    }
-*/
-
     blurTopAppBer() {
         this.appBar.blur();
     }
 
-/*
     nextMenu(menuId) {
         let menuIndex = this.menuList
             .findIndex(toggleMenu => toggleMenu.id == menuId);
@@ -769,7 +722,6 @@ export class Core {
         }
         this.menuList[menuIndex].exec();
     }
-*/
 
     async exportOptionsA() {
         await this.options.exportOptionsA(this);
