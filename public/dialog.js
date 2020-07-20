@@ -1,3 +1,4 @@
+import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 
@@ -35,6 +36,7 @@ export class Dialog {
         this.dialogTitle.textContent = null;
         this.dialogContent.textContent = null;
         this.dialogFooter.textContent = null;
+        document.dispatchEvent(new FocusEditorEvent());
     }
 
     getElement() {

@@ -182,6 +182,9 @@ export class Core {
     }
 
     onFocusEditor(event) {
+        if (!event.detail.editor) {
+            event.detail.editor = this.getEditor();
+        }
         event.detail.editor.focus();
     }
 
@@ -492,7 +495,6 @@ export class Core {
                 args => this.closeFileCallbackA(args),
                 {index: index}
             );
-            document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         } else {
             await this.closeFileCallbackA({index: index});
         }
@@ -507,6 +509,7 @@ export class Core {
         }
         const index = this.getActive();
         document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
+        document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
     }
 
     async openUrlA(index, url) {
