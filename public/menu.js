@@ -1,5 +1,7 @@
 import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
+import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
+import {ChangeStatusbarEvent} from '/change_statusbar_event.js';
 import {UiHelper} from '/ui_helper.js';
 
 export class Menu extends UiHelper {
@@ -42,6 +44,9 @@ export class Menu extends UiHelper {
         if (!this.menu.items[event.detail.index].textContent.includes('...')) {
             document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
         }
+        const index = this.core.getActive();
+        document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
+        document.dispatchEvent(new ChangeStatusbarEvent(this.core.getEditor()));
     }
 
     onKeyUp(event) {
