@@ -10,8 +10,8 @@ const EditDocument = ace.require('ace/document').Document;
 export class FileData {
     constructor(core) {
         this.core = core;
-        this.editSession = new ace.EditSession(new EditDocument('')); // Ace EditSession API
-        this.editSession.setUndoManager(new ace.UndoManager()); // Undo manager
+        this.editSession = new ace.EditSession(new EditDocument(''));
+        this.editSession.setUndoManager(new ace.UndoManager());
         this.initialize('');
     }
 
@@ -33,7 +33,9 @@ export class FileData {
         const res = new Res();
         if (this.url.pathname.includes('/' + res.dirs.res + '/')) {
             return Boolean(
-                Object.values(res.files).find(name => this.url.pathname.includes(name))
+                Object.values(res.files).find(
+                    name => this.url.pathname.includes(name)
+                )
             );
         }
         return false;
@@ -131,7 +133,9 @@ export class FileData {
 
     downloadFile() {
         const fileHelper = new FileHelper();
-        const blob = fileHelper.buildBlob(this.editSession.getValue(), this.type);
+        const blob = fileHelper.buildBlob(
+            this.editSession.getValue(), this.type
+        );
         fileHelper.writeBlob(blob, this.name);
         document.dispatchEvent(
             new ChangeSnackbarEvent('Download file: ' + this.name, true, null)

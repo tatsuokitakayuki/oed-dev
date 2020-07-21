@@ -8,24 +8,30 @@ let newWorker = null;
 window.addEventListener('DOMContentLoaded', () => core.initializeA());
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js', {scope: './'})
-            .then(reg => {
-                console.log('[oed.js] Service worker has been registered for scope: ' + reg.scope);
-                reg.addEventListener('updatefound', () => {
-                    newWorker = reg.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        switch (newWorker.state) {
-                            case 'installed':
-                                if (navigator.serviceWorker.controller) {
-                                    const res = new Res();
-                                    document.dispatchEvent(new ChangeSnackbarEvent(res.strings.updated_oed, true, null));
-                                }
-                                break;
-                            default:
-                                break;
-                        }
-                    });
+        navigator.serviceWorker.register('./sw.js', {scope: './'}).then(reg => {
+            console.log(
+                '[oed.js] Service worker has been registered for scope: ' +
+                reg.scope
+            );
+            reg.addEventListener('updatefound', () => {
+                newWorker = reg.installing;
+                newWorker.addEventListener('statechange', () => {
+                    switch (newWorker.state) {
+                        case 'installed':
+                            if (navigator.serviceWorker.controller) {
+                                const res = new Res();
+                                document.dispatchEvent(
+                                    new ChangeSnackbarEvent(
+                                        res.strings.updated_oed, true, null
+                                    )
+                                );
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 });
             });
+        });
     });
 }

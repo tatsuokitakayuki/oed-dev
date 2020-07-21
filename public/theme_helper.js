@@ -52,12 +52,16 @@ export class ThemeHelper {
         });
         const themes = {bright: [], dark: []};
         themelist.forEach(x => {
-            themes[x.isDark ? 'dark' : 'bright'].push({caption: x.caption, value: x.theme});
+            themes[x.isDark ? 'dark' : 'bright'].push(
+                {caption: x.caption, value: x.theme}
+            );
         });
         return themes;
     }
 
     isDark(theme) {
-        return Boolean(this.getThemes().dark.find(darkTheme => darkTheme.value == theme));
+        return Boolean(
+            this.getThemes().dark.find(darkTheme => darkTheme.value == theme)
+        );
     }
 }

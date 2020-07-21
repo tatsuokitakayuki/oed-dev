@@ -57,13 +57,34 @@ export class Core {
         this.fileManager = new FileManager(this);
         this.keybinding = new Keybinding(this);
         this.menuList = [
-            {id: 'menu-file', exec: () => document.getElementById('button-file').click()},
-            {id: 'menu-edit', exec: () => document.getElementById('button-edit').click()},
-            {id: 'menu-search', exec: () => document.getElementById('button-search').click()},
-            {id: 'menu-code', exec: () => document.getElementById('button-code').click()},
-            {id: 'menu-view', exec: () => document.getElementById('button-view').click()},
-            {id: 'menu-extensions', exec: () => document.getElementById('button-extensions').click()},
-            {id: 'menu-help', exec: () => document.getElementById('button-help').click()},
+            {
+                id: 'menu-file',
+                exec: () => document.getElementById('button-file').click()
+            },
+            {
+                id: 'menu-edit',
+                exec: () => document.getElementById('button-edit').click()
+            },
+            {
+                id: 'menu-search',
+                exec: () => document.getElementById('button-search').click()
+            },
+            {
+                id: 'menu-code',
+                exec: () => document.getElementById('button-code').click()
+            },
+            {
+                id: 'menu-view',
+                exec: () => document.getElementById('button-view').click()
+            },
+            {
+                id: 'menu-extensions',
+                exec: () => document.getElementById('button-extensions').click()
+            },
+            {
+                id: 'menu-help',
+                exec: () => document.getElementById('button-help').click()
+            },
         ];
     }
 
@@ -86,9 +107,15 @@ export class Core {
         await this.options.initializeA(this);
         this.keybinding.initialize();
         this.getEditor().on('focus', editor => this.onChangeEditor(editor));
-        this.getEditor().on('changeStatus', editor => this.onChangeEditor(editor));
-        this.getEditor().on('changeSelection', editor => this.onChangeEditor(editor));
-        this.getEditor().on('keyboardActivity', editor => this.onChangeEditor(editor));
+        this.getEditor().on(
+            'changeStatus', editor => this.onChangeEditor(editor)
+        );
+        this.getEditor().on(
+            'changeSelection', editor => this.onChangeEditor(editor)
+        );
+        this.getEditor().on(
+            'keyboardActivity', editor => this.onChangeEditor(editor)
+        );
         this.appBar.initialize();
         this.drawer.initialize();
         this.snackbar.initialize();
@@ -101,7 +128,9 @@ export class Core {
         this.menuExtensions.initialize();
         this.menuHelp.initialize();
         const appView = document.getElementById('app-view');
-        appView.addEventListener('dragover', event => this.onDragOver(event), false);
+        appView.addEventListener(
+            'dragover', event => this.onDragOver(event), false
+        );
         appView.addEventListener('drop', event => this.onDropA(event), false);
         document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         this.helloOed();
@@ -173,7 +202,9 @@ export class Core {
                 break;
             case 'theme':
                 this.getEditor().setOption(name, value);
-                document.dispatchEvent(new ChangeViewEvent(-1, -1, {theme:true}));
+                document.dispatchEvent(
+                    new ChangeViewEvent(-1, -1, {theme:true})
+                );
                 break;
             default:
                 this.getEditor().setOption(name, value);
@@ -413,7 +444,9 @@ export class Core {
         if (index == -1 || !this.isEmptyFile(index)) {
             index = this.fileManager.createFileData();
         }
-        await this.options.initializeSessionOptionsA(this.getEditSession(index));
+        await this.options.initializeSessionOptionsA(
+            this.getEditSession(index)
+        );
         return index;
     }
 
@@ -444,7 +477,9 @@ export class Core {
                 if (oldIndex != index) {
                     this.drawer.addItem(index, -1);
                 } else {
-                    document.dispatchEvent(new ChangeDrawerItemEvent(index, -1));
+                    document.dispatchEvent(
+                        new ChangeDrawerItemEvent(index, -1)
+                    );
                 }
             } else {
                 this.dropFileData(index);
@@ -467,7 +502,9 @@ export class Core {
         const url = this.getUrl(index);
         const res = new Res();
         if (url.pathname.includes('/' + res.dirs.res + '/')) {
-            this.renameFile(index, () => this.getEditor().execCommand('oedDownloadFile'), {});
+            this.renameFile(
+                index, () => this.getEditor().execCommand('oedDownloadFile'), {}
+            );
             return;
         }
         this.fileManager.downloadFile(index);
@@ -480,7 +517,9 @@ export class Core {
             return;
         }
         this.fileManager.addEventListener();
-        const dialogRenameFile = new DialogRenameFile(this.getName(index), callback, args);
+        const dialogRenameFile = new DialogRenameFile(
+            this.getName(index), callback, args
+        );
         dialogRenameFile.open();
     }
 
@@ -540,7 +579,9 @@ export class Core {
                 this.setReadOnly(index, true);
                 this.updateEditSession(index);
                 if (this.drawer.hasItem(index)) {
-                    document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
+                    document.dispatchEvent(
+                        new ChangeDrawerItemEvent(index, index)
+                    );
                 } else {
                     this.drawer.addItem(index, index);
                 }
@@ -596,42 +637,58 @@ export class Core {
     }
 
     selectKeyboardHandler() {
-        const dialogKeyboardHandler = new DialogKeyboardHandler(this.getOption('keyboardHandler'));
+        const dialogKeyboardHandler = new DialogKeyboardHandler(
+            this.getOption('keyboardHandler')
+        );
         dialogKeyboardHandler.open();
     }
 
     selectMenuButton() {
-        const dialogMenuButton = new DialogMenuButton(this.getOption('menuButton'));
+        const dialogMenuButton = new DialogMenuButton(
+            this.getOption('menuButton')
+        );
         dialogMenuButton.open();
     }
 
     promptFontSize() {
-        const dialogFontSize = new DialogFontSize(this.getOption('fontSize'));
+        const dialogFontSize = new DialogFontSize(
+            this.getOption('fontSize')
+        );
         dialogFontSize.open();
     }
 
     selectCursorStyle() {
-        const dialogCursorStyle = new DialogCursorStyle(this.getOption('cursorStyle'));
+        const dialogCursorStyle = new DialogCursorStyle(
+            this.getOption('cursorStyle')
+        );
         dialogCursorStyle.open();
     }
 
     selectMergeUndoDeltas() {
-        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(this.getOption('mergeUndoDeltas'));
+        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(
+            this.getOption('mergeUndoDeltas')
+        );
         dialogMergeUndoDeltas.open();
     }
 
     promptPrintMarginColumn() {
-        const dialogPrintMarginColumn = new DialogPrintMarginColumn(this.getOption('printMarginColumn'));
+        const dialogPrintMarginColumn = new DialogPrintMarginColumn(
+            this.getOption('printMarginColumn')
+        );
         dialogPrintMarginColumn.open();
     }
 
     selectScrollPastEnd() {
-        const dialogScrollPastEnd = new DialogScrollPastEnd(this.getOption('scrollPastEnd'));
+        const dialogScrollPastEnd = new DialogScrollPastEnd(
+            this.getOption('scrollPastEnd')
+        );
         dialogScrollPastEnd.open();
     }
 
     promptFontFamily() {
-        const dialogFontFamily = new DialogFontFamily(this.getOption('fontFamily'));
+        const dialogFontFamily = new DialogFontFamily(
+            this.getOption('fontFamily')
+        );
         dialogFontFamily.open();
     }
 
@@ -641,32 +698,44 @@ export class Core {
     }
 
     selectLanguageMode() {
-        const dialogLanguageMode = new DialogLanguageMode(this.getOption('mode'));
+        const dialogLanguageMode = new DialogLanguageMode(
+            this.getOption('mode')
+        );
         dialogLanguageMode.open();
     }
 
     selectFoldStyle() {
-        const dialogFoldStyle = new DialogFoldStyle(this.getOption('foldStyle'));
+        const dialogFoldStyle = new DialogFoldStyle(
+            this.getOption('foldStyle')
+        );
         dialogFoldStyle.open();
     }
 
     selectNewLineMode() {
-        const dialogNewLineMode = new DialogNewLineMode(this.getOption('newLineMode'));
+        const dialogNewLineMode = new DialogNewLineMode(
+            this.getOption('newLineMode')
+        );
         dialogNewLineMode.open();
     }
 
     promptFirstLineNumber() {
-        const dialogFirstLineNumber = new DialogFirstLineNumber(this.getOption('firstLineNumber'));
+        const dialogFirstLineNumber = new DialogFirstLineNumber(
+            this.getOption('firstLineNumber')
+        );
         dialogFirstLineNumber.open();
     }
 
     selectFileDecoding() {
-        const dialogFileDecoding = new DialogFileDecoding(this.getOption('fileDecoding'));
+        const dialogFileDecoding = new DialogFileDecoding(
+            this.getOption('fileDecoding')
+        );
         dialogFileDecoding.open();
     }
 
     idToName(id) {
-        return id.replace(/-./gi, match => match.slice(1).toUpperCase()).replace('Ime', 'IME');
+        return id.replace(
+            /-./gi, match => match.slice(1).toUpperCase()
+        ).replace('Ime', 'IME');
     }
 
     selectFile(index) {

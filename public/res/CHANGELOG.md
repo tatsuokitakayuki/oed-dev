@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200721 (dev)
+- Formatted source code.
 - Updated localForage to version 1.8.0.
 
 ## Version 3.2.20200720 (dev)

@@ -25,7 +25,9 @@ export class Menu extends UiHelper {
         document.getElementById(this.menuId)
             .addEventListener('keyup', event => this.onKeyUp(event), options);
         const materialHelper = new MaterialHelper();
-        materialHelper.menuItems(document.getElementById(this.itemData.id), this.itemData.items);
+        materialHelper.menuItems(
+            document.getElementById(this.itemData.id), this.itemData.items
+        );
     }
 
     onAction(event) {
@@ -47,7 +49,9 @@ export class Menu extends UiHelper {
         const index = this.core.getActive();
         if (index != -1) {
             document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
-            document.dispatchEvent(new ChangeStatusbarEvent(this.core.getEditor()));
+            document.dispatchEvent(
+                new ChangeStatusbarEvent(this.core.getEditor())
+            );
         }
     }
 

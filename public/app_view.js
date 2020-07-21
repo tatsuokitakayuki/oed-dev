@@ -17,7 +17,9 @@ export class AppView {
         document.addEventListener(
             'Editor:saveoptions',
             event => document.dispatchEvent(
-                new SaveOptionsEvent(this.core.getEditor(), event.detail.options)
+                new SaveOptionsEvent(
+                    this.core.getEditor(), event.detail.options
+                )
             ),
             options
         );
@@ -30,7 +32,9 @@ export class AppView {
         document.removeEventListener(
             'Editor:saveoptions',
             event => document.dispatchEvent(
-                new SaveOptionsEvent(this.core.getEditor(), event.detail.options)
+                new SaveOptionsEvent(
+                    this.core.getEditor(), event.detail.options
+                )
             )
         );
     }
@@ -57,7 +61,9 @@ export class AppView {
             this.updateTheme();
         }
         if (flags.all || flags.statusbar) {
-            document.dispatchEvent(new ChangeStatusbarEvent(this.core.getEditor()));
+            document.dispatchEvent(
+                new ChangeStatusbarEvent(this.core.getEditor())
+            );
         }
     }
 

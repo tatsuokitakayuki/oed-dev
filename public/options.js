@@ -23,25 +23,26 @@ export class Options {
 
     getDefaultEditorOptions() {
         return {
-            autoScrollEditorIntoView: false,    // true|[false]
-            behavioursEnabled: true,            // [true]|false
-            copyWithEmptySelection: false,      // true|[false]
-            cursorStyle: 'ace',                 // ["ace"]|"slim"|"smooth"|"wide"
-            enableAutoIndent: true,             // [true]|false
-            enableLinking: true,                // [true]|false
-            enableMultiselect: true,            // [true]|false
-            highlightActiveLine: true,          // [true]|false
-            highlightSelectedWord: true,        // [true]|false
-            mergeUndoDeltas: 'always',          // true|false|["always"]
-            navigateWithinSoftTabs: false,      // true|[false]
-            selectionStyle: 'line',             // ["line"]|"text"
-            wrapBehavioursEnabled: true,        // [true]|false
+            autoScrollEditorIntoView: false, // true|[false]
+            behavioursEnabled: true,         // [true]|false
+            copyWithEmptySelection: false,   // true|[false]
+            cursorStyle: 'ace',              // ["ace"]|"slim"|"smooth"|"wide"
+            enableAutoIndent: true,          // [true]|false
+            enableLinking: true,             // [true]|false
+            enableMultiselect: true,         // [true]|false
+            highlightActiveLine: true,       // [true]|false
+            highlightSelectedWord: true,     // [true]|false
+            mergeUndoDeltas: 'always',       // true|false|["always"]
+            navigateWithinSoftTabs: false,   // true|[false]
+            selectionStyle: 'line',          // ["line"]|"text"
+            wrapBehavioursEnabled: true,     // [true]|false
         };
     }
 
     getEditorOptions(editor) {
         return {
-            autoScrollEditorIntoView: editor.getOption('autoScrollEditorIntoView'),
+            autoScrollEditorIntoView:
+                editor.getOption('autoScrollEditorIntoView'),
             behavioursEnabled: editor.getOption('behavioursEnabled'),
             copyWithEmptySelection: editor.getOption('copyWithEmptySelection'),
             cursorStyle: editor.getOption('cursorStyle'),
@@ -76,8 +77,8 @@ export class Options {
             displayIndentGuides: true,      // [true]|false
             fadeFoldWidgets: false,         // true|[false]
             fixedWidthGutter: true,         // [true]|false
-            fontFamily: 'monospace',        // css font-family value ["monospace"]
-            fontSize: '16px',               // number or css font-size string [16]
+            fontFamily: 'monospace',        // ["monospace"]
+            fontSize: '16px',               // ["16px"]
             hScrollBarAlwaysVisible: false, // true|[false]
             highlightGutterLine: true,      // [true]|false
             printMarginColumn: 80,          // number [80]
@@ -87,7 +88,7 @@ export class Options {
             showInvisibles: false,          // true|[false]
             showLineNumbers: true,          // [true]|false
             showPrintMargin: true,          // [true]|false
-            theme: 'ace/theme/chrome',      // path to a theme e.g "ace/theme/textmate"
+            theme: 'ace/theme/chrome',      // "ace/theme/textmate"
             useTextareaForIME: true,        // [true]|false
             vScrollBarAlwaysVisible: false, // true|[false]
         };
@@ -101,7 +102,8 @@ export class Options {
             fixedWidthGutter: editor.getOption('fixedWidthGutter'),
             fontFamily: editor.getOption('fontFamily'),
             fontSize: editor.getOption('fontSize'),
-            hScrollBarAlwaysVisible: editor.getOption('hScrollBarAlwaysVisible'),
+            hScrollBarAlwaysVisible:
+                editor.getOption('hScrollBarAlwaysVisible'),
             highlightGutterLine: editor.getOption('highlightGutterLine'),
             printMarginColumn: editor.getOption('printMarginColumn'),
             scrollPastEnd: editor.getOption('scrollPastEnd'),
@@ -112,7 +114,8 @@ export class Options {
             showPrintMargin: editor.getOption('showPrintMargin'),
             theme: editor.getOption('theme'),
             useTextareaForIME: editor.getOption('useTextareaForIME'),
-            vScrollBarAlwaysVisible: editor.getOption('vScrollBarAlwaysVisible'),
+            vScrollBarAlwaysVisible:
+                editor.getOption('vScrollBarAlwaysVisible'),
         };
     }
 
@@ -128,7 +131,9 @@ export class Options {
     }
 
     saveRendererOptions(editor) {
-        localforage.setItem('options_renderer', this.getRendererOptions(editor));
+        localforage.setItem(
+            'options_renderer', this.getRendererOptions(editor)
+        );
     }
 
     getDefaultMouseHandlerOptions() {
@@ -199,18 +204,20 @@ export class Options {
 
     getDefaultExtensionsOptions() {
         return {
-            enableBasicAutocompletion: false,   // true|[false] (Language Tools)
-            enableLiveAutocompletion: false,    // true|[false] (Language Tools)
-            enableSnippets: false,              // true|[false] (Language Tools)
-            enableEmmet: false,                 // true|[false] (Emmet)
-            useElasticTabstops: false           // true|[false] (Elastic Tabstops)
+            enableBasicAutocompletion: false, // true|[false] (Language Tools)
+            enableLiveAutocompletion: false,  // true|[false] (Language Tools)
+            enableSnippets: false,            // true|[false] (Language Tools)
+            enableEmmet: false,               // true|[false] (Emmet)
+            useElasticTabstops: false         // true|[false] (Elastic Tabstops)
         };
     }
 
     getExtensionsOptions(editor) {
         return {
-            enableBasicAutocompletion: editor.getOption('enableBasicAutocompletion'),
-            enableLiveAutocompletion: editor.getOption('enableLiveAutocompletion'),
+            enableBasicAutocompletion:
+                editor.getOption('enableBasicAutocompletion'),
+            enableLiveAutocompletion:
+                editor.getOption('enableLiveAutocompletion'),
             enableSnippets: editor.getOption('enableSnippets'),
             enableEmmet: editor.getOption('enableEmmet'),
             useElasticTabstops: editor.getOption('useElasticTabstops'),
@@ -233,11 +240,11 @@ export class Options {
 
     getDefaultOedOptions() {
         return {
-            fileDecoding: 'utf-8',      // string ["utf-8"]
-            hello: false,               // true|[false]
-            keyboardHandler: 'Ace',     // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
-            menuButton: 'label',        // "iconlabel"|["label"]|"icon"
-            theme: 'Dark',              // ["Dark"]|"Light"|"Ace"|"AceReverse"
+            fileDecoding: 'utf-8',  // string ["utf-8"]
+            hello: false,           // true|[false]
+            keyboardHandler: 'Ace', // ["Ace"]|"Vim"|"Emacs"|"Sublime"|"VSCode"
+            menuButton: 'label',    // "iconlabel"|["label"]|"icon"
+            theme: 'Dark',          // ["Dark"]|"Light"|"Ace"|"AceReverse"
         };
     }
 

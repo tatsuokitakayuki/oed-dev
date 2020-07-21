@@ -1,4 +1,4 @@
-const OED_VERSION = '3.2.20200721.0';
+const OED_VERSION = '3.2.20200721.1';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -576,7 +576,9 @@ self.addEventListener('install', event => {
                     caches
                         .open(key)
                         .then(cache => {
-                            console.log('[Service Worker] Caching all: ' + item.log);
+                            console.log(
+                                '[Service Worker] Caching all: ' + item.log
+                            );
                             return cache.addAll(item.list);
                         })
                         .catch(error => console.error(error));
@@ -618,10 +620,14 @@ self.addEventListener('fetch', event => {
         caches
             .match(event.request)
             .then(responseMatch => {
-                return responseMatch || fetch(event.request).then(responseFetch => {
-                    console.log('[Service Worker] Fetch new resource: ' + event.request.url);
-                    return responseFetch;
-                });
+                return responseMatch ||
+                    fetch(event.request).then(responseFetch => {
+                        console.log(
+                            '[Service Worker] Fetch new resource: ' +
+                            event.request.url
+                        );
+                        return responseFetch;
+                    });
             })
             .catch(error => console.error(error))
     );

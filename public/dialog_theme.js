@@ -27,10 +27,17 @@ export class DialogTheme extends DialogSelect {
             if (item.value != this.initialValue) {
                 attributeList.push({name: 'class', value: 'mdc-list-item'});
             } else {
-                attributeList.push({name: 'class', value: 'mdc-list-item mdc-list-item--selected'});
+                attributeList.push(
+                    {
+                        name: 'class',
+                        value: 'mdc-list-item mdc-list-item--selected'
+                    }
+                );
                 attributeList.push({name: 'selected', value: 'selected'});
             }
-            brightGroup.appendChild(htmlHelper.option(String(item.caption), attributeList));
+            brightGroup.appendChild(
+                htmlHelper.option(String(item.caption), attributeList)
+            );
         });
         const darkGroup = htmlHelper.optgroup(
             null, [{name: 'label', value: 'Dark'}]
@@ -40,10 +47,17 @@ export class DialogTheme extends DialogSelect {
             if (item.value != this.initialValue) {
                 attributeList.push({name: 'class', value: 'mdc-list-item'});
             } else {
-                attributeList.push({name: 'class', value: 'mdc-list-item mdc-list-item--selected'});
+                attributeList.push(
+                    {
+                        name: 'class',
+                        value: 'mdc-list-item mdc-list-item--selected'
+                    }
+                );
                 attributeList.push({name: 'selected', value: 'selected'});
             }
-            darkGroup.appendChild(htmlHelper.option(String(item.caption), attributeList));
+            darkGroup.appendChild(
+                htmlHelper.option(String(item.caption), attributeList)
+            );
         });
         return [brightGroup, darkGroup];
     }

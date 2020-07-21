@@ -19,7 +19,8 @@ export class CacheManager {
         let cacheList = [];
         list.forEach(item => {
             const parts = item.split('-v');
-            if (cacheList.length === 0 || cacheList[cacheList.length - 1].name != parts[0]) {
+            if (cacheList.length === 0
+                || cacheList[cacheList.length - 1].name != parts[0]) {
                 cacheList.push({name: parts[0], version: [parts[1]]});
             } else {
                 cacheList[cacheList.length - 1].version.push(parts[1]);

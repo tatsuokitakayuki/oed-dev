@@ -19,7 +19,9 @@ export class AppBar {
     }
 
     initialize() {
-        this.topAppBar.setScrollTarget(document.getElementById('editor-container'));
+        this.topAppBar.setScrollTarget(
+            document.getElementById('editor-container')
+        );
         const options = {passive: true};
         this.topAppBar.listen(
             'MDCTopAppBar:nav',
@@ -128,24 +130,58 @@ export class AppBar {
         const res = new Res();
         const materialHelper = new MaterialHelper();
         [
-            {label: res.buttons.file, button: this.buttonFile, icon: 'folder'},
-            {label: res.buttons.edit, button: this.buttonEdit, icon: 'edit'},
-            {label: res.buttons.search, button: this.buttonSearch, icon: 'search'},
-            {label: res.buttons.code, button: this.buttonCode, icon: 'code'},
-            {label: res.buttons.view, button: this.buttonView, icon: 'pageview'},
-            {label: res.buttons.extensions, button: this.buttonExtensions, icon: 'extension'},
-            {label: res.buttons.help, button: this.buttonHelp, icon: 'help'},
+            {
+                label: res.buttons.file,
+                button: this.buttonFile,
+                icon: 'folder'
+            },
+            {
+                label: res.buttons.edit,
+                button: this.buttonEdit,
+                icon: 'edit'
+            },
+            {
+                label: res.buttons.search,
+                button: this.buttonSearch,
+                icon: 'search'
+            },
+            {
+                label: res.buttons.code,
+                button: this.buttonCode,
+                icon: 'code'
+            },
+            {
+                label: res.buttons.view,
+                button: this.buttonView,
+                icon: 'pageview'
+            },
+            {
+                label: res.buttons.extensions,
+                button: this.buttonExtensions,
+                icon: 'extension'
+            },
+            {
+                label: res.buttons.help,
+                button: this.buttonHelp,
+                icon: 'help'
+            },
         ]
         .forEach(item => {
             materialHelper.removeChildren(item.button);
             item.button.appendChild(materialHelper.buttonRipple());
             switch (style) {
                 case res.menu_button[0].value:
-                    item.button.appendChild(materialHelper.buttonIcon(item.icon));
-                    item.button.appendChild(materialHelper.buttonLabel(item.label));
+                    item.button.appendChild(
+                        materialHelper.buttonIcon(item.icon)
+                    );
+                    item.button.appendChild(
+                        materialHelper.buttonLabel(item.label)
+                    );
                     break;
                 case res.menu_button[1].value:
-                    item.button.appendChild(materialHelper.buttonLabel(item.label));
+                    item.button.appendChild(
+                        materialHelper.buttonLabel(item.label)
+                    );
                     break;
                 case res.menu_button[2].value:
                     item.button.appendChild(materialHelper.icon(item.icon));

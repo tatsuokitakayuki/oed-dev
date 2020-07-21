@@ -20,11 +20,15 @@ export class MaterialHelper extends HtmlHelper {
     }
 
     listItemPrimaryText(text) {
-        return this.span(text, [{name: 'class', value: 'mdc-list-item__primary-text'}]);
+        return this.span(
+            text, [{name: 'class', value: 'mdc-list-item__primary-text'}]
+        );
     }
 
     listItemSecondaryText(text) {
-        return this.span(text, [{name: 'class', value: 'mdc-list-item__secondary-text'}]);
+        return this.span(
+            text, [{name: 'class', value: 'mdc-list-item__secondary-text'}]
+        );
     }
 
     listItemMeta(text) {
@@ -124,7 +128,10 @@ export class MaterialHelper extends HtmlHelper {
     buttonDialog(label) {
         const button = this.button(null, [
             {name: 'type', value: 'button'},
-            {name: 'class', value: 'mdc-button mdc-dialog__button mdc-button--outlined'},
+            {
+                name: 'class',
+                value: 'mdc-button mdc-dialog__button mdc-button--outlined'
+            },
             {name: 'role', value: 'button'},
             {name: 'tabindex', value: '0'},
         ]);
@@ -140,7 +147,9 @@ export class MaterialHelper extends HtmlHelper {
         const button = this.buttonDialog(res.buttons.ok);
         button.setAttribute('id', 'dialog-button-ok');
         button.setAttribute('data-mdc-dialog-action', 'submit');
-        button.setAttribute('data-mdc-dialog-button-default', 'data-mdc-dialog-button-default');
+        button.setAttribute(
+            'data-mdc-dialog-button-default', 'data-mdc-dialog-button-default'
+        );
         return button;
     }
 
@@ -157,10 +166,14 @@ export class MaterialHelper extends HtmlHelper {
             null, [{name: 'class', value: 'mdc-select__anchor'}]
         );
         anchor.appendChild(
-            this.span(null, [{name: 'class', value: 'mdc-select__dropdown-icon'}])
+            this.span(
+                null, [{name: 'class', value: 'mdc-select__dropdown-icon'}]
+            )
         );
         anchor.appendChild(
-            this.div(null, [{name: 'class', value: 'mdc-select__selected-text'}])
+            this.div(
+                null, [{name: 'class', value: 'mdc-select__selected-text'}]
+            )
         );
         anchor.appendChild(this.underline());
         return anchor;
@@ -183,8 +196,14 @@ export class MaterialHelper extends HtmlHelper {
         const menuDiv = this.div(
             null,
             [
-                {name: 'class', value: 'mdc-select__menu mdc-menu mdc-menu-surface'},
-                {name: 'role', value: 'listbox'}
+                {
+                    name: 'class',
+                    value: 'mdc-select__menu mdc-menu mdc-menu-surface'
+                },
+                {
+                    name: 'role',
+                    value: 'listbox'
+                }
             ]
         );
         menuDiv.appendChild(selectUl);

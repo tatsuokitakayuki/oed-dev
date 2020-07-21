@@ -6,7 +6,9 @@ import {StatusHelper} from '/status_helper.js';
 export class Drawer {
     constructor(core) {
         this.core = core;
-        this.drawer = new mdc.drawer.MDCDrawer(document.getElementById('drawer-view'));
+        this.drawer = new mdc.drawer.MDCDrawer(
+            document.getElementById('drawer-view')
+        );
         this.fileListView = document.getElementById('file-list');
         this.fileList = mdc.list.MDCList.attachTo(this.fileListView);
     }
@@ -79,7 +81,9 @@ export class Drawer {
 
     updateItem(index, active) {
         const newItem = this.buildItem(index, index == active);
-        this.fileListView.replaceChild(newItem, this.fileListView.childNodes[index]);
+        this.fileListView.replaceChild(
+            newItem, this.fileListView.childNodes[index]
+        );
         if (index == active) {
             this.fileListView.childNodes[index].scrollIntoView(
                 {behavior: 'auto', block: 'center'}
@@ -94,7 +98,10 @@ export class Drawer {
     buildItem(index, selected) {
         const materialHelper = new MaterialHelper();
         const item = materialHelper.listItem(
-            'file-list-item-' + String(this.core.getTime(index)) + '-' + String(index)
+            'file-list-item-' +
+            String(this.core.getTime(index)) +
+            '-' +
+            String(index)
         );
         if (selected) {
             item.setAttribute('class', 'mdc-list-item mdc-list-item--selected');

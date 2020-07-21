@@ -15,10 +15,17 @@ export class DialogSelect extends Dialog {
             if (item.value != this.initialValue) {
                 attributeList.push({name: 'class', value: 'mdc-list-item'});
             } else {
-                attributeList.push({name: 'class', value: 'mdc-list-item mdc-list-item--selected'});
+                attributeList.push(
+                    {
+                        name: 'class',
+                        value: 'mdc-list-item mdc-list-item--selected'
+                    }
+                );
                 attributeList.push({name: 'selected', value: 'selected'});
             }
-            selectList.push(materialHelper.option(String(item.name), attributeList));
+            selectList.push(
+                materialHelper.option(String(item.name), attributeList)
+            );
         });
         return selectList;
     }
@@ -35,7 +42,9 @@ export class DialogSelect extends Dialog {
                 {name: 'id', value: 'dialog-select-field'}
             ]
         );
-        this.buildSelectList(selectData).forEach(item => select.appendChild(item));
+        this.buildSelectList(selectData).forEach(
+            item => select.appendChild(item)
+        );
         select.onchange = event => this.onChange(event);
         const div = materialHelper.div(
             null, [{name: 'class', value: 'mdc-select mdc-select--no-label'}]

@@ -14,6 +14,7 @@ export class Statusbar {
 
     onChange(event) {
         const statusHelper = new StatusHelper();
-        this.element.textContent = statusHelper.buildStatusText(event.detail.editor);
+        this.element.textContent =
+            statusHelper.buildStatusText(event.detail.editor);
     }
 }

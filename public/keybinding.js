@@ -117,7 +117,9 @@ export class Keybinding {
             name: 'oedRenameFile',
             description: res.descriptions.rename_file + '...',
             bindKey: {win: 'Alt-R', mac: 'Option-R'},
-            exec: editor => this.core.renameFile(this.core.getActive(), null, null),
+            exec: editor => this.core.renameFile(
+                this.core.getActive(), null, null
+            ),
             readOnly: false
         });
         this.core.getEditor().commands.addCommand({
@@ -141,8 +143,9 @@ export class Keybinding {
         this.core.getEditor().commands.addCommand({
             name: 'oedIndentedSoftWrap',
             description: res.descriptions.indented_soft_wrap,
-            exec: editor =>
-                editor.setOption('indentedSoftWrap', !editor.getOption('indentedSoftWrap')),
+            exec: editor => editor.setOption(
+                'indentedSoftWrap', !editor.getOption('indentedSoftWrap')
+            ),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
@@ -172,17 +175,22 @@ export class Keybinding {
         this.core.getEditor().commands.addCommand({
             name: 'oedUseSoftTabs',
             description: res.descriptions.use_soft_tabs,
-            exec: editor =>
-                editor.setOption('useSoftTabs', !editor.getOption('useSoftTabs')),
+            exec: editor => editor.setOption(
+                'useSoftTabs', !editor.getOption('useSoftTabs')
+            ),
             readOnly: true
         });
         this.core.getEditor().commands.addCommand({
             name: 'oedSaveEditSessionOptions',
             description: res.descriptions.save_edit_session_options,
             exec: editor => {
-                this.dispatchSaveOptionsEvent(editor, {session: true, oed: true});
+                this.dispatchSaveOptionsEvent(
+                    editor, {session: true, oed: true}
+                );
                 document.dispatchEvent(
-                    new ChangeSnackbarEvent('Saved edit session options.', true, null)
+                    new ChangeSnackbarEvent(
+                        'Saved edit session options.', true, null
+                    )
                 );
             },
             readOnly: true
@@ -343,7 +351,8 @@ export class Keybinding {
             exec: editor => {
                 editor.setOption(
                     'selectionStyle',
-                    editor.getOption('selectionStyle') === 'line' ? 'text' : 'line'
+                    editor.getOption('selectionStyle') === 'line' ?
+                        'text' : 'line'
                 );
                 this.dispatchSaveOptionsEvent(editor, {editor: true});
             },

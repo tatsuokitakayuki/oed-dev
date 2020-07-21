@@ -43,11 +43,17 @@ export class Snackbar {
     onChange(event) {
         if (this.snackbar.isOpen) {
             this.que.push(
-                {label: event.detail.label, close: event.detail.close, actions: event.detail.actions}
+                {
+                    label: event.detail.label,
+                    close: event.detail.close,
+                    actions: event.detail.actions
+                }
             );
             return;
         }
-        this.update(event.detail.label, event.detail.close, event.detail.actions);
+        this.update(
+            event.detail.label, event.detail.close, event.detail.actions
+        );
     }
 
     update(label, close, actions) {
