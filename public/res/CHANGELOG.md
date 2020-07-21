@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200721 (dev)
+- Updated localForage to version 1.8.0.
+
 ## Version 3.2.20200720 (dev)
 - Fixed to focus on EditField after closing the dialog.
 - Fixed a bug that crashes when updating the status.
