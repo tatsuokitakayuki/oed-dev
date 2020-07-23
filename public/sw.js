@@ -1,12 +1,12 @@
-const OED_VERSION = '3.2.20200721.1';
+const OED_VERSION = '3.2.20200723.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
-const MDC_VERSION = '5.1.0';
-const MDC_BASE = 'MDC';
+const MDC_VERSION = '7.0.0';
+const MDC_BASE = 'material-components-web';
 const MDI_VERSION = '3.0.1';
 const MDI_BASE = 'MDI';
-const LF_VERSION = '1.8.0';
+const LF_VERSION = '1.8.1';
 const LF_BASE = 'localForage';
 const EC_VERSION = '1.0.0';
 const EC_BASE = 'emmet-core';
@@ -508,8 +508,8 @@ const ACE_URLS = [
     './ace/worker-xquery.js',
 ];
 const MDC_URLS = [
-    './material-components-web/dist/material-components-web.min.css',
-    './material-components-web/dist/material-components-web.min.js',
+    './material-components-web/material-components-web.min.css',
+    './material-components-web/material-components-web.min.js',
 ];
 const MDI_URLS = [
     './iconfont/material-icons.css',
@@ -544,7 +544,7 @@ const CACHE_LIST = [
         base: MDC_BASE,
         version: MDC_VERSION,
         list: MDC_URLS,
-        log: 'Material Design Component for Web'
+        log: 'Material Components for web'
     },
     {
         base: MDI_BASE,
