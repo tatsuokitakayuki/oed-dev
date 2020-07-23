@@ -218,7 +218,7 @@ export class MenuView extends Menu {
                 const optionValue = String(
                     this.core.getOption(
                         this.core.idToName(
-                            item.id.slice((this.menuId + '-oed-').length)
+                            item.id.slice((this.id + '-oed-').length)
                         )
                     )
                 );

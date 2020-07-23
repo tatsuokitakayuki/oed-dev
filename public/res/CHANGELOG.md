@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200723 (dev)
+- Updated Material Components for the web to version 7.0.0.
 - Updated localForage to version 1.8.1.
 
 ## Version 3.2.20200721 (dev)

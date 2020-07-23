@@ -1,16 +1,22 @@
 import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
+import {ChangeMenuButtonEvent} from '/change_menu_button_event.js';
 import {ChangeStatusbarEvent} from '/change_statusbar_event.js';
 import {UiHelper} from '/ui_helper.js';
 
 export class Menu extends UiHelper {
-    constructor(core, menuId) {
+    constructor(core, id) {
         super();
         this.core = core;
-        this.menuId = menuId;
-        this.menu = new mdc.menu.MDCMenu(document.getElementById(menuId));
+        this.id = id;
+        this.menu = new mdc.menu.MDCMenu(document.getElementById(id));
+        this.surface = new mdc.menuSurface.MDCMenuSurface(
+            document.getElementById(id)
+        );
         this.itemData = null;
+        this.name = this.id.slice('menu-'.length);
+        this.acted = false;
     }
 
     initialize() {
@@ -22,7 +28,10 @@ export class Menu extends UiHelper {
         this.menu.listen(
             'MDCMenu:selected', event => this.onAction(event), options
         );
-        document.getElementById(this.menuId)
+        this.surface.listen(
+            'MDCMenuSurface:closed', () => this.onClosed(), options
+        );
+        document.getElementById(this.id)
             .addEventListener('keyup', event => this.onKeyUp(event), options);
         const materialHelper = new MaterialHelper();
         materialHelper.menuItems(
@@ -30,13 +39,24 @@ export class Menu extends UiHelper {
         );
     }
 
+    onClosed() {
+        document.dispatchEvent(
+            new ChangeMenuButtonEvent({name: this.name, enabled: true})
+        );
+        if (!this.acted) {
+            document.dispatchEvent(new FocusEditorEvent(this.core.getEditor()));
+        }
+        this.acted = false;
+    }
+
     onAction(event) {
+        this.acted = true;
         this.toggle();
         try {
             this.core.getEditor().execCommand(
                 this.core.idToName(
                     this.menu.items[event.detail.index].id.slice(
-                        (this.menuId + '-').length
+                        (this.id + '-').length
                     )
                 )
             );
@@ -56,14 +76,15 @@ export class Menu extends UiHelper {
     }
 
     onKeyUp(event) {
+        this.acted = true;
         switch(event.code) {
             case 'ArrowRight':
                 this.toggle();
-                this.core.nextMenu(this.menuId);
+                this.core.nextMenu(this.id);
                 break;
             case 'ArrowLeft':
                 this.toggle();
-                this.core.previousMenu(this.menuId);
+                this.core.previousMenu(this.id);
                 break;
             default:
                 break;
@@ -79,10 +100,13 @@ export class Menu extends UiHelper {
         if (this.isOpen()) {
             this.updateMenuItems();
             this.setTabindex();
-            document.getElementById(this.menuId).focus();
+            document.getElementById(this.id).focus();
+            document.dispatchEvent(
+                new ChangeMenuButtonEvent({name: this.name, enabled: false})
+            );
         } else {
             this.resetTabindex();
-            document.getElementById(this.menuId).blur();
+            document.getElementById(this.id).blur();
         }
     }
 

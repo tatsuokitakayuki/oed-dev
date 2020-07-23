@@ -1,4 +1,4 @@
-const OED_VERSION = '3.2.20200723.0';
+const OED_VERSION = '3.2.20200723.1';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -544,7 +544,7 @@ const CACHE_LIST = [
         base: MDC_BASE,
         version: MDC_VERSION,
         list: MDC_URLS,
-        log: 'Material Components for web'
+        log: 'Material Components for the web'
     },
     {
         base: MDI_BASE,

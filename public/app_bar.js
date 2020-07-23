@@ -9,13 +9,44 @@ export class AppBar {
         this.topAppBar = new mdc.topAppBar.MDCTopAppBar(this.getElement());
         this.appBarTitle = document.getElementById('app-bar-title');
         this.appNavIcon = document.getElementById('app-nav-icon');
-        this.buttonFile = document.getElementById('button-file');
-        this.buttonEdit = document.getElementById('button-edit');
-        this.buttonSearch = document.getElementById('button-search');
-        this.buttonCode = document.getElementById('button-code');
-        this.buttonView = document.getElementById('button-view');
-        this.buttonExtensions = document.getElementById('button-extensions');
-        this.buttonHelp = document.getElementById('button-help');
+        const res = new Res();
+        this.menuButtons = [
+            {
+                label: res.buttons.file,
+                button: document.getElementById('button-file'),
+                icon: 'folder'
+            },
+            {
+                label: res.buttons.edit,
+                button: document.getElementById('button-edit'),
+                icon: 'edit'
+            },
+            {
+                label: res.buttons.search,
+                button: document.getElementById('button-search'),
+                icon: 'search'
+            },
+            {
+                label: res.buttons.code,
+                button: document.getElementById('button-code'),
+                icon: 'code'
+            },
+            {
+                label: res.buttons.view,
+                button: document.getElementById('button-view'),
+                icon: 'pageview'
+            },
+            {
+                label: res.buttons.extensions,
+                button: document.getElementById('button-extensions'),
+                icon: 'extension'
+            },
+            {
+                label: res.buttons.help,
+                button: document.getElementById('button-help'),
+                icon: 'help'
+            },
+        ];
     }
 
     initialize() {
@@ -28,37 +59,37 @@ export class AppBar {
             () => document.dispatchEvent(new ToggleDrawerEvent()),
             options
         );
-        this.buttonFile.addEventListener(
+        this.menuButtons[0].button.addEventListener(
             'click',
             () => this.openMenu('file'),
             options
         );
-        this.buttonEdit.addEventListener(
+        this.menuButtons[1].button.addEventListener(
             'click',
             () => this.openMenu('edit'),
             options
         );
-        this.buttonSearch.addEventListener(
+        this.menuButtons[2].button.addEventListener(
             'click',
             () => this.openMenu('search'),
             options
         );
-        this.buttonCode.addEventListener(
+        this.menuButtons[3].button.addEventListener(
             'click',
             () => this.openMenu('code'),
             options
         );
-        this.buttonView.addEventListener(
+        this.menuButtons[4].button.addEventListener(
             'click',
             () => this.openMenu('view'),
             options
         );
-        this.buttonExtensions.addEventListener(
+        this.menuButtons[5].button.addEventListener(
             'click',
             () => this.openMenu('extensions'),
             options
         );
-        this.buttonHelp.addEventListener(
+        this.menuButtons[6].button.addEventListener(
             'click',
             () => this.openMenu('help'),
             options
@@ -85,6 +116,9 @@ export class AppBar {
         }
         if (event.detail.style) {
             this.updateButtons(event.detail.style);
+        }
+        if (event.detail.name && event.detail.enabled != undefined) {
+            this.enableButton(event.detail.name, event.detail.enabled);
         }
     }
 
@@ -129,44 +163,7 @@ export class AppBar {
     updateButtons(style) {
         const res = new Res();
         const materialHelper = new MaterialHelper();
-        [
-            {
-                label: res.buttons.file,
-                button: this.buttonFile,
-                icon: 'folder'
-            },
-            {
-                label: res.buttons.edit,
-                button: this.buttonEdit,
-                icon: 'edit'
-            },
-            {
-                label: res.buttons.search,
-                button: this.buttonSearch,
-                icon: 'search'
-            },
-            {
-                label: res.buttons.code,
-                button: this.buttonCode,
-                icon: 'code'
-            },
-            {
-                label: res.buttons.view,
-                button: this.buttonView,
-                icon: 'pageview'
-            },
-            {
-                label: res.buttons.extensions,
-                button: this.buttonExtensions,
-                icon: 'extension'
-            },
-            {
-                label: res.buttons.help,
-                button: this.buttonHelp,
-                icon: 'help'
-            },
-        ]
-        .forEach(item => {
+        this.menuButtons.forEach(item => {
             materialHelper.removeChildren(item.button);
             item.button.appendChild(materialHelper.buttonRipple());
             switch (style) {
@@ -191,5 +188,14 @@ export class AppBar {
             }
             item.button.appendChild(materialHelper.buttonTouch());
         });
+    }
+
+    enableButton(name, enabled) {
+        const button = document.getElementById('button-' + name);
+        if (enabled) {
+            button.removeAttribute('disabled');
+        } else {
+            button.setAttribute('disabled', 'disabled');
+        }
     }
 }

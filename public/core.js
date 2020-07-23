@@ -137,7 +137,7 @@ export class Core {
         this.setWindowTitle();
         document.dispatchEvent(new ChangeViewEvent(0, 0, {all: true}));
         document.dispatchEvent(
-            new ChangeMenuButtonEvent(this.getOption('menuButton'))
+            new ChangeMenuButtonEvent({style: this.getOption('menuButton')})
         );
     }
 
@@ -198,7 +198,9 @@ export class Core {
                 break;
             case 'menuButton':
                 this.getOedOptions().menuButton = value;
-                document.dispatchEvent(new ChangeMenuButtonEvent(value));
+                document.dispatchEvent(
+                    new ChangeMenuButtonEvent({style: value})
+                );
                 break;
             case 'theme':
                 this.getEditor().setOption(name, value);
