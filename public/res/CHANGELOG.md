@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200723 (dev)
+- Adjusted some background colors.
 - Improved the key input processing of the list.
 
 ## Version 3.2.20200723 (dev)

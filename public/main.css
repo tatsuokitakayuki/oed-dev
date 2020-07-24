@@ -126,20 +126,8 @@ body {
     color: inherit;
 }
 
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--selected::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--selected::after {
-    background-color: var(--mdc-theme-on-primary);
-}
-
-:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
-    background-color: var(--mdc-theme-on-primary);
-}
-
 .mdc-list-item--selected, .mdc-list-item--activated {
     color: inherit;
-}
-
-.mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
-    background-color: var(--mdc-theme-on-primary);
 }
 
 .mdc-text-field .mdc-text-field__input {
@@ -160,6 +148,21 @@ body {
 
 .mdc-list-item__secondary-text {
     color: var(--mdc-theme-on-secondary);
+}
+
+:not(.mdc-list-item--disabled).mdc-list-item--selected .mdc-list-item__ripple::before, :not(.mdc-list-item--disabled).mdc-list-item--selected .mdc-list-item__ripple::after {
+    background-color: #6200ee;
+    background-color: var(--mdc-theme-on-primary, #6200ee);
+}
+
+.mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
+    background-color: #6200ee;
+    background-color: var(--mdc-theme-on-primary, #6200ee);
+}
+
+:not(.mdc-list-item--disabled).mdc-list-item .mdc-list-item__ripple::before, :not(.mdc-list-item--disabled).mdc-list-item .mdc-list-item__ripple::after {
+    background-color: #6200ee;
+    background-color: var(--mdc-theme-on-primary, #6200ee);
 }
 /* end */
 
