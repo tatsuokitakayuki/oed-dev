@@ -6,13 +6,23 @@ export class MaterialHelper extends HtmlHelper {
         return this.div(null, [{name: 'class', value: 'mdc-line-ripple'}]);
     }
 
-    listItem(id) {
-        return this.li(null, [
+    listItem(id, text, meta) {
+        const li = this.li(null, [
             {name: 'class', value: 'mdc-list-item'},
             {name: 'role', value: 'menuitem'},
             {name: 'id', value: id},
             {name: 'tabindex', value: '-1'}
         ]);
+        li.appendChild(this.listItemRipple());
+        li.appendChild(this.listItemText(text));
+        if (meta) {
+            li.appendChild(this.listItemMeta(meta));
+        }
+        return li;
+    }
+
+    listItemRipple() {
+        return this.span(null, [{name: 'class', value: 'mdc-list-item__ripple'}]);
     }
 
     listItemText(text) {
@@ -54,11 +64,7 @@ export class MaterialHelper extends HtmlHelper {
         items.forEach(item => {
             let child;
             if (item.id !== '-') {
-                child = this.listItem(item.id);
-                child.appendChild(this.listItemText(item.text));
-                if (item.meta) {
-                    child.appendChild(this.listItemMeta(item.meta));
-                }
+                child = this.listItem(item.id, item.text, item.meta);
             } else {
                 child = this.listItemDivider();
             }

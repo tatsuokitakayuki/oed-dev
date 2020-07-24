@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## Version 3.2.20200723 (dev)
+- Improved the key input processing of the list.
+
+## Version 3.2.20200723 (dev)
 - Updated Material Components for the web to version 7.0.0.
 - Updated localForage to version 1.8.1.
 

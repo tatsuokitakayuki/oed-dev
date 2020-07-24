@@ -1,3 +1,4 @@
+import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
 import {ThemeHelper} from '/theme_helper.js';
@@ -209,6 +210,7 @@ export class MenuView extends Menu {
 
     updateMenuItems() {
         const res = new Res();
+        const materialHelper = new MaterialHelper();
         const themeHelper = new ThemeHelper();
         this.menu.items.forEach(item => {
             const data = this.itemData.items.find(
@@ -253,7 +255,14 @@ export class MenuView extends Menu {
                     default:
                         break;
                 }
-                item.textContent = data.text + ' [' + optionText + ']';
+                materialHelper.removeChildren(item);
+                item.appendChild(materialHelper.listItemRipple());
+                item.appendChild(materialHelper.listItemText(
+                    data.text + ' [' + optionText + ']'
+                ));
+                if (data.meta) {
+                    item.appendChild(materialHelper.listItemMeta(data.meta));
+                }
             }
         });
     }

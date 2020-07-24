@@ -10,16 +10,15 @@ export class Drawer {
             document.getElementById('drawer-view')
         );
         this.fileListView = document.getElementById('file-list');
-        this.fileList = mdc.list.MDCList.attachTo(this.fileListView);
     }
 
     initialize() {
         const options = {passive: true};
         this.drawer.listen('MDCDrawer:opened', () => this.onOpened(), options);
         this.drawer.listen('MDCDrawer:closed', () => this.onClosed(), options);
-        this.fileList.singleSelection = true;
-        this.fileList.wrapFocus = true;
-        this.fileList.listen(
+        this.fileListView.singleSelection = true;
+        this.fileListView.wrapFocus = true;
+        this.fileListView.addEventListener(
             'MDCList:action', event => this.onAction(event), options
         );
         document.addEventListener(

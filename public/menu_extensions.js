@@ -1,3 +1,4 @@
+import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
 
@@ -43,20 +44,26 @@ export class MenuExtensions extends Menu {
     }
 
     updateMenuItems() {
+        const materialHelper = new MaterialHelper();
         this.menu.items.forEach(item => {
             const data = this.itemData.items.find(
                 data => item.id == data.id
             );
             if (data.update) {
-                let optionValue = String(
-                    this.core.getOption(
-                        this.core.idToName(
-                            item.id.slice((this.id + '-oed-').length)
-                        )
+                let optionValue = String(this.core.getOption(
+                    this.core.idToName(
+                        item.id.slice((this.id + '-oed-').length)
                     )
-                );
+                ));
                 let optionText = optionValue;
-                item.textContent = data.text + ' [' + optionText + ']';
+                materialHelper.removeChildren(item);
+                item.appendChild(materialHelper.listItemRipple());
+                item.appendChild(materialHelper.listItemText(
+                    data.text + ' [' + optionText + ']'
+                ));
+                if (data.meta) {
+                    item.appendChild(materialHelper.listItemMeta(data.meta));
+                }
             }
         });
     }

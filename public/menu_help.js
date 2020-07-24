@@ -1,3 +1,4 @@
+import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
 
@@ -72,6 +73,7 @@ export class MenuHelp extends Menu {
 
     updateMenuItems() {
         const res = new Res();
+        const materialHelper = new MaterialHelper();
         this.menu.items.forEach(item => {
             const data = this.itemData.items.find(
                 data => item.id == data.id
@@ -99,7 +101,14 @@ export class MenuHelp extends Menu {
                     default:
                         break;
                 }
-                item.textContent = data.text + ' [' + optionText + ']';
+                materialHelper.removeChildren(item);
+                item.appendChild(materialHelper.listItemRipple());
+                item.appendChild(materialHelper.listItemText(
+                    data.text + ' [' + optionText + ']'
+                ));
+                if (data.meta) {
+                    item.appendChild(materialHelper.listItemMeta(data.meta));
+                }
             }
         });
     }
