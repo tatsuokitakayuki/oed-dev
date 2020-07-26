@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 3.2.20200726 (dev)
+- Improved the process of adding all commands of OED.
+
+## Version 3.2.20200724 (dev)
+- Adjusted some background colors.
+
 ## Version 3.2.20200723 (dev)
 - Adjusted some background colors.
 - Improved the key input processing of the list.

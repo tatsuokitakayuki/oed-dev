@@ -105,7 +105,7 @@ export class Core {
         );
         await this.newFileA();
         await this.options.initializeA(this);
-        this.keybinding.initialize();
+        this.keybinding.initialize(this.getEditor());
         this.getEditor().on('focus', editor => this.onChangeEditor(editor));
         this.getEditor().on(
             'changeStatus', editor => this.onChangeEditor(editor)
