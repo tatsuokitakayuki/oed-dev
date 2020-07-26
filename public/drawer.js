@@ -114,7 +114,7 @@ export class Drawer {
         );
         const statusHelper = new StatusHelper();
         text.appendChild(materialHelper.listItemSecondaryText(
-            statusHelper.buildStatusText(
+            statusHelper.buildFileListItemSecondaryText(
                 this.core.getEditor(), this.core.getEditSession(index))
             )
         );

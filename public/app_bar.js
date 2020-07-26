@@ -1,6 +1,7 @@
 import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
+import {StatusHelper} from '/status_helper.js';
 import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
 
 export class AppBar {
@@ -104,15 +105,7 @@ export class AppBar {
 
     onChange(event) {
         if (event.detail.index !== undefined) {
-            const index = event.detail.index;
-            const titleData = {
-                title: this.core.getDisplayName(index),
-                options: {
-                    modified: !this.core.isClean(index),
-                    read_only: this.core.isReadOnly(index),
-                }
-            };
-            this.setTitle(this.buildTitle(titleData));
+            this.setTitle(this.buildTitle(event.detail.index));
         }
         if (event.detail.style) {
             this.updateButtons(event.detail.style);
@@ -133,22 +126,11 @@ export class AppBar {
         }
     }
 
-    buildTitle(titleData) {
+    buildTitle(index) {
         const res = new Res();
-        let textContent = titleData.title;
-        if (true) {
-            let status = [];
-            if (titleData.options.modified) {
-                status.push(res.strings.modified);
-            }
-            if (titleData.options.read_only) {
-                status.push(res.strings.read_only);
-            }
-            const s = status.join(', ');
-            if (s) {
-                textContent += ` (${s})`;
-            }
-        }
+        let textContent = this.core.getDisplayName(index);
+        const statusHelper = new StatusHelper();
+        textContent += ' ' + statusHelper.buildTitleAdditionalText(this.core.getEditor());
         return textContent;
     }
 

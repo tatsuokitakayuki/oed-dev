@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200726 (dev)
+- Adjusted the contents of the status of all parts.
 - Improved the process of adding all commands of OED.
 
 ## Version 3.2.20200724 (dev)

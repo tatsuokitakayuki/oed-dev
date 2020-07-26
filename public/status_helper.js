@@ -8,6 +8,22 @@ export class StatusHelper {
         this.insert = 'Insert';
     }
 
+    buildTitleAdditionalText(editor, editSession = editor.getSession()) {
+        const items = [];
+        items.push(this.buildRecordingText(editor));
+        items.push(this.buildModifiedText(editSession));
+        items.push(this.buildReadOnlyText(editor));
+        return items.join('').trim();
+    }
+
+    buildFileListItemSecondaryText(editor, editSession = editor.getSession()) {
+        const items = [];
+        items.push(this.buildModifiedText(editSession));
+        items.push(this.buildReadOnlyText(editor));
+        items.push(this.buildLanguageModeText(editSession));
+        return items.join('').trim();
+    }
+
     buildStatusText(editor, editSession = editor.getSession()) {
         const items = [];
         items.push(this.buildInputModeText(editor));
@@ -17,8 +33,8 @@ export class StatusHelper {
         items.push(this.buildLengthText(editSession));
         items.push(this.buildModifiedText(editSession));
         items.push(this.buildReadOnlyText(editor));
-        items.push(this.buildOverwriteText(editSession));
         items.push(this.buildLanguageModeText(editSession));
+        items.push(this.buildOverwriteText(editSession));
         return items.join('').trim();
     }
 
