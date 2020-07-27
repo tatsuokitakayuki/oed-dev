@@ -42,7 +42,7 @@
                         <div class="mdc-button__touch"></div>
                     </button>
                     <!-- Title -->
-                    <span class="mdc-top-app-bar__title" id="app-bar-title">OED (Open, Edit, and Download)</span>
+                    <span class="mdc-top-app-bar__title oed-do-not-select" id="app-bar-title">OED (Open, Edit, and Download)</span>
                 </section>
                 <!-- End side -->
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
@@ -115,10 +115,10 @@
         </header>
         <!-- File Drawer -->
         <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--dense-fixed-adjust mdc-elevation--z2" id="drawer-view" jang="">
-            <div class="mdc-drawer__header" id="drawer-header">
+            <div class="mdc-drawer__header oed-do-not-select" id="drawer-header">
                 <h3 class="mdc-drawer__title">File list</h3>
             </div>
-            <div class="mdc-drawer__content" id="drawer-content">
+            <div class="mdc-drawer__content oed-do-not-select" id="drawer-content">
                 <ul class="mdc-list mdc-list--dense mdc-list--two-line" role="menu" aria-hidden="true" aria-orientation="vertical" id="file-list"></ul>
             </div>
         </aside>
@@ -127,13 +127,13 @@
             <!-- Editor view -->
             <main class="main-content" id="editor"></main>
             <!-- Statusbar -->
-            <div class="mdc-typography--caption" id="statusbar"></div>
+            <div class="mdc-typography--caption oed-do-not-select" id="statusbar"></div>
         </div>
         <!-- Dialog View -->
         <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content" id="dialog">
             <div class="mdc-dialog__container">
                 <div class="mdc-dialog__surface">
-                    <h2 class="mdc-dialog__title" id="dialog-title"></h2>
+                    <h2 class="mdc-dialog__title oed-do-not-select" id="dialog-title"></h2>
                     <div class="mdc-dialog__content" id="dialog-content"></div>
                     <footer class="mdc-dialog__actions" id="dialog-footer"></footer>
                 </div>

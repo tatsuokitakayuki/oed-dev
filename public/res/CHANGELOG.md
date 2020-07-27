@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 3.2.20200727 (dev)
+- Improved the definition of non-selectable parts.
+
 ## Version 3.2.20200726 (dev)
 - Adjusted the contents of the status of all parts.
 - Improved the process of adding all commands of OED.

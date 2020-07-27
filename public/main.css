@@ -170,7 +170,7 @@ select {
     width: 100%;
 }
 
-#app-bar-title, #drawer-header, #drawer-content, #dialog-title, #statusbar {
+.oed-do-not-select {
     user-select: none;
 }
 
@@ -183,4 +183,6 @@ select {
     text-align: right;
     padding: 0.25em 1em;
     border-top: 1px solid var(--mdc-theme-on-secondary);
+    background-color: #6200ee;
+    background-color: var(--mdc-theme-primary, #6200ee);
 }
