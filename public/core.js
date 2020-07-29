@@ -492,9 +492,9 @@ export class Core {
     }
 
     async openSelectFileA() {
+        document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         const dialogSelectFile = new DialogSelectFile();
         const files = await dialogSelectFile.openA(true);
-        document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         if (files) {
             await this.openFileA(files);
         }
