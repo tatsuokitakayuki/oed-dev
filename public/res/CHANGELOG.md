@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 3.2.20200729 (dev)
+- Improved focus movement when canceling Import options only by mouse operation.
 - Improved focus movement when canceling Open file only by mouse operation.
 
 ## Version 3.2.20200727 (dev)

@@ -802,6 +802,7 @@ export class Core {
     }
 
     async importOptionsA() {
+        document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         await this.options.importOptionsA(this);
     }
 }
