@@ -1,43 +1,43 @@
-# OED（おえど） - Open, edit, and download.
+# OED (Open, edit, and download)
+
+[English version](https://github.com/tatsuokitakayuki/oed-dev/blob/master/README.md)
 
 ## これはなにか
+
 「OED」はウェブ技術のみで作ったテキスト・コードエディターです。
 「OED」はプログレッシブウェブアプリ（Progressive Web App）です。
-私達は主に Chromebook （あるいは Chromium OS やそれを元とした OS の） ユーザーのために「OED」を開発しています。
+主に Chromebook（あるいは Chromium OS やそれを元とした OS の）ユーザーのために「OED」を開発しています。
 
 ## プロジェクトの目的
-- 「OED」を立派なテキストエディタに仕上げます。
+
+- 「OED」を実用に耐えうるテキスト・コードエディタにします。
     - 機能を追加します。
-        1. Ace のすべての機能にできる限りアクセスできるようにします。
-            - 当面の重点目標です。
-        2. PWA として備えるべき機能を実装します。
-        3. 「OED」ならではの機能を実装します。
-    - 「OED」の開発時に発生した不具合を修正します。
-    - 「OED」のソースコードを整えます。
+    - 不具合を修正します。
+    - 保守します。
 
 ## 「OED」の特徴
-- 完全なプログレッシブウェブアプリ（PWA）です。
-    - 私達は Chrome API を使わずに開発しています。
-    - 一般的なテキストエディターと使用感が異なります。
-        - 例えば「Save file」はありません。代わりに「Download file」があります。
-- 「OED」の実行に必要なすべてのファイルをローカルストレージにキャッシュします。
-    - 「OED」はオフラインで動作します。
-- バックグラウンドで自動的に「OED」を更新します。
+
+- プログレッシブウェブアプリ（PWA）です。
+    - 特定の OS やブラウザに依存しないように開発しています。
+- オフラインで動作します。
+    - 特定のホスティングサービスに依存しないように開発しています。
+    - ローカルにインストールできます。
+- バックグラウンドで自動的に更新します。
     - 常に最新バージョンを保ちます。
-        - dev channel では時々不具合を含んだままリリースすることがあります。
-- 私達は「OED」の UI をマテリアルデザインで構築しています。
-    - Chrome OS にプリインストールされているほとんどの Web アプリは、マテリアルデザインを使用しています。
-    - 私達は「OED」で他のデザインを採用する理由を思いつきません。
-    - そして、何よりも私達がマテリアルデザインで「OED」の UI を構築してみたかったから。
-        - マテリアルデザインで UI を構築するときに発生する様々な問題を私達なりに洗い出してみたかったから。
-- 「OED」は特別なアクセス許可を要求しません。
+- 特別なアクセス許可を要求しません。
     - ブラウザ、OS、およびハードウェアへの不必要なアクセスを予防するためです。
-- 「OED」は Cookie を使いません。
+- Cookie を使いません。
     - 代わりに IndexedDB を使います。
-- 「OED」はオープンソースソフトウェアです。
+- オープンソースソフトウェアです。
     - オープンソースソフトウェアです。
 
+## 「OED」の欠点
+
+- セーブ機能はありません。
+    - 代わりにダウンロード機能を用意しました。
+
 ## システム要件
+
 - OS
     - Chrome OS（重要対象、動作確認済み）
     - Linux（動作確認報告あり）
@@ -53,6 +53,7 @@
     - Safari
 
 ## 「OED」で使用しているライブラリやフレームワークの一覧
+
 * [Ace](https://ace.c9.io/)
 * [Material Design Component for Web](https://material.io/develop/web/)
 * [Material Design Icons](https://google.github.io/material-design-icons/)
@@ -60,15 +61,33 @@
 * [emmet-core](https://github.com/cloud9ide/emmet-core)
 
 ## ライセンス
+
 このプログラムはオープンソースソフトウェアです。[MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE) の下で配布しています。
 
 ## 使い方
+
 ### すぐに試す方法
+
 - [安定版 (stable channel)](https://oed-stable.web.app/)
 - [開発版 (dev channel)](https://oed-dev.web.app/)
+    - [Firebase](https://firebase.google.com/) ホスティングサービスを使っています。
 
-This app uses [Firebase](https://firebase.google.com/) hosting services.
+### ローカルで試す方法
+
+1. このリポジトリを clone します。
+    - git clone https://github.com/tatsuokitakayuki/oed-dev.git
+2. public ディレクトリに移動します。
+    - cd oed-dev/public/
+3. HTTP サーバーを起動します。
+    - python3 -m http.server --bind 127.0.0.1 8080
+4. ウェブブラウザで localhost:8080 を開きます。
+
+ぜひお試しください。
 
 ## 問い合わせ先
-龍興 尚幸 （Tatsuoki, Takayuki）
-- お気軽に。
+
+* 龍興 尚幸（Tatsuoki, Takayuki）：プロジェクトリーダー
+    - Twitter: @ttatsuoki
+    - e-mail: takayuki.tatsuoki@gmail.com
+
+お気軽に。
