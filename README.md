@@ -1,43 +1,43 @@
-# OED - Open, Edit, and Download.
+# OED (Open, Edit, and Download)
+
+[Japanese version](https://github.com/tatsuokitakayuki/oed-dev/blob/master/README-JP.md)
 
 ## What is this
+
 "OED" is a text / code editor made only by web technology.
 "OED" is a progressive web app.
 We are developing "OED" mainly for Chromebook (or Chromium OS and its based OS) users.
 
 ## Project goals
-- Turn "OED" into a fine text / code editor.
+
+- Make "OED" a practical text code editor.
     - Add functionality.
-        1. Make all Ace features as accessible as possible.
-            - This is an important goal for the time being.
-        2. Implement the functions that PWA should have.
-        3. The functions unique to "OED" are implemented.
-    - We will fix the problems that occurred during the development of "OED".
-    - Prepare the source code of "OED".
+    - Fix the defect.
+    - Maintain.
 
 ## Features of "OED"
-- "OED" is a complete progressive web app (PWA).
-    - We are developing without using Chrome API.
-    - The usability differs from that of a general text code editor.
-        - For example, there is no "Save file". There is a "Download file" instead.
-- Caches all files needed to perform an "OED" to local storage.
-    - "OED" works offline.
-- "OED" is updated automatically in the background.
+
+- It is a progressive web app.
+    - We are developing so that it does not depend on a specific OS or browser.
+- Works offline.
+    - We are developing so that it does not depend on a specific hosting service.
+    - It can be installed locally.
+- Updates automatically in the background.
     - Always keep the latest version.
-        - The dev channel is sometimes released with defects.
-- We are building an "OED" UI with Material Design.
-    - Most web apps preinstalled on Chrome OS use Material Design.
-    - We can't come up with a reason to adopt other designs in "OED".
-    - And above all, we wanted to build an "OED" UI with material design.
-        - We wanted to identify the various issues that arise when building a UI with material design.
-- "OED" does not require special permissions.
+- Does not require special permissions.
     - This is to prevent unnecessary access to your browser, OS, and hardware.
-- "OED" does not use cookies.
+- Do not use cookies.
     - Use IndexedDB instead.
-- "OED" is open source software.
+- Open source software.
     - Open source software.
 
+## Disadvantages of "OED"
+
+- There is no Save file.
+    - We have prepared a Download file instead.
+
 ## System requirements
+
 - OS
     - Chrome OS (Main target, Tested)
     - Linux (Reported to work)
@@ -53,6 +53,7 @@ We are developing "OED" mainly for Chromebook (or Chromium OS and its based OS) 
     - Safari
 
 ## List of libraries and frameworks used
+
 * [Ace](https://ace.c9.io/)
 * [Material Design Component for Web](https://material.io/develop/web/)
 * [Material Design Icons](https://google.github.io/material-design-icons/)
@@ -60,15 +61,33 @@ We are developing "OED" mainly for Chromebook (or Chromium OS and its based OS) 
 * [emmet-core](https://github.com/cloud9ide/emmet-core)
 
 ## License
+
 This program is open source software; it is distributed under the [MIT License](https://github.com/tatsuokitakayuki/oed-dev/blob/master/LICENSE).
 
 ## How to use
+
 ### How to try immediately
+
 - [stable channel](https://oed-stable.web.app/)
 - [dev channel](https://oed-dev.web.app/)
+    - This app uses [Firebase](https://firebase.google.com/) hosting services.
 
-This app uses [Firebase](https://firebase.google.com/) hosting services.
+### How to try locally
+
+1. Clone this repository.
+    - git clone https://github.com/tatsuokitakayuki/oed-dev.git
+2. Change to the public directory.
+    - cd oed-dev/public/
+3. Start the HTTP server.
+    - python3 -m http.server --bind 127.0.0.1 8080
+4. Open localhost:8080 in your web browser.
+
+Please try.
 
 ## Contact information
-Tatsuoki, Takayuki
-- Feel free to.
+
+* 龍興 尚幸 (Tatsuoki, Takayuki): Project leader
+    - Twitter: @ttatsuoki
+    - e-mail: takayuki.tatsuoki@gmail.com
+
+Feel free to.
