@@ -1,4 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
+import {descriptions} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
@@ -17,7 +18,7 @@ export class DialogScrollPastEnd extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.descriptions.scroll_past_end, res.scroll_past_end);
+        super.open(descriptions.SCROLL_PAST_END, res.scroll_past_end);
     }
 
     submit() {

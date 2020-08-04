@@ -1,4 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
+import {descriptions} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
@@ -16,7 +17,7 @@ export class DialogWrap extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.descriptions.wrap, res.wrap);
+        super.open(descriptions.WRAP, res.wrap);
     }
 
     reset() {

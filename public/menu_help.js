@@ -1,3 +1,4 @@
+import {descriptions} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
@@ -5,65 +6,64 @@ import {Res} from '/res.js';
 export class MenuHelp extends Menu {
     constructor(core) {
         super(core, 'menu-help');
-        const res = new Res();
         this.itemData = {
             id: 'menu-list-help',
             items: [
                 {
                     id: 'menu-help-open-command-pallete',
-                    text: res.descriptions.command_pallete + '...',
+                    text: descriptions.COMMAND_PALLETE + '...',
                     meta: 'F1',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-keyboard-handler',
-                    text: res.descriptions.keyboard_handler + '...',
+                    text: descriptions.KEYBOARD_HANDLER + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-help-oed-menu-button',
-                    text: res.descriptions.menu_button + '...',
+                    text: descriptions.MENU_BUTTON + '...',
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-export-options',
-                    text: res.descriptions.export_options,
+                    text: descriptions.EXPORT_OPTIONS,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-import-options',
-                    text: res.descriptions.import_options + '...',
+                    text: descriptions.IMPORT_OPTIONS + '...',
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-cache-list',
-                    text: res.descriptions.cache_list,
+                    text: descriptions.CACHE_LIST,
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-change-log',
-                    text: res.descriptions.change_log,
+                    text: descriptions.CHANGE_LOG,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-open-source-lisence',
-                    text: res.descriptions.open_source_lisence,
+                    text: descriptions.OPEN_SOURCE_LISENCE,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-about',
-                    text: res.descriptions.about,
+                    text: descriptions.ABOUT,
                     meta: '',
                     update: false
                 }

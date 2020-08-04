@@ -1,4 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
+import {descriptions} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
@@ -17,7 +18,7 @@ export class DialogCursorStyle extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.descriptions.cursor_style, res.cursor_style);
+        super.open(descriptions.CURSOR_STYLE, res.cursor_style);
     }
 
     submit() {

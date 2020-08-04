@@ -1,41 +1,40 @@
+import {descriptions} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
-import {Res} from '/res.js';
 
 export class MenuExtensions extends Menu {
     constructor(core) {
         super(core, 'menu-extensions');
-        const res = new Res();
         this.itemData = {
             id: 'menu-list-extensions',
             items: [
                 {
                     id: 'menu-extensions-oed-enable-basic-autocompletion',
-                    text: res.descriptions.enable_basic_autocompletion,
+                    text: descriptions.ENABLE_BASIC_AUTOCOMPLETION,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-live-autocompletion',
-                    text: res.descriptions.enable_live_autocompletion,
+                    text: descriptions.ENABLE_LIVE_AUTOCOMPLETION,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-snippets',
-                    text: res.descriptions.enable_snippets,
+                    text: descriptions.ENABLE_SNIPPETS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-emmet',
-                    text: res.descriptions.enable_emmet,
+                    text: descriptions.ENABLE_EMMET,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-use-elastic-tabstops',
-                    text: res.descriptions.use_elastic_tabstops,
+                    text: descriptions.USE_ELASTIC_TABSTOPS,
                     meta: '',
                     update: true
                 }

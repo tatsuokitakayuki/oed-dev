@@ -1,4 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
+import {descriptions} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
@@ -16,7 +17,7 @@ export class DialogFoldStyle extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(res.descriptions.fold_style, res.fold_style);
+        super.open(descriptions.FOLD_STYLE, res.fold_style);
     }
 
     reset() {

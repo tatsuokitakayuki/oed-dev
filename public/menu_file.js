@@ -1,3 +1,4 @@
+import {descriptions} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
@@ -5,124 +6,123 @@ import {Res} from '/res.js';
 export class MenuFile extends Menu {
     constructor(core) {
         super(core, 'menu-file');
-        const res = new Res();
         this.itemData = {
             id: 'menu-list-file',
             items: [
                 {
                     id: 'menu-file-oed-new-file',
-                    text: res.descriptions.new_file,
+                    text: descriptions.NEW_FILE,
                     meta: 'Ctrl+N',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-open-file',
-                    text: res.descriptions.open_file + '...',
+                    text: descriptions.OPEN_FILE + '...',
                     meta: 'Ctrl+O',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-download-file',
-                    text: res.descriptions.download_file,
+                    text: descriptions.DOWNLOAD_FILE,
                     meta: 'Ctrl+S',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-rename-file',
-                    text: res.descriptions.rename_file + '...',
+                    text: descriptions.RENAME_FILE + '...',
                     meta: 'Alt+R',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-read-only', // Editor
-                    text: res.descriptions.read_only,
+                    text: descriptions.READ_ONLY,
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-toggle-file-list',
-                    text: res.descriptions.toggle_file_list,
+                    text: descriptions.TOGGLE_FILE_LIST,
                     meta: 'Ctrl+Shift+F',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-next-file',
-                    text: res.descriptions.next_file,
+                    text: descriptions.NEXT_FILE,
                     meta: 'Ctrl+Tab',
                 },
                 {
                     id: 'menu-file-oed-previous-file',
-                    text: res.descriptions.previous_file,
+                    text: descriptions.PREVIOUS_FILE,
                     meta: 'Ctrl+Shift+Tab',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-file-decoding', // OED
-                    text: res.descriptions.file_decoding + '...',
+                    text: descriptions.FILE_DECODING + '...',
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-first-line-number', // EditSession
-                    text: res.descriptions.first_line_number + '...',
+                    text: descriptions.FIRST_LINE_NUMBER + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-fold-style', // EditSession
-                    text: res.descriptions.fold_style + '...',
+                    text: descriptions.FOLD_STYLE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-indented-soft-wrap', // EditSession
-                    text: res.descriptions.indented_soft_wrap,
+                    text: descriptions.INDENTED_SOFT_WRAP,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-mode', // EditSession
-                    text: res.descriptions.language_mode + '...',
+                    text: descriptions.LANGUAGE_MODE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-new-line-mode', // EditSession
-                    text: res.descriptions.new_line_mode + '...',
+                    text: descriptions.NEW_LINE_MODE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-wrap', // EditSession
-                    text: res.descriptions.wrap + '...',
+                    text: descriptions.WRAP + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-tab-size', // EditSession
-                    text: res.descriptions.tab_size + '...',
+                    text: descriptions.TAB_SIZE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-use-soft-tabs', // EditSession
-                    text: res.descriptions.use_soft_tabs,
+                    text: descriptions.USE_SOFT_TABS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-save-edit-session-options',
-                    text: res.descriptions.save_edit_session_options,
+                    text: descriptions.SAVE_EDIT_SESSION_OPTIONS,
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-close-file',
-                    text: res.descriptions.close_file + '...',
+                    text: descriptions.CLOSE_FILE + '...',
                     meta: 'Alt+W',
                     update: false
                 }

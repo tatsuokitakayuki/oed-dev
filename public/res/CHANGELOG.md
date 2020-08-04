@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200804 (dev)
+- Moved the definition of descriptions from res.js to res/descriptions.js.
+
 ## Version 3.2.20200729 (dev)
 - Improved focus movement when canceling Import options only by mouse operation.
 - Improved focus movement when canceling Open file only by mouse operation.

@@ -1,3 +1,4 @@
+import {descriptions} from '/res/descriptions.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {FileHelper} from '/file_helper.js';
 import {RenameFileEvent} from '/rename_file_event.js';
@@ -18,7 +19,7 @@ export class DialogRenameFile extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            res.descriptions.rename_file, null, res.placeholders.rename_file,
+            descriptions.RENAME_FILE, null, res.placeholders.rename_file,
             this.updateValue, 'text', null, null
         );
     }

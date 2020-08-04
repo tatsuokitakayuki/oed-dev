@@ -3,6 +3,7 @@ import {AppView} from '/app_view.js';
 import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
 import {ChangeMenuButtonEvent} from '/change_menu_button_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
+import {descriptions} from '/res/descriptions.js';
 import {DialogConfirm} from '/dialog_confirm.js';
 import {DialogCursorStyle} from '/dialog_cursor_style.js';
 import {DialogFileDecoding} from '/dialog_file_decoding.js';
@@ -530,7 +531,7 @@ export class Core {
             const res = new Res();
             const dialogConfirm = new DialogConfirm();
             dialogConfirm.open(
-                res.descriptions.close_file,
+                descriptions.CLOSE_FILE,
                 res.strings.confirm_close_file
                     .replace('$filename$', this.getName(index)),
                 args => this.closeFileCallbackA(args),
