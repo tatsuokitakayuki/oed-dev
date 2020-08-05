@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200805 (dev)
+- Added res/descriptions.js to the OED file list.
 - Removed Copy and Cut from Edit menu.
 
 ## Version 4.0.20200804 (dev)
