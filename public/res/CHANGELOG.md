@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200806 (dev)
+- Improved to reuse the source code window of OED.
+
 ## Version 4.0.20200805 (dev)
 - Added the function to open the source code of OED to the Help menu.
 - Improved the theme update process.

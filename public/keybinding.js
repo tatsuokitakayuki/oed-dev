@@ -7,6 +7,7 @@ import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
 export class Keybinding {
     constructor(core) {
         this.core = core;
+        this.oedSourceCode = null;
     }
 
     initializeFileList(editor) {
@@ -652,11 +653,16 @@ export class Keybinding {
             {
                 name: 'oedSourceCode',
                 description: descriptions.SOURCE_CODE,
-                exec: editor => window.open(
-                    'https://github.com/tatsuokitakayuki/oed-dev',
-                    'OEDSourceCode',
-                    'noopener'
-                ),
+                exec: editor => {
+                    if (this.oedSourceCode == null || this.oedSourceCode.closed) {
+                        this.oedSourceCode = window.open(
+                            'https://github.com/tatsuokitakayuki/oed-dev',
+                            'OEDSourceCode'
+                        );
+                    } else {
+                        this.oedSourceCode.focus();
+                    }
+                },
                 readOnly: true
             },
             {
