@@ -76,11 +76,12 @@ export class AppView {
         const theme = this.core.getOption('theme');
         if (theme) {
             const element = document.getElementById('app-view');
+            element.classList.remove(...['oed-dark', 'oed-light']);
             const themeHelper = new ThemeHelper();
             if (themeHelper.isDark(theme)) {
-                element.setAttribute('class', 'mdc-typography oed-dark');
+                element.classList.add('oed-dark');
             } else {
-                element.setAttribute('class', 'mdc-typography oed-light');
+                element.classList.add('oed-light');
             }
         }
     }

@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200805 (dev)
+- Improved the theme update process.
 - Updated localForage to version 1.9.0.
 - Added res/descriptions.js to the OED file list.
 - Removed Copy and Cut from Edit menu.
