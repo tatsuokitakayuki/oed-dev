@@ -19,6 +19,7 @@ export class MenuEdit extends Menu {
                     meta: 'Ctrl+Shift+Z',
                     update: false
                 },
+                /*
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-cut',
@@ -32,7 +33,6 @@ export class MenuEdit extends Menu {
                     meta: 'Ctrl+C',
                     update: false
                 },
-                /*
                 {
                     id: 'menu-edit-paste',
                     text: descriptions.PASTE,

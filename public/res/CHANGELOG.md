@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200805 (dev)
+- Removed Copy and Cut from Edit menu.
+
 ## Version 4.0.20200804 (dev)
 - Moved the definition of descriptions from res.js to res/descriptions.js.
 
