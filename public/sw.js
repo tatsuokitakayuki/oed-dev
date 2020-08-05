@@ -1,4 +1,4 @@
-const OED_VERSION = '4.0.20200805.1';
+const OED_VERSION = '4.0.20200805.2';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -6,7 +6,7 @@ const MDC_VERSION = '7.0.0';
 const MDC_BASE = 'material-components-web';
 const MDI_VERSION = '3.0.1';
 const MDI_BASE = 'MDI';
-const LF_VERSION = '1.8.1';
+const LF_VERSION = '1.9.0';
 const LF_BASE = 'localForage';
 const EC_VERSION = '1.0.0';
 const EC_BASE = 'emmet-core';
