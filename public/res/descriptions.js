@@ -113,6 +113,7 @@ export const descriptions = {
     EXPORT_OPTIONS: 'Export options',
     IMPORT_OPTIONS: 'Import options',
     CACHE_LIST: 'Cache list',
+    SOURCE_CODE: 'Source code on GitHub',
     CHANGE_LOG: 'Change log',
     OPEN_SOURCE_LISENCE: 'Open source lisence',
     ABOUT: 'About',

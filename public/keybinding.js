@@ -650,6 +650,16 @@ export class Keybinding {
                 readOnly: true
             },
             {
+                name: 'oedSourceCode',
+                description: descriptions.SOURCE_CODE,
+                exec: editor => window.open(
+                    'https://github.com/tatsuokitakayuki/oed-dev',
+                    'OEDSourceCode',
+                    'noopener'
+                ),
+                readOnly: true
+            },
+            {
                 name: 'oedChangeLog',
                 description: descriptions.CHANGE_LOG,
                 exec: editor => this.core.changeLogA(),

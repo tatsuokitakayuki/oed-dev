@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200805 (dev)
+- Added the function to open the source code of OED to the Help menu.
 - Improved the theme update process.
 - Updated localForage to version 1.9.0.
 - Added res/descriptions.js to the OED file list.
