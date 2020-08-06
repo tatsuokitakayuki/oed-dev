@@ -1,4 +1,4 @@
-const OED_VERSION = '4.0.20200806.2';
+const OED_VERSION = '4.0.20200806.3';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -11,7 +11,6 @@ const LF_BASE = 'localForage';
 const EC_VERSION = '1.0.0';
 const EC_BASE = 'emmet-core';
 const OED_URLS = [
-    './',
     './app_bar.js',
     './app_view.js',
     './cache_manager.js',
@@ -60,6 +59,7 @@ const OED_URLS = [
     './images/icons/icon-512x512.png',
     './images/icons/icon-72x72.png',
     './images/icons/icon-96x96.png',
+    './',
     './keybinding.js',
     './main.css',
     './manifest.json',
@@ -72,14 +72,15 @@ const OED_URLS = [
     './menu_help.js',
     './menu_search.js',
     './menu_view.js',
+    './move_drawer_event.js',
     './oed.js',
     './options.js',
     './rename_file_event.js',
     './res.js',
     './res/ABOUT.md',
     './res/CHANGELOG.md',
-    './res/descriptions.js',
     './res/OPEN_SOURCE_LISENCE.md',
+    './res/descriptions.js',
     './save_options_editor_event.js',
     './save_options_event.js',
     './snackbar.js',

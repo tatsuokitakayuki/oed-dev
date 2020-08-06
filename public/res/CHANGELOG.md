@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200806 (dev)
+- Added MoveDrawerEvent class.
 - Added the function to insert Welcome message as many times as you like.
 - Improved the welcome message insertion process.
 - Improved to reuse the source code window of OED.
