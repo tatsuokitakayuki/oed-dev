@@ -134,7 +134,7 @@ export class Core {
         );
         appView.addEventListener('drop', event => this.onDropA(event), false);
         document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
-        this.helloOed();
+        this.welcomeOed();
         this.setWindowTitle();
         document.dispatchEvent(new ChangeViewEvent(0, 0, {all: true}));
         document.dispatchEvent(
@@ -330,8 +330,8 @@ export class Core {
         return this.options.getOedOptions();
     }
 
-    isHello() {
-        return this.getOedOptions().hello;
+    isWelcome() {
+        return this.getOedOptions().welcome;
     }
 
     getDrawer() {
@@ -389,8 +389,8 @@ export class Core {
         this.getEditor().setKeyboardHandler(value);
     }
 
-    setHello(hello) {
-        this.getOedOptions().hello = hello;
+    setWelcome(welcome) {
+        this.getOedOptions().welcome = welcome;
     }
 
     saveEditorOptions() {
@@ -417,14 +417,18 @@ export class Core {
         this.fileManager.dropFileData(index);
     }
 
-    helloOed() {
-        if (this.isHello()) {
+    welcomeOed() {
+        if (this.isWelcome()) {
             return;
         }
-        const res = new Res();
-        this.getEditor().insert(res.strings.hello);
-        this.setHello(true);
+        this.insertWelcome(this.getEditor());
+        this.setWelcome(true);
         this.saveOedOptions();
+    }
+
+    insertWelcome(editor) {
+        const res = new Res();
+        editor.insert(res.strings.welcome);
     }
 
     setWindowTitle() {

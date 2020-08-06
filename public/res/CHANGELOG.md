@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200806 (dev)
+- Improved the welcome message insertion process.
 - Improved to reuse the source code window of OED.
 
 ## Version 4.0.20200805 (dev)
