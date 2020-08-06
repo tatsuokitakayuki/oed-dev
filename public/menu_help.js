@@ -50,6 +50,12 @@ export class MenuHelp extends Menu {
                 },
                 {id: '-', text: '', meta: ''},
                 {
+                    id: 'menu-help-oed-insert-welcome',
+                    text: descriptions.INSERT_WELCOME,
+                    meta: '',
+                    update: false
+                },
+                {
                     id: 'menu-help-oed-source-code',
                     text: descriptions.SOURCE_CODE,
                     meta: '',

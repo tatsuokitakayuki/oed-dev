@@ -651,6 +651,12 @@ export class Keybinding {
                 readOnly: true
             },
             {
+                name: 'oedInsertWelcome',
+                description: descriptions.INSERT_WELCOME,
+                exec: editor => this.core.insertWelcome(editor),
+                readOnly: true
+            },
+            {
                 name: 'oedSourceCode',
                 description: descriptions.SOURCE_CODE,
                 exec: editor => {
