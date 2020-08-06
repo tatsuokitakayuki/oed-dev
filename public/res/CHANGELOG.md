@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200806 (dev)
+- Deleted ToggleDrawerEvent class.
 - Changed ToggleDrawerEvent to MoveDrawerEvent.
 - Added MoveDrawerEvent class.
 - Added the function to insert Welcome message as many times as you like.
