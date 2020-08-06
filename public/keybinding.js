@@ -2,7 +2,7 @@ import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
 import {descriptions} from '/res/descriptions.js';
 import {SaveOptionsEvent} from '/save_options_event.js';
-import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
+import {MoveDrawerEvent} from '/move_drawer_event.js';
 
 export class Keybinding {
     constructor(core) {
@@ -699,7 +699,7 @@ export class Keybinding {
                 name: 'oedToggleFileList',
                 description: descriptions.TOGGLE_FILE_LIST,
                 bindKey: {win: 'Ctrl-Shift-F', mac: 'Command-Shift-F'},
-                exec: editor => document.dispatchEvent(new ToggleDrawerEvent()),
+                exec: editor => document.dispatchEvent(new MoveDrawerEvent('toggle')),
                 readOnly: true
             },
             {

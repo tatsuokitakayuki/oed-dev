@@ -2,7 +2,7 @@ import {FocusEditorEvent} from '/focus_editor_event.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Res} from '/res.js';
 import {StatusHelper} from '/status_helper.js';
-import {ToggleDrawerEvent} from '/toggle_drawer_event.js';
+import {MoveDrawerEvent} from '/move_drawer_event.js';
 
 export class AppBar {
     constructor(core) {
@@ -57,7 +57,7 @@ export class AppBar {
         const options = {passive: true};
         this.topAppBar.listen(
             'MDCTopAppBar:nav',
-            () => document.dispatchEvent(new ToggleDrawerEvent()),
+            () => document.dispatchEvent(new MoveDrawerEvent('toggle')),
             options
         );
         this.menuButtons[0].button.addEventListener(

@@ -25,7 +25,7 @@ export class Drawer {
             'Drawer:changeitem', event => this.onChangeItem(event), options
         );
         document.addEventListener(
-            'Drawer:toggle', () => this.onToggle(), options
+            'Drawer:move', event => this.onMove(event), options
         );
     }
 
@@ -57,7 +57,7 @@ export class Drawer {
         this.updateItem(event.detail.index, event.detail.active);
     }
 
-    onToggle() {
+    onMove(event) {
         this.toggle();
     }
 
