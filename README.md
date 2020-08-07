@@ -4,26 +4,28 @@
 
 ## What is this
 
-"OED" is a text / code editor made only by web technology.
-"OED" is a progressive web app.
-We are developing "OED" mainly for Chromebook (or Chromium OS and its based OS) users.
+OED is a text / code editor made only by web technology.
+OED is a progressive web app.
+We are developing OED mainly for Chromebook (or Chromium OS and its based OS) users.
 
 ## Project goals
 
-- Make "OED" a practical text code editor.
+- Make OED a practical text code editor.
     - Add functionality.
     - Fix the defect.
     - Maintain.
 
-## Features of "OED"
+## Features of OED
 
 - It is a progressive web app.
-    - We are developing so that it does not depend on a specific OS or browser.
+    - It does not depend on a specific OS or browser.
+- No distribution server is selected.
+    - All processing is done in the browser.
+    - It does not depend on a particular hosting service.
 - Works offline.
-    - We are developing so that it does not depend on a specific hosting service.
-    - It can be installed locally.
+    - It caches the files needed for operation locally.
 - Updates automatically in the background.
-    - Always keep the latest version.
+    - Always keep the version of the delivery server.
 - Does not require special permissions.
     - This is to prevent unnecessary access to your browser, OS, and hardware.
 - Do not use cookies.
@@ -31,7 +33,7 @@ We are developing "OED" mainly for Chromebook (or Chromium OS and its based OS) 
 - Open source software.
     - Open source software.
 
-## Disadvantages of "OED"
+## Disadvantages of OED
 
 - There is no Save file.
     - We have prepared a Download file instead.
