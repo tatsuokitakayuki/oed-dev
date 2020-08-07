@@ -3,6 +3,7 @@
 ## Access means provided
 
 ### Editor options
+
 - autoScrollEditorIntoView
 - behavioursEnabled
 - copyWithEmptySelection
@@ -18,14 +19,17 @@
 - wrapBehavioursEnabled
 
 ### Renderer options
+
 - animatedScroll
 - displayIndentGuides
 - fadeFoldWidgets
 - fixedWidthGutter
+- fontFamily
 - fontSize
-- hScrollBarAlwaysVisible
 - highlightGutterLine
+- hScrollBarAlwaysVisible
 - printMarginColumn
+- scrollPastEnd
 - showFoldWidgets
 - showGutter
 - showInvisibles
@@ -35,19 +39,28 @@
 - vScrollBarAlwaysVisible
 
 ### Edit session options
+
+- firstLineNumber
+- foldStyle
+- mode
+- newLineMode
 - overwrite
+- tabSize
+- useSoftTabs
 - wrap
 
 ### Extensions options
+
 - enableBasicAutocompletion
+- enableEmmet
 - enableLiveAutocompletion
 - enableSnippets
-- enableEmmet
 - useElasticTabstops
 
 ## Access means not provided
 
 ### Renderer options
+
 - maxLines
 - minLines
 - printMargin
@@ -55,11 +68,8 @@
 
 ## Access means will be provided
 
-### Renderer options
-- fontFamily
-- scrollPastEnd
-
 ### Mouse handler options
+
 - dragDelay
 - dragEnabled
 - focusTimeout
@@ -67,10 +77,5 @@
 - tooltipFollowsMouse
 
 ### Edit session options
-- firstLineNumber
-- foldStyle
-- mode
-- newLineMode
-- tabSize
-- useSoftTabs
+
 - useWorker
