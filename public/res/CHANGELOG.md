@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 4.0.20200808 (dev)
+- Sorted OED file list.
+- Fixed window title string.
+
 ## Version 4.0.20200806 (dev)
 - Deleted ToggleDrawerEvent class.
 - Changed ToggleDrawerEvent to MoveDrawerEvent.
