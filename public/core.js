@@ -433,13 +433,14 @@ export class Core {
 
     setWindowTitle() {
         let channel = document.domain;
+        let extra = '';
         if (document.domain == 'oed-dev.web.app') {
-            channel = 'official dev channel';
+            extra = 'Community (dev) ';
         }
         if (document.domain == 'oed-stable.web.app') {
-            channel = 'official stable channel';
+            extra = 'Community (stable) ';
         }
-        document.title = `OED [${channel}]`;
+        document.title = `OED ${extra}[${channel}]`;
     }
 
     updateEditSession(index) {
