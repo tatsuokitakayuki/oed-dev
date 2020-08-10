@@ -70,8 +70,8 @@ OED はプログレッシブウェブアプリ（Progressive Web App）です。
 
 ### すぐに試す方法
 
-- [安定版 (stable channel)](https://oed-stable.web.app/)
-- [開発版 (dev channel)](https://oed-dev.web.app/)
+- [安定版 (stable)](https://oed.kirari.app/)
+- [開発版 (dev)](https://oed.kirari.dev/)
     - [Firebase](https://firebase.google.com/) ホスティングサービスを使っています。
 
 ### ローカルで試す方法

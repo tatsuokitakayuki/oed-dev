@@ -70,8 +70,8 @@ This program is open source software; it is distributed under the [MIT License](
 
 ### How to try immediately
 
-- [stable channel](https://oed-stable.web.app/)
-- [dev channel](https://oed-dev.web.app/)
+- [stable](https://oed.kirari.app/)
+- [dev](https://oed.kirari.dev/)
     - This app uses [Firebase](https://firebase.google.com/) hosting services.
 
 ### How to try locally
