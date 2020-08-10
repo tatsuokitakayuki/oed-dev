@@ -175,9 +175,16 @@ export class AppBar {
     enableButton(name, enabled) {
         const button = document.getElementById('button-' + name);
         if (enabled) {
-            button.removeAttribute('disabled');
+            button.removeAttribute('style');
+            button.querySelector('.mdc-button__ripple').removeAttribute(
+                'style'
+            );
         } else {
-            button.setAttribute('disabled', 'disabled');
+            button.setAttribute('style', 'pointer-events: none;');
+            button.querySelector('.mdc-button__ripple').setAttribute(
+                'style',
+                'opacity: 0.12;background-color: var(--mdc-theme-on-primary);'
+            );
         }
     }
 }
