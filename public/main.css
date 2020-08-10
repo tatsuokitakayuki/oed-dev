@@ -32,6 +32,14 @@ body {
     white-space: nowrap;
 }
 
+.mdc-list--dense .mdc-list-item {
+    height: 2em;
+}
+
+.mdc-menu .mdc-list-divider {
+    margin: 0.5em 0;
+}
+
 .mdc-list-item__text {
     overflow: visible;
     white-space: nowrap;

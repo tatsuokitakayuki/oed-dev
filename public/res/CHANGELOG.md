@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200810 (dev)
+- Adjusted the height of menu items.
 - Updated domain name.
 
 ## Version 4.0.20200808 (dev)
