@@ -55,7 +55,7 @@ export class MaterialHelper extends HtmlHelper {
 
     listItemDivider() {
         return this.li(null, [
-            {name: 'class', value: 'mdc-list-divider mdc-list-divider--padded'},
+            {name: 'class', value: 'mdc-list-divider'},
             {name: 'role', value: 'separator'}
         ]);
     }

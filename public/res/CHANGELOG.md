@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200810 (dev)
+- Fixed the divider in the menu.
 - Adjusted the height of menu items.
 - Updated domain name.
 
