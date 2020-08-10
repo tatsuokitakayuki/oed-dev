@@ -434,10 +434,10 @@ export class Core {
     setWindowTitle() {
         let channel = document.domain;
         let extra = '';
-        if (document.domain == 'oed-dev.web.app') {
+        if (document.domain == 'oed.kirari.dev') {
             extra = 'Community (dev) ';
         }
-        if (document.domain == 'oed-stable.web.app') {
+        if (document.domain == 'oed.kirari.app') {
             extra = 'Community (stable) ';
         }
         document.title = `OED ${extra}[${channel}]`;

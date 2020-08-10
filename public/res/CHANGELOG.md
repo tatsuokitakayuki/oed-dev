@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200810 (dev)
+- Updated domain name.
+
 ## Version 4.0.20200808 (dev)
 - Sorted OED file list.
 - Fixed window title string.
