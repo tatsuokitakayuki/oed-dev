@@ -96,12 +96,6 @@ export const descriptions = {
     FONT_FAMILY: 'Font family',
     FONT_SIZE: 'Font size',
     THEME: 'Theme',
-    
-    RTL: 'RTL',
-    RTL_TEXT: 'Line based RTL switching',
-    SHOW_TOKEN_INFO: 'Show token info',
-    TEXT_POSITION_DEBUGGER: 'Show textarea position',
-    
     ENABLE_BASIC_AUTOCOMPLETION: 'Basic autocompletion',
     ENABLE_LIVE_AUTOCOMPLETION: 'Live autocompletion',
     ENABLE_SNIPPETS: 'Snippets',
@@ -125,6 +119,4 @@ export const descriptions = {
     TOGGLE_VIEW_MENU: 'Toggle view menu',
     TOGGLE_EXTENSIONS_MENU: 'Toggle extensions menu',
     TOGGLE_HELP_MENU: 'Toggle help menu',
-
-    USE_INCREMENTAL_SEARCH: 'Incremental Search',
 };

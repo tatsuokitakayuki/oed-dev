@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200811 (dev)
+- Removed some unnecessary string definitions.
+
 ## Version 4.0.20200810 (dev)
 - Improved the behavior of menu buttons.
 - Fixed the divider in the menu.
