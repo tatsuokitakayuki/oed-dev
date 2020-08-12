@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200812 (dev)
+- Adjusted the height of menu items again.
+
 ## Version 4.0.20200811 (dev)
 - Removed some unnecessary string definitions.
 
