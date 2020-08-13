@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200813 (dev)
+- Refactored oed.js.
 - Fixed window title string.
 
 ## Version 4.0.20200812 (dev)

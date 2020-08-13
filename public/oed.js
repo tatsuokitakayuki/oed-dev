@@ -4,6 +4,20 @@ import {Res} from '/res.js';
 
 const core = new Core();
 let newWorker = null;
+const stateChange = () => {
+    switch (newWorker.state) {
+        case 'installed':
+            if (navigator.serviceWorker.controller) {
+                const res = new Res();
+                document.dispatchEvent(
+                    new ChangeSnackbarEvent(res.strings.updated_oed, true, null)
+                );
+            }
+            break;
+        default:
+            break;
+    }
+};
 
 window.addEventListener('DOMContentLoaded', () => core.initializeA());
 if ('serviceWorker' in navigator) {
@@ -15,22 +29,7 @@ if ('serviceWorker' in navigator) {
             );
             reg.addEventListener('updatefound', () => {
                 newWorker = reg.installing;
-                newWorker.addEventListener('statechange', () => {
-                    switch (newWorker.state) {
-                        case 'installed':
-                            if (navigator.serviceWorker.controller) {
-                                const res = new Res();
-                                document.dispatchEvent(
-                                    new ChangeSnackbarEvent(
-                                        res.strings.updated_oed, true, null
-                                    )
-                                );
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-                });
+                newWorker.addEventListener('statechange', () => statechange());
             });
         });
     });
