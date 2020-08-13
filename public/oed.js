@@ -4,7 +4,7 @@ import {Res} from '/res.js';
 
 const core = new Core();
 let newWorker = null;
-const stateChange = () => {
+const onStateChange = () => {
     switch (newWorker.state) {
         case 'installed':
             if (navigator.serviceWorker.controller) {
@@ -18,19 +18,20 @@ const stateChange = () => {
             break;
     }
 };
+const onLoad = () => {
+    navigator.serviceWorker.register('./sw.js', {scope: './'}).then(reg => {
+        console.log(
+            '[oed.js] Service worker has been registered for scope: ' +
+            reg.scope
+        );
+        reg.addEventListener('updatefound', () => {
+            newWorker = reg.installing;
+            newWorker.addEventListener('statechange', () => onStatechange());
+        });
+    });
+};
 
 window.addEventListener('DOMContentLoaded', () => core.initializeA());
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js', {scope: './'}).then(reg => {
-            console.log(
-                '[oed.js] Service worker has been registered for scope: ' +
-                reg.scope
-            );
-            reg.addEventListener('updatefound', () => {
-                newWorker = reg.installing;
-                newWorker.addEventListener('statechange', () => statechange());
-            });
-        });
-    });
+    window.addEventListener('load', () => onLoad());
 }
