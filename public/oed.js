@@ -10,7 +10,7 @@ const onStateChange = () => {
             if (navigator.serviceWorker.controller) {
                 const res = new Res();
                 document.dispatchEvent(
-                    new ChangeSnackbarEvent(res.strings.updated_oed, true, null)
+                    new ChangeSnackbarEvent(res.strings.restart_update, true, null)
                 );
             }
             break;
@@ -26,7 +26,7 @@ const onLoad = () => {
         );
         reg.addEventListener('updatefound', () => {
             newWorker = reg.installing;
-            newWorker.addEventListener('statechange', () => onStatechange());
+            newWorker.addEventListener('statechange', () => onStateChange());
         });
     });
 };

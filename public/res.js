@@ -127,7 +127,7 @@ export class Res {
             modified: 'Modified',
             read_only: 'Read only',
             untitled: 'untitled',
-            updated_oed: 'Updated OED',
+            restart_update: 'Restart OED and update.',
             welcome: 'Welcome to OED (Open, Edit, and Download).\n\n'+
                 '\"OED\" is a text / code editor implemented only in web technology.\n'+
                 '\"OED\" is the Progressive Web App (PWA).\n'+
