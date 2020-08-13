@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200813 (dev)
+- Fixed window title string.
+
 ## Version 4.0.20200812 (dev)
 - Adjusted the height of menu items again.
 

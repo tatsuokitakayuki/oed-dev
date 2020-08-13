@@ -432,15 +432,11 @@ export class Core {
     }
 
     setWindowTitle() {
-        let channel = document.domain;
-        let extra = '';
-        if (document.domain == 'oed.kirari.dev') {
-            extra = 'Community (dev) ';
+        let host = location.host;
+        if (location.port == 443) {
+            host = location.hostname;
         }
-        if (document.domain == 'oed.kirari.app') {
-            extra = 'Community (stable) ';
-        }
-        document.title = `OED ${extra}[${channel}]`;
+        document.title = `OED [${host}]`;
     }
 
     updateEditSession(index) {
