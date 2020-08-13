@@ -8,6 +8,7 @@ export class Snackbar {
             document.getElementById('snackbar-view')
         );
         this.que = [];
+        this.command = null;
     }
 
     initialize() {
@@ -30,13 +31,17 @@ export class Snackbar {
     }
 
     onClosed(event) {
+        if (event.reason && event.reason == 'action') {
+            this.command();
+        }
         this.snackbar.labelText = '';
         const materialHelper = new MaterialHelper();
         const snackbarActions = document.getElementById('snackbar-actions');
         materialHelper.removeChildren(snackbarActions);
+        this.command = null;
         const next = this.que.shift();
         if (next) {
-            this.update(next.label, next.close, next.actions);
+            this.update(next.label, next.close, next.action);
         }
     }
 
@@ -46,22 +51,22 @@ export class Snackbar {
                 {
                     label: event.detail.label,
                     close: event.detail.close,
-                    actions: event.detail.actions
+                    action: event.detail.action
                 }
             );
             return;
         }
         this.update(
-            event.detail.label, event.detail.close, event.detail.actions
+            event.detail.label, event.detail.close, event.detail.action
         );
     }
 
-    update(label, close, actions) {
+    update(label, close, action) {
         this.snackbar.labelText = label;
         this.snackbar.closeOnEscape = true;
         this.snackbar.timeoutMs = 5000;
-        if (actions) {
-            this.setActions(actions);
+        if (action) {
+            this.setAction(action);
         }
         if (close) {
             this.setClose();
@@ -69,27 +74,26 @@ export class Snackbar {
         this.snackbar.open();
     }
 
-    setActions(actions) {
+    setAction(action) {
         const materialHelper = new MaterialHelper();
         const snackbarActions = document.getElementById('snackbar-actions');
-        actions.forEach(action => {
-            const button = materialHelper.actionSnackbar();
-            button.appendChild(
-                materialHelper.span(
-                    action.label,
-                    [
-                        {name: 'class', value: 'mdc-button__label'},
-                        {name: 'style', value: 'color: magenta;'},
-                    ]
-                )
-            );
-            snackbarActions.appendChild(button);
-        });
+        const button = materialHelper.actionSnackbar();
+        button.appendChild(
+            materialHelper.span(
+                action.label,
+                [
+                    {name: 'class', value: 'mdc-button__label'},
+                    {name: 'style', value: 'color: magenta;'},
+                ]
+            )
+        );
+        snackbarActions.appendChild(button);
+        this.command = action.command;
     }
 
     setClose() {
         const materialHelper = new MaterialHelper();
         const snackbarActions = document.getElementById('snackbar-actions');
-        snackbarActions.appendChild(materialHelper.actionSnackbarClose());
+        snackbarActions.appendChild(materialHelper.closeSnackbar());
     }
 }

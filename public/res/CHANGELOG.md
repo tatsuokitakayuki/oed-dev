@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200813 (dev)
+- Fixed Snackbar action and dismiss.
 - Refactored oed.js.
 - Fixed window title string.
 

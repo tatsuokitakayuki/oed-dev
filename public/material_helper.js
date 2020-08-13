@@ -104,20 +104,27 @@ export class MaterialHelper extends HtmlHelper {
         );
     }
 
-    actionSnackbar() {
+    buttonSnackbar() {
         const action = this.button(
             null,
             [
                 {name: 'type', value: 'button'},
-                {name: 'class', value: 'mdc-button mdc-snackbar__action'}
+                {name: 'class', value: 'mdc-button'}
             ]
         );
         action.appendChild(this.buttonRipple());
         return action;
     }
 
-    actionSnackbarClose() {
-        const action = this.actionSnackbar();
+    actionSnackbar() {
+        const action = this.buttonSnackbar();
+        action.classList.add('mdc-snackbar__action');
+        return action;
+    }
+
+    closeSnackbar() {
+        const action = this.buttonSnackbar();
+        action.classList.add('mdc-snackbar__dismiss');
         action.appendChild(
             this.span(
                 'close',
