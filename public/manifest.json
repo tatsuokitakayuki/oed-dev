@@ -11,7 +11,7 @@
     "orientation": "landscape-primary",
 
     "scope": "/",
-    "start_url": "./",
+    "start_url": "/",
 
     "icons": [
         {
