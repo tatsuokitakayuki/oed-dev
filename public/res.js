@@ -129,9 +129,12 @@ export class Res {
             untitled: 'untitled',
             restart_update: 'Restart OED and update.',
             welcome: 'Welcome to OED (Open, Edit, and Download).\n\n'+
-                '\"OED\" is a text / code editor implemented only in web technology.\n'+
-                '\"OED\" is the Progressive Web App (PWA).\n'+
-                'Enjoy editing text and code.\n',
+                'OED is an application that edits text and code, which is ' +
+                'implemented only by Web technologies ' +
+                '(HTML, CSS, and JavaScript).\n'+
+                'A Web App that can be installed offline on a device like ' +
+                'OED is called a Progressive Web Application (PWA).\n'+
+                'Let\'s enjoy text and code editing together!\n',
         };
     }
 }

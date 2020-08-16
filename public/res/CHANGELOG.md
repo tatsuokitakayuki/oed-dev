@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200816 (dev)
+- Updated welcome message.
+
 ## Version 4.0.20200814 (dev)
 - Fixed start_url of manifest.json.
 
