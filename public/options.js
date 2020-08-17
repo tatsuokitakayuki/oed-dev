@@ -1,7 +1,6 @@
 import {CacheManager} from '/cache_manager.js';
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
-import {DialogSelectFile} from '/dialog_select_file.js';
 import {FileHelper} from '/file_helper.js';
 import {SaveOptionsEvent} from '/save_options_event.js';
 
@@ -297,7 +296,8 @@ export class Options {
     }
 
     async importOptionsA(core) {
-        const dialogSelectFile = new DialogSelectFile();
+        const module = await import('/dialog_select_file.js');
+        const dialogSelectFile = new module.DialogSelectFile();
         const files = await dialogSelectFile.openA(false);
         if (files) {
             const fileHelper = new FileHelper();

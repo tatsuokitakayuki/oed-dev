@@ -4,24 +4,6 @@ import {ChangeDrawerItemEvent} from '/change_drawer_item_event.js';
 import {ChangeMenuButtonEvent} from '/change_menu_button_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
 import {descriptions} from '/res/descriptions.js';
-import {DialogConfirm} from '/dialog_confirm.js';
-import {DialogCursorStyle} from '/dialog_cursor_style.js';
-import {DialogFileDecoding} from '/dialog_file_decoding.js';
-import {DialogFirstLineNumber} from '/dialog_first_line_number.js';
-import {DialogFoldStyle} from '/dialog_fold_style.js';
-import {DialogFontFamily} from '/dialog_font_family.js';
-import {DialogFontSize} from '/dialog_font_size.js';
-import {DialogKeyboardHandler} from '/dialog_keyboard_handler.js';
-import {DialogLanguageMode} from '/dialog_language_mode.js';
-import {DialogMenuButton} from '/dialog_menu_button.js';
-import {DialogMergeUndoDeltas} from '/dialog_merge_undo_deltas.js';
-import {DialogNewLineMode} from '/dialog_new_line_mode.js';
-import {DialogPrintMarginColumn} from '/dialog_print_margin_column.js';
-import {DialogRenameFile} from '/dialog_rename_file.js';
-import {DialogScrollPastEnd} from '/dialog_scroll_past_end.js';
-import {DialogSelectFile} from '/dialog_select_file.js';
-import {DialogTabSize} from '/dialog_tab_size.js';
-import {DialogTheme} from '/dialog_theme.js';
 import {Drawer} from '/drawer.js';
 import {FileManager} from '/file_manager.js';
 import {FocusEditorEvent} from '/focus_editor_event.js';
@@ -494,7 +476,8 @@ export class Core {
 
     async openSelectFileA() {
         document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
-        const dialogSelectFile = new DialogSelectFile();
+        const module = await import('/dialog_select_file.js');
+        const dialogSelectFile = new module.DialogSelectFile();
         const files = await dialogSelectFile.openA(true);
         if (files) {
             await this.openFileA(files);
@@ -515,12 +498,13 @@ export class Core {
         document.dispatchEvent(new ChangeViewEvent(index, index, {all: true}));
     }
 
-    renameFile(index, callback, args) {
+    async renameFile(index, callback, args) {
         if (this.isCoreFile(index)) {
             return;
         }
         this.fileManager.addEventListener();
-        const dialogRenameFile = new DialogRenameFile(
+        const module = await import('/dialog_rename_file.js');
+        const dialogRenameFile = new module.DialogRenameFile(
             this.getName(index), callback, args
         );
         dialogRenameFile.open();
@@ -529,7 +513,8 @@ export class Core {
     async closeFileA(index) {
         if (!this.isCoreFile(index) && !this.isClean(index)) {
             const res = new Res();
-            const dialogConfirm = new DialogConfirm();
+            const module = await import('/dialog_confirm.js');
+            const dialogConfirm = new module.DialogConfirm();
             dialogConfirm.open(
                 descriptions.CLOSE_FILE,
                 res.strings.confirm_close_file
@@ -629,67 +614,77 @@ export class Core {
         return readOnly;
     }
 
-    promptTabSize() {
-        const dialogTabSize = new DialogTabSize(this.getOption('tabSize'));
+    async promptTabSize() {
+        const module = await import('/dialog_tab_size.js');
+        const dialogTabSize = new module.DialogTabSize(this.getOption('tabSize'));
         dialogTabSize.open();
     }
 
-    selectTheme() {
-        const dialogTheme = new DialogTheme(this.getOption('theme'));
+    async selectTheme() {
+        const module = await import('/dialog_theme.js');
+        const dialogTheme = new module.DialogTheme(this.getOption('theme'));
         dialogTheme.open();
     }
 
-    selectKeyboardHandler() {
-        const dialogKeyboardHandler = new DialogKeyboardHandler(
+    async selectKeyboardHandler() {
+        const module = await import('/dialog_keyboard_handler.js');
+        const dialogKeyboardHandler = new module.DialogKeyboardHandler(
             this.getOption('keyboardHandler')
         );
         dialogKeyboardHandler.open();
     }
 
-    selectMenuButton() {
-        const dialogMenuButton = new DialogMenuButton(
+    async selectMenuButton() {
+        const module = await import('/dialog_menu_button.js');
+        const dialogMenuButton = new module.DialogMenuButton(
             this.getOption('menuButton')
         );
         dialogMenuButton.open();
     }
 
-    promptFontSize() {
-        const dialogFontSize = new DialogFontSize(
+    async promptFontSize() {
+        const module = await import('/dialog_font_size.js');
+        const dialogFontSize = new module.DialogFontSize(
             this.getOption('fontSize')
         );
         dialogFontSize.open();
     }
 
-    selectCursorStyle() {
-        const dialogCursorStyle = new DialogCursorStyle(
+    async selectCursorStyle() {
+        const module = await import('/dialog_cursor_style.js');
+        const dialogCursorStyle = new module.DialogCursorStyle(
             this.getOption('cursorStyle')
         );
         dialogCursorStyle.open();
     }
 
-    selectMergeUndoDeltas() {
-        const dialogMergeUndoDeltas = new DialogMergeUndoDeltas(
+    async selectMergeUndoDeltas() {
+        const module = await import('/dialog_merge_undo_deltas.js');
+        const dialogMergeUndoDeltas = new module.DialogMergeUndoDeltas(
             this.getOption('mergeUndoDeltas')
         );
         dialogMergeUndoDeltas.open();
     }
 
-    promptPrintMarginColumn() {
-        const dialogPrintMarginColumn = new DialogPrintMarginColumn(
+    async promptPrintMarginColumn() {
+        const module = await import('/dialog_print_margin_column.js');
+        const dialogPrintMarginColumn = new module.DialogPrintMarginColumn(
             this.getOption('printMarginColumn')
         );
         dialogPrintMarginColumn.open();
     }
 
-    selectScrollPastEnd() {
-        const dialogScrollPastEnd = new DialogScrollPastEnd(
+    async selectScrollPastEnd() {
+        const module = await import('/dialog_scroll_past_end.js');
+        const dialogScrollPastEnd = new module.DialogScrollPastEnd(
             this.getOption('scrollPastEnd')
         );
         dialogScrollPastEnd.open();
     }
 
-    promptFontFamily() {
-        const dialogFontFamily = new DialogFontFamily(
+    async promptFontFamily() {
+        const module = await import('/dialog_font_family.js');
+        const dialogFontFamily = new module.DialogFontFamily(
             this.getOption('fontFamily')
         );
         dialogFontFamily.open();
@@ -701,36 +696,41 @@ export class Core {
         dialogWrap.open();
     }
 
-    selectLanguageMode() {
-        const dialogLanguageMode = new DialogLanguageMode(
+    async selectLanguageMode() {
+        const module = await import('/dialog_language_mode.js');
+        const dialogLanguageMode = new module.DialogLanguageMode(
             this.getOption('mode')
         );
         dialogLanguageMode.open();
     }
 
-    selectFoldStyle() {
-        const dialogFoldStyle = new DialogFoldStyle(
+    async selectFoldStyle() {
+        const module = await import('/dialog_fold_style.js');
+        const dialogFoldStyle = new module.DialogFoldStyle(
             this.getOption('foldStyle')
         );
         dialogFoldStyle.open();
     }
 
-    selectNewLineMode() {
-        const dialogNewLineMode = new DialogNewLineMode(
+    async selectNewLineMode() {
+        const module = await import('/dialog_new_line_mode.js');
+        const dialogNewLineMode = new module.DialogNewLineMode(
             this.getOption('newLineMode')
         );
         dialogNewLineMode.open();
     }
 
-    promptFirstLineNumber() {
-        const dialogFirstLineNumber = new DialogFirstLineNumber(
+    async promptFirstLineNumber() {
+        const module = await import('/dialog_first_line_number.js');
+        const dialogFirstLineNumber = new module.DialogFirstLineNumber(
             this.getOption('firstLineNumber')
         );
         dialogFirstLineNumber.open();
     }
 
-    selectFileDecoding() {
-        const dialogFileDecoding = new DialogFileDecoding(
+    async selectFileDecoding() {
+        const module = await import('/dialog_file_decoding.js');
+        const dialogFileDecoding = new module.DialogFileDecoding(
             this.getOption('fileDecoding')
         );
         dialogFileDecoding.open();
