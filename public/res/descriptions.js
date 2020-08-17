@@ -1,4 +1,4 @@
-export const descriptions = {
+export const DESCRIPTIONS = {
     NEXT_FILE: 'Next file',
     PREVIOUS_FILE: 'Previous file',
     FIRST_FILE: '1st file',

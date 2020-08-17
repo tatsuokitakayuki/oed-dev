@@ -1,5 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
@@ -19,7 +19,7 @@ export class DialogPrintMarginColumn extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            descriptions.PRINT_MARGIN_COLUMN, null,
+            DESCRIPTIONS.PRINT_MARGIN_COLUMN, null,
             res.placeholders.print_margin_column, this.initialValue, 'number',
             0, 256
         );

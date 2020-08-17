@@ -1,6 +1,6 @@
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {SaveOptionsEvent} from '/save_options_event.js';
 import {MoveDrawerEvent} from '/move_drawer_event.js';
 
@@ -14,77 +14,77 @@ export class Keybinding {
         const commands = [
             {
                 name: 'oedNextFile',
-                description: descriptions.NEXT_FILE,
+                description: DESCRIPTIONS.NEXT_FILE,
                 bindKey: {win: 'Ctrl-Tab', mac: 'Command-Tab'},
                 exec: editor => this.core.nextFile(),
                 readOnly: true
             },
             {
                 name: 'oedPreviousFile',
-                description: descriptions.PREVIOUS_FILE,
+                description: DESCRIPTIONS.PREVIOUS_FILE,
                 bindKey: {win: 'Ctrl-Shift-Tab', mac: 'Command-Shift-Tab'},
                 exec: editor => this.core.previousFile(),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile1',
-                description: descriptions.FIRST_FILE,
+                description: DESCRIPTIONS.FIRST_FILE,
                 bindKey: {win: 'Ctrl-1', mac: 'Command-1'},
                 exec: editor => this.core.selectFile(0),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile2',
-                description: descriptions.SECOND_FILE,
+                description: DESCRIPTIONS.SECOND_FILE,
                 bindKey: {win: 'Ctrl-2', mac: 'Command-2'},
                 exec: editor => this.core.selectFile(1),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile3',
-                description: descriptions.THIRD_FILE,
+                description: DESCRIPTIONS.THIRD_FILE,
                 bindKey: {win: 'Ctrl-3', mac: 'Command-3'},
                 exec: editor => this.core.selectFile(2),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile4',
-                description: descriptions.FOURTH_FILE,
+                description: DESCRIPTIONS.FOURTH_FILE,
                 bindKey: {win: 'Ctrl-4', mac: 'Command-4'},
                 exec: editor => this.core.selectFile(3),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile5',
-                description: descriptions.FIFTH_FILE,
+                description: DESCRIPTIONS.FIFTH_FILE,
                 bindKey: {win: 'Ctrl-5', mac: 'Command-5'},
                 exec: editor => this.core.selectFile(4),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile6',
-                description: descriptions.SIXTH_FILE,
+                description: DESCRIPTIONS.SIXTH_FILE,
                 bindKey: {win: 'Ctrl-6', mac: 'Command-6'},
                 exec: editor => this.core.selectFile(5),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile7',
-                description: descriptions.SEVENTH_FILE,
+                description: DESCRIPTIONS.SEVENTH_FILE,
                 bindKey: {win: 'Ctrl-7', mac: 'Command-7'},
                 exec: editor => this.core.selectFile(6),
                 readOnly: true
             },
             {
                 name: 'oedSelectFile8',
-                description: descriptions.EIGHTH_FILE,
+                description: DESCRIPTIONS.EIGHTH_FILE,
                 bindKey: {win: 'Ctrl-8', mac: 'Command-8'},
                 exec: editor => this.core.selectFile(7),
                 readOnly: true
             },
             {
                 name: 'oedSelectFileLast',
-                description: descriptions.LAST_FILE,
+                description: DESCRIPTIONS.LAST_FILE,
                 bindKey: {win: 'Ctrl-9', mac: 'Command-9'},
                 exec: editor => this.core.lastFile(),
                 readOnly: true
@@ -97,28 +97,28 @@ export class Keybinding {
         const commands = [
             {
                 name: 'oedNewFile',
-                description: descriptions.NEW_FILE,
+                description: DESCRIPTIONS.NEW_FILE,
                 bindKey: {win: 'Ctrl-N', mac: 'Command-N'},
                 exec: editor => this.core.newFileA(),
                 readOnly: true
             },
             {
                 name: 'oedOpenFile',
-                description: descriptions.OPEN_FILE + '...',
+                description: DESCRIPTIONS.OPEN_FILE + '...',
                 bindKey: {win: 'Ctrl-O', mac: 'Command-O'},
                 exec: editor => this.core.openSelectFileA(),
                 readOnly: true
             },
             {
                 name: 'oedDownloadFile',
-                description: descriptions.DOWNLOAD_FILE,
+                description: DESCRIPTIONS.DOWNLOAD_FILE,
                 bindKey: {win: 'Ctrl-S', mac: 'Command-S'},
                 exec: editor => this.core.downloadFile(this.core.getActive()),
                 readOnly: false
             },
             {
                 name: 'oedRenameFile',
-                description: descriptions.RENAME_FILE + '...',
+                description: DESCRIPTIONS.RENAME_FILE + '...',
                 bindKey: {win: 'Alt-R', mac: 'Option-R'},
                 exec: editor => this.core.renameFile(
                     this.core.getActive(), null, null
@@ -127,25 +127,25 @@ export class Keybinding {
             },
             {
                 name: 'oedFileDecoding',
-                description: descriptions.FILE_DECODING + '...',
+                description: DESCRIPTIONS.FILE_DECODING + '...',
                 exec: editor => this.core.selectFileDecoding(),
                 readOnly: true
             },
             {
                 name: 'oedFirstLineNumber',
-                description: descriptions.FIRST_LINE_NUMBER + '...',
+                description: DESCRIPTIONS.FIRST_LINE_NUMBER + '...',
                 exec: editor => this.core.promptFirstLineNumber(),
                 readOnly: true
             },
             {
                 name: 'oedFoldStyle',
-                description: descriptions.FOLD_STYLE + '...',
+                description: DESCRIPTIONS.FOLD_STYLE + '...',
                 exec: editor => this.core.selectFoldStyle(),
                 readOnly: true
             },
             {
                 name: 'oedIndentedSoftWrap',
-                description: descriptions.INDENTED_SOFT_WRAP,
+                description: DESCRIPTIONS.INDENTED_SOFT_WRAP,
                 exec: editor => editor.setOption(
                     'indentedSoftWrap', !editor.getOption('indentedSoftWrap')
                 ),
@@ -153,31 +153,31 @@ export class Keybinding {
             },
             {
                 name: 'oedMode',
-                description: descriptions.LANGUAGE_MODE + '...',
+                description: DESCRIPTIONS.LANGUAGE_MODE + '...',
                 exec: editor => this.core.selectLanguageMode(),
                 readOnly: true
             },
             {
                 name: 'oedNewLineMode',
-                description: descriptions.NEW_LINE_MODE + '...',
+                description: DESCRIPTIONS.NEW_LINE_MODE + '...',
                 exec: editor => this.core.selectNewLineMode(),
                 readOnly: true
             },
             {
                 name: 'oedWrap',
-                description: descriptions.WRAP + '...',
+                description: DESCRIPTIONS.WRAP + '...',
                 exec: editor => this.core.selectWrap(),
                 readOnly: true
             },
             {
                 name: 'oedTabSize',
-                description: descriptions.TAB_SIZE + '...',
+                description: DESCRIPTIONS.TAB_SIZE + '...',
                 exec: editor => this.core.promptTabSize(),
                 readOnly: true
             },
             {
                 name: 'oedUseSoftTabs',
-                description: descriptions.USE_SOFT_TABS,
+                description: DESCRIPTIONS.USE_SOFT_TABS,
                 exec: editor => editor.setOption(
                     'useSoftTabs', !editor.getOption('useSoftTabs')
                 ),
@@ -185,7 +185,7 @@ export class Keybinding {
             },
             {
                 name: 'oedSaveEditSessionOptions',
-                description: descriptions.SAVE_EDIT_SESSION_OPTIONS,
+                description: DESCRIPTIONS.SAVE_EDIT_SESSION_OPTIONS,
                 exec: editor => {
                     this.dispatchSaveOptionsEvent(
                         editor, {session: true, oed: true}
@@ -200,7 +200,7 @@ export class Keybinding {
             },
             {
                 name: 'oedCloseFile',
-                description: descriptions.CLOSE_FILE + '...',
+                description: DESCRIPTIONS.CLOSE_FILE + '...',
                 bindKey: {win: 'Alt-W', mac: 'Option-W'},
                 exec: editor => this.core.closeFileA(this.core.getActive()),
                 readOnly: true
@@ -222,7 +222,7 @@ export class Keybinding {
         const commands = [
             {
                 name: 'oedAutoScrollEditorIntoView',
-                description: descriptions.AUTO_SCROLL_EDITOR_INTO_VIEW,
+                description: DESCRIPTIONS.AUTO_SCROLL_EDITOR_INTO_VIEW,
                 exec: editor => {
                     editor.setOption(
                         'autoScrollEditorIntoView',
@@ -234,7 +234,7 @@ export class Keybinding {
             },
             {
                 name: 'oedBehavioursEnabled',
-                description: descriptions.BEHAVIOURS_ENABLED,
+                description: DESCRIPTIONS.BEHAVIOURS_ENABLED,
                 exec: editor => {
                     editor.setOption(
                         'behavioursEnabled', !editor.getOption('behavioursEnabled')
@@ -245,7 +245,7 @@ export class Keybinding {
             },
             {
                 name: 'oedCopyWithEmptySelection',
-                description: descriptions.COPY_WITH_EMPTY_SELECTION,
+                description: DESCRIPTIONS.COPY_WITH_EMPTY_SELECTION,
                 exec: editor => {
                     editor.setOption(
                         'copyWithEmptySelection',
@@ -257,13 +257,13 @@ export class Keybinding {
             },
             {
                 name: 'oedCursorStyle',
-                description: descriptions.CURSOR_STYLE + '...',
+                description: DESCRIPTIONS.CURSOR_STYLE + '...',
                 exec: editor => this.core.selectCursorStyle(),
                 readOnly: true
             },
             {
                 name: 'oedEnableAutoIndent',
-                description: descriptions.ENABLE_AUTO_INDENT,
+                description: DESCRIPTIONS.ENABLE_AUTO_INDENT,
                 exec: editor => {
                     editor.setOption(
                         'enableAutoIndent', !editor.getOption('enableAutoIndent')
@@ -274,7 +274,7 @@ export class Keybinding {
             },
             {
                 name: 'oedEnableLinking',
-                description: descriptions.ENABLE_LINKING,
+                description: DESCRIPTIONS.ENABLE_LINKING,
                 exec: editor => {
                     editor.setOption(
                         'enableLinking', !editor.getOption('enableLinking')
@@ -285,7 +285,7 @@ export class Keybinding {
             },
             {
                 name: 'oedEnableMultiselect',
-                description: descriptions.ENABLE_MULTISELECT,
+                description: DESCRIPTIONS.ENABLE_MULTISELECT,
                 exec: editor => {
                     editor.setOption(
                         'enableMultiselect', !editor.getOption('enableMultiselect')
@@ -296,7 +296,7 @@ export class Keybinding {
             },
             {
                 name: 'oedHighlightActiveLine',
-                description: descriptions.HIGHLIGHT_ACTIVE_LINE,
+                description: DESCRIPTIONS.HIGHLIGHT_ACTIVE_LINE,
                 exec: editor => {
                     editor.setOption(
                         'highlightActiveLine',
@@ -308,7 +308,7 @@ export class Keybinding {
             },
             {
                 name: 'oedHighlightSelectedWord',
-                description: descriptions.HIGHLIGHT_SELECTED_WORD,
+                description: DESCRIPTIONS.HIGHLIGHT_SELECTED_WORD,
                 exec: editor => {
                     editor.setOption(
                         'highlightSelectedWord',
@@ -320,13 +320,13 @@ export class Keybinding {
             },
             {
                 name: 'oedMergeUndoDeltas',
-                description: descriptions.MERGE_UNDO_DELTAS + '...',
+                description: DESCRIPTIONS.MERGE_UNDO_DELTAS + '...',
                 exec: editor => this.core.selectMergeUndoDeltas(),
                 readOnly: true
             },
             {
                 name: 'oedNavigateWithinSoftTabs',
-                description: descriptions.NAVIGATE_WITHIN_SOFT_TABS,
+                description: DESCRIPTIONS.NAVIGATE_WITHIN_SOFT_TABS,
                 exec: editor => {
                     editor.setOption(
                         'navigateWithinSoftTabs',
@@ -338,7 +338,7 @@ export class Keybinding {
             },
             {
                 name: 'oedReadOnly',
-                description: descriptions.READ_ONLY,
+                description: DESCRIPTIONS.READ_ONLY,
                 exec: editor => {
                     const index = this.core.getActive();
                     if (!this.core.isCoreFile(index)) {
@@ -352,7 +352,7 @@ export class Keybinding {
             },
             {
                 name: 'oedSelectionStyle',
-                description: descriptions.SELECTION_STYLE,
+                description: DESCRIPTIONS.SELECTION_STYLE,
                 exec: editor => {
                     editor.setOption(
                         'selectionStyle',
@@ -365,7 +365,7 @@ export class Keybinding {
             },
             {
                 name: 'oedWrapBehavioursEnabled',
-                description: descriptions.WRAP_BEHAVIOURS_ENABLED,
+                description: DESCRIPTIONS.WRAP_BEHAVIOURS_ENABLED,
                 exec: editor => {
                     editor.setOption(
                         'wrapBehavioursEnabled',
@@ -377,7 +377,7 @@ export class Keybinding {
             },
             {
                 name: 'oedShowGutter',
-                description: descriptions.SHOW_GUTTER,
+                description: DESCRIPTIONS.SHOW_GUTTER,
                 exec: editor => {
                     editor.setOption('showGutter', !editor.getOption('showGutter'));
                     this.dispatchSaveOptionsEvent(editor, {renderer: true});
@@ -386,7 +386,7 @@ export class Keybinding {
             },
             {
                 name: 'oedFixedWidthGutter',
-                description: descriptions.FIXED_WIDTH_GUTTER,
+                description: DESCRIPTIONS.FIXED_WIDTH_GUTTER,
                 exec: editor => {
                     editor.setOption(
                         'fixedWidthGutter', !editor.getOption('fixedWidthGutter')
@@ -397,7 +397,7 @@ export class Keybinding {
             },
             {
                 name: 'oedHighlightGutterLine',
-                description: descriptions.HIGHLIGHT_GUTTER_LINE,
+                description: DESCRIPTIONS.HIGHLIGHT_GUTTER_LINE,
                 exec: editor => {
                     editor.setOption(
                         'highlightGutterLine',
@@ -409,7 +409,7 @@ export class Keybinding {
             },
             {
                 name: 'oedShowLineNumbers',
-                description: descriptions.SHOW_LINE_NUMBERS,
+                description: DESCRIPTIONS.SHOW_LINE_NUMBERS,
                 exec: editor => {
                     editor.setOption(
                         'showLineNumbers', !editor.getOption('showLineNumbers')
@@ -420,7 +420,7 @@ export class Keybinding {
             },
             {
                 name: 'oedDisplayIndentGuides',
-                description: descriptions.DISPLAY_INDENT_GUIDES,
+                description: DESCRIPTIONS.DISPLAY_INDENT_GUIDES,
                 exec: editor => {
                     editor.setOption(
                         'displayIndentGuides',
@@ -432,13 +432,13 @@ export class Keybinding {
             },
             {
                 name: 'oedPrintMarginColumn',
-                description: descriptions.PRINT_MARGIN_COLUMN + '...',
+                description: DESCRIPTIONS.PRINT_MARGIN_COLUMN + '...',
                 exec: editor => this.core.promptPrintMarginColumn(),
                 readOnly: true
             },
             {
                 name: 'oedShowPrintMargin',
-                description: descriptions.SHOW_PRINT_MARGIN,
+                description: DESCRIPTIONS.SHOW_PRINT_MARGIN,
                 exec: editor => {
                     editor.setOption(
                         'showPrintMargin', !editor.getOption('showPrintMargin')
@@ -449,7 +449,7 @@ export class Keybinding {
             },
             {
                 name: 'oedAnimatedScroll',
-                description: descriptions.ANIMATED_SCROLL,
+                description: DESCRIPTIONS.ANIMATED_SCROLL,
                 exec: editor => {
                     editor.setOption(
                         'animatedScroll', !editor.getOption('animatedScroll')
@@ -460,7 +460,7 @@ export class Keybinding {
             },
             {
                 name: 'oedFadeFoldWidgets',
-                description: descriptions.FADE_FOLD_WIDGETS,
+                description: DESCRIPTIONS.FADE_FOLD_WIDGETS,
                 exec: editor => {
                     editor.setOption(
                         'fadeFoldWidgets', !editor.getOption('fadeFoldWidgets')
@@ -471,13 +471,13 @@ export class Keybinding {
             },
             {
                 name: 'oedScrollPastEnd',
-                description: descriptions.SCROLL_PAST_END + '...',
+                description: DESCRIPTIONS.SCROLL_PAST_END + '...',
                 exec: editor => this.core.selectScrollPastEnd(),
                 readOnly: true
             },
             {
                 name: 'oedShowFoldWidgets',
-                description: descriptions.SHOW_FOLD_WIDGETS,
+                description: DESCRIPTIONS.SHOW_FOLD_WIDGETS,
                 exec: editor => {
                     editor.setOption(
                         'showFoldWidgets', !editor.getOption('showFoldWidgets')
@@ -488,7 +488,7 @@ export class Keybinding {
             },
             {
                 name: 'oedShowInvisibles',
-                description: descriptions.SHOW_INVISIBLES,
+                description: DESCRIPTIONS.SHOW_INVISIBLES,
                 exec: editor => {
                     editor.setOption(
                         'showInvisibles', !editor.getOption('showInvisibles')
@@ -499,7 +499,7 @@ export class Keybinding {
             },
             {
                 name: 'oedVScrollBarAlwaysVisible',
-                description: descriptions.VERTICAL_SCROLL_BAR_ALWAYS_VISIBLE,
+                description: DESCRIPTIONS.VERTICAL_SCROLL_BAR_ALWAYS_VISIBLE,
                 exec: editor => {
                     editor.setOption(
                         'vScrollBarAlwaysVisible',
@@ -511,7 +511,7 @@ export class Keybinding {
             },
             {
                 name: 'oedHScrollBarAlwaysVisible',
-                description: descriptions.HOLIZONTAL_SCROLL_BAR_ALWAYS_VISIBLE,
+                description: DESCRIPTIONS.HOLIZONTAL_SCROLL_BAR_ALWAYS_VISIBLE,
                 exec: editor => {
                     editor.setOption(
                         'hScrollBarAlwaysVisible',
@@ -523,7 +523,7 @@ export class Keybinding {
             },
             {
                 name: 'oedUseTextareaForIME',
-                description: descriptions.USE_TEXTAREA_FOR_IME,
+                description: DESCRIPTIONS.USE_TEXTAREA_FOR_IME,
                 exec: editor => {
                     editor.setOption(
                         'useTextareaForIME', !editor.getOption('useTextareaForIME')
@@ -534,19 +534,19 @@ export class Keybinding {
             },
             {
                 name: 'oedFontFamily',
-                description: descriptions.FONT_FAMILY + '...',
+                description: DESCRIPTIONS.FONT_FAMILY + '...',
                 exec: editor => this.core.promptFontFamily(),
                 readOnly: true
             },
             {
                 name: 'oedFontSize',
-                description: descriptions.FONT_SIZE + '...',
+                description: DESCRIPTIONS.FONT_SIZE + '...',
                 exec: editor => this.core.promptFontSize(),
                 readOnly: true
             },
             {
                 name: 'oedTheme',
-                description: descriptions.THEME + '...',
+                description: DESCRIPTIONS.THEME + '...',
                 exec: editor => this.core.selectTheme(),
                 readOnly: true
             },
@@ -558,7 +558,7 @@ export class Keybinding {
         const commands = [
             {
                 name: 'oedEnableBasicAutocompletion',
-                description: descriptions.ENABLE_BASIC_AUTOCOMPLETION,
+                description: DESCRIPTIONS.ENABLE_BASIC_AUTOCOMPLETION,
                 exec: editor => {
                     editor.setOption(
                         'enableBasicAutocompletion',
@@ -570,7 +570,7 @@ export class Keybinding {
             },
             {
                 name: 'oedEnableLiveAutocompletion',
-                description: descriptions.ENABLE_LIVE_AUTOCOMPLETION,
+                description: DESCRIPTIONS.ENABLE_LIVE_AUTOCOMPLETION,
                 exec: editor => {
                     editor.setOption(
                         'enableLiveAutocompletion',
@@ -582,7 +582,7 @@ export class Keybinding {
             },
             {
                 name: 'oedEnableSnippets',
-                description: descriptions.ENABLE_SNIPPETS,
+                description: DESCRIPTIONS.ENABLE_SNIPPETS,
                 exec: editor => {
                     editor.setOption(
                         'enableSnippets', !editor.getOption('enableSnippets')
@@ -593,7 +593,7 @@ export class Keybinding {
             },
             {
                 name: 'oedEnableEmmet',
-                description: descriptions.ENABLE_EMMET,
+                description: DESCRIPTIONS.ENABLE_EMMET,
                 exec: editor => {
                     editor.setOption(
                         'enableEmmet', !editor.getOption('enableEmmet')
@@ -604,7 +604,7 @@ export class Keybinding {
             },
             {
                 name: 'oedUseElasticTabstops',
-                description: descriptions.USE_ELASTIC_TABSTOPS,
+                description: DESCRIPTIONS.USE_ELASTIC_TABSTOPS,
                 exec: editor => {
                     editor.setOption(
                         'useElasticTabstops',
@@ -622,43 +622,43 @@ export class Keybinding {
         const commands = [
             {
                 name: 'oedKeyboardHandler',
-                description: descriptions.KEYBOARD_HANDLER + '...',
+                description: DESCRIPTIONS.KEYBOARD_HANDLER + '...',
                 exec: editor => this.core.selectKeyboardHandler(),
                 readOnly: true
             },
             {
                 name: 'oedMenuButton',
-                description: descriptions.MENU_BUTTON + '...',
+                description: DESCRIPTIONS.MENU_BUTTON + '...',
                 exec: editor => this.core.selectMenuButton(),
                 readOnly: true
             },
             {
                 name: 'oedExportOptions',
-                description: descriptions.EXPORT_OPTIONS,
+                description: DESCRIPTIONS.EXPORT_OPTIONS,
                 exec: editor => this.core.exportOptionsA(),
                 readOnly: true
             },
             {
                 name: 'oedImportOptions',
-                description: descriptions.IMPORT_OPTIONS + '...',
+                description: DESCRIPTIONS.IMPORT_OPTIONS + '...',
                 exec: editor => this.core.importOptionsA(),
                 readOnly: true
             },
             {
                 name: 'oedCacheList',
-                description: descriptions.CACHE_LIST,
+                description: DESCRIPTIONS.CACHE_LIST,
                 exec: editor => this.core.cacheListA(),
                 readOnly: true
             },
             {
                 name: 'oedInsertWelcome',
-                description: descriptions.INSERT_WELCOME,
+                description: DESCRIPTIONS.INSERT_WELCOME,
                 exec: editor => this.core.insertWelcome(editor),
                 readOnly: true
             },
             {
                 name: 'oedSourceCode',
-                description: descriptions.SOURCE_CODE,
+                description: DESCRIPTIONS.SOURCE_CODE,
                 exec: editor => {
                     if (this.oedSourceCode == null || this.oedSourceCode.closed) {
                         this.oedSourceCode = window.open(
@@ -673,19 +673,19 @@ export class Keybinding {
             },
             {
                 name: 'oedChangeLog',
-                description: descriptions.CHANGE_LOG,
+                description: DESCRIPTIONS.CHANGE_LOG,
                 exec: editor => this.core.changeLogA(),
                 readOnly: true
             },
             {
                 name: 'oedOpenSourceLisence',
-                description: descriptions.OPEN_SOURCE_LISENCE,
+                description: DESCRIPTIONS.OPEN_SOURCE_LISENCE,
                 exec: editor => this.core.openSourceLisenceA(),
                 readOnly: true
             },
             {
                 name: 'oedAbout',
-                description: descriptions.ABOUT,
+                description: DESCRIPTIONS.ABOUT,
                 exec: editor => this.core.aboutA(),
                 readOnly: true
             },
@@ -697,56 +697,56 @@ export class Keybinding {
         const commands = [
             {
                 name: 'oedToggleFileList',
-                description: descriptions.TOGGLE_FILE_LIST,
+                description: DESCRIPTIONS.TOGGLE_FILE_LIST,
                 bindKey: {win: 'Ctrl-Shift-F', mac: 'Command-Shift-F'},
                 exec: editor => document.dispatchEvent(new MoveDrawerEvent('toggle')),
                 readOnly: true
             },
             {
                 name: 'oedToggleFileMenu',
-                description: descriptions.TOGGLE_FILE_MENU,
+                description: DESCRIPTIONS.TOGGLE_FILE_MENU,
                 bindKey: {win: 'Alt-I'},
                 exec: editor => document.getElementById('button-file').click(),
                 readOnly: true
             },
             {
                 name: 'oedToggleEditMenu',
-                description: descriptions.TOGGLE_EDIT_MENU,
+                description: DESCRIPTIONS.TOGGLE_EDIT_MENU,
                 bindKey: {win: 'Alt-D'},
                 exec: editor => document.getElementById('button-edit').click(),
                 readOnly: true
             },
             {
                 name: 'oedToggleSearchMenu',
-                description: descriptions.TOGGLE_SEARCH_MENU,
+                description: DESCRIPTIONS.TOGGLE_SEARCH_MENU,
                 bindKey: {win: 'Alt-S'},
                 exec: editor => document.getElementById('button-search').click(),
                 readOnly: true
             },
             {
                 name: 'oedToggleCodeMenu',
-                description: descriptions.TOGGLE_CODE_MENU,
+                description: DESCRIPTIONS.TOGGLE_CODE_MENU,
                 bindKey: {win: 'Alt-C'},
                 exec: editor => document.getElementById('button-code').click(),
                 readOnly: true
             },
             {
                 name: 'oedToggleViewMenu',
-                description: descriptions.TOGGLE_VIEW_MENU,
+                description: DESCRIPTIONS.TOGGLE_VIEW_MENU,
                 bindKey: {win: 'Alt-V'},
                 exec: editor => document.getElementById('button-view').click(),
                 readOnly: true
             },
             {
                 name: 'oedToggleExtensionsMenu',
-                description: descriptions.TOGGLE_EXTENSIONS_MENU,
+                description: DESCRIPTIONS.TOGGLE_EXTENSIONS_MENU,
                 bindKey: {win: 'Alt-X'},
                 exec: editor => document.getElementById('button-extensions').click(),
                 readOnly: true
             },
             {
                 name: 'oedToggleHelpMenu',
-                description: descriptions.TOGGLE_HELP_MENU,
+                description: DESCRIPTIONS.TOGGLE_HELP_MENU,
                 bindKey: {win: 'Alt-H'},
                 exec: editor => document.getElementById('button-help').click(),
                 readOnly: true

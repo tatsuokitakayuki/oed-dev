@@ -1,5 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 
@@ -17,7 +17,7 @@ export class DialogFileDecoding extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(descriptions.FILE_DECODING, res.encoding_names);
+        super.open(DESCRIPTIONS.FILE_DECODING, res.encoding_names);
     }
 
     reset() {

@@ -1,4 +1,4 @@
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 
@@ -10,31 +10,31 @@ export class MenuExtensions extends Menu {
             items: [
                 {
                     id: 'menu-extensions-oed-enable-basic-autocompletion',
-                    text: descriptions.ENABLE_BASIC_AUTOCOMPLETION,
+                    text: DESCRIPTIONS.ENABLE_BASIC_AUTOCOMPLETION,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-live-autocompletion',
-                    text: descriptions.ENABLE_LIVE_AUTOCOMPLETION,
+                    text: DESCRIPTIONS.ENABLE_LIVE_AUTOCOMPLETION,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-snippets',
-                    text: descriptions.ENABLE_SNIPPETS,
+                    text: DESCRIPTIONS.ENABLE_SNIPPETS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-enable-emmet',
-                    text: descriptions.ENABLE_EMMET,
+                    text: DESCRIPTIONS.ENABLE_EMMET,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-extensions-oed-use-elastic-tabstops',
-                    text: descriptions.USE_ELASTIC_TABSTOPS,
+                    text: DESCRIPTIONS.USE_ELASTIC_TABSTOPS,
                     meta: '',
                     update: true
                 }

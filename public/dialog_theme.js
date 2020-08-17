@@ -1,5 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {HtmlHelper} from '/html_helper.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
@@ -64,7 +64,7 @@ export class DialogTheme extends DialogSelect {
 
     open() {
         const themeHelper = new ThemeHelper();
-        super.open(descriptions.THEME, themeHelper.getThemes());
+        super.open(DESCRIPTIONS.THEME, themeHelper.getThemes());
     }
 
     submit() {

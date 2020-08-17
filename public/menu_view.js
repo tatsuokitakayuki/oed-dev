@@ -1,4 +1,4 @@
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
@@ -13,79 +13,79 @@ export class MenuView extends Menu {
                 // Editor options
                 {
                     id: 'menu-view-oed-navigate-within-soft-tabs',
-                    text: descriptions.NAVIGATE_WITHIN_SOFT_TABS,
+                    text: DESCRIPTIONS.NAVIGATE_WITHIN_SOFT_TABS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-auto-scroll-editor-into-view',
-                    text: descriptions.AUTO_SCROLL_EDITOR_INFO_VIEW,
+                    text: DESCRIPTIONS.AUTO_SCROLL_EDITOR_INFO_VIEW,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-copy-with-empty-selection',
-                    text: descriptions.COPY_WITH_EMPTY_SELECTION,
+                    text: DESCRIPTIONS.COPY_WITH_EMPTY_SELECTION,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-cursor-style',
-                    text: descriptions.CURSOR_STYLE + '...',
+                    text: DESCRIPTIONS.CURSOR_STYLE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-enable-auto-indent',
-                    text: descriptions.ENABLE_AUTO_INDENT,
+                    text: DESCRIPTIONS.ENABLE_AUTO_INDENT,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-behaviours-enabled',
-                    text: descriptions.BEHAVIOURS_ENABLED,
+                    text: DESCRIPTIONS.BEHAVIOURS_ENABLED,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-enable-linking',
-                    text: descriptions.ENABLE_LINKING,
+                    text: DESCRIPTIONS.ENABLE_LINKING,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-enable-multiselect',
-                    text: descriptions.ENABLE_MULTISELECT,
+                    text: DESCRIPTIONS.ENABLE_MULTISELECT,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-selection-style',
-                    text: descriptions.SELECTION_STYLE,
+                    text: DESCRIPTIONS.SELECTION_STYLE,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-active-line',
-                    text: descriptions.HIGHLIGHT_ACTIVE_LINE,
+                    text: DESCRIPTIONS.HIGHLIGHT_ACTIVE_LINE,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-selected-word',
-                    text: descriptions.HIGHLIGHT_SELECTED_WORD,
+                    text: DESCRIPTIONS.HIGHLIGHT_SELECTED_WORD,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-merge-undo-deltas',
-                    text: descriptions.MERGE_UNDO_DELTAS + '...',
+                    text: DESCRIPTIONS.MERGE_UNDO_DELTAS + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-wrap-behaviours-enabled',
-                    text: descriptions.WRAP_BEHAVIOURS_ENABLED,
+                    text: DESCRIPTIONS.WRAP_BEHAVIOURS_ENABLED,
                     meta: '',
                     update: true
                 },
@@ -93,114 +93,114 @@ export class MenuView extends Menu {
                 // Renderer (Gutter) options
                 {
                     id: 'menu-view-oed-show-gutter',
-                    text: descriptions.SHOW_GUTTER,
+                    text: DESCRIPTIONS.SHOW_GUTTER,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-fixed-width-gutter',
-                    text: descriptions.FIXED_WIDTH_GUTTER,
+                    text: DESCRIPTIONS.FIXED_WIDTH_GUTTER,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-highlight-gutter-line',
-                    text: descriptions.HIGHLIGHT_GUTTER_LINE,
+                    text: DESCRIPTIONS.HIGHLIGHT_GUTTER_LINE,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-line-numbers',
-                    text: descriptions.SHOW_LINE_NUMBERS,
+                    text: DESCRIPTIONS.SHOW_LINE_NUMBERS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-fade-fold-widgets',
-                    text: descriptions.FADE_FOLD_WIDGETS,
+                    text: DESCRIPTIONS.FADE_FOLD_WIDGETS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-fold-widgets',
-                    text: descriptions.SHOW_FOLD_WIDGETS,
+                    text: DESCRIPTIONS.SHOW_FOLD_WIDGETS,
                     meta: '',
                     update: true
                 },
                 // Renderer (Margin) options
                 {
                     id: 'menu-view-oed-print-margin-column',
-                    text: descriptions.PRINT_MARGIN_COLUMN + '...',
+                    text: DESCRIPTIONS.PRINT_MARGIN_COLUMN + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-print-margin',
-                    text: descriptions.SHOW_PRINT_MARGIN,
+                    text: DESCRIPTIONS.SHOW_PRINT_MARGIN,
                     meta: '',
                     update: true
                 },
                 // Renderer (Scroll) options
                 {
                     id: 'menu-view-oed-animated-scroll',
-                    text: descriptions.ANIMATED_SCROLL,
+                    text: DESCRIPTIONS.ANIMATED_SCROLL,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-v-scroll-bar-always-visible',
-                    text: descriptions.VERTICAL_SCROLL_BAR_ALWAYS_VISIBLE,
+                    text: DESCRIPTIONS.VERTICAL_SCROLL_BAR_ALWAYS_VISIBLE,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-h-scroll-bar-always-visible',
-                    text: descriptions.HOLIZONTAL_SCROLL_BAR_ALWAYS_VISIBLE,
+                    text: DESCRIPTIONS.HOLIZONTAL_SCROLL_BAR_ALWAYS_VISIBLE,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-scroll-past-end',
-                    text: descriptions.SCROLL_PAST_END + '...',
+                    text: DESCRIPTIONS.SCROLL_PAST_END + '...',
                     meta: '',
                     update: true
                 },
                 // Renderer options
                 {
                     id: 'menu-view-oed-display-indent-guides',
-                    text: descriptions.DISPLAY_INDENT_GUILES,
+                    text: DESCRIPTIONS.DISPLAY_INDENT_GUILES,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-show-invisibles',
-                    text: descriptions.SHOW_INVISIBLES,
+                    text: DESCRIPTIONS.SHOW_INVISIBLES,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-use-textarea-for-ime',
-                    text: descriptions.USE_TEXTAREA_FOR_IME,
+                    text: DESCRIPTIONS.USE_TEXTAREA_FOR_IME,
                     meta: '',
                     update: true
                 },
                 // Renderer (Font) options
                 {
                     id: 'menu-view-oed-font-family',
-                    text: descriptions.FONT_FAMILY + '...',
+                    text: DESCRIPTIONS.FONT_FAMILY + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-view-oed-font-size',
-                    text: descriptions.FONT_SIZE + '...',
+                    text: DESCRIPTIONS.FONT_SIZE + '...',
                     meta: '',
                     update: true
                 },
                 // Renderer options
                 {
                     id: 'menu-view-oed-theme',
-                    text: descriptions.THEME + '...',
+                    text: DESCRIPTIONS.THEME + '...',
                     meta: '',
                     update: true
                 },

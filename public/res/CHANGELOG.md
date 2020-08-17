@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200817 (dev)
+- Renamed descriptions to DESCRIPTIONS.
 - Removed unnecessary import.
 - Changed to dynamic import.
 

@@ -1,5 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {DialogSelect} from '/dialog_select.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
@@ -18,7 +18,7 @@ export class DialogKeyboardHandler extends DialogSelect {
 
     open() {
         const res = new Res();
-        super.open(descriptions.KEYBOARD_HANDLER, res.keyboard_handler);
+        super.open(DESCRIPTIONS.KEYBOARD_HANDLER, res.keyboard_handler);
     }
 
     submit() {

@@ -1,5 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
 import {SaveOptionsEditorEvent} from '/save_options_editor_event.js';
@@ -23,7 +23,7 @@ export class DialogFontFamily extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            descriptions.FONT_FAMILY, null, res.placeholders.font_family,
+            DESCRIPTIONS.FONT_FAMILY, null, res.placeholders.font_family,
             this.initialValue, 'text', null, null
         );
     }

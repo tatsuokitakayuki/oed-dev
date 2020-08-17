@@ -1,5 +1,5 @@
 import {ChangeEditorOptionEvent} from '/change_editor_option_event.js';
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {DialogPrompt} from '/dialog_prompt.js';
 import {Res} from '/res.js';
 
@@ -18,7 +18,7 @@ export class DialogTabSize extends DialogPrompt {
     open() {
         const res = new Res();
         super.open(
-            descriptions.TAB_SIZE, null, res.placeholders.tab_size,
+            DESCRIPTIONS.TAB_SIZE, null, res.placeholders.tab_size,
             this.initialValue, 'number', 1, 16
         );
     }

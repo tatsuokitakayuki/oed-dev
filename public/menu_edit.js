@@ -1,4 +1,4 @@
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {Menu} from '/menu.js';
 
 export class MenuEdit extends Menu {
@@ -9,13 +9,13 @@ export class MenuEdit extends Menu {
             items: [
                 {
                     id: 'menu-edit-undo',
-                    text: descriptions.UNDO,
+                    text: DESCRIPTIONS.UNDO,
                     meta: 'Ctrl+Z',
                     update: false
                 },
                 {
                     id: 'menu-edit-redo',
-                    text: descriptions.REDO,
+                    text: DESCRIPTIONS.REDO,
                     meta: 'Ctrl+Shift+Z',
                     update: false
                 },
@@ -23,19 +23,19 @@ export class MenuEdit extends Menu {
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-cut',
-                    text: descriptions.CUT,
+                    text: DESCRIPTIONS.CUT,
                     meta: 'Ctrl+X',
                     update: false
                 },
                 {
                     id: 'menu-edit-copy',
-                    text: descriptions.COPY,
+                    text: DESCRIPTIONS.COPY,
                     meta: 'Ctrl+C',
                     update: false
                 },
                 {
                     id: 'menu-edit-paste',
-                    text: descriptions.PASTE,
+                    text: DESCRIPTIONS.PASTE,
                     meta: 'Ctrl+V',
                     update: false
                 },
@@ -43,84 +43,84 @@ export class MenuEdit extends Menu {
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-overwrite',
-                    text: descriptions.OVERWRITE,
+                    text: DESCRIPTIONS.OVERWRITE,
                     meta: 'Ins',
                     update: false
                 },
                 {
                     id: 'menu-edit-delete',
-                    text: descriptions.DELETE,
+                    text: DESCRIPTIONS.DELETE,
                     meta: 'Del',
                     update: false
                 },
                 {
                     id: 'menu-edit-backspace',
-                    text: descriptions.BACKSPACE,
+                    text: DESCRIPTIONS.BACKSPACE,
                     meta: 'Bs',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-selectall',
-                    text: descriptions.SELECT_ALL,
+                    text: DESCRIPTIONS.SELECT_ALL,
                     meta: 'Ctrl+A',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-indent',
-                    text: descriptions.INDENT,
+                    text: DESCRIPTIONS.INDENT,
                     meta: 'Tab',
                     update: false
                 },
                 {
                     id: 'menu-edit-outdent',
-                    text: descriptions.OUTDENT,
+                    text: DESCRIPTIONS.OUTDENT,
                     meta: 'Shift+Tab',
                     update: false
                 },
                 {
                     id: 'menu-edit-blockindent',
-                    text: descriptions.BLOCK_INDENT,
+                    text: DESCRIPTIONS.BLOCK_INDENT,
                     meta: 'Ctrl+]',
                     update: false
                 },
                 {
                     id: 'menu-edit-blockoutdent',
-                    text: descriptions.BLOCK_OUTDENT,
+                    text: DESCRIPTIONS.BLOCK_OUTDENT,
                     meta: 'Ctrl+[',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-touppercase',
-                    text: descriptions.TO_UPPER_CASE,
+                    text: DESCRIPTIONS.TO_UPPER_CASE,
                     meta: 'Ctrl+U',
                     update: false
                 },
                 {
                     id: 'menu-edit-tolowercase',
-                    text: descriptions.TO_LOWER_CASE,
+                    text: DESCRIPTIONS.TO_LOWER_CASE,
                     meta: 'Ctrl+Shift+U',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-sortlines',
-                    text: descriptions.SORT_LINES,
+                    text: DESCRIPTIONS.SORT_LINES,
                     meta: 'Ctrl+Alt+S',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-edit-togglerecording',
-                    text: descriptions.TOGGLE_RECORDING_MACRO,
+                    text: DESCRIPTIONS.TOGGLE_RECORDING_MACRO,
                     meta: 'Ctrl+Alt+E',
                     update: false
                 },
                 {
                     id: 'menu-edit-replaymacro',
-                    text: descriptions.REPLAY_MACRO,
+                    text: DESCRIPTIONS.REPLAY_MACRO,
                     meta: 'Ctrl+Shift+E',
                     update: false
                 }

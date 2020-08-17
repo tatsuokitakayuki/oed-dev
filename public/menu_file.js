@@ -1,4 +1,4 @@
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
@@ -11,118 +11,118 @@ export class MenuFile extends Menu {
             items: [
                 {
                     id: 'menu-file-oed-new-file',
-                    text: descriptions.NEW_FILE,
+                    text: DESCRIPTIONS.NEW_FILE,
                     meta: 'Ctrl+N',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-open-file',
-                    text: descriptions.OPEN_FILE + '...',
+                    text: DESCRIPTIONS.OPEN_FILE + '...',
                     meta: 'Ctrl+O',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-download-file',
-                    text: descriptions.DOWNLOAD_FILE,
+                    text: DESCRIPTIONS.DOWNLOAD_FILE,
                     meta: 'Ctrl+S',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-rename-file',
-                    text: descriptions.RENAME_FILE + '...',
+                    text: DESCRIPTIONS.RENAME_FILE + '...',
                     meta: 'Alt+R',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-read-only', // Editor
-                    text: descriptions.READ_ONLY,
+                    text: DESCRIPTIONS.READ_ONLY,
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-toggle-file-list',
-                    text: descriptions.TOGGLE_FILE_LIST,
+                    text: DESCRIPTIONS.TOGGLE_FILE_LIST,
                     meta: 'Ctrl+Shift+F',
                     update: false
                 },
                 {
                     id: 'menu-file-oed-next-file',
-                    text: descriptions.NEXT_FILE,
+                    text: DESCRIPTIONS.NEXT_FILE,
                     meta: 'Ctrl+Tab',
                 },
                 {
                     id: 'menu-file-oed-previous-file',
-                    text: descriptions.PREVIOUS_FILE,
+                    text: DESCRIPTIONS.PREVIOUS_FILE,
                     meta: 'Ctrl+Shift+Tab',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-file-decoding', // OED
-                    text: descriptions.FILE_DECODING + '...',
+                    text: DESCRIPTIONS.FILE_DECODING + '...',
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-first-line-number', // EditSession
-                    text: descriptions.FIRST_LINE_NUMBER + '...',
+                    text: DESCRIPTIONS.FIRST_LINE_NUMBER + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-fold-style', // EditSession
-                    text: descriptions.FOLD_STYLE + '...',
+                    text: DESCRIPTIONS.FOLD_STYLE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-indented-soft-wrap', // EditSession
-                    text: descriptions.INDENTED_SOFT_WRAP,
+                    text: DESCRIPTIONS.INDENTED_SOFT_WRAP,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-mode', // EditSession
-                    text: descriptions.LANGUAGE_MODE + '...',
+                    text: DESCRIPTIONS.LANGUAGE_MODE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-new-line-mode', // EditSession
-                    text: descriptions.NEW_LINE_MODE + '...',
+                    text: DESCRIPTIONS.NEW_LINE_MODE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-wrap', // EditSession
-                    text: descriptions.WRAP + '...',
+                    text: DESCRIPTIONS.WRAP + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-tab-size', // EditSession
-                    text: descriptions.TAB_SIZE + '...',
+                    text: DESCRIPTIONS.TAB_SIZE + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-use-soft-tabs', // EditSession
-                    text: descriptions.USE_SOFT_TABS,
+                    text: DESCRIPTIONS.USE_SOFT_TABS,
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-file-oed-save-edit-session-options',
-                    text: descriptions.SAVE_EDIT_SESSION_OPTIONS,
+                    text: DESCRIPTIONS.SAVE_EDIT_SESSION_OPTIONS,
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-file-oed-close-file',
-                    text: descriptions.CLOSE_FILE + '...',
+                    text: DESCRIPTIONS.CLOSE_FILE + '...',
                     meta: 'Alt+W',
                     update: false
                 }

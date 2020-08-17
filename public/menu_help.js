@@ -1,4 +1,4 @@
-import {descriptions} from '/res/descriptions.js';
+import {DESCRIPTIONS} from '/res/descriptions.js';
 import {MaterialHelper} from '/material_helper.js';
 import {Menu} from '/menu.js';
 import {Res} from '/res.js';
@@ -11,71 +11,71 @@ export class MenuHelp extends Menu {
             items: [
                 {
                     id: 'menu-help-open-command-pallete',
-                    text: descriptions.COMMAND_PALLETE + '...',
+                    text: DESCRIPTIONS.COMMAND_PALLETE + '...',
                     meta: 'F1',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-keyboard-handler',
-                    text: descriptions.KEYBOARD_HANDLER + '...',
+                    text: DESCRIPTIONS.KEYBOARD_HANDLER + '...',
                     meta: '',
                     update: true
                 },
                 {
                     id: 'menu-help-oed-menu-button',
-                    text: descriptions.MENU_BUTTON + '...',
+                    text: DESCRIPTIONS.MENU_BUTTON + '...',
                     meta: '',
                     update: true
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-export-options',
-                    text: descriptions.EXPORT_OPTIONS,
+                    text: DESCRIPTIONS.EXPORT_OPTIONS,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-import-options',
-                    text: descriptions.IMPORT_OPTIONS + '...',
+                    text: DESCRIPTIONS.IMPORT_OPTIONS + '...',
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-cache-list',
-                    text: descriptions.CACHE_LIST,
+                    text: DESCRIPTIONS.CACHE_LIST,
                     meta: '',
                     update: false
                 },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-insert-welcome',
-                    text: descriptions.INSERT_WELCOME,
+                    text: DESCRIPTIONS.INSERT_WELCOME,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-source-code',
-                    text: descriptions.SOURCE_CODE,
+                    text: DESCRIPTIONS.SOURCE_CODE,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-change-log',
-                    text: descriptions.CHANGE_LOG,
+                    text: DESCRIPTIONS.CHANGE_LOG,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-open-source-lisence',
-                    text: descriptions.OPEN_SOURCE_LISENCE,
+                    text: DESCRIPTIONS.OPEN_SOURCE_LISENCE,
                     meta: '',
                     update: false
                 },
                 {
                     id: 'menu-help-oed-about',
-                    text: descriptions.ABOUT,
+                    text: DESCRIPTIONS.ABOUT,
                     meta: '',
                     update: false
                 }
