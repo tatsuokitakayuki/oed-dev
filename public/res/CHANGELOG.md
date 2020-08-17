@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200817 (dev)
+- Removed unnecessary import.
 - Changed to dynamic import.
 
 ## Version 4.0.20200816 (dev)

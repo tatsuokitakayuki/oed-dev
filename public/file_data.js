@@ -1,7 +1,6 @@
 import {CacheManager} from '/cache_manager.js';
 import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {ChangeViewEvent} from '/change_view_event.js';
-import {DialogRenameFile} from '/dialog_rename_file.js';
 import {FileHelper} from '/file_helper.js';
 import {Res} from '/res.js';
 
