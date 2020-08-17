@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200817 (dev)
+- Fixed name and description of manifest.json.
 - Renamed MoveDrawerEvent to ChangeDrawerEvent.
 - Renamed descriptions to DESCRIPTIONS.
 - Removed unnecessary import.
