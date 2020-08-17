@@ -1,4 +1,4 @@
-const OED_VERSION = '4.0.20200817.2';
+const OED_VERSION = '4.0.20200817.3';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -16,6 +16,7 @@ const OED_URLS = [
     './app_view.js',
     './cache_manager.js',
     './change_app_bar_event.js',
+    './change_drawer_event.js',
     './change_drawer_item_event.js',
     './change_editor_option_event.js',
     './change_menu_button_event.js',
@@ -72,7 +73,6 @@ const OED_URLS = [
     './menu_help.js',
     './menu_search.js',
     './menu_view.js',
-    './move_drawer_event.js',
     './oed.js',
     './options.js',
     './rename_file_event.js',
