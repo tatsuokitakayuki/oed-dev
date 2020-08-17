@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200817 (dev)
+- Changed to dynamic import.
+
 ## Version 4.0.20200816 (dev)
 - Updated welcome message.
 
