@@ -1,151 +1,151 @@
 <!DOCTYPE html>
 <html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="application-name" content="OED">
-        <meta name="description" content="OED (Open, Edit, and Download) is a text / code editor implemented only in web technology.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#faf500">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="default">
-        <meta name="apple-mobile-web-app-title" content="OED">
-        <title>OED</title>
-        <link rel="manifest" href="/manifest.json">
-        <link rel="stylesheet" href="/material-components-web/material-components-web.min.css">
-        <link rel="stylesheet" href="/iconfont/material-icons.css">
-        <link rel="stylesheet" href="/main.css">
-        <link rel="icon" type="image/png" href="/images/icons/favicon.png">
-        <link rel="apple-touch-icon" type="image/png" href="/images/icons/favicon.png">
-        <script defer src="/emmet-core/emmet.js"></script>
-        <script defer src="/ace/ace.js"></script>
-        <script defer src="/ace/ext-language_tools.js"></script>
-        <script defer src="/ace/ext-elastic_tabstops_lite.js"></script>
-        <script defer src="/ace/ext-modelist.js"></script>
-        <script defer src="/ace/ext-linking.js"></script>
-        <script defer src="/ace/ext-emmet.js"></script>
-        <script defer src="/ace/ext-prompt.js"></script>
-        <script defer src="/material-components-web/material-components-web.min.js"></script>
-        <script defer src="/localForage/localforage.min.js"></script>
-        <script src="/oed.js" type="module"></script>
-    </head>
-    <body class="mdc-typography oed-dark" id="app-view">
-        <!-- Top App Bar -->
-        <header class="mdc-top-app-bar app-bar mdc-top-app-bar--dense mdc-elevation--z4" id="app-bar">
-            <div class="mdc-top-app-bar__row">
-                <!-- Start side -->
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <!-- Drawer button -->
-                    <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__navigation-icon" tabindex="0" id="app-nav-icon" title="Ctrl+Shift+L">
-                        <div class="mdc-button__ripple"></div>
-                        <span class="material-icons" aria-hidden="true">menu</span>
-                        <div class="mdc-button__touch"></div>
-                    </button>
-                    <!-- Title -->
-                    <span class="mdc-top-app-bar__title oed-do-not-select" id="app-bar-title">OED (Open, Edit, and Download)</span>
-                </section>
-                <!-- End side -->
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                    <!-- Menu buttons -->
-                    <!-- File -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-file" title="Alt+I"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-file">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-file"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Edit -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-edit" title="Alt+D"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-edit">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-edit"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Search -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-search" title="Alt+S"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-search">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-search"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Code -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-code" title="Alt+C"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-code">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-code"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- View -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-view" title="Alt+V"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-view">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-view"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Extensions -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-extensions" title="Alt+X"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-extensions">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-extensions"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Help -->
-                    <div>
-                        <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-help" title="Alt+H"></button>
-                        <div class="mdc-menu-surface--anchor">
-                            <div class="mdc-menu mdc-menu-surface" id="menu-help">
-                                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-help"></ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="application-name" content="OED">
+    <meta name="description" content="OED (Open, Edit, and Download) is a text / code editor implemented only in web technology.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#faf500">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OED">
+    <title>OED</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/material-components-web/material-components-web.min.css">
+    <link rel="stylesheet" href="/iconfont/material-icons.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="icon" type="image/png" href="/images/icons/favicon.png">
+    <link rel="apple-touch-icon" type="image/png" href="/images/icons/favicon.png">
+    <script defer src="/emmet-core/emmet.js"></script>
+    <script defer src="/ace/ace.js"></script>
+    <script defer src="/ace/ext-language_tools.js"></script>
+    <script defer src="/ace/ext-elastic_tabstops_lite.js"></script>
+    <script defer src="/ace/ext-modelist.js"></script>
+    <script defer src="/ace/ext-linking.js"></script>
+    <script defer src="/ace/ext-emmet.js"></script>
+    <script defer src="/ace/ext-prompt.js"></script>
+    <script defer src="/material-components-web/material-components-web.min.js"></script>
+    <script defer src="/localForage/localforage.min.js"></script>
+    <script src="/oed.js" type="module"></script>
+  </head>
+  <body class="mdc-typography oed-dark" id="app-view">
+    <!-- Top App Bar -->
+    <header class="mdc-top-app-bar app-bar mdc-top-app-bar--dense mdc-elevation--z4" id="app-bar">
+      <div class="mdc-top-app-bar__row">
+        <!-- Start side -->
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <!-- Drawer button -->
+          <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__navigation-icon" tabindex="0" id="app-nav-icon" title="Ctrl+Shift+L">
+            <div class="mdc-button__ripple"></div>
+            <span class="material-icons" aria-hidden="true">menu</span>
+            <div class="mdc-button__touch"></div>
+          </button>
+          <!-- Title -->
+          <span class="mdc-top-app-bar__title oed-do-not-select" id="app-bar-title">OED (Open, Edit, and Download)</span>
+        </section>
+        <!-- End side -->
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+          <!-- Menu buttons -->
+          <!-- File -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-file" title="Alt+I"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-file">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-file"></ul>
+              </div>
             </div>
-        </header>
-        <!-- File Drawer -->
-        <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--dense-fixed-adjust mdc-elevation--z2" id="drawer-view" jang="">
-            <div class="mdc-drawer__header oed-do-not-select" id="drawer-header">
-                <h3 class="mdc-drawer__title">File list</h3>
+          </div>
+          <!-- Edit -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-edit" title="Alt+D"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-edit">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-edit"></ul>
+              </div>
             </div>
-            <div class="mdc-drawer__content oed-do-not-select" id="drawer-content">
-                <ul class="mdc-list mdc-list--dense mdc-list--two-line" role="menu" aria-hidden="true" aria-orientation="vertical" id="file-list"></ul>
+          </div>
+          <!-- Search -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-search" title="Alt+S"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-search">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-search"></ul>
+              </div>
             </div>
-        </aside>
-        <!-- Editor container -->
-        <div class="mdc-drawer-app-content mdc-top-app-bar--dense-fixed-adjust" id="editor-container">
-            <!-- Editor view -->
-            <main class="main-content" id="editor"></main>
-            <!-- Statusbar -->
-            <div class="mdc-typography--caption oed-do-not-select" id="statusbar"></div>
+          </div>
+          <!-- Code -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-code" title="Alt+C"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-code">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-code"></ul>
+              </div>
+            </div>
+          </div>
+          <!-- View -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-view" title="Alt+V"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-view">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-view"></ul>
+              </div>
+            </div>
+          </div>
+          <!-- Extensions -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-extensions" title="Alt+X"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-extensions">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-extensions"></ul>
+              </div>
+            </div>
+          </div>
+          <!-- Help -->
+          <div>
+            <button type="button" class="mdc-button mdc-button--touch mdc-top-app-bar__action-item" tabindex="0" id="button-help" title="Alt+H"></button>
+            <div class="mdc-menu-surface--anchor">
+              <div class="mdc-menu mdc-menu-surface" id="menu-help">
+                <ul class="mdc-list mdc-list--dense" role="menu" aria-hidden="true" aria-orientation="vertical" id="menu-list-help"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <!-- File Drawer -->
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--dense-fixed-adjust mdc-elevation--z2" id="drawer-view" jang="">
+      <div class="mdc-drawer__header oed-do-not-select" id="drawer-header">
+        <h3 class="mdc-drawer__title">File list</h3>
+      </div>
+      <div class="mdc-drawer__content oed-do-not-select" id="drawer-content">
+        <ul class="mdc-list mdc-list--dense mdc-list--two-line" role="menu" aria-hidden="true" aria-orientation="vertical" id="file-list"></ul>
+      </div>
+    </aside>
+    <!-- Editor container -->
+    <div class="mdc-drawer-app-content mdc-top-app-bar--dense-fixed-adjust" id="editor-container">
+      <!-- Editor view -->
+      <main class="main-content" id="editor"></main>
+      <!-- Statusbar -->
+      <div class="mdc-typography--caption oed-do-not-select" id="statusbar"></div>
+    </div>
+    <!-- Dialog View -->
+    <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content" id="dialog">
+      <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+          <h2 class="mdc-dialog__title oed-do-not-select" id="dialog-title"></h2>
+          <div class="mdc-dialog__content" id="dialog-content"></div>
+          <footer class="mdc-dialog__actions" id="dialog-footer"></footer>
         </div>
-        <!-- Dialog View -->
-        <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-content" id="dialog">
-            <div class="mdc-dialog__container">
-                <div class="mdc-dialog__surface">
-                    <h2 class="mdc-dialog__title oed-do-not-select" id="dialog-title"></h2>
-                    <div class="mdc-dialog__content" id="dialog-content"></div>
-                    <footer class="mdc-dialog__actions" id="dialog-footer"></footer>
-                </div>
-            </div>
-            <div class="mdc-dialog__scrim"></div>
-        </div>
-        <!-- Snackbar -->
-        <div class="mdc-snackbar mdc-snackbar--leading" id="snackbar-view">
-            <div class="mdc-snackbar__surface" id="snackbar-surface">
-                <div class="mdc-snackbar__label" role="status" aria-live="polite" id="snackbar-label"></div>
-                <div class="mdc-snackbar__actions" id="snackbar-actions"></div>
-            </div>
-        </div>
-    </body>
+      </div>
+      <div class="mdc-dialog__scrim"></div>
+    </div>
+    <!-- Snackbar -->
+    <div class="mdc-snackbar mdc-snackbar--leading" id="snackbar-view">
+      <div class="mdc-snackbar__surface" id="snackbar-surface">
+        <div class="mdc-snackbar__label" role="status" aria-live="polite" id="snackbar-label"></div>
+        <div class="mdc-snackbar__actions" id="snackbar-actions"></div>
+      </div>
+    </div>
+  </body>
 </html>

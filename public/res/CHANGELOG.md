@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200818 (dev)
+- Changed the tab size of index.html from 4 to 2.
 - Fixed the link element.
 
 ## Version 4.0.20200817 (dev)
