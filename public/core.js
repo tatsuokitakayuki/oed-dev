@@ -75,6 +75,7 @@ export class Core {
                 exec: () => document.getElementById('button-help').click()
             },
         ];
+        this.dialogModule = null;
     }
 
     async initializeA() {
@@ -481,6 +482,13 @@ export class Core {
         document.dispatchEvent(new ChangeDrawerItemEvent(index, index));
     }
 
+    isOpenDialog() {
+        if (!this.dialogModule) {
+            return false;
+        }
+        return this.dialogModule.isOpen();
+    }
+
     async openSelectFileA() {
         document.dispatchEvent(new FocusEditorEvent(this.getEditor()));
         const module = await import('/dialog_select_file.js');
@@ -519,9 +527,13 @@ export class Core {
 
     async closeFileA(index) {
         if (!this.isCoreFile(index) && !this.isClean(index)) {
+            if (this.isOpenDialog()) {
+                return;
+            }
             const res = new Res();
             const module = await import('/dialog_confirm.js');
             const dialogConfirm = new module.DialogConfirm();
+            this.dialogModule = dialogConfirm;
             dialogConfirm.open(
                 DESCRIPTIONS.CLOSE_FILE,
                 res.strings.confirm_close_file

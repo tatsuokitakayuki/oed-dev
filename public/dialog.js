@@ -39,6 +39,10 @@ export class Dialog {
         document.dispatchEvent(new FocusEditorEvent());
     }
 
+    isOpen() {
+        return this.dialog.isOpen;
+    }
+
     getElement() {
         return document.getElementById('dialog');
     }

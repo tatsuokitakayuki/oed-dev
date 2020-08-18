@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200818 (dev)
+- Fixed a bug that a confirmation dialog with a problem is displayed when Alt+W is repeatedly pressed during editing.
 - Fixed to use Ace's themelist extension to get theme list.
 - Fixed the call point of Core class.
 - Changed the tab size of index.html from 4 to 2.
