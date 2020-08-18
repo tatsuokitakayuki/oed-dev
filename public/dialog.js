@@ -40,6 +40,9 @@ export class Dialog {
     }
 
     isOpen() {
+        if (!this.dialog) {
+            return false;
+        }
         return this.dialog.isOpen;
     }
 
