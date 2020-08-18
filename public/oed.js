@@ -2,7 +2,6 @@ import {ChangeSnackbarEvent} from '/change_snackbar_event.js';
 import {Core} from '/core.js';
 import {Res} from '/res.js';
 
-const core = new Core();
 let newWorker = null;
 const onStateChange = () => {
     switch (newWorker.state) {
@@ -31,7 +30,9 @@ const onLoad = () => {
     });
 };
 
-window.addEventListener('DOMContentLoaded', () => core.initializeA());
+window.addEventListener(
+    'DOMContentLoaded', async () => await new Core().initializeA()
+);
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => onLoad());
 }
