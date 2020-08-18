@@ -22,6 +22,13 @@ import {Statusbar} from '/statusbar.js';
 
 export class Core {
     constructor() {
+        let module = ace.require('ace/ext/language_tools');
+        module = ace.require('ace/ext/elastic_tabstops_lite');
+        module = ace.require('ace/ext/linking');
+        module = ace.require('ace/ext/modelist');
+        module = ace.require('ace/ext/emmet');
+        module = ace.require('ace/ext/prompt');
+        module = ace.require('ace/ext/themelist');
         this.editor = ace.edit('editor');
         this.appView = new AppView(this);
         this.appBar = new AppBar(this);
