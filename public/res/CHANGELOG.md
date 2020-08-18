@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200818 (dev)
+- Fixed the link element.
+
 ## Version 4.0.20200817 (dev)
 - Fixed name and description of manifest.json.
 - Renamed MoveDrawerEvent to ChangeDrawerEvent.
