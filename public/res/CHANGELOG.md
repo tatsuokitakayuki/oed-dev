@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 4.0.20200819 (dev)
+- Rewrote the service worker with reference to PWABuilder.
+
 ## Version 4.0.20200818 (dev)
 - Fixed a bug that a confirmation dialog with a problem is displayed when Alt+W is repeatedly pressed during editing.
 - Fixed to use Ace's themelist extension to get theme list.

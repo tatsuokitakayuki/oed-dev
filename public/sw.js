@@ -1,4 +1,4 @@
-const OED_VERSION = '4.0.20200818.4';
+const OED_VERSION = '4.0.20200819.0';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -567,7 +567,7 @@ const CACHE_LIST = [
     }
 ];
 
-self.addEventListener('install', event => {
+self.addEventListener('install', async event => {
     console.log('[Service Worker] Install');
     event.waitUntil(
         caches.keys().then(keylist => {
@@ -608,13 +608,14 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('message', event => {
-    if (event.data.action === 'skipWaiting') {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
+        console.log('[Service Worker] Exec skipWaiting');
     }
 });
 
 self.addEventListener('fetch', event => {
-    if (event.request.method !== "GET") {
+    if (event.request.mode !== 'navigate') {
         return;
     }
     event.respondWith(
