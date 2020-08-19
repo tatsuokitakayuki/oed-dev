@@ -1,11 +1,11 @@
-const OED_VERSION = '4.0.20200819.0';
+const OED_VERSION = '4.0.20200819.1';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
 const MDC_VERSION = '7.0.0';
 const MDC_BASE = 'material-components-web';
-const MDI_VERSION = '3.0.1';
-const MDI_BASE = 'MDI';
+const MDI_VERSION = '3.0.2';
+const MDI_BASE = 'material-icons';
 const LF_VERSION = '1.9.0';
 const LF_BASE = 'localForage';
 const EC_VERSION = '1.0.0';
@@ -551,7 +551,7 @@ const CACHE_LIST = [
         base: MDI_BASE,
         version: MDI_VERSION,
         list: MDI_URLS,
-        log: 'Material Design Icons'
+        log: 'Material Icons'
     },
     {
         base: LF_BASE,

@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200819 (dev)
+- Updated Material Icons to version 3.0.2.
 - Rewrote the service worker with reference to PWABuilder.
 
 ## Version 4.0.20200818 (dev)
