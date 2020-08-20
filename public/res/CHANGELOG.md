@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Version 4.0.20200820 (dev)
+- Rewrote the service worker.
 - Fixed manifest.json.
 
 ## Version 4.0.20200819 (dev)
