@@ -1,18 +1,15 @@
 {
     "dir": "auto",
     "lang": "en-US",
-    "name": "OED (Open, Edit, and Download)",
+    "name": "OED",
     "short_name": "OED",
-    "description": "OED is an application that edits text and code, which is implemented only by Web technologies (HTML, CSS, and JavaScript).",
-
+    "description": "OED (Open, Edit, and Download) is an application that edits text and code, which is implemented only by Web technologies (HTML, CSS, and JavaScript).",
     "theme_color": "#faf500",
-    "background_color": "#ffffff",
+    "background_color": "#fff",
     "display": "standalone",
     "orientation": "landscape-primary",
-
     "scope": "/",
     "start_url": "/",
-
     "icons": [
         {
             "src": "/images/icons/icon-72x72.png",
