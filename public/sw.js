@@ -614,23 +614,33 @@ self.addEventListener('message', event => {
     }
 });
 
+const getCacheNameFromPathname = pathname => {
+    for (const item in CACHE_LIST){
+        if (item.list.include('.' + pathname)) {
+            return item.base + JOINT_FOR_KEY + item.version;
+        }
+    }
+    return '';
+};
+
 self.addEventListener('fetch', event => {
     if (event.request.mode !== 'navigate') {
         return;
     }
-    event.respondWith(
-        caches
-            .match(event.request)
-            .then(responseMatch => {
-                return responseMatch ||
-                    fetch(event.request).then(responseFetch => {
-                        console.log(
-                            '[Service Worker] Fetch new resource: ' +
-                            event.request.url
-                        );
-                        return responseFetch;
-                    });
-            })
-            .catch(error => console.error(error))
-    );
+    console.log('[Service Worker] Request resource: ' + event.request.url);
+    event.respondWith(async () => {
+        let response = null;
+        try {
+            response = await event.preloadResponse;
+            if (!response) {
+                response = await fetch(event.request);
+            }
+        } catch (error) {
+            const cache = await caches.open(
+                getCacheFromPathname(event.request.url.pathname)
+            );
+            response = await cache.match(event.request);
+        }
+        return response;
+    });
 });
