@@ -1,4 +1,4 @@
-const OED_VERSION = '4.0.20200820.1';
+const OED_VERSION = '4.0.20200820.2';
 const OED_BASE = 'OED';
 const ACE_VERSION = '1.4.12';
 const ACE_BASE = 'Ace';
@@ -616,7 +616,6 @@ self.addEventListener('message', event => {
 
 const getCacheNameFromPathname = pathname => {
     for (const item of CACHE_LIST){
-        debugger;
         if (item.list.includes('.' + pathname)) {
             return item.base + JOINT_FOR_KEY + item.version;
         }
@@ -630,7 +629,6 @@ self.addEventListener('fetch', event => {
     }
     console.log('[Service Worker] Request resource: ' + event.request.url);
     event.respondWith((async () => {
-        debugger;
         let response = null;
         try {
             response = await event.preloadResponse;
