@@ -18,7 +18,7 @@ const onStateChange = () => {
     }
 };
 const onLoad = () => {
-    navigator.serviceWorker.register('./sw.js', {scope: './'}).then(reg => {
+    navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(reg => {
         console.log(
             '[oed.js] Service worker has been registered for scope: ' +
             reg.scope
