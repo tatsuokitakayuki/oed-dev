@@ -106,6 +106,12 @@ export class MenuEdit extends Menu {
                 },
                 {id: '-', text: '', meta: ''},
                 {
+                    id: 'menu-edit-joinlines',
+                    text: DESCRIPTIONS.JOIN_LINES,
+                    meta: '',
+                    update: false
+                },
+                {
                     id: 'menu-edit-sortlines',
                     text: DESCRIPTIONS.SORT_LINES,
                     meta: 'Ctrl+Alt+S',
