@@ -105,6 +105,7 @@ export const DESCRIPTIONS = {
     ENABLE_EMMET: 'Emmet',
     USE_ELASTIC_TABSTOPS: 'Elastic tabstops',
     COMMAND_PALLETE: 'Command pallete',
+    SHOW_SETTINGS_MENU: 'Show settings menu',
     KEYBOARD_HANDLER: 'Keybinding',
     MENU_BUTTON: 'Menu button',
     EXPORT_OPTIONS: 'Export options',

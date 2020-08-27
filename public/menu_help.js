@@ -15,6 +15,12 @@ export class MenuHelp extends Menu {
                     meta: 'F1',
                     update: false
                 },
+                {
+                    id: 'menu-help-show-settings-menu',
+                    text: DESCRIPTIONS.SHOW_SETTINGS_MENU + '...',
+                    meta: 'Ctrl+,',
+                    update: false
+                },
                 {id: '-', text: '', meta: ''},
                 {
                     id: 'menu-help-oed-keyboard-handler',
