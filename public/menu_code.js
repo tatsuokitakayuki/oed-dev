@@ -71,6 +71,18 @@ export class MenuCode extends Menu {
                     update: false
                 },
                 {
+                    id: 'menu-code-foldall',
+                    text: DESCRIPTIONS.FOLD_ALL,
+                    meta: '',
+                    update: false
+                },
+                {
+                    id: 'menu-code-fold-all-comments',
+                    text: DESCRIPTIONS.FOLD_ALL_COMMENTS,
+                    meta: '',
+                    update: false
+                },
+                {
                     id: 'menu-code-fold-other',
                     text: DESCRIPTIONS.FOLD_OTHER,
                     meta: 'Alt+0',
