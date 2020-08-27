@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 4.0.20200827 (dev)
+- Fixed the problem that Find next and Find previous in the Search menu do not work.
+- Added one item to the Edit menu.
+- Added two items to the Code menu.
+
 ## Version 4.0.20200824 (dev)
 - Rewrote the service worker again.
 

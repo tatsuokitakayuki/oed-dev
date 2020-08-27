@@ -14,13 +14,13 @@ export class MenuSearch extends Menu {
                     update: false
                 },
                 {
-                    id: 'menu-search-find-next',
+                    id: 'menu-search-findnext',
                     text: DESCRIPTIONS.FIND_NEXT,
                     meta: 'Ctrl+K',
                     update: false
                 },
                 {
-                    id: 'menu-search-find-previous',
+                    id: 'menu-search-findprevious',
                     text: DESCRIPTIONS.FIND_PREVIOUS,
                     meta: 'Ctrl+Shift+K',
                     update: false
