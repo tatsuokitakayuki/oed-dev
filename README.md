@@ -4,8 +4,8 @@
 
 ## What is this
 
-OED is a text / code editor made only by web technology.
-OED is a progressive web app.
+OED is an application that edits text and code, which is implemented only by Web technologies (HTML, CSS, and JavaScript).
+A Web App that can be installed offline on a device like OED is called a Progressive Web Application (PWA).
 We are developing OED mainly for Chromebook (or Chromium OS and its based OS) users.
 
 ## Project goals
@@ -49,10 +49,10 @@ We are developing OED mainly for Chromebook (or Chromium OS and its based OS) us
     - iOS
     - iPadOS
 - Browser
-    - Chrome (Main target, Tested)
-    - Firefox
-    - Edge (Tested on EdgeHTML and Chromium)
-    - Safari
+    - Chrome (Version 63 or higher, Main target, Tested)
+    - Firefox (Version 67 or higher)
+    - Edge (Version 79 or higher)
+    - Safari (Version 11.1 or higher)
 
 ## List of libraries and frameworks used
 

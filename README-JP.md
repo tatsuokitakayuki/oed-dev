@@ -4,8 +4,8 @@
 
 ## これはなにか
 
-OED はウェブ技術のみで作ったテキスト・コードエディターです。
-OED はプログレッシブウェブアプリ（Progressive Web App）です。
+OED は Web 技術 (HTML, CSS, JavaScript) のみで実装しているテキストおよびコードを編集するアプリケーションです。
+OED のような端末にインストールしてオフラインで使用可能なウェブアプリをプログレッシブウェブアプリケーション (PWA) と呼びます。
 主に Chromebook（あるいは Chromium OS やそれを元とした OS の）ユーザーのために OED を開発しています。
 
 ## プロジェクトの目的
@@ -45,14 +45,14 @@ OED はプログレッシブウェブアプリ（Progressive Web App）です。
     - Linux（動作確認報告あり）
     - Windows（動作確認済み）
     - Mac
-    - Android（動作確認済みですが、不安定です）
+    - Android（動作確認済み）
     - iOS
     - iPadOS
 - ブラウザ
-    - Chrome（重要対象、動作確認済み）
-    - Firefox
-    - Edge（EdgeHTML と Chromium で動作確認済み）
-    - Safari
+    - Chrome（バージョン 63 以上、重要対象、動作確認済み）
+    - Firefox（バージョン 67 以上）
+    - Edge（バージョン 79 以上）
+    - Safari（バージョン 11.1 以上）
 
 ## OED で使用しているライブラリやフレームワークの一覧
 
